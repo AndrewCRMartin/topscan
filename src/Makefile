@@ -1,4 +1,3 @@
-DEST   = $(HOME)/bin
 LIBDIR = $(HOME)/lib
 INCDIR = $(HOME)/include
 CC     = cc
@@ -27,4 +26,8 @@ distclean : clean
 	\rm -f $(EXE)
 
 install :
-	cp $(EXE) $(DEST)
+	./install.sh
+
+test :
+	(cd t; ./runtest.sh)
+
