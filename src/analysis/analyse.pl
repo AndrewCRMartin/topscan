@@ -1,8 +1,8 @@
-#!/usr/local/bin/perl
+#!/usr/bin/perl
 #*************************************************************************
 #
 #   Program:    analyse
-#   File:       analyse.perl
+#   File:       analyse.pl
 #   
 #   Version:    V1.0
 #   Date:       23.02.98
@@ -16,10 +16,8 @@
 #               Gower Street,
 #               London.
 #               WC1E 6BT.
-#   Phone:      (Home) +44 (0)1372 275775
-#               (Work) +44 (0)171 419 3890
-#   EMail:      martin@biochem.ucl.ac.uk
-#               andrew@stagleys.demon.co.uk
+#   Phone:      +44 (0)207 679 7034
+#   EMail:      andrew@bioinf.org.uk
 #               
 #*************************************************************************
 #
@@ -42,7 +40,7 @@
 #   Analyses the output from topscan by reprinting as the domain ID,
 #   CAT code and score.
 #   Normally one would feed the output of topscan through something like
-#      | sort +1 -n | tail -50 | analyse.perl
+#      | sort -k 1 -n | tail -50 | analyse.pl
 #
 #*************************************************************************
 #

@@ -1,4 +1,4 @@
-#!/usr/local/bin/perl
+#!/usr/bin/perl
 #*************************************************************************
 #
 #   Program:    
@@ -16,10 +16,8 @@
 #               Gower Street,
 #               London.
 #               WC1E 6BT.
-#   Phone:      (Home) +44 (0)1372 275775
-#               (Work) +44 (0)171 419 3890
-#   EMail:      martin@biochem.ucl.ac.uk
-#               andrew@stagleys.demon.co.uk
+#   Phone:      +44 (0)207 679 7034
+#   EMail:      andrew@bioinf.org.uk
 #               
 #*************************************************************************
 #
@@ -51,15 +49,15 @@
 #   =================
 #
 #*************************************************************************
-$minhelix  = 3;
-$minstrand = 4;
+$domdir   = "/nfs/cathdata/dompdb";
+$pdbprep  = "/acrm/data/pdb";
+$pdbext   = ".ent";
+$topscan  = $ENV{'HOME}' . "/bin/topscan";
+$getchain = $ENV{'HOME}' . "/bin/pdbgetchain";
 
 #*************************************************************************
-$domdir   = "/nfs/cathdata/dompdb";
-$pdbprep  = "/data/pdb_release/all/pdb";
-$pdbext   = ".ent";
-$topscan  = "/home/bsm/martin/bin/topscan";
-$getchain = "/home/bsm/martin/bin/getchain";
+$minhelix  = 3;
+$minstrand = 4;
 
 #*************************************************************************
 use Pg;
