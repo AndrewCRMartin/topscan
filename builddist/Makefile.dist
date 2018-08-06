@@ -1,27 +1,44 @@
+XML    = # -DXML_SUPPORT $(shell xml2-config --cflags)
+XMLLIB = # -lxml2
+#
+GUNZIP = -DGUNZIP_SUPPORT
+#
 DEST   = $(HOME)/bin
 LIBDIR = $(HOME)/lib
 INCDIR = $(HOME)/include
 CC     = cc
-COPT   = -ansi -pedantic -Wall -L$(LIBDIR) -I$(INCDIR) -g
-LIB    = -lbiop -lgen -lm -lxml2
+COPT   = -ansi -pedantic -Wall -O2
+LIBS   = $(XMLLIB) -lm
 EXE    = topscan mergestride mergepdbsecstr
+LFILES1 = bioplib/OpenStdFiles.o bioplib/align.o bioplib/chindex.o \
+	  bioplib/array2.o bioplib/fsscanf.o bioplib/GetWord.o \
+	  bioplib/padterm.o bioplib/OpenFile.o 
+LFILES2 = bioplib/OpenFile.o bioplib/ReadPDB.o bioplib/SelectCaPDB.o \
+	  bioplib/fsscanf.o bioplib/padterm.o bioplib/StoreString.o \
+	  bioplib/FreeStringList.o bioplib/FindNextResidue.o \
+	  bioplib/chindex.o bioplib/WritePDB.o bioplib/hash.o \
+	  bioplib/prime.o bioplib/stringutil.o bioplib/PDBHeaderInfo.o \
+	  bioplib/throne.o bioplib/strcatalloc.o bioplib/GetWord.o \
+	  bioplib/array2.o bioplib/stringcat.o bioplib/GetPDBChainLabels.o \
+	  bioplib/BuildConect.o bioplib/IndexPDB.o bioplib/FindResidue.o \
+	  bioplib/OpenStdFiles.o bioplib/ParseRes.o
 
 all : $(EXE)
 
-topscan : topscan.o
-	$(CC) $(COPT) -o $@ $< $(LIB)
+topscan : topscan.o $(LFILES1)
+	$(CC) $(COPT) -o $@ $< $(LFILES1) $(LIB)
 
-mergestride : mergestride.o
-	$(CC) $(COPT) -o $@ $< $(LIB)
+mergestride : mergestride.o $(LFILES2)
+	$(CC) $(COPT) -o $@ $< $(LFILES2) $(LIB) -lm
 
-mergepdbsecstr : mergepdbsecstr.o
-	$(CC) $(COPT) -o $@ $< $(LIB)
+mergepdbsecstr : mergepdbsecstr.o $(LFILES2)
+	$(CC) $(COPT) -o $@ $< $(LFILES2) $(LIB) -lm
 
 .c.o :
 	$(CC) $(COPT) -c -o $@ $<
 
 clean :
-	\rm -f topscan.o mergestride.o mergepdbsecstr.o
+	\rm -f topscan.o mergestride.o mergepdbsecstr.o $(LFILES1) $(LFILES2)
 
 distclean : clean
 	\rm -f $(EXE)

@@ -106,7 +106,7 @@ int main(int argc, char **argv)
 
    if(ParseCmdLine(argc, argv, pdbfile, infile, outfile))
    {
-      if(OpenStdFiles(infile, outfile, &in, &out))
+      if(blOpenStdFiles(infile, outfile, &in, &out))
       {
          if((pdbfp = fopen(pdbfile,"r"))!=NULL)
          {
@@ -156,14 +156,14 @@ BOOL DoMerge(FILE *pdbfp, FILE *pdbsecstrfp, FILE *out)
    int    natoms;
 
    /* Read the PDB file                                                 */
-   if((pdb = ReadPDB(pdbfp, &natoms))==NULL)
+   if((pdb = blReadPDB(pdbfp, &natoms))==NULL)
    {
       fprintf(stderr,"mergepdbsecstr: No atoms read from PDB file\n");
       return(FALSE);
    }
 
    /* Reduce to CA atoms                                                */
-   pdb = SelectCaPDB(pdb);
+   pdb = blSelectCaPDB(pdb);
 
    /* Read the PDBSECSTR file                                           */
    if((pdbsecstr = ReadPdbsecstr(pdbsecstrfp))==NULL)

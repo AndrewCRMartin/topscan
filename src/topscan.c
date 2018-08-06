@@ -245,7 +245,7 @@ int main(int argc, char **argv)
       else
       {
          /* Read the Matrix file                                        */
-         if(!ReadMDM(matfile))
+         if(!blReadMDM(matfile))
          {
             fprintf(stderr,"Unable to read matrix file %s\n",matfile);
             return(1);
@@ -386,8 +386,8 @@ int RunAlignment(char *top1, char *top2)
    }
 
    /* Native position                                                   */
-   maxscore = align(top1,length1,top2,length2,FALSE,
-                    FALSE,GAPPEN,align1,align2,&align_len);
+   maxscore = blAlign(top1,length1,top2,length2,FALSE,
+                      FALSE,GAPPEN,align1,align2,&align_len);
    strcpy(gBest1,align1);
    strcpy(gBest2,align2);
    gBest1[align_len] = '\0';
@@ -400,8 +400,8 @@ int RunAlignment(char *top1, char *top2)
       {
          TurnAboutZ(top1);
          
-         score = align(top1,length1,top2,length2,FALSE,
-                       FALSE,GAPPEN,align1,align2,&align_len);
+         score = blAlign(top1,length1,top2,length2,FALSE,
+                         FALSE,GAPPEN,align1,align2,&align_len);
          if(score > maxscore)
          {
             maxscore = score;
@@ -419,8 +419,8 @@ int RunAlignment(char *top1, char *top2)
       {
          TurnAboutZ(top1);
          
-         score = align(top1,length1,top2,length2,FALSE,
-                       FALSE,GAPPEN,align1,align2,&align_len);
+         score = blAlign(top1,length1,top2,length2,FALSE,
+                         FALSE,GAPPEN,align1,align2,&align_len);
          if(score > maxscore)
          {
             maxscore = score;
@@ -453,7 +453,7 @@ void TurnAboutX(char *top)
    
    while(*top)
    {
-      *top = new[chindex(old,*top)];
+      *top = new[blChindex(old,*top)];
       top++;
    }
 }
@@ -475,7 +475,7 @@ void TurnAboutY(char *top)
    
    while(*top)
    {
-      *top = new[chindex(old,*top)];
+      *top = new[blChindex(old,*top)];
       top++;
    }
 }
@@ -497,7 +497,7 @@ void TurnAboutZ(char *top)
    
    while(*top)
    {
-      *top = new[chindex(old,*top)];
+      *top = new[blChindex(old,*top)];
       top++;
    }
 }
@@ -763,8 +763,12 @@ char *ReadDSSP(FILE *fp, int ELen, int HLen)
         struc,
         LastStruc    = ' ';
    REAL x,  y,  z,
-        x1, y1, z1,
-        xp, yp, zp;
+        x1 = 0.0, 
+        y1 = 0.0, 
+        z1 = 0.0,
+        xp = 0.0, 
+        yp = 0.0,
+        zp = 0.0;
    BOOL InBody       = FALSE,
         InElement    = FALSE;
    int  i            = 0,
@@ -924,14 +928,14 @@ int CalcIDScore(char *seq1, char *seq2, BOOL UseBoth)
    for(i=0; i<seqlen1; i++)
    {
       if(isalpha(seq1[i]))
-         score1 += CalcMDMScore(seq1[i], seq1[i]);
+         score1 += blCalcMDMScore(seq1[i], seq1[i]);
    }
    if(UseBoth)
    {
       for(i=0; i<seqlen2; i++)
       {
          if(isalpha(seq2[i]))
-            score2 += CalcMDMScore(seq2[i], seq2[i]);
+            score2 += blCalcMDMScore(seq2[i], seq2[i]);
       }
       if(score2 > score1)
          score1 = score2;

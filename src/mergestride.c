@@ -3,12 +3,12 @@
    Program:    mergestride
    File:       mergestride.c
    
-   Version:    V1.0
-   Date:       13.03.98
+   Version:    V2.0
+   Date:       06.08.18
    Function:   Merge original PDB file with STRIDE secondary structure
                assignments
    
-   Copyright:  (c) UCL / Dr. Andrew C. R. Martin 1998
+   Copyright:  (c) UCL / Dr. Andrew C. R. Martin 1998-2018
    Author:     Dr. Andrew C. R. Martin
    Address:    Biomolecular Structure & Modelling Unit,
                Department of Biochemistry & Molecular Biology,
@@ -51,6 +51,7 @@
    Revision History:
    =================
    V1.0  13.03.98 Original
+   V2.0  06.08.18 Updated for new Bioplib
 
 *************************************************************************/
 /* Includes
@@ -105,7 +106,7 @@ int main(int argc, char **argv)
 
    if(ParseCmdLine(argc, argv, pdbfile, infile, outfile))
    {
-      if(OpenStdFiles(infile, outfile, &in, &out))
+      if(blOpenStdFiles(infile, outfile, &in, &out))
       {
          if((pdbfp = fopen(pdbfile,"r"))!=NULL)
          {
@@ -154,14 +155,14 @@ BOOL DoMerge(FILE *pdbfp, FILE *stridefp, FILE *out)
    int    natoms;
 
    /* Read the PDB file                                                 */
-   if((pdb = ReadPDB(pdbfp, &natoms))==NULL)
+   if((pdb = blReadPDB(pdbfp, &natoms))==NULL)
    {
       fprintf(stderr,"mergestride: No atoms read from PDB file\n");
       return(FALSE);
    }
 
    /* Reduce to CA atoms                                                */
-   pdb = SelectCaPDB(pdb);
+   pdb = blSelectCaPDB(pdb);
 
    /* Read the STRIDE file                                              */
    if((stride = ReadStride(stridefp))==NULL)
