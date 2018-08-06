@@ -3,11 +3,11 @@
    Program:    topscan
    File:       topscan.c
    
-   Version:    V1.1
-   Date:       15.01.98
+   Version:    V1.2
+   Date:       12.03.98
    Function:   Compare protein topologies
    
-   Copyright:  (c) Dr. Andrew C. R. Martin 1995
+   Copyright:  (c) UCL, Dr. Andrew C. R. Martin 1998
    Author:     Dr. Andrew C. R. Martin
    Address:    Biomolecular Structure & Modelling Unit,
                Department of Biochemistry & Molecular Biology,
@@ -49,6 +49,7 @@
    =================
    V1.0  13.01.98 Original
    V1.1  15.01.98 Fixed for where there is no secondary structure found
+   V1.2  12.03.98 Added option to use STRIDE rather than DSSP
 
 *************************************************************************/
 /* Includes
@@ -65,12 +66,14 @@
 /************************************************************************/
 /* Defines and macros
 */
-#define DSSP    "dssp"
-#define MAXBUFF 160
-#define GAPPEN  8
-#define MATFILE "topmat.mat"
-#define ELEN    4
-#define HLEN    4
+#define DSSP        "dssp"
+#define STRIDE      "stride"
+#define MERGESTRIDE "mergestride"
+#define MAXBUFF     160
+#define GAPPEN      8
+#define MATFILE     "topmat.mat"
+#define ELEN        4
+#define HLEN        4
 
 /************************************************************************/
 /* Globals
@@ -89,12 +92,15 @@ void TurnAboutY(char *top);
 void TurnAboutZ(char *top);
 BOOL ParseCmdLine(int argc, char **argv, char *infile1, char *infile2, 
                   char *matfile, int *ELen, int *HLen, BOOL *RunDSSP,
-                  BOOL *BuildOnly, BOOL *ScanMode, BOOL *UseBoth);
+                  BOOL *BuildOnly, BOOL *ScanMode, BOOL *UseBoth,
+                  BOOL *UseStride);
 void Usage(void);
-char *ReadDSSP(FILE *fp, int ELen, int HLen);
+char *ReadTopology(FILE *fp, int ELen, int HLen, BOOL UseStride);
 char CalcElement(char struc, REAL x1, REAL y1, REAL z1, 
                  REAL x2, REAL y2, REAL z2);
 int CalcIDScore(char *seq1, char *seq2, BOOL UseBoth);
+char *ReadDSSP(FILE *fp, int ELen, int HLen);
+char *ReadStride(FILE *fp, int ELen, int HLen);
 
 
 /************************************************************************/
@@ -102,7 +108,7 @@ int CalcIDScore(char *seq1, char *seq2, BOOL UseBoth);
    -------------------------------
    Main program for the topscan program
 
-   13.01.97 Original   By: ACRM
+   13.01.98 Original   By: ACRM
 */
 int main(int argc, char **argv)
 {
@@ -121,7 +127,8 @@ int main(int argc, char **argv)
    BOOL  RunDSSP   = FALSE,
          BuildOnly = FALSE,
          ScanMode  = FALSE,
-         UseBoth   = FALSE;
+         UseBoth   = FALSE,
+         UseStride = FALSE;
 #ifdef __linux__
    __pid_t pid;
 #else
@@ -132,7 +139,7 @@ int main(int argc, char **argv)
    gBest2[0] = '\0';
    
    if(ParseCmdLine(argc, argv, infile1, infile2, matfile, &ELen, &HLen,
-                   &RunDSSP, &BuildOnly, &ScanMode, &UseBoth))
+                   &RunDSSP, &BuildOnly, &ScanMode, &UseBoth, &UseStride))
    {
       strcpy(sourcefile,infile1);
       
@@ -145,15 +152,34 @@ int main(int argc, char **argv)
          pid = getpid();
 
          sprintf(ofile1,"/tmp/file1.%d",pid);
-         sprintf(cmd,"%s %s %s >/dev/null", DSSP, infile1, ofile1);
-         system(cmd);
+         if(UseStride)
+         {
+            sprintf(cmd,"%s %s | %s %s > %s", STRIDE, infile1, 
+                    MERGESTRIDE, infile1, ofile1);
+            system(cmd);
+         }
+         else
+         {
+            sprintf(cmd,"%s %s %s >/dev/null", DSSP, infile1, ofile1);
+            system(cmd);
+         }
          strcpy(infile1, ofile1);
+         
 
          if(!BuildOnly && !ScanMode)
          {
             sprintf(ofile2,"/tmp/file2.%d",pid);
-            sprintf(cmd,"%s %s %s >/dev/null", DSSP, infile2, ofile2);
-            system(cmd);
+            if(UseStride)
+            {
+               sprintf(cmd,"%s %s | %s %s > %s", STRIDE, infile2, 
+                       MERGESTRIDE, infile2, ofile2);
+               system(cmd);
+            }
+            else
+            {
+               sprintf(cmd,"%s %s %s >/dev/null", DSSP, infile2, ofile2);
+               system(cmd);
+            }
             strcpy(infile2, ofile2);
          }
       }
@@ -174,7 +200,7 @@ int main(int argc, char **argv)
       }
 
       /* Read the DSSP files                                            */
-      if((top1 = ReadDSSP(fdssp1, ELen, HLen))==NULL)
+      if((top1 = ReadTopology(fdssp1, ELen, HLen, UseStride))==NULL)
       {
          fprintf(stderr,"Unable to read topology from %s\n",infile1);
          return(1);
@@ -239,7 +265,7 @@ int main(int argc, char **argv)
          }
          else
          {
-            if((top2 = ReadDSSP(fdssp2, ELen, HLen))==NULL)
+            if((top2 = ReadTopology(fdssp2, ELen, HLen, UseStride))==NULL)
             {
                fprintf(stderr,"Unable to read topology from %s\n",
                        infile2);
@@ -289,8 +315,8 @@ int main(int argc, char **argv)
    If both are of length 0, returns a score of 100. If only one is
    of length zero, returns 0
 
-   13.01.97 Original   By: ACRM
-   15.01.97 Added check for 0-length topology strings
+   13.01.98 Original   By: ACRM
+   15.01.98 Added check for 0-length topology strings
 */
 int RunAlignment(char *top1, char *top2)
 {
@@ -308,7 +334,7 @@ int RunAlignment(char *top1, char *top2)
    length1 = strlen(top1);
    length2 = strlen(top2);
 
-   /* 15.01.97 Added this check on 0-length topology strings            */
+   /* 15.01.98 Added this check on 0-length topology strings            */
    if((length1 == 0) && (length2 == 0))
       return(100);
    if((length1 == 0) || (length2 == 0))
@@ -384,7 +410,7 @@ int RunAlignment(char *top1, char *top2)
 
    Modifies the topology string by rotating about X
 
-   13.01.97 Original   By: ACRM
+   13.01.98 Original   By: ACRM
 */
 void TurnAboutX(char *top)
 {
@@ -406,7 +432,7 @@ void TurnAboutX(char *top)
 
    Modifies the topology string by rotating about Y
 
-   13.01.97 Original   By: ACRM
+   13.01.98 Original   By: ACRM
 */
 void TurnAboutY(char *top)
 {
@@ -428,7 +454,7 @@ void TurnAboutY(char *top)
 
    Modifies the topology string by rotating about Z
 
-   13.01.97 Original   By: ACRM
+   13.01.98 Original   By: ACRM
 */
 void TurnAboutZ(char *top)
 {
@@ -446,7 +472,8 @@ void TurnAboutZ(char *top)
 /************************************************************************/
 /*>BOOL ParseCmdLine(int argc, char **argv, char *infile1, char *infile2, 
                      char *matfile, int *ELen, int *HLen, BOOL *RunDSSP,
-                     BOOL *BuildOnly, BOOL *ScanMode, BOOL *UseBoth)
+                     BOOL *BuildOnly, BOOL *ScanMode, BOOL *UseBoth,
+                     BOOL *UseStride)
    ---------------------------------------------------------------------
    Input:   int    argc         Argument count
             char   **argv       Argument array
@@ -462,15 +489,17 @@ void TurnAboutZ(char *top)
             BOOL   *UseBoth     Calculate the percentages wrt max score
                                 from either struc rather than just the 
                                 first
+            BOOL   *UseStride   Use Stride rather than DSSP
    Returns: BOOL                Success?
 
    Parse the command line
    
-   13.01.97 Original    By: ACRM
+   13.01.98 Original    By: ACRM
 */
 BOOL ParseCmdLine(int argc, char **argv, char *infile1, char *infile2, 
                   char *matfile, int *ELen, int *HLen, BOOL *RunDSSP,
-                  BOOL *BuildOnly, BOOL *ScanMode, BOOL *UseBoth)
+                  BOOL *BuildOnly, BOOL *ScanMode, BOOL *UseBoth,
+                  BOOL *UseStride)
 {
    argc--;
    argv++;
@@ -510,6 +539,8 @@ BOOL ParseCmdLine(int argc, char **argv, char *infile1, char *infile2,
             break;
          case 'p':
             *RunDSSP = TRUE;
+            if(argv[0][2] == 's')
+               *UseStride = TRUE;
             break;
          case 'b':
             *BuildOnly = TRUE;
@@ -553,19 +584,21 @@ BOOL ParseCmdLine(int argc, char **argv, char *infile1, char *infile2,
    ----------------
    Prints a usage message
 
-   13.01.97 Original   By: ACRM
-   15.01.97 V1.1
+   13.01.98 Original   By: ACRM
+   15.01.98 V1.1
+   13.03.98 V1.2
 */
 void Usage(void)
 {
-   fprintf(stderr,"\ntopscan V1.1 (c) Dr. Andrew C.R. Martin, UCL\n");
+   fprintf(stderr,"\ntopscan V1.2 (c) 1998, Dr. Andrew C.R. Martin, \
+UCL\n");
 
-   fprintf(stderr,"\nUsage: topscan [-v] [-p] [-w] [-h hlen] [-e elen] \
-[-m matrix] file1.{dssp|pdb} file2.{dssp|pdb}\n");
-   fprintf(stderr,"       topscan -b [-p] [-h hlen] [-e elen] \
+   fprintf(stderr,"\nUsage: topscan [-v] [-p[s]] [-w] [-h hlen] \
+[-e elen] [-m matrix] file1.{dssp|pdb} file2.{dssp|pdb}\n");
+   fprintf(stderr,"       topscan -b [-p[s]] [-h hlen] [-e elen] \
 file1.{dssp|pdb}\n");
-   fprintf(stderr,"       topscan -s [-v] [-p] [-w] [-h hlen] [-e elen] \
-[-m matrix] file1.{dssp|pdb} file2.top\n");
+   fprintf(stderr,"       topscan -s [-v] [-p[s]] [-w] [-h hlen] \
+[-e elen] [-m matrix] file1.{dssp|pdb} file2.top\n");
    fprintf(stderr,"\n       -b Build the topology string for a file\n");
    fprintf(stderr,"          (Don't actually run a comparison)\n");
    fprintf(stderr,"       -s Scan a DSSP or PDB file against a library \
@@ -576,6 +609,8 @@ of topology strings\n");
    fprintf(stderr,"       -v Verbose mode\n");
    fprintf(stderr,"       -p Input files are PDB and the DSSP program \
 will be run first\n");
+   fprintf(stderr,"          If -ps is specified, then STRIDE will be \
+run rather than DSSP\n");
    fprintf(stderr,"       -w Calculate score as percentage from both \
 topology strings\n");
    fprintf(stderr,"          rather than just the first\n");
@@ -586,15 +621,15 @@ topology strings\n");
 
    fprintf(stderr,"\nCondenses a protein structure into a topology \
 string by reading from\n");
-   fprintf(stderr,"a DSSP file. The string has a 12-letter alphabet for \
-the 6 orientations\n");
-   fprintf(stderr,"of sheet and helix. The comparison is performed using \
-24 orientations\n");
-   fprintf(stderr,"for one of the structures compared with the other in \
-a fixed position.\n");
-   fprintf(stderr,"Output is the best score obtained - the alignment is \
-also given if the\n");
-   fprintf(stderr,"verbose option is selected\n");
+   fprintf(stderr,"a DSSP or STRIDE file. The string has a 12-letter \
+alphabet for the 6\n");
+   fprintf(stderr,"orientations of sheet and helix. The comparison is \
+performed using 24\n");
+   fprintf(stderr,"orientations for one of the structures compared with \
+the other in a fixed\n");
+   fprintf(stderr,"position. Output is the best score obtained - the \
+alignment is also\n");
+   fprintf(stderr,"given if the verbose option is selected.\n");
 
    fprintf(stderr,"\nOutput is the best score obtained. The score is \
 presented as a percentage\n");
@@ -621,6 +656,33 @@ the program in\n");
 
 
 /************************************************************************/
+/*>char *ReadTopology(FILE *fp, int ELen, int HLen, BOOL UseStride)
+   ----------------------------------------------------------------
+   Input:   FILE   *fp        DSSP file pointer
+            int    ELen       Minimum length of strand
+            int    HLen       Minimum length of helix
+            BOOL   UseStride  Read from Stride rather than DSSP file
+   Returns: char *            Topology string
+
+   Reads a the topology from a DSSP or Stride file, returning a string 
+   representing the topology.
+
+   13.03.98 Original   By: ACRM
+*/
+char *ReadTopology(FILE *fp, int ELen, int HLen, BOOL UseStride)
+{
+   if(UseStride)
+   {
+      return(ReadStride(fp, ELen, HLen));
+   }
+   else
+   {
+      return(ReadDSSP(fp, ELen, HLen));
+   }
+}
+
+
+/************************************************************************/
 /*>char *ReadDSSP(FILE *fp, int ELen, int HLen)
    --------------------------------------------
    Input:   FILE     *fp     DSSP file pointer
@@ -630,7 +692,7 @@ the program in\n");
 
    Reads a DSSP file returning a string representing the topology.
 
-   13.01.97 Original   By: ACRM
+   13.01.98 Original   By: ACRM
 */
 char *ReadDSSP(FILE *fp, int ELen, int HLen)
 {
@@ -728,7 +790,7 @@ char *ReadDSSP(FILE *fp, int ELen, int HLen)
    ends of the element, returns a combined code of structure plus
    direction.
 
-   13.01.97 Original   By: ACRM
+   13.01.98 Original   By: ACRM
 */
 char CalcElement(char struc, REAL x1, REAL y1, REAL z1, 
                  REAL x2, REAL y2, REAL z2)
@@ -827,3 +889,84 @@ int CalcIDScore(char *seq1, char *seq2, BOOL UseBoth)
    
    return(score1);
 }
+
+/************************************************************************/
+/*>char *ReadStride(FILE *fp, int ELen, int HLen)
+   ----------------------------------------------
+   Input:   FILE     *fp     Stride file pointer
+            int      ELen    Minimum length of strand
+            int      HLen    Minimum length of helix
+   Returns: char *           Topology string
+
+   Reads a Stride file returning a string representing the topology.
+
+   13.03.98 Original   By: ACRM
+*/
+char *ReadStride(FILE *fp, int ELen, int HLen)
+{
+   char *top,
+        buffer[MAXBUFF*2],
+        struc,
+        LastStruc    = ' ';
+   REAL x,  y,  z,
+        x1, y1, z1,
+        xp, yp, zp;
+   BOOL InBody       = FALSE,
+        InElement    = FALSE;
+   int  i            = 0,
+        EleLength    = 0;
+
+   
+   if((top = (char *)malloc(MAXBUFF * sizeof(char)))==NULL)
+      return(NULL);
+   
+   while(fgets(buffer,MAXBUFF*2,fp))
+   {
+      TERMINATE(buffer);
+      fsscanf(buffer,"%15x%8lf%1x%8lf%1x%8lf%1x%c",&x,&y,&z,&struc);
+      if((struc=='E' || struc=='H') && (struc==LastStruc))
+      {
+         EleLength++;
+      }
+      
+      if((struc=='E' || struc=='H') && (struc!=LastStruc))
+      {
+         /* Start of new element                                     */
+         if(InElement)
+         {
+            if((LastStruc=='E' && EleLength>=ELen) ||
+               (LastStruc=='H' && EleLength>=HLen))
+               top[i++] = CalcElement(LastStruc,x1,y1,z1,xp,yp,zp);
+         }
+         
+         InElement = TRUE;
+         EleLength = 1;
+         x1 = x;
+         y1 = y;
+         z1 = z;
+      }
+      else if(InElement && struc!='E' && struc!='H')
+      {
+         /* Just come out of an element                              */
+         if((LastStruc=='E' && EleLength>=ELen) ||
+            (LastStruc=='H' && EleLength>=HLen))
+            top[i++] = CalcElement(LastStruc,x1,y1,z1,xp,yp,zp);
+         InElement = FALSE;
+      }
+      
+      LastStruc = struc;
+      xp = x;
+      yp = y;
+      zp = z;
+   }
+   
+   if(InElement)
+   {
+      /* File ended with an element                                     */
+      top[i++] = CalcElement(LastStruc,x1,y1,z1,xp,yp,zp);
+   }
+   top[i] = '\0';
+   
+   return(top);
+}
+
