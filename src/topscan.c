@@ -3,7 +3,7 @@
    Program:    topscan
    File:       topscan.c
    
-   Version:    V1.3
+   Version:    V2.0
    Date:       06.08.18
    Function:   Compare protein topologies
    
@@ -50,6 +50,7 @@
    V1.1  15.01.98 Fixed for where there is no secondary structure found
    V1.2  12.03.98 Added option to use STRIDE rather than DSSP
    V1.3  06.08.18 Initialized variable for clean compile
+   V2.0  06.08.18 Added pdbsecstr support as the default
 
 *************************************************************************/
 /* Includes
@@ -66,14 +67,19 @@
 /************************************************************************/
 /* Defines and macros
 */
-#define DSSP        "dssp"
-#define STRIDE      "stride"
-#define MERGESTRIDE "mergestride"
-#define MAXBUFF     160
-#define GAPPEN      8
-#define MATFILE     "topmat.mat"
-#define ELEN        4
-#define HLEN        4
+#define DSSP             "dssp"
+#define STRIDE           "stride"
+#define PDBSECSTR        "pdbsecstr"
+#define MERGESTRIDE      "mergestride"
+#define MERGEPDBSECSTR   "mergepdbsecstr"
+#define MAXBUFF          160
+#define GAPPEN           8
+#define MATFILE          "topmat.mat"
+#define DEFAULT_ELEN     4
+#define DEFAULT_HLEN     4
+#define SECSTR_DSSP      0
+#define SECSTR_STRIDE    1
+#define SECSTR_PDBSECSTR 2
 
 /************************************************************************/
 /* Globals
@@ -91,11 +97,11 @@ void TurnAboutX(char *top);
 void TurnAboutY(char *top);
 void TurnAboutZ(char *top);
 BOOL ParseCmdLine(int argc, char **argv, char *infile1, char *infile2, 
-                  char *matfile, int *ELen, int *HLen, BOOL *RunDSSP,
+                  char *matfile, int *ELen, int *HLen, BOOL *CalcSecStr,
                   BOOL *BuildOnly, BOOL *ScanMode, BOOL *UseBoth,
-                  BOOL *UseStride);
+                  int *SecStrCalculator);
 void Usage(void);
-char *ReadTopology(FILE *fp, int ELen, int HLen, BOOL UseStride);
+char *ReadTopology(FILE *fp, int ELen, int HLen, int SecStrCalculator);
 char CalcElement(char struc, REAL x1, REAL y1, REAL z1, 
                  REAL x2, REAL y2, REAL z2);
 int CalcIDScore(char *seq1, char *seq2, BOOL UseBoth);
@@ -109,7 +115,8 @@ char *ReadStride(FILE *fp, int ELen, int HLen);
    Main program for the topscan program
 
    13.01.98 Original   By: ACRM
-   06.08.18 Initialized fdssp1 and fdssp2
+   06.08.18 Initialized file pointers
+            Added pdbsecstr support
 */
 int main(int argc, char **argv)
 {
@@ -123,13 +130,13 @@ int main(int argc, char **argv)
          *top2;
    int   score, 
          IDScore, 
-         ELen      = ELEN, 
-         HLen      = HLEN;
-   BOOL  RunDSSP   = FALSE,
-         BuildOnly = FALSE,
-         ScanMode  = FALSE,
-         UseBoth   = FALSE,
-         UseStride = FALSE;
+         ELen             = DEFAULT_ELEN, 
+         HLen             = DEFAULT_HLEN,
+         SecStrCalculator = SECSTR_PDBSECSTR;
+   BOOL  CalcSecStr       = FALSE,
+         BuildOnly        = FALSE,
+         ScanMode         = FALSE,
+         UseBoth          = FALSE;
 #ifdef __linux__
    __pid_t pid;
 #else
@@ -140,11 +147,15 @@ int main(int argc, char **argv)
    gBest2[0] = '\0';
    
    if(ParseCmdLine(argc, argv, infile1, infile2, matfile, &ELen, &HLen,
-                   &RunDSSP, &BuildOnly, &ScanMode, &UseBoth, &UseStride))
+                   &CalcSecStr, &BuildOnly, &ScanMode, &UseBoth,
+                   &SecStrCalculator))
    {
       strcpy(sourcefile,infile1);
       
-      if(RunDSSP)
+      /* Calculate secondary structure using selected program if
+         required
+      */
+      if(CalcSecStr)
       {
          char ofile1[MAXBUFF],
               ofile2[MAXBUFF],
@@ -152,40 +163,57 @@ int main(int argc, char **argv)
          
          pid = getpid();
 
+         /* SecStr calculation for the first file                       */
          sprintf(ofile1,"/tmp/file1.%d",pid);
-         if(UseStride)
+         switch(SecStrCalculator)
          {
+         case SECSTR_STRIDE:
             sprintf(cmd,"%s %s | %s %s > %s", STRIDE, infile1, 
                     MERGESTRIDE, infile1, ofile1);
-            system(cmd);
-         }
-         else
-         {
+            break;
+         case SECSTR_DSSP:
             sprintf(cmd,"%s %s %s >/dev/null", DSSP, infile1, ofile1);
-            system(cmd);
+            break;
+         case SECSTR_PDBSECSTR:
+         default:
+            sprintf(cmd,"%s %s | %s %s > %s", PDBSECSTR, infile1, 
+                    MERGEPDBSECSTR, infile1, ofile1);
+            break;
          }
-         strcpy(infile1, ofile1);
-         
 
+         system(cmd);
+         strcpy(infile1, ofile1);
+
+         /* If we aren't just building and we aren't scanning then it is
+            a comparison between two proteins so do the SecStr 
+            calculation for the second file
+         */
          if(!BuildOnly && !ScanMode)
          {
             sprintf(ofile2,"/tmp/file2.%d",pid);
-            if(UseStride)
+
+            switch(SecStrCalculator)
             {
+            case SECSTR_STRIDE:
                sprintf(cmd,"%s %s | %s %s > %s", STRIDE, infile2, 
                        MERGESTRIDE, infile2, ofile2);
-               system(cmd);
-            }
-            else
-            {
+               break;
+            case SECSTR_DSSP:
                sprintf(cmd,"%s %s %s >/dev/null", DSSP, infile2, ofile2);
-               system(cmd);
+               break;
+            case SECSTR_PDBSECSTR:
+            default:
+               sprintf(cmd,"%s %s | %s %s > %s", PDBSECSTR, infile2, 
+                       MERGEPDBSECSTR, infile2, ofile2);
+               break;
             }
+
+            system(cmd);
             strcpy(infile2, ofile2);
          }
       }
       
-      /* Open the DSSP files                                            */
+      /* Open the secondary structure files                             */
       if((fdssp1=fopen(infile1,"r"))==NULL)
       {
          fprintf(stderr,"Can't read %s\n",infile1);
@@ -200,13 +228,16 @@ int main(int argc, char **argv)
          }
       }
 
-      /* Read the DSSP files                                            */
-      if((top1 = ReadTopology(fdssp1, ELen, HLen, UseStride))==NULL)
+      /* Read the secondary structure files                             */
+      if((top1 = ReadTopology(fdssp1,ELen,HLen,SecStrCalculator))==NULL)
       {
          fprintf(stderr,"Unable to read topology from %s\n",infile1);
          return(1);
       }
 
+      /* If we are only building, then just display the information. 
+         Otherwise we compare the secondary structure assignments
+      */
       if(BuildOnly)
       {
          printf("%s %s\n",sourcefile,top1);
@@ -219,7 +250,8 @@ int main(int argc, char **argv)
             fprintf(stderr,"Unable to read matrix file %s\n",matfile);
             return(1);
          }
-            
+
+         /* Comparing against a library                                 */
          if(ScanMode)
          {
             char buffer[MAXBUFF], 
@@ -264,9 +296,10 @@ int main(int argc, char **argv)
                }
             }
          }
-         else
+         else /* Just comparing two files                               */
          {
-            if((top2 = ReadTopology(fdssp2, ELen, HLen, UseStride))==NULL)
+            if((top2 = ReadTopology(fdssp2,ELen,HLen,
+                                    SecStrCalculator))==NULL)
             {
                fprintf(stderr,"Unable to read topology from %s\n",
                        infile2);
@@ -287,7 +320,7 @@ int main(int argc, char **argv)
          }
       }
       
-      if(RunDSSP)
+      if(CalcSecStr)
       {
          unlink(infile1);
          if(!BuildOnly && !ScanMode)
@@ -472,9 +505,9 @@ void TurnAboutZ(char *top)
 
 /************************************************************************/
 /*>BOOL ParseCmdLine(int argc, char **argv, char *infile1, char *infile2, 
-                     char *matfile, int *ELen, int *HLen, BOOL *RunDSSP,
-                     BOOL *BuildOnly, BOOL *ScanMode, BOOL *UseBoth,
-                     BOOL *UseStride)
+                     char *matfile, int *ELen, int *HLen, 
+                     BOOL *CalcSecStr, BOOL *BuildOnly, BOOL *ScanMode,
+                     BOOL *UseBoth, int *SecStrCalculator)
    ---------------------------------------------------------------------
    Input:   int    argc         Argument count
             char   **argv       Argument array
@@ -483,24 +516,25 @@ void TurnAboutZ(char *top)
             char   *matfile     Matrix file      
             int    *ELen        Minimum strand length
             int    *HLen        Minimum helix length
-            BOOL   *RunDSSP     Run the DSSP program on input files?
+            BOOL   *CalcSecStr  Run the DSSP program on input files?
             BOOL   *BuildOnly   Just create the topology string for the
                                 structure?
             BOOL   *ScanMode    Run in scan mode?
             BOOL   *UseBoth     Calculate the percentages wrt max score
                                 from either struc rather than just the 
                                 first
-            BOOL   *UseStride   Use Stride rather than DSSP
+            int    *SecStrCalculator Use Stride, DSSP or pdbsecstr
    Returns: BOOL                Success?
 
    Parse the command line
    
    13.01.98 Original    By: ACRM
+   06.08.18 Added pdbsecstr support as the default
 */
 BOOL ParseCmdLine(int argc, char **argv, char *infile1, char *infile2, 
-                  char *matfile, int *ELen, int *HLen, BOOL *RunDSSP,
+                  char *matfile, int *ELen, int *HLen, BOOL *CalcSecStr,
                   BOOL *BuildOnly, BOOL *ScanMode, BOOL *UseBoth,
-                  BOOL *UseStride)
+                  int *SecStrCalculator)
 {
    argc--;
    argv++;
@@ -539,9 +573,24 @@ BOOL ParseCmdLine(int argc, char **argv, char *infile1, char *infile2,
             gVerbose = TRUE;
             break;
          case 'p':
-            *RunDSSP = TRUE;
-            if(argv[0][2] == 's')
-               *UseStride = TRUE;
+            *CalcSecStr = TRUE;
+            switch(argv[0][2])
+            {
+            case 's':
+               *SecStrCalculator = SECSTR_STRIDE;
+               break;
+            case 'p':
+               *SecStrCalculator = SECSTR_PDBSECSTR;
+               break;
+            case 'd':
+               *SecStrCalculator = SECSTR_DSSP;
+               break;
+            case '\0':
+               *SecStrCalculator = SECSTR_PDBSECSTR;
+               break;
+            default:
+               return(FALSE);
+            }
             break;
          case 'b':
             *BuildOnly = TRUE;
@@ -588,17 +637,19 @@ BOOL ParseCmdLine(int argc, char **argv, char *infile1, char *infile2,
    13.01.98 Original   By: ACRM
    15.01.98 V1.1
    13.03.98 V1.2
+   06.08.18 V2.0 Added pdbsecstr support as the default
+
 */
 void Usage(void)
 {
-   fprintf(stderr,"\ntopscan V1.2 (c) 1998, Dr. Andrew C.R. Martin, \
+   fprintf(stderr,"\ntopscan V2.0 (c) 1998-2018, Dr. Andrew C.R. Martin, \
 UCL\n");
 
-   fprintf(stderr,"\nUsage: topscan [-v] [-p[s]] [-w] [-h hlen] \
+   fprintf(stderr,"\nUsage: topscan [-v] [-p[s|d|p]] [-w] [-h hlen] \
 [-e elen] [-m matrix] file1.{dssp|pdb} file2.{dssp|pdb}\n");
-   fprintf(stderr,"       topscan -b [-p[s]] [-h hlen] [-e elen] \
+   fprintf(stderr,"       topscan -b [-p[s|d|p]] [-h hlen] [-e elen] \
 file1.{dssp|pdb}\n");
-   fprintf(stderr,"       topscan -s [-v] [-p[s]] [-w] [-h hlen] \
+   fprintf(stderr,"       topscan -s [-v] [-p[s|d|p]] [-w] [-h hlen] \
 [-e elen] [-m matrix] file1.{dssp|pdb} file2.top\n");
    fprintf(stderr,"\n       -b Build the topology string for a file\n");
    fprintf(stderr,"          (Don't actually run a comparison)\n");
@@ -608,22 +659,29 @@ of topology strings\n");
    fprintf(stderr,"       -m Specify the matrix file [Default: %s]\n",
            MATFILE);
    fprintf(stderr,"       -v Verbose mode\n");
-   fprintf(stderr,"       -p Input files are PDB and the DSSP program \
-will be run first\n");
+   fprintf(stderr,"       -p Input files are PDB and the pdbsecstr \
+program will be run first\n");
    fprintf(stderr,"          If -ps is specified, then STRIDE will be \
-run rather than DSSP\n");
+run rather than pdbsecstr\n");
+   fprintf(stderr,"          If -pd is specified, then DSSP will be \
+run rather than pdbsecstr\n");
+   fprintf(stderr,"          If -pp is specified, the default, \
+pdbsecstr will be used\n");
    fprintf(stderr,"       -w Calculate score as percentage from both \
 topology strings\n");
    fprintf(stderr,"          rather than just the first\n");
    fprintf(stderr,"       -h Specify minimum helix length [Default: \
-%d]\n", HLEN);
+%d]\n", DEFAULT_HLEN);
    fprintf(stderr,"       -e Specify minimum strand length [Default: \
-%d]\n", ELEN);
+%d]\n", DEFAULT_ELEN);
 
+   fprintf(stderr,"\nV2.0 defaults to pdbsecstr (from BiopTools) with \
+-p rather than DSSP.\n");
+   
    fprintf(stderr,"\nCondenses a protein structure into a topology \
 string by reading from\n");
-   fprintf(stderr,"a DSSP or STRIDE file. The string has a 12-letter \
-alphabet for the 6\n");
+   fprintf(stderr,"a pdbsecstr, DSSP or STRIDE file. The string has a \
+12-letter alphabet for the 6\n");
    fprintf(stderr,"orientations of sheet and helix. The comparison is \
 performed using 24\n");
    fprintf(stderr,"orientations for one of the structures compared with \
@@ -654,31 +712,34 @@ the program in\n");
 }
 
 
-
-
 /************************************************************************/
-/*>char *ReadTopology(FILE *fp, int ELen, int HLen, BOOL UseStride)
-   ----------------------------------------------------------------
-   Input:   FILE   *fp        DSSP file pointer
-            int    ELen       Minimum length of strand
-            int    HLen       Minimum length of helix
-            BOOL   UseStride  Read from Stride rather than DSSP file
-   Returns: char *            Topology string
+/*>char *ReadTopology(FILE *fp, int ELen, int HLen, int SecStrCalculator)
+   ----------------------------------------------------------------------
+   Input:   FILE   *fp               DSSP file pointer
+            int    ELen              Minimum length of strand
+            int    HLen              Minimum length of helix
+            int    SecStrCalculator  Secondary Structure calculator to
+                                     use (pdbsecstr, Stride or DSSP)
+   Returns: char *                   Topology string
 
-   Reads a the topology from a DSSP or Stride file, returning a string 
-   representing the topology.
+   Reads a the topology from a pdbsecstr, DSSP or Stride file, returning
+   a string representing the topology.
 
    13.03.98 Original   By: ACRM
+   06.08.18 Added pdbsecstr support as the default
 */
-char *ReadTopology(FILE *fp, int ELen, int HLen, BOOL UseStride)
+char *ReadTopology(FILE *fp, int ELen, int HLen, int SecStrCalculator)
 {
-   if(UseStride)
+   switch(SecStrCalculator)
    {
-      return(ReadStride(fp, ELen, HLen));
-   }
-   else
-   {
+   case SECSTR_DSSP:
       return(ReadDSSP(fp, ELen, HLen));
+      break;
+   case SECSTR_STRIDE:
+   case SECSTR_PDBSECSTR:
+   default:
+      return(ReadStride(fp, ELen, HLen));
+      break;
    }
 }
 
@@ -900,6 +961,8 @@ int CalcIDScore(char *seq1, char *seq2, BOOL UseBoth)
    Returns: char *           Topology string
 
    Reads a Stride file returning a string representing the topology.
+   This is actually the combined PDB/STRIDE file - the same format is
+   used for pdbsecstr
 
    13.03.98 Original   By: ACRM
 */
@@ -931,7 +994,7 @@ char *ReadStride(FILE *fp, int ELen, int HLen)
       
       if((struc=='E' || struc=='H') && (struc!=LastStruc))
       {
-         /* Start of new element                                     */
+         /* Start of new element                                        */
          if(InElement)
          {
             if((LastStruc=='E' && EleLength>=ELen) ||
@@ -947,7 +1010,7 @@ char *ReadStride(FILE *fp, int ELen, int HLen)
       }
       else if(InElement && struc!='E' && struc!='H')
       {
-         /* Just come out of an element                              */
+         /* Just come out of an element                                 */
          if((LastStruc=='E' && EleLength>=ELen) ||
             (LastStruc=='H' && EleLength>=HLen))
             top[i++] = CalcElement(LastStruc,x1,y1,z1,xp,yp,zp);
