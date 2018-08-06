@@ -1,6 +1,6 @@
 \documentclass{article}
-%\usepackage[proof]{jmb}
-\usepackage{jmb}
+\usepackage[proof]{proteng}
+%\usepackage{proteng}
 \usepackage{a4}
 \usepackage{rotating}
 \usepackage{epsfig}
@@ -10,13 +10,13 @@
 \newcommand{\tick}{\mbox{$\surd$}}
 \newcommand{\Asq}{\mbox{\AA${}^{2}$}}
 
-\emergencystretch 1in
+\emergencystretch 2in
 
 \title{The ups and downs of protein topology; rapid comparison of protein
 structure\\
 {\large {\bfseries Running title:} The ups and downs of protein topology}\\
-{\large {\bfseries Keywords:} structure comparison; protein fold;
-CATH; structural similarity}}
+{\large {\bfseries Keywords:} CATH / protein fold / structure
+comparison / structural similarity}}
 \author{Andrew C.R.\ Martin\\
 School of Animal and Microbial Sciences\\
 University of Reading\\
@@ -28,7 +28,7 @@ EMail: a.c.r.martin@reading.ac.uk}
 
 \begin{document}
 \maketitle
-\bibliographystyle{jmbacrm}
+\bibliographystyle{proteng}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{abstract}
@@ -114,12 +114,12 @@ structure. There are two common approaches to this problem: one is
 ``threading'' which assesses how well a sequence is accommodated
 within a three-dimensional structure\cite[for
 example]{jones:threading}; the other is alignment of a predicted
-sequence of SSEs against a fold library encoded in this form\cite[for
-example]{russell:foldrec,rost:foldrec}.  These fold recognition
-methods are therefore making the assumption that the tertiary topology
-can be predicted from the primary topology. An analysis of the
-occurrence of given primary topologies in different tertiary
-topologies is presented.
+sequence of secondary structure assignments\cite{rost:foldrec} or
+SSEs\cite{russell:foldrec} against a fold library encoded in this
+form.  The latter fold recognition method is therefore making the
+assumption that the tertiary topology can be predicted from the
+primary topology. An analysis of the occurrence of given primary
+topologies in different tertiary topologies is presented.
 
 If this assumption is true, then it should also be possible to use
 primary topology strings for three-dimensional structure comparison.
@@ -131,456 +131,45 @@ length of the elements and the loops which connect them) to improve
 the mapping between these lower levels of topological description and
 tertiary topology (i.e.\ protein fold).
 
-TOPSCAN was initially developed as a simple method to reduce the
-search space for the CATH-server. In that implementation, the secondary
-topology strings contain only the directional information.  It is used
-to sort domains and SSAP is then used to make the final selection
-working down the TOPSCAN-sorted list. In this way, we can be sure that
-we will not miss any hits which might otherwise have been found using
-a full search with SSAP alone.
+A number of other methods of protein structure comparison have made
+use of a simplified representation of protein structure since the
+concept was first suggested by Sheridan \emph{et
+al.}\shortcite{sheridan:ijppr}.  For example Mitchell \emph{et
+al.}\shortcite{mitchell:graphss} looked for common sub-structures by
+using a linear representation of helices and strands to create a graph
+amenable to comparison using subgraph isomorphism.  Kleywegt and
+Jones\shortcite{kleywegt:dejavu} described a protein as a set of SSEs
+together with number of residues and physical length or each SSE and
+used matrices of distances between the centres of the SSEs and cosines
+of angles between the direction vectors of the elements. These
+representations are then compared to find similar motifs.
+
+Other methods similar in principle to TOPSCAN include
+FAST-SSAP\cite{taylor:alignment}, a constraint programming (CP) method
+based on TOPS diagrams\cite{David_Gilbert_David_Westhead} and TOP, a
+least-squares fitting method\cite{lu:top}.  FAST-SSAP uses double
+dynamic programming to align vectors representing the SSEs to compare
+two structures. The CP method uses a 4-letter alphabet to represent
+the two types of secondary structure going either up or down and adds
+information about chirality and hydrogen bonds between SSEs.
+Comparison is performed by finding a maximum common template and
+scoring the two structures against that template.  TOP represents each
+SSE by its two end-points and then performs iterative least squares
+fitting of this small number of points to find an optimal match.
+
+The major difference between the method presented here and other
+methods is that the representation of SSEs is purely symbolic. This
+has a distinct speed advantage and means that only a single algorithm
+(dynamic programming) is needed for performing the comparison of
+structures. No comparisons are needed at the level coordinates or
+distances.
 
 Here an analysis of protein fold similarity at the primary and
 secondary topology levels is presented and the ability of these to
-predict similarity at the tertiary topology level is assessed.
-Implications of the results for fold recognition and secondary
-structure prediction are discussed.
+predict similarity at the tertiary topology (protein fold) level is
+assessed.  Implications of the results for fold recognition and
+secondary structure prediction are discussed.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Results and Discussion}
-%\input results.tex
-%\input best.tex
-%\input worst.tex
-%\input bars.tex
-
-\subsection{Assignment of secondary structure (primary topology)}
-The assignment of secondary structure is the critical first stage. We
-have found that the DSSP algorithm\cite{kabsch:dictionary} can be
-over-sensitive to errors in the structure. For example, NMR structures
-often show little secondary structure in DSSP assignments whereas an
-intuitive visual inspection shows substantial secondary structure. The
-DSSP algorithm works by assigning a cutoff to hydrogen-bonding
-energies and finding patterns of hydrogen bonds characteristic of
-secondary structures. Any hydrogen-bonds which fail to meet these
-criteria are excluded and secondary structure assignment may therefore
-be less than optimal.
-
-The STRIDE software from Argos and co-workers\cite{frishman:ssassign} was
-designed to reduce this sensitivity. However, using STRIDE in place of
-DSSP makes little difference to the overall results (data not
-shown). The TOPSCAN software allows either DSSP or STRIDE secondary
-structure assignments to be used and STRIDE was selected for all
-further analysis.
-
-% The simplified secondary structure assignment scheme used within
-% RasMol actually appears to perform better in assigning secondary
-% structures in an intuitive manner and we are investigating the
-% possibility of extracting this code from RasMol for stand-alone
-% secondary structure assignment.
-
-We explored the effects of setting the minimum required number of
-consecutive residues assigned to a given secondary structure to 3 and
-4 residues. We also looked at treating \htt\ helix residues as the
-same as $\alpha$-helix (data not shown). This made little difference
-when the length cutoff was set to 4, but made results significantly
-worse when the length cutoff was set to 3. This is because most
-instances of true \htt\ helix are $<4$ residues in length (as shown
-above, the mean length of a \htt-helix is 3.3 residues). These are
-then treated as $\alpha$-helix and compared with regions of true
-$\alpha$-helix.  The implication here is that treating \htt\ helix as
-$\alpha$-helix is not a good strategy and this has implications for
-those who do this in secondary structure prediction\cite[for
-example]{king:combine}. It appears that it would be better to treat
-\htt-helix as coil in secondary structure prediction, particularly
-when this is being used for fold recognition.
-
-
-%11111111111111111111111111111111111111111111111111111111111111111111111
-\subsection{Assignment of secondary topology}
-In addition to secondary structure and the direction of SSEs, 
-following factors were considered in defining secondary topology:
-accessibility, proximity, element length and loop length. The
-performance is assessed in terms of percent coverage vs.\ percent
-error, specifically taking error rates of 1\% and 5\%. These results
-are summarised in \tableref{\ref{tab:summary}}.
-
-\begin{table}
-\caption{\label{tab:summary}Summary of effects of adding information
-to the secondary topology strings.}
-\begin{tabularx}{\linewidth}{lllllXX} \hline
-SS length &               &           & Element & Loop   & \multicolumn{2}{c}{Coverage} \\ \cline{6-7}
-cutoff    & Accessibility & Proximity & length  & length & 1\% error & 5\% error \\ \hline
-3         &               &           &         &        & 16.55     & 47.14     \\
-3         &               &           &         & \tick  & 17.89     & 48.02     \\
-3         &               &           & \tick   &        & 20.85     & 49.35     \\
-3         &               &           & \tick   & \tick  & 22.06     & 49.80     \\
-3         &               & \tick     &         &        & 18.55     & 48.43     \\
-3         &               & \tick     &         & \tick  & 19.97     & 48.71     \\
-3         &               & \tick     & \tick   &        & 22.72     & 50.36     \\
-3         &               & \tick     & \tick   & \tick  & 24.24     & 50.45     \\
-3         & \tick         &           &         &        & 19.84     & 49.54     \\
-3         & \tick         &           &         & \tick  & 21.14     & 49.92     \\
-3         & \tick         &           & \tick   &        & 23.87     & 51.46     \\
-3         & \tick         &           & \tick   & \tick  & 24.92     & 51.37     \\
-3         & \tick         & \tick     &         &        & 21.74     & 50.32     \\
-3         & \tick         & \tick     &         & \tick  & 23.17     & 50.23     \\
-3         & \tick         & \tick     & \tick   &        & 25.59     & 51.92     \\
-3         & \tick         & \tick     & \tick   & \tick  & 26.43     & 51.75     \\
-          &               &           &         &        &           &           \\
-4         &               &           &         &        & 15.67     & 45.07     \\
-4         &               &           &         & \tick  & 17.12     & 45.48     \\
-4         &               &           & \tick   &        & 20.26     & 47.01     \\
-4         &               &           & \tick   & \tick  & 20.95     & 47.39     \\
-4         &               & \tick     &         &        & 17.74     & 46.26     \\
-4         &               & \tick     &         & \tick  & 19.27     & 46.53     \\
-4         &               & \tick     & \tick   &        & 22.11     & 47.79     \\
-4         &               & \tick     & \tick   & \tick  & 22.87     & 47.70     \\
-4         & \tick         &           &         &        & 19.17     & 47.41     \\
-4         & \tick         &           &         & \tick  & 20.25     & 47.44     \\
-4         & \tick         &           & \tick   &        & 22.72     & 48.59     \\
-4         & \tick         &           & \tick   & \tick  & 23.46     & 48.69     \\
-4         & \tick         & \tick     &         &        & 20.86     & 48.22     \\
-4         & \tick         & \tick     &         & \tick  & 22.11     & 47.75     \\
-4         & \tick         & \tick     & \tick   &        & 24.39     & 49.01     \\
-4         & \tick         & \tick     & \tick   & \tick  & 25.02     & 48.98     \\
-\hline
-\end{tabularx}
-Coverage values at 1\% and 5\%
-error rates were calculated by linear interpolation of the coverage
-vs. error plots in the ranges 0.5--1.75 and 3.0--8.0
-respectively. This gives a sample of approximately 8 points evenly
-spread above and below the interpolation point.
-\hrule
-\end{table}
-
-As seen in the table, the best coverage results are achieved with the
-secondary structure cutoff set to 3 and with accessibility, proximity,
-element length and loop length information in the secondary topology
-strings.  Interestingly, at the 5\% error rate, loop length has a
-detrimental effect, presumably because the loops are the most variable
-factor between proteins adopting the same fold.
-
-
-%11111111111111111111111111111111111111111111111111111111111111111111111
-% -----------------------------------------------------
-%                  Primary                Secondary
-%               ---------------         ---------------
-%               Within  Between         Within  Between
-% -----------------------------------------------------
-% ...All...
-% >95           51      30723           9       812
-% >65           258     667151          107     6839           
-% >60           269     970672          125     12282
-% >55           276     1312787         169     27754
-% >50           281     1655551         205     62808
-% Observations: 292     4688807         292     4688807
-%
-% ...>3 SSEs...
-% >95           41      28944           3       64
-% >65           238     665372          93      5112
-% >60           247     968893          111     10555
-% >55           252     1311008         151     26027
-% >50           255     1653772         185     61081
-% Observations: 259     4495340         259     4495340
-% -----------------------------------------------------
-
-\begin{table}
-\caption{\label{tab:scores} High scoring comparisons.}
-\begin{center}
-\begin{tabularx}{\linewidth}{Xlllll}\hline
-              & \multicolumn{2}{c}{Primary} & & \multicolumn{2}{c}{Secondary} \\ \cline{2-3}\cline{5-6}
-Score (\%)    & Within    & Between         & & Within    & Between           \\ \hline
-\multicolumn{6}{l}{\bfseries All structures} \\
-$>95$         & 17.5\%    & 0.66\%          & & 3.08\%    & 0.02\%            \\
-$>65$         & 88.4\%    & 14.2\%          & & 36.6\%    & 0.15\%            \\ 
-$>60$         & 92.1\%    & 20.7\%          & & 42.8\%    & 0.33\%            \\ 
-$>55$         & 94.5\%    & 28.0\%          & & 57.9\%    & 0.59\%            \\ 
-$>50$         & 96.2\%    & 35.3\%          & & 70.2\%    & 1.34\%            \\ 
-Observations: & 292       & 4688807         & & 292       & 4688807           \\
-              &           &                 & &           &                   \\
-\multicolumn{6}{l}{\bfseries $>3$ secondary structure elements} \\
-$>95$         & 15.8\%    & 0.64\%          & & 1.16\%    & 0.001\%           \\
-$>65$         & 91.9\%    & 14.8\%          & & 35.9\%    & 0.11\%            \\ 
-$>60$         & 95.4\%    & 21.6\%          & & 42.9\%    & 0.23\%            \\ 
-$>55$         & 97.3\%    & 29.2\%          & & 58.3\%    & 0.58\%            \\ 
-$>50$         & 98.4\%    & 36.8\%          & & 71.4\%    & 1.36\%            \\ 
-Observations: & 259       & 4495340         & & 259       & 4495340           \\ \hline
-\end{tabularx}
-\end{center}
-Percentage of comparisons scoring above cutoffs of 50\%, 55\%, 60\%,
-65\% and 95\% first for comparisons of all structures and second only
-for comparisons of topology strings containing 4 or more secondary
-structure elements (SSEs).  \hrule
-\end{table}
-
-\subsection{Does primary topology predict protein fold?}
-Using the CATH classification, each protein fold containing more than
-one near-identical sequence family (i.e.\ each CAT level containing
-more than one Nrep) was examined. Within each of these 292 groups, the
-mean TOPSCAN score was calculated for all pairs of Nreps using only
-the primary topology (secondary structure cutoff length set to 3).
-The frequency of scores obtained is shown in
-\figref{\ref{fig:primary}a}.  Unsurprisingly, the highest peak is for
-a score of 95--100\% (see \tableref{\ref{tab:scores}}), i.e.\ within a
-protein fold, the primary topology is generally identical. As shown in
-the table, similar results were obtained when trivial matches between
-very small structures containing fewer than 4 SSEs were ignored.
-
-\begin{figure}
-\begin{tabular}{ll}
-a                               & b                             \\
-\epsfig{file=pics/within_primary.mean.ps,width=2.5in} & %
-\epsfig{file=pics/between_primary.ps,width=2.5in} \\
-\end{tabular}
-\caption{\label{fig:primary}Frequency of scores achieved using primary
-topology a) within a given protein fold b) when comparing a given fold
-with every other fold.}
-\end{figure}
-
-\begin{figure}
-\begin{tabular}{ll}
-a                               & b                             \\
-\epsfig{file=pics/1aca.ps,width=2.5in} & \epsfig{file=pics/2ccy.ps,width=2.5in} \\
-\end{tabular}
-%\centerline{\epsfig{file=pics/1aca.ps,width=3in}\epsfig{file=pics/2ccy.ps,width=3in}}
-\caption{\label{fig:4helix}Two examples of 4-helix bundles: a) PDB
-code: 1aca and b) PDB code: 2ccy chain A.  Both would have the same
-primary topology description of HHHH, but they show different
-topologies (CATH topology assignments 1.20.80 and 1.20.120
-respectively). The four helices are coloured blue, green, orange, red
-working from N-terminus to C-terminus. Images were generated with 
-Molscript~2.1.2\protect\cite{kraulis:molscript}}
-\end{figure}
-
-Every Nrep within each protein fold (CAT) was then compared with every
-Nrep of every other protein fold (a total of 4688807 comparisons) and
-the distribution of the scores was plotted
-(Figure~\ref{fig:primary}b).  Initially one would expect that
-different folds will have a low score in this comparison, but 14.2\% of
-the comparisons score $>65\%$ with 0.66\% scoring $>95\%$ (see
-Table~\ref{tab:scores}), the distribution peaking at a score of
-35--40\%.  However when one considers, for example, 4-helix bundles as
-shown in \figref{\ref{fig:4helix}}, it becomes obvious that there are
-multiple folds containing the same set of SSEs. The figure shows two
-4-helix bundles from bovine acyl-coenzyme~A binding protein\cite[PDB
-code: 1aca]{kragelund:1aca} and cytochrome~C$'$ from
-\emph{Rhodospirillum molischianum}\cite[PDB code:
-2ccy]{finzel:2ccy}. At the primary topology level, both would be
-described as HHHH (note that 2ccy has a short segment of \htt\ helix
-between the second and third main helices).
-
-Thus, by knowing only the primary topology (perhaps from
-secondary structure prediction), there is a high chance of matching
-the incorrect protein fold with an identical primary topology.
-
-\begin{figure}
-\begin{tabular}{ll}
-a                               & b                             \\
-\epsfig{file=pics/within_secondary.mean.ps,width=2.5in} & %
-\epsfig{file=pics/between_secondary.ps,width=2.5in} \\
-\end{tabular}
-\caption{\label{fig:secondary}Frequency of scores achieved using
-secondary topology a) within a given protein fold b) when comparing a
-given fold with every other fold.}
-\end{figure}
-
-%11111111111111111111111111111111111111111111111111111111111111111111111
-\subsection{Does secondary topology predict protein fold?}
-As with comparison of primary topology, each protein fold containing
-more than one near-identical sequence family was examined. Within each
-of these groups, the TOPSCAN score was calculated using the secondary
-topology with a secondary structure length cutoff of 3 and including
-accessibility, proximity, element length and loop length information
-(\figref{\ref{fig:secondary}a}, Table~\ref{tab:scores}). The
-distribution moves to the left compared with using primary topology
-and the peak for 95--100\% is lost. This is largely a result of the
-single cutoffs used to define seondary topology. Scores are
-artificially reduced where two examples lie close to, but on either
-side of, the cutoff. The distribution peaks ar around 55--60\%.
-
-Comparison between protein folds (Figure~\ref{fig:secondary}b) now
-peaks at a score of 15--20\% and all the high scoring peaks
-are removed. Only 0.15\% of comparisons score $>65\%$ (Table~\ref{tab:scores}).
-
-Referring again to Figure~\ref{fig:4helix}, although the primary
-topology for the two folds is the same (HHHH), by following the chain
-trace, it is clear that the directions of the helices is different
-(1aca: up, down, down, up; 2ccy: up, down, up, down) and incorporating
-this information into the secondary topology strings will distinguish
-between the two folds.
-
-\begin{figure}
-\begin{tabular}{ll}
-a                               & b                             \\
-\epsfig{file=pics/1dar.ps,width=2.5in} & %
-\epsfig{file=pics/1elo.ps,width=2.5in} \\
-\end{tabular}
-\caption{\label{fig:1dar1elo}Domain three of elongation factor G (EF-G)
-from \emph{Thermus thermophilus} strain HB8 a) from crystal structure
-1dar in complex with GDP and b) from crystal structure 1elo of the
-free protein. The structures are coloured from blue at the N-terminus
-(residue 433) to red at the C-terminus (residue 483). Note the
-dicontinuities resulting from some residues not being visible
-in the x-ray structures.}
-\end{figure}
-
-Interestingly both the comparisons of primary and secondary topology
-within a fold show one comparison with a very low score ($<10$\%).
-These structures (domain 3 from PDB files 1dar\cite{al-karadaghi:1dar}
-and 1elo\cite{aevarsson:1elo}) were examined using RasMol and are
-shown in \figref{\ref{fig:1dar1elo}}. They represent one domain from
-elongation factor G (EF-G) from \emph{Thermus thermophilus} strain HB8
-complexed and uncomplexed with GDP respectively. Whereas 1dar contains
-only $\beta$-strands, 1elo has two poorly defined strands and a
-helix. The sequences of these two are identical, yet the fold is
-different as a result of conformational flexibility of EF-G on binding
-nucleotide.  It should also be noted that the structures are poorly
-defined in this region with some residues not visible in the crystal
-structures. Thus some of the differences may reflect errors in the
-structures although, since both structures are solved by the same
-group, it is unlikely that they would have built one with an
-$\alpha$-helix and the other without unless there were a real
-difference.
-
-
-%11111111111111111111111111111111111111111111111111111111111111111111111
-\subsection{Problems}
-The algorithm has problems in discriminating, for example, a TIM
-barrel from a Rossmann fold. These are topologically somewhat similar
---- in both cases, they consist in the main of alternating
-$\beta$-strands and $\alpha$-helices which form a core of
-$\beta$-sheet with helices on the outside. In the case of the TIM
-barrel the $\beta$-sheet is curved into a barrel whereas the Rossmann
-fold has a relatively flat sheet. Because the differences between the
-two occur in a plane perpendicular to the direction of the SSEs, the
-current method does not distinguish reliably between these
-architectures.
-
-\tableref{\ref{tab:timros}} shows three examples of TIM barrels and
-Rossman folds having almost identical primary topology. ALthough in
-these cases the sceondary topology similarites are much lower, it can
-be seen that the scores are relatively high for such different protein
-folds.
-
-
-
-\begin{table}
-\caption{\label{tab:timros} Examples of TIM barrels and Rossman folds
-with similar primary and secondary topology}
-\begin{center}
-\begin{tabularx}{\linewidth}{llXll}\hline
-Fold$^{\dag}$ %
-     & Domain     & Primary                   & Primary         & Tertiary        \\
-     & identifier & topology                  & similarity (\%) & similarity (\%) \\ \hline
-TIM  & 1ads00     & {\tt EEHEHEHEHEHEHEHHHH}  &                 &                 \\
-ROS  & 1yveI1     & {\tt EEHEHEHEHEHEHEHEH-}  & 90.6            & 46.1            \\
-     &            &                           &                 &                 \\
-TIM  & 1tml00     & {\tt -HHEHEHEHHEHEHEEH}   &                 &                 \\
-ROS  & 1vid00     & {\tt HHHEHEHEHHEHEHEE-}   & 93.8            & 51.9            \\
-     &            &                           &                 &                 \\
-TIM  & 1pii02     & {\tt HEHEHEHEEEHEEH}      &                 &                 \\
-ROS  & 2reb01     & {\tt HEHEHEHEHEHEEE}      & 90.0            & 45.7            \\ \hline
-\end{tabularx}
-\end{center}
-The PDB codes are:
-1ads\protect\cite{wilson:1ads}, 
-1yve\protect\cite{biou:1yve},
-1tml\protect\cite{spezio:1tml},
-1vid\protect\cite{vidgren:1vid},
-1pii\protect\cite{wilmanns:1pii},
-2reb\protect\cite{story:2reb}
-$^{\dag}$TIM: TIM barrels (CATH code 3.20.20); ROS: Rossmann folds (CATH code 3.40.40).
-\hrule
-\end{table}
-
-
-
-%% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% 
-%% Give examples of topology strings for TIM and Rossmann            %%
-%% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% 
-
-%11111111111111111111111111111111111111111111111111111111111111111111111
-\subsection{Comparison of TOPSCAN with other rapid methods}
-
-Three methods similar in principle to TOPSCAN are
-FAST-SSAP\cite{taylor:alignment}, a constraint programming (CP) method
-based on TOPS diagrams\cite{David_Gilbert_David_Westhead} and TOP, a
-least-squares fitting method\cite{lu:top}.
-
-FAST-SSAP uses double dynamic programming to align vectors
-representing the SSEs to compare two structures. The CP method uses a
-4-letter alphabet to represent the two types of secondary structure
-going either up or down and adds information about chirality and
-hydrogen bonds between SSEs.  Comparison is performed by finding a
-maximum common template and scoring the two structures against that
-template.  TOP represents each SSE by its two end-points and then
-performs iterative least squares fitting of this small number of
-points to find an optimal match.
-
-The simple approach taken by TOPSCAN allows a very significant speed
-advantage. It is approximately 25$\times$ faster than the current
-implementations of FAST-SSAP and CP and is estimated to be
-approximately 30000$\times$ faster than normal SSAP.  FAST-SSAP could
-be speeded by calculating the secondary structure vectors simply from
-the end-points of the SSEs rather than using an Eigenvector.
-
-Compared with FAST-SSAP, the simple segregation of secondary structure
-vectors into six quadrants throws away a lot of more detailed
-information about the relative orientation of the elements, but as a
-result, allows us to perform normal single dynamic programming
-removing the need for double dynamic programming.
-
-Compared with CP, the TOPSCAN representation actually has more
-information about directionality of the secondary structure vectors,
-but loses the more detailed proximity information (encoded in the
-constraint programming by hydrogen-bond information) and the chirality
-arcs.
-
-The authors of TOP do not provide directly comparable results.
-However, since the method relies not only on the direction of the
-SSEs, but also on the precise location of the endpoints, it seems
-likely that the method will be particularly sensitive to the secondary
-structure definition. It is well known that assignment is particularly
-problematic at the ends of the secondary structures.
-
-The best results achieved with TOPSCAN (c.26.5\% coverage at 1\% error
-and c.52\% coverage at 5\% error) compare with c.60\% (at 1\% error)
-and c.78\% (at 5\% error) for full SSAP and c.36\% (at 1\% error) and
-c.58\% (at 5\% error) for CP\cite{gilbert:aisb}. Given the large
-increase in speed achieved over these methods, TOPSCAN performs well
-and is particularly valuable as a preliminary screen.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Conclusions}
-TOPSCAN has proved a useful addition to the available methods for
-comparing protein structures. In particular, it is useful as a
-preliminary screen to look for possible similar structures. It also
-provides a useful rapid method of ranking structures for further more
-detailed comparison using SSAP.
-
-Analysis of the CATH data has shown some interesting anomolies as well
-as a few minor errors in the CATH data which have been fed back to the
-CATH maintainers. Thus TOPSCAN also appears to have a role in rapid
-validation of structural classification.
-
-In common with the fast version of SSAP which relies on secondary
-structure vectors and with CP and TOP which also make use of sequences
-of SSEs, TOPSCAN is most likely to fail when a structure is poorly
-defined and DSSP or STRIDE are unable to make reliable secondary
-structure assignments. The atomic level full SSAP is less prone to
-these problems, but pays a huge penalty in the time required for
-comparison.
-
-Future work will include investigating more complex classification of
-properties such as solvent accessibility. Currently only binary
-classifications are used (e.g.\ exposed vs. burried). In the case of
-$\beta$-strands, specific allowance could be made for edge
-strands. Changing the global Needlemann \& Wunsch dynamic programming
-algorithm to a local Smith-Waterman alignment will also allow for
-sub-structure matching. Given the current analysis of factors which
-affect the accuracy of comparison of structures, this information can
-feed back into fold recognition and the algorthim described here, when
-combined with methods for prediction of the factors used in the
-secondary topology string, will be of application in fold recognition.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Materials and Methods}
@@ -640,7 +229,7 @@ regions of at least a specified number of residues with the same
 assignment are selected.  This produces the primary topology of the
 protein equivalent to a string of E and H characters where one
 character represents one complete strand or helix. The program also
-allows one to treat \htt\ helix assignments as $\alpha$-helix as is
+allows one to treat \htt-helix assignments as $\alpha$-helix as is
 frequently done in secondary structure prediction.
 
 %11111111111111111111111111111111111111111111111111111111111111111111111
@@ -918,13 +507,569 @@ $5.7$ residues.
 % trade-off of computer time for absolute accuracy of results.
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Results and Discussion}
+%\input results.tex
+%\input best.tex
+%\input worst.tex
+%\input bars.tex
+
+\subsection{Assignment of secondary structure (primary topology)}
+The assignment of secondary structure is the critical first stage. We
+have found that the DSSP algorithm\cite{kabsch:dictionary} can be
+over-sensitive to errors in the structure. For example, NMR structures
+often show little secondary structure in DSSP assignments whereas an
+intuitive visual inspection shows substantial secondary structure. The
+DSSP algorithm works by assigning a cutoff to hydrogen-bonding
+energies and finding patterns of hydrogen bonds characteristic of
+secondary structures. Any hydrogen-bonds which fail to meet these
+criteria are excluded and secondary structure assignment may therefore
+be less than optimal.
+
+The STRIDE software from Argos and co-workers\cite{frishman:ssassign} was
+designed to reduce this sensitivity. However, using STRIDE in place of
+DSSP makes little difference to the overall results (data not
+shown). The TOPSCAN software allows either DSSP or STRIDE secondary
+structure assignments to be used and STRIDE was selected for all
+further analysis.
+
+% The simplified secondary structure assignment scheme used within
+% RasMol actually appears to perform better in assigning secondary
+% structures in an intuitive manner and we are investigating the
+% possibility of extracting this code from RasMol for stand-alone
+% secondary structure assignment.
+
+We explored the effects of setting the minimum required number of
+consecutive residues assigned to a given secondary structure to 3 and
+4 residues. We also looked at treating \htt-helix residues as the
+same as $\alpha$-helix (data not shown). This made little difference
+when the length cutoff was set to 4, but made results significantly
+worse when the length cutoff was set to 3. This is because most
+instances of true \htt-helix are $<4$ residues in length (as shown
+above, the mean length of a \htt-helix is 3.3 residues). These are
+then treated as $\alpha$-helix and compared with regions of true
+$\alpha$-helix.  The implication here is that treating \htt-helix as
+$\alpha$-helix is not a good strategy and this has implications for
+those who do this in secondary structure prediction\cite[for
+example]{king:combine}. It appears that it would be better to treat
+\htt-helix as coil in secondary structure prediction, particularly
+when this is being used for fold recognition.
+
+
+%11111111111111111111111111111111111111111111111111111111111111111111111
+\subsection{Assignment of secondary topology}
+In addition to secondary structure and the direction of SSEs, the
+following factors were considered in defining secondary topology:
+accessibility, proximity, element length and loop length. The
+performance is assessed in terms of percent coverage vs.\ percent
+error, specifically taking error rates of 1\% and 5\%.  The dataset
+used was the CATH NReps with NMR structures excluded. Error and
+coverage at a given TOPSCAN score were calculated as (number of false
+hits / total number of hits) and (number of true hits / total true
+hits) respectively and coverage values at 1\% and 5\% error rates were
+calculated by linear interpolation of the coverage vs. error plots in
+the ranges 0.5--1.75 and 3.0--8.0 respectively. This gives a sample of
+approximately 8 points evenly spread above and below the interpolation
+point. These results are summarised in \tableref{\ref{tab:summary}}.
+
+\begin{table}
+\caption{\label{tab:summary}Summary of effects of adding information
+to the secondary topology strings.}
+\begin{tabularx}{\linewidth}{lllllXX} \hline
+SS length &               &           & Element & Loop   & \multicolumn{2}{c}{Coverage} \\ \cline{6-7}
+cutoff    & Accessibility & Proximity & length  & length & 1\% error & 5\% error \\ \hline
+3         &               &           &         &        & 16.55     & 47.14     \\
+3         &               &           &         & \tick  & 17.89     & 48.02     \\
+3         &               &           & \tick   &        & 20.85     & 49.35     \\
+3         &               &           & \tick   & \tick  & 22.06     & 49.80     \\
+3         &               & \tick     &         &        & 18.55     & 48.43     \\
+3         &               & \tick     &         & \tick  & 19.97     & 48.71     \\
+3         &               & \tick     & \tick   &        & 22.72     & 50.36     \\
+3         &               & \tick     & \tick   & \tick  & 24.24     & 50.45     \\
+3         & \tick         &           &         &        & 19.84     & 49.54     \\
+3         & \tick         &           &         & \tick  & 21.14     & 49.92     \\
+3         & \tick         &           & \tick   &        & 23.87     & 51.46     \\
+3         & \tick         &           & \tick   & \tick  & 24.92     & 51.37     \\
+3         & \tick         & \tick     &         &        & 21.74     & 50.32     \\
+3         & \tick         & \tick     &         & \tick  & 23.17     & 50.23     \\
+3         & \tick         & \tick     & \tick   &        & 25.59     & 51.92     \\
+3         & \tick         & \tick     & \tick   & \tick  & 26.43     & 51.75     \\
+          &               &           &         &        &           &           \\
+4         &               &           &         &        & 15.67     & 45.07     \\
+4         &               &           &         & \tick  & 17.12     & 45.48     \\
+4         &               &           & \tick   &        & 20.26     & 47.01     \\
+4         &               &           & \tick   & \tick  & 20.95     & 47.39     \\
+4         &               & \tick     &         &        & 17.74     & 46.26     \\
+4         &               & \tick     &         & \tick  & 19.27     & 46.53     \\
+4         &               & \tick     & \tick   &        & 22.11     & 47.79     \\
+4         &               & \tick     & \tick   & \tick  & 22.87     & 47.70     \\
+4         & \tick         &           &         &        & 19.17     & 47.41     \\
+4         & \tick         &           &         & \tick  & 20.25     & 47.44     \\
+4         & \tick         &           & \tick   &        & 22.72     & 48.59     \\
+4         & \tick         &           & \tick   & \tick  & 23.46     & 48.69     \\
+4         & \tick         & \tick     &         &        & 20.86     & 48.22     \\
+4         & \tick         & \tick     &         & \tick  & 22.11     & 47.75     \\
+4         & \tick         & \tick     & \tick   &        & 24.39     & 49.01     \\
+4         & \tick         & \tick     & \tick   & \tick  & 25.02     & 48.98     \\
+\hline
+\end{tabularx}
+\end{table}
+
+As seen in the table, the best coverage results are achieved with the
+secondary structure cutoff set to 3 and with accessibility, proximity,
+element length and loop length information in the secondary topology
+strings.  Interestingly, at the 5\% error rate, loop length has a
+detrimental effect, presumably because the loops are the most variable
+factor between proteins adopting the same fold.
+
+
+%11111111111111111111111111111111111111111111111111111111111111111111111
+% -----------------------------------------------------
+%                  Primary                Secondary
+%               ---------------         ---------------
+%               Within  Between         Within  Between
+% -----------------------------------------------------
+% ...All...
+% >95           51      30723           9       812
+% >65           258     667151          107     6839           
+% >60           269     970672          125     12282
+% >55           276     1312787         169     27754
+% >50           281     1655551         205     62808
+% Observations: 292     4688807         292     4688807
+%
+% ...>3 SSEs...
+% >95           41      28944           3       64
+% >65           238     665372          93      5112
+% >60           247     968893          111     10555
+% >55           252     1311008         151     26027
+% >50           255     1653772         185     61081
+% Observations: 259     4495340         259     4495340
+% -----------------------------------------------------
+
+\begin{table}
+\caption{\label{tab:scores} High scoring comparisons.}
+\begin{center}
+\begin{tabularx}{\linewidth}{Xlllll}\hline
+              & \multicolumn{2}{c}{Primary} & & \multicolumn{2}{c}{Secondary} \\ \cline{2-3}\cline{5-6}
+Score (\%)    & Within    & Between         & & Within    & Between           \\ \hline
+\multicolumn{6}{l}{\bfseries All structures} \\
+$>95$         & 17.5\%    & 0.66\%          & & 3.08\%    & 0.02\%            \\
+$>65$         & 88.4\%    & 14.2\%          & & 36.6\%    & 0.15\%            \\ 
+$>60$         & 92.1\%    & 20.7\%          & & 42.8\%    & 0.33\%            \\ 
+$>55$         & 94.5\%    & 28.0\%          & & 57.9\%    & 0.59\%            \\ 
+$>50$         & 96.2\%    & 35.3\%          & & 70.2\%    & 1.34\%            \\ 
+Observations: & 292       & 4688807         & & 292       & 4688807           \\
+              &           &                 & &           &                   \\
+\multicolumn{6}{l}{\bfseries $>3$ secondary structure elements} \\
+$>95$         & 15.8\%    & 0.64\%          & & 1.16\%    & 0.001\%           \\
+$>65$         & 91.9\%    & 14.8\%          & & 35.9\%    & 0.11\%            \\ 
+$>60$         & 95.4\%    & 21.6\%          & & 42.9\%    & 0.23\%            \\ 
+$>55$         & 97.3\%    & 29.2\%          & & 58.3\%    & 0.58\%            \\ 
+$>50$         & 98.4\%    & 36.8\%          & & 71.4\%    & 1.36\%            \\ 
+Observations: & 259       & 4495340         & & 259       & 4495340           \\ \hline
+\end{tabularx}
+\end{center}
+Percentage of comparisons scoring above cutoffs of 50\%, 55\%, 60\%,
+65\% and 95\% first for comparisons of all structures and second only
+for comparisons of topology strings containing 4 or more secondary
+structure elements (SSEs).  \hrule
+\end{table}
+
+\subsection{Does primary topology predict protein fold?}
+Using the CATH classification, each protein fold containing more than
+one near-identical sequence family (i.e.\ each CAT level containing
+more than one Nrep) was examined. Within each of these 292 groups, the
+mean TOPSCAN score was calculated for all pairs of Nreps using only
+the primary topology (secondary structure cutoff length set to 3).
+The frequency of scores obtained is shown in
+\figref{\ref{fig:primary}a}.  Unsurprisingly, the highest peak is for
+a score of 95--100\% (see \tableref{\ref{tab:scores}}), i.e.\ within a
+protein fold, the primary topology is generally identical. As shown in
+the table, similar results were obtained when trivial matches between
+very small structures containing fewer than 4 SSEs were ignored.
+
+\begin{figure}
+\begin{tabular}{ll}
+a                               & b                             \\
+\epsfig{file=pics/within_primary.mean.ps,width=2.5in} & %
+\epsfig{file=pics/between_primary.ps,width=2.5in} \\
+\end{tabular}
+\caption{\label{fig:primary}Frequency of scores achieved using primary
+topology a) within a given protein fold b) when comparing a given fold
+with every other fold.}
+\end{figure}
+
+\begin{figure}
+\begin{tabular}{ll}
+a                               & b                             \\
+\epsfig{file=pics/1aca_bw.ps,width=2.5in} & \epsfig{file=pics/2ccy_bw.ps,width=2.5in} \\
+\end{tabular}
+%\centerline{\epsfig{file=pics/1aca.ps,width=3in}\epsfig{file=pics/2ccy.ps,width=3in}}
+\caption{\label{fig:4helix}Two examples of 4-helix bundles: a) PDB
+code: 1aca and b) PDB code: 2ccy chain A.  Both would have the same
+primary topology description of HHHH, but they show different
+topologies (CATH topology assignments 1.20.80 and 1.20.120
+respectively). The four helices are 
+labelled A--D
+% coloured blue, green, orange, red
+working from N-terminus to C-terminus. Images were generated with 
+Molscript~2.1.2\protect\cite{kraulis:molscript}}
+\end{figure}
+
+Every Nrep within each protein fold (CAT) was then compared with every
+Nrep of every other protein fold (a total of 4688807 comparisons) and
+the distribution of the scores was plotted
+(Figure~\ref{fig:primary}b).  Initially one would expect that
+different folds will have a low score in this comparison, but 14.2\% of
+the comparisons score $>65\%$ with 0.66\% scoring $>95\%$ (see
+Table~\ref{tab:scores}), the distribution peaking at a score of
+35--40\%.  However when one considers, for example, 4-helix bundles as
+shown in \figref{\ref{fig:4helix}}, it becomes obvious that there are
+multiple folds containing the same set of SSEs. The figure shows two
+4-helix bundles from bovine acyl-coenzyme~A binding protein\cite[PDB
+code: 1aca]{kragelund:1aca} and cytochrome~C$'$ from
+\emph{Rhodospirillum molischianum}\cite[PDB code:
+2ccy]{finzel:2ccy}. At the primary topology level, both would be
+described as HHHH (note that 2ccy has a short segment of \htt-helix
+between the second and third main helices).
+
+Thus, by knowing only the primary topology (perhaps from secondary
+structure prediction), there is a high chance of matching the
+incorrect protein fold with an identical primary topology. The protein
+taxonomy based on secondary structure derived by Przytycka \emph{et
+al.}\cite{przytycka:sstaxonomy} is based purely on primary topology
+strings although the similarity score is then calculated on the basis
+of the common number of residues matched when a pair of SSEs is
+aligned. From the results presented here, it appears that the authors
+were either lucky to avoid false positive matches in the data set they
+used, or that the scoring on the basis of length is a very good
+filter.
+
+\begin{figure}
+\begin{tabular}{ll}
+a                               & b                             \\
+\epsfig{file=pics/within_secondary.mean.ps,width=2.5in} & %
+\epsfig{file=pics/between_secondary.ps,width=2.5in} \\
+\end{tabular}
+\caption{\label{fig:secondary}Frequency of scores achieved using
+secondary topology a) within a given protein fold b) when comparing a
+given fold with every other fold.}
+\end{figure}
+
+%11111111111111111111111111111111111111111111111111111111111111111111111
+\subsection{Does secondary topology predict protein fold?}
+As with comparison of primary topology, each protein fold containing
+more than one near-identical sequence family was examined. Within each
+of these groups, the TOPSCAN score was calculated using the secondary
+topology with a secondary structure length cutoff of 3 and including
+accessibility, proximity, element length and loop length information
+(\figref{\ref{fig:secondary}a}, Table~\ref{tab:scores}). The
+distribution moves to the left compared with using primary topology
+and the peak for 95--100\% is lost. This is largely a result of the
+single cutoffs used to define secondary topology. Scores are
+artificially reduced where two examples lie close to, but on either
+side of, the cutoff. The distribution peaks are around 55--60\%.
+
+Comparison between protein folds (Figure~\ref{fig:secondary}b) now
+peaks at a score of 15--20\% and all the high scoring peaks
+are removed. Only 0.15\% of comparisons score $>65\%$ (Table~\ref{tab:scores}).
+
+Referring again to Figure~\ref{fig:4helix}, although the primary
+topology for the two folds is the same (HHHH), by following the chain
+trace, it is clear that the directions of the helices is different
+(1aca: up, down, down, up; 2ccy: up, down, up, down) and incorporating
+this information into the secondary topology strings will distinguish
+between the two folds.
+
+\begin{figure}
+\begin{tabular}{ll}
+a                               & b                             \\
+\epsfig{file=pics/1dar.ps,width=2.5in} & %
+\epsfig{file=pics/1elo.ps,width=2.5in} \\
+\end{tabular}
+\caption{\label{fig:1dar1elo}Domain three of elongation factor G (EF-G)
+from \emph{Thermus thermophilus} strain HB8 a) from crystal structure
+1dar in complex with GDP and b) from crystal structure 1elo of the
+free protein. The structures are 
+shown with the N-terminus (residue 433) on the left and the C-terminus
+(residue 483) on the right. 
+%coloured from blue at the N-terminus
+%(residue 433) to red at the C-terminus (residue 483). 
+Note the
+discontinuities resulting from some residues not being visible
+in the x-ray structures.}
+\end{figure}
+
+Interestingly both the comparisons of primary and secondary topology
+within a fold show one comparison with a very low score ($<10$\%).
+These structures (domain 3 from PDB files 1dar\cite{al-karadaghi:1dar}
+and 1elo\cite{aevarsson:1elo}) were examined using RasMol and are
+shown in \figref{\ref{fig:1dar1elo}}. They represent one domain from
+elongation factor G (EF-G) from \emph{Thermus thermophilus} strain HB8
+complexed and uncomplexed with GDP respectively. Whereas 1dar contains
+only $\beta$-strands, 1elo has two poorly defined strands and a
+helix. The sequences of these two are identical, yet the fold is
+different as a result of conformational flexibility of EF-G on binding
+nucleotide.  It should also be noted that the structures are poorly
+defined in this region with some residues not visible in the crystal
+structures. Thus some of the differences may reflect errors in the
+structures although, since both structures are solved by the same
+group, it is unlikely that they would have built one with an
+$\alpha$-helix and the other without unless there were a real
+difference.
+
+
+%11111111111111111111111111111111111111111111111111111111111111111111111
+\subsection{TIM Barrels and Rossmann Folds}
+At the primary topology level, the TIM barrel and the Rossmann fold
+are somewhat similar --- in both cases, they consist in the main of
+alternating $\beta$-strands and $\alpha$-helices which form a core of
+$\beta$-sheet with helices on the outside. In the case of the TIM
+barrel the $\beta$-sheet is curved into a barrel whereas the Rossmann
+fold has a relatively flat sheet. Because the differences between the
+two occur in a plane perpendicular to the direction of the SSEs, the
+directional element of the secondary topology assignments is also
+similar. However, differences do occur in the accessibilities and
+lengths of the elements. It is interesting to note that in Rose's
+taxonomy based on secondary structure\cite{przytycka:sstaxonomy}, the
+Flavodoxin and Flavodoxin-like Rossmann folds are well separated from
+the TIM barrels. However, one of the structures which they place in
+the middle of the TIM barrel cluster (2cmd: lactate and malate
+dehydrogenase) is split in the CATH classification into two domains,
+the first of which is assigned as a Rossmann fold.
+
+\tableref{\ref{tab:timros}} shows three examples of TIM barrels and
+Rossmann folds having almost identical primary topology. Although in
+these cases the secondary topology similarities are much lower, it can
+be seen that the scores are relatively high for such different protein
+folds although, in practice they are comparable with the SSAP scores.
+
+\begin{table}
+\caption{\label{tab:timros} Examples of TIM barrels and Rossmann folds
+with similar primary and secondary topology}
+\begin{center}
+\begin{tabularx}{\linewidth}{llXlll}\hline
+Fold$^{\dag}$ %
+     & Domain     & Primary                   & Primary         & Secondary       & SSAP       \\
+     & identifier & topology                  & similarity (\%) & similarity (\%) & score (\%) \\ \hline
+TIM  & 1ads00     & {\tt EEHEHEHEHEHEHEHHHH}  &                 &                 &            \\
+ROS  & 1yveI1     & {\tt EEHEHEHEHEHEHEHEH-}  & 90.6            & 46.1            & 57.1       \\
+     &            &                           &                 &                 &            \\
+TIM  & 1tml00     & {\tt -HHEHEHEHHEHEHEEH}   &                 &                 &            \\
+ROS  & 1vid00     & {\tt HHHEHEHEHHEHEHEE-}   & 93.8            & 51.9            & 59.9       \\
+     &            &                           &                 &                 &            \\
+TIM  & 1pii02     & {\tt HEHEHEHEEEHEEH}      &                 &                 &            \\
+ROS  & 2reb01     & {\tt HEHEHEHEHEHEEE}      & 90.0            & 45.7            & 64.2       \\ \hline
+\end{tabularx}
+\end{center}
+The PDB codes are:
+1ads\protect\cite{wilson:1ads}, 
+1yve\protect\cite{biou:1yve},
+1tml\protect\cite{spezio:1tml},
+1vid\protect\cite{vidgren:1vid},
+1pii\protect\cite{wilmanns:1pii},
+2reb\protect\cite{story:2reb}
+$^{\dag}$TIM: TIM barrels (CATH code 3.20.20); ROS: Rossmann folds (CATH code 3.40.40).
+\hrule
+\end{table}
+
+
+
+%% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% 
+%% Give examples of topology strings for TIM and Rossmann            %%
+%% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% 
+
+%11111111111111111111111111111111111111111111111111111111111111111111111
+\subsection{Comparison of TOPSCAN with other rapid methods}
+
+As cited in the Introduction, a number of other methods have used a
+reduced representation of protein structure to allow rapid comparison.
+The main difference between TOPSCAN and other methods is that the
+representation is purely symbolic and this simple approach allows a
+very significant speed advantage. It is approximately 25$\times$
+faster than the current implementations of
+FAST-SSAP\cite{taylor:alignment} and
+CP\cite{David_Gilbert_David_Westhead} and is estimated to be
+approximately 30000$\times$ faster than normal SSAP.  FAST-SSAP could
+be speeded by calculating the secondary structure vectors simply from
+the end-points of the SSEs rather than using an Eigenvector.
+
+Compared with FAST-SSAP and other methods which rely upon the
+end-points of SSEs, the simple segregation of secondary structure
+vectors into six quadrants throws away a lot of more detailed
+information about the relative orientation of the elements, but as a
+result, allows us to perform normal single dynamic programming
+removing the need for double dynamic programming.
+
+Compared with CP, the TOPSCAN representation actually has more
+information about direction of the secondary structure vectors, but
+loses the more detailed proximity information (encoded in the
+constraint programming by hydrogen-bond information) and the chirality
+arcs.
+
+The authors of TOP\cite{lu:top} do not provide directly comparable
+results.  However, since the method relies not only on the direction
+of the SSEs, but also on the precise location of the endpoints, it
+seems likely that the method will be particularly sensitive to the
+secondary structure definition. It is well known that assignment is
+particularly problematic at the ends of the secondary structures and
+minor variations between structures can cause one or two residues at
+each end to be (or not to be) included in an SSE. This could cause a
+difference in end-point location of $>6.0$\AA. This is less of a
+problem with DEJAVU\cite{kleywegt:dejavu} where the matrix of
+distances between midpoints of the SSEs and angles between the SSEs
+are used.  While the endpoints of the SSEs are used by TOPSCAN to
+define the direction, their precise location is less important. They
+are also implicitly used by TOPSCAN to define the length of an SSE and
+of a loop, but since these are simply taken as `long' or `short'
+rather than using an exact length, only a small percentage of SSEs or
+loops (those of length close to the cutoff) will be likely to be
+misclassified.
+
+The best results achieved with TOPSCAN (c.26.5\% coverage at 1\% error
+and c.52\% coverage at 5\% error) compare with c.60\% (at 1\% error)
+and c.78\% (at 5\% error) for full SSAP and c.36\% (at 1\% error) and
+c.58\% (at 5\% error) for CP\cite{gilbert:aisb}. Given the large
+increase in speed achieved over these methods, TOPSCAN performs well
+and is particularly valuable as a preliminary screen.
+
+%11111111111111111111111111111111111111111111111111111111111111111111111
+\subsection{Performance of TOPSCAN as a prescreen for more detailed
+comparison} 
+
+The coverage vs. error figures shown in Table~\ref{tab:summary} give a
+standard measure for the performance of the method in structure
+comparison. As described above, these results are similar to the CP
+method at a 5\% error rate.
+
+If the method is to be used as a pre-screen for a more detailed and
+computationally more demanding method such as SSAP, one is more
+interested in being able to obtain true positives (correct hits) with
+a minimum of false positives (incorrect hits). In summary, error rates
+at 90\%, 95\% and 99\% coverage are 29.02\%, 39.15\% and 60.82\%
+respectively (it is impractical to aim for 100\% coverage owing to odd
+cases such as domain 3 from 1elo and 1dar where the proteins are
+identical but have different folds as well as possible errors in
+CATH).
+
+\begin{figure}
+\centerline{\psfig{file=pics/cutoffs.eps,width=2.5in}}
+\caption{\label{fig:cutoffs}Distribution of best TOPSCAN scores
+obtained for each CATH Nrep matching another Nrep of the same fold
+(i.e. in the same CAT family).}
+\end{figure}
+
+Figure~\ref{fig:cutoffs} shows the distribution of the maximum topscan
+score for a correct hit against another protein domain of the same fold.
+(As before, each protein fold containing more than one near-identical
+sequence family was examined and, for each of these families, the maximum
+topscan score for a correct hit against another protein domain with
+the same fold was recorded.) It is clear that a number of correct hits
+have low maximum scores. Therefore, it is recommended that if
+TOPSCAN is to be used as a filter for other methods, that it is not
+used to exclude structures, but to sort the structures for
+presentation to a detailed method such as SSAP with the most likely
+matches first. As soon as SSAP finds a good hit, the search through
+the ordered list is terminated. This procedure has been implemented
+using an early version of TOPSCAN (encoding only seondary structure
+type and direction) in the CATH-server\cite{orengo:classifying}.
+
+
+%     However, what we are really interested in is being able to hit just
+%     one protein of the correct fold. A more detailed comparison can then
+%     be performed against all examples from a representative set having the
+%     same fold.
+%     
+%     % This was done using _n_a_l_L_ dataset as follows:
+%     % Filter out those with <4 SSEs
+%     %    filterranks.perl ranks_e3h3_n_a_l_L_nolimit.out >ranks_e3h3_n_a_l_L_nolimit.filtered
+%     % Find the best score for each true match
+%     %    findcutoff.perl ranks_e3h3_n_a_l_L_nolimit.filtered >cutoff_e3h3_n_a_l_L_nolimit_filtered.out
+%     % Sort this file
+%     %    sort -n +1 cutoff_e3h3_n_a_l_L_nolimit_filtered.out >cutoff_e3h3_n_a_l_L_nolimit_filtered.sor
+%     % See how may examples we have
+%     %    wc cutoff_e3h3_n_a_l_L_nolimit_filtered.sor
+%     % (= 2575) Therefore 1% = 26, 5% = 129
+%     % Find the cutoff for 1% and 5%
+%     %    scoreforfirstN.pl -count=26 cutoff_e3h3_n_a_l_L_nolimit_filtered.sor
+%     %    scoreforfirstN.pl -count=129 cutoff_e3h3_n_a_l_L_nolimit_filtered.sor
+%     % (26 => 33.33 ; 129 => 46.25)
+%     % Calculate the error rate at the cutoffs
+%     %    errorAtCutoff.perl -cutoff=33.33 ranks_e3h3_n_a_l_L_nolimit.filtered
+%     %    errorAtCutoff.perl -cutoff=46.25 ranks_e3h3_n_a_l_L_nolimit.filtered
+%     % (1% (33.33) => 85.08% ; 5% (46.25) => 62.48% )
+%     
+%     As before, each protein fold containing more than one near-identical
+%     sequence family was examined. For each of these families, the maximum
+%     topscan score for a correct hit against another protein domain with
+%     the same fold was recorded. Trivial matches in which either structure
+%     contains fewer than 4 SSEs were ignored. A barchart of frequency of
+%     scores (in bins of five percentage units) against score is shown in
+%     \figref{~\ref{fig:cutoffs}}. From this distribution, scores of 33.33\%
+%     and 46.25\% can be determined as cutoffs at which 1\% and 5\%
+%     respectively of correct hits would be lost. i.e. A coverage of 99\%
+%     would be achieved by selecting only hits with a score better than
+%     33.33\%.
+%     
+%     The error rate for each cutoff, $c$, was then calculated as:
+%     $$E = \frac{N_{f,c}}{N_{f,c} + N_{t,c}}$$ 
+%     where $N_{f,c}$ is the number of false positive matches scoring $\ge
+%     c$ and $N_{t,c}$ is the number of true positive matches scoring $\ge
+%     c$ number of false positive matches scoring $\ge$ these cutoffs was
+%     then calculated as a percentage of the total number of matches.
+%     Error rates of 85.08\% at 99\% coverage and 63.48\% at 5\%
+%     coverage were achived.
+%     
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusions}
+TOPSCAN has proved a useful addition to the available methods for
+comparing protein structures.  TOPSCAN was initially developed as a
+simple method to reduce the search space for the CATH-server. In that
+implementation, the secondary topology strings contain only the
+directional information and it is used as a rapid method of ranking
+structures for further more detailed comparison using SSAP.
+
+Analysis of the CATH data using TOPSCAN has shown some interesting
+anomalies as well as a few minor errors in the CATH data which have
+been fed back to the CATH maintainers. Thus TOPSCAN also appears to
+have a role in rapid validation of structural classification.
+
+Our analysis of factors affecting the performance of TOPSCAN has
+suggested that treating \htt-helix as $\alpha$-helix in secondary
+structure prediction is a bad strategy especially when the results are
+to be used for fold recognition.
+
+In common other methods which reduce a three-dimensional structure to
+a set of secondary structure elements with or without associated
+vector information, TOPSCAN is most likely to fail when a structure is
+poorly defined and DSSP or STRIDE are unable to make reliable
+secondary structure assignments. The atomic level full SSAP is less
+prone to these problems, but pays a huge penalty in the time required
+for comparison.
+
+Future work will include investigating more complex classification of
+properties such as solvent accessibility. Currently only binary
+classifications are used (e.g.\ exposed vs. buried). In the case of
+$\beta$-strands, specific allowance could be made for edge
+strands. Changing the global Needlemann \& Wunsch dynamic programming
+algorithm to a local Smith-Waterman alignment will also allow for
+sub-structure matching. Given the current analysis of factors which
+affect the accuracy of comparison of structures, this information can
+feed back into fold recognition and the algorithm described here, when
+combined with methods for prediction of the factors used in the
+secondary topology string, will be of application in fold recognition.
+
+A TOPSCAN server has been made available at
+\verb1http://www.bioinf.org.uk/topscan/1 and at \verb1http://www.rubic.rdg.ac.uk/topscan/1
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Acknowledgements}
 I should like to thank Christine Orengo, Frances Pearl and Janet
 Thornton for making the CATH data available and for their support
 during the first part of this work which was funded by departmental
 funds at University College London as part of the development of the
-CATHServer.
+CATHServer. 
 
 \bibliography{abbrev,prediction,analysis,methods,paper}
 
