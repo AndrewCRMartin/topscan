@@ -1,11 +1,11 @@
 /*************************************************************************
 
-   Program:    
-   File:       
+   Program:    topscan
+   File:       topscan.c
    
-   Version:    
-   Date:       
-   Function:   
+   Version:    V1.1
+   Date:       15.01.98
+   Function:   Compare protein topologies
    
    Copyright:  (c) Dr. Andrew C. R. Martin 1995
    Author:     Dr. Andrew C. R. Martin
@@ -47,6 +47,8 @@
 
    Revision History:
    =================
+   V1.0  13.01.98 Original
+   V1.1  15.01.98 Fixed for where there is no secondary structure found
 
 *************************************************************************/
 /* Includes
@@ -125,6 +127,9 @@ int main(int argc, char **argv)
 #else
    pid_t pid;
 #endif
+
+   gBest1[0] = '\0';
+   gBest2[0] = '\0';
    
    if(ParseCmdLine(argc, argv, infile1, infile2, matfile, &ELen, &HLen,
                    &RunDSSP, &BuildOnly, &ScanMode, &UseBoth))
@@ -209,6 +214,11 @@ int main(int argc, char **argv)
                   ptr++;
                if(strlen(ptr) && (*ptr != '!') && (*ptr != '#'))
                {
+                  name[0]   = '\0';
+                  top2[0]   = '\0';
+                  strcpy(gBest1, top1);
+                  gBest2[0] = '\0';
+                  
                   sscanf(ptr,"%s %s",name,top2);
 
                   IDScore = CalcIDScore(top1, top2, UseBoth);
@@ -276,8 +286,11 @@ int main(int argc, char **argv)
                      *gBest2 Best alignment of top2
 
    Does the alignment in all 24 rotations
+   If both are of length 0, returns a score of 100. If only one is
+   of length zero, returns 0
 
    13.01.97 Original   By: ACRM
+   15.01.97 Added check for 0-length topology strings
 */
 int RunAlignment(char *top1, char *top2)
 {
@@ -294,6 +307,13 @@ int RunAlignment(char *top1, char *top2)
    /* Allocate memory to store the alignment and run the N&W            */
    length1 = strlen(top1);
    length2 = strlen(top2);
+
+   /* 15.01.97 Added this check on 0-length topology strings            */
+   if((length1 == 0) && (length2 == 0))
+      return(100);
+   if((length1 == 0) || (length2 == 0))
+      return(0);
+   
    if((align1 = (char *)malloc((length1+length2)*sizeof(char)))==NULL)
    {
       fprintf(stderr,"No memory for alignment1\n");
@@ -534,10 +554,11 @@ BOOL ParseCmdLine(int argc, char **argv, char *infile1, char *infile2,
    Prints a usage message
 
    13.01.97 Original   By: ACRM
+   15.01.97 V1.1
 */
 void Usage(void)
 {
-   fprintf(stderr,"\ntopscan V1.0 (c) Dr. Andrew C.R. Martin, UCL\n");
+   fprintf(stderr,"\ntopscan V1.1 (c) Dr. Andrew C.R. Martin, UCL\n");
 
    fprintf(stderr,"\nUsage: topscan [-v] [-p] [-w] [-h hlen] [-e elen] \
 [-m matrix] file1.{dssp|pdb} file2.{dssp|pdb}\n");
@@ -766,6 +787,7 @@ char CalcElement(char struc, REAL x1, REAL y1, REAL z1,
    sequence
 
    14.01.98 Original   By: ACRM
+   
 */
 int CalcIDScore(char *seq1, char *seq2, BOOL UseBoth)
 {
@@ -790,8 +812,18 @@ int CalcIDScore(char *seq1, char *seq2, BOOL UseBoth)
       if(score2 > score1)
          score1 = score2;
    }
+
+   /* 15.01.98 Added check for zero length strings                      */
+   if(UseBoth)
+   {
+      if((seqlen1==0) && (seqlen2==0))
+         score1 = 100;
+   }
+   else
+   {
+      if(seqlen1==0)
+         score1 = 100;
+   }
    
    return(score1);
 }
-
-
