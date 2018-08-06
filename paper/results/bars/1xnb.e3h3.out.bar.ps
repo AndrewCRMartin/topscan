@@ -1,0 +1,746 @@
+%!PS-Adobe-2.0
+ %%Creator: AMPlot2. SciTech Software, 1992
+ %%For: (Amiga)
+ %%Title: ()
+ %%CreationDate: Tue Mar 10 16:11:36 1998
+ %%Pages: 1
+ %%DocumentFonts: atend
+ %%BoundingBox:  152   518   514   752
+ %%EndComments
+ %%---------------Prologue-----------------
+ /xpicsize  4.6250 def
+ /ypicsize  3.0000 def
+ /xoffset  2.5000 def
+ /yoffset  7.4000 def
+ /xscale { xpicsize 72 mul mul } def
+ /yscale { ypicsize 72 mul mul } def
+ /xunits { xscale xoffset 72 mul add } def
+ /yunits { yscale yoffset 72 mul add } def
+ 
+ % Re-encode font for Amiga special characters
+ /ISOLatin1Enc [
+ StandardEncoding 0 143 getinterval aload
+ /dotlessi/grave/acute/circumflex/tilde/macron/breve/dotaccent/dieresis/.notdef
+ /ring/cedilla/.notdef/quotedblright/ogonek/caron
+ /space/exclamdown/cent/sterling/currency/yen/brokenbar/section/dieresis/copyright
+ /ordfeminine/guillemotleft/logicalnot/hyphen/registered/macron/degree/plusminus
+ /twosuperior/threesuperior/acute/mu/paragraph/periodcentered/cedilla/onesuperior
+ /ordmasculine/guillemotright/onequarter/onehalf/threequarters/questiondown/Agrave
+ /Aacute/Acircumflex/Atilde/Adieresis/Aring/AE/Ccedilla/Egrave/Eacute/Ecircumflex
+ /Edieresis/Igrave/Iacute/Icircumflex/Idieresis/Eth/Ntilde/Ograve/Oacute/Ocircumflex
+ /Otilde/Odieresis/multiply/Oslash/Ugrave/Uacute/Ucircumflex/Udieresis/Yacute/Thorn
+ /germandbls/agrave/aacute/acircumflex/atilde/adieresis/aring/ae/ccedilla/egrave
+ /eacute/ecircumflex/edieresis/igrave/iacute/icircumflex/idieresis/eth/ntilde/ograve
+ /oacute/ocircumflex/otilde/odieresis/divide/oslash/ugrave/uacute/ucircumflex
+ /udieresis/yacute/thorn/ydieresis ] def
+ 
+ % Blue book full re-encoding program
+ % /reencodedict 5 dict def
+ /ReEncode
+ { % reencodedict begin
+ 	/newencoding exch def /newfontname exch def /basefontname exch def
+ 	/basefontdict basefontname findfont def	/newfont basefontdict maxlength dict def
+ 	basefontdict
+ 	{exch dup dup /FID ne exch /Encoding ne and
+ 		{exch newfont 3 1 roll put}{pop pop}ifelse
+ 	}forall
+ 	newfont /FontName newfontname put newfont /Encoding newencoding put
+ 	newfontname newfont definefont pop
+ 	% end
+ }def
+ 
+ % Modified from Gold's re-make font scheme
+ /font {
+ 	/newfontname  exch def 
+    /basefontname exch def
+ 	dup /sY exch def /sX exch def 
+ 	FontDirectory newfontname known not
+ 	{ basefontname newfontname ISOLatin1Enc ReEncode } if
+ 	newfontname findfont [ sX 0 0 sY 0 0 ] makefont setfont
+ }def
+ 
+ /hatchSpace 2.000 def
+ /hatchThick 0.500 def
+ /rightJustifyText
+ {  /RightColumn exch def
+    dup
+    stringwidth pop
+    RightColumn exch sub
+    Line moveto
+    show
+ }  def
+ /circle
+ {  0 360 arc
+ }  def
+ /raise
+ {  TextHeight 1.5 div FontName FontName1 font
+    0 TextHeight 2 div     rmoveto
+    show
+    0 TextHeight 2 div neg rmoveto
+    TextHeight FontName FontName1 font
+ }  def
+ /lower
+ {  TextHeight 1.5 div FontName FontName1 font
+    0 TextHeight 4 div neg rmoveto
+    show
+    0 TextHeight 4 div     rmoveto
+    TextHeight FontName FontName1 font
+ }  def
+ /greek
+ {  AltFontName findfont TextHeight scalefont setfont
+    show
+    TextHeight FontName FontName1 font
+ }  def
+ /AltFontName  /Symbol def
+ /max
+ {  2 copy
+    lt {exch} if
+    pop
+ }  def
+ /horizLines
+ % x1 y1 x2 y2 horizLines
+ {  newpath
+    hatchThick setlinewidth
+    /y2 exch def
+    /x2 exch def
+    /y1 exch def
+    /x1 exch def
+    y1 yunits hatchSpace y2 yunits
+    {  dup
+       x1 xunits exch moveto
+       x2 xunits exch lineto
+    }  for
+    stroke
+ }  def
+ /vertLines
+ % x1 y1 x2 y2 vertLines
+ {  newpath
+    hatchThick setlinewidth
+    /y2 exch def
+    /x2 exch def
+    /y1 exch def
+    /x1 exch def
+    x1 xunits hatchSpace x2 xunits
+    {  dup
+       y1 yunits moveto
+       y2 yunits lineto
+    }  for
+    stroke
+ }  def
+ /upLines
+ % x1 y1 x2 y2 upLines
+ {  newpath
+    hatchThick setlinewidth
+    /y2 exch def
+    /x2 exch def
+    /y1 exch def
+    /x1 exch def
+    x1 xunits hatchSpace x2 xunits
+    {  y1 yunits moveto
+       x2 xunits x1 xunits sub dup rlineto
+    }  for
+    stroke
+    y1 yunits hatchSpace y2 yunits
+    {  x1 xunits exch moveto
+       x2 xunits x1 xunits sub dup rlineto
+    }  for
+    stroke
+ }  def
+ /downLines
+ % x1 y1 x2 y2 downLines
+ {  newpath
+    hatchThick setlinewidth
+    /y2 exch def
+    /x2 exch def
+    /y1 exch def
+    /x1 exch def
+    x1 xunits hatchSpace x2 xunits
+    {  y2 yunits moveto
+       x2 xunits x1 xunits sub dup neg rlineto
+    }  for
+    stroke
+    y2 yunits hatchSpace neg y1 yunits
+    {  x1 xunits exch moveto
+       x2 xunits x1 xunits sub dup neg rlineto
+    }  for
+    stroke
+ }  def
+ %%EndProlog
+ %%Page 1 1
+ %%---------------Script-----------------
+ [] 0 setdash
+ 1.000000 setlinewidth
+ [] 0 setdash
+  0.0000 xunits  0.0000 yunits moveto
+ 1.000 setgray
+ newpath
+  0.0050 xunits  0.0000 yunits moveto
+  0.0050 xunits  0.0200 yunits lineto
+  0.0450 xunits  0.0200 yunits lineto
+  0.0450 xunits  0.0000 yunits lineto
+ closepath
+ fill
+ 0.000 setgray
+ 1.000000 setlinewidth
+  0.0050 xunits  0.0000 yunits moveto
+  0.0050 xunits  0.0200 yunits lineto
+  0.0450 xunits  0.0200 yunits lineto
+  0.0450 xunits  0.0000 yunits lineto
+ stroke
+ 1.000 setgray
+ newpath
+  0.0550 xunits  0.0000 yunits moveto
+  0.0550 xunits  0.0790 yunits lineto
+  0.0950 xunits  0.0790 yunits lineto
+  0.0950 xunits  0.0000 yunits lineto
+ closepath
+ fill
+ 0.000 setgray
+ 1.000000 setlinewidth
+  0.0550 xunits  0.0000 yunits moveto
+  0.0550 xunits  0.0790 yunits lineto
+  0.0950 xunits  0.0790 yunits lineto
+  0.0950 xunits  0.0000 yunits lineto
+ stroke
+ 1.000 setgray
+ newpath
+  0.1050 xunits  0.0000 yunits moveto
+  0.1050 xunits  0.2540 yunits lineto
+  0.1450 xunits  0.2540 yunits lineto
+  0.1450 xunits  0.0000 yunits lineto
+ closepath
+ fill
+ 0.000 setgray
+ 1.000000 setlinewidth
+  0.1050 xunits  0.0000 yunits moveto
+  0.1050 xunits  0.2540 yunits lineto
+  0.1450 xunits  0.2540 yunits lineto
+  0.1450 xunits  0.0000 yunits lineto
+ stroke
+ 1.000 setgray
+ newpath
+  0.1550 xunits  0.0000 yunits moveto
+  0.1550 xunits  0.0880 yunits lineto
+  0.1950 xunits  0.0880 yunits lineto
+  0.1950 xunits  0.0000 yunits lineto
+ closepath
+ fill
+ 0.000 setgray
+ 1.000000 setlinewidth
+  0.1550 xunits  0.0000 yunits moveto
+  0.1550 xunits  0.0880 yunits lineto
+  0.1950 xunits  0.0880 yunits lineto
+  0.1950 xunits  0.0000 yunits lineto
+ stroke
+ 1.000 setgray
+ newpath
+  0.2050 xunits  0.0000 yunits moveto
+  0.2050 xunits  0.1150 yunits lineto
+  0.2450 xunits  0.1150 yunits lineto
+  0.2450 xunits  0.0000 yunits lineto
+ closepath
+ fill
+ 0.000 setgray
+ 1.000000 setlinewidth
+  0.2050 xunits  0.0000 yunits moveto
+  0.2050 xunits  0.1150 yunits lineto
+  0.2450 xunits  0.1150 yunits lineto
+  0.2450 xunits  0.0000 yunits lineto
+ stroke
+ 1.000 setgray
+ newpath
+  0.2550 xunits  0.0000 yunits moveto
+  0.2550 xunits  0.1150 yunits lineto
+  0.2950 xunits  0.1150 yunits lineto
+  0.2950 xunits  0.0000 yunits lineto
+ closepath
+ fill
+ 0.000 setgray
+ 1.000000 setlinewidth
+  0.2550 xunits  0.0000 yunits moveto
+  0.2550 xunits  0.1150 yunits lineto
+  0.2950 xunits  0.1150 yunits lineto
+  0.2950 xunits  0.0000 yunits lineto
+ stroke
+ 1.000 setgray
+ newpath
+  0.3050 xunits  0.0000 yunits moveto
+  0.3050 xunits  0.1260 yunits lineto
+  0.3450 xunits  0.1260 yunits lineto
+  0.3450 xunits  0.0000 yunits lineto
+ closepath
+ fill
+ 0.000 setgray
+ 1.000000 setlinewidth
+  0.3050 xunits  0.0000 yunits moveto
+  0.3050 xunits  0.1260 yunits lineto
+  0.3450 xunits  0.1260 yunits lineto
+  0.3450 xunits  0.0000 yunits lineto
+ stroke
+ 1.000 setgray
+ newpath
+  0.3550 xunits  0.0000 yunits moveto
+  0.3550 xunits  0.1620 yunits lineto
+  0.3950 xunits  0.1620 yunits lineto
+  0.3950 xunits  0.0000 yunits lineto
+ closepath
+ fill
+ 0.000 setgray
+ 1.000000 setlinewidth
+  0.3550 xunits  0.0000 yunits moveto
+  0.3550 xunits  0.1620 yunits lineto
+  0.3950 xunits  0.1620 yunits lineto
+  0.3950 xunits  0.0000 yunits lineto
+ stroke
+ 1.000 setgray
+ newpath
+  0.4050 xunits  0.0000 yunits moveto
+  0.4050 xunits  0.2070 yunits lineto
+  0.4450 xunits  0.2070 yunits lineto
+  0.4450 xunits  0.0000 yunits lineto
+ closepath
+ fill
+ 0.000 setgray
+ 1.000000 setlinewidth
+  0.4050 xunits  0.0000 yunits moveto
+  0.4050 xunits  0.2070 yunits lineto
+  0.4450 xunits  0.2070 yunits lineto
+  0.4450 xunits  0.0000 yunits lineto
+ stroke
+ 1.000 setgray
+ newpath
+  0.4550 xunits  0.0000 yunits moveto
+  0.4550 xunits  0.1510 yunits lineto
+  0.4950 xunits  0.1510 yunits lineto
+  0.4950 xunits  0.0000 yunits lineto
+ closepath
+ fill
+ 0.000 setgray
+ 1.000000 setlinewidth
+  0.4550 xunits  0.0000 yunits moveto
+  0.4550 xunits  0.1510 yunits lineto
+  0.4950 xunits  0.1510 yunits lineto
+  0.4950 xunits  0.0000 yunits lineto
+ stroke
+ 1.000 setgray
+ newpath
+  0.5050 xunits  0.0000 yunits moveto
+  0.5050 xunits  0.1820 yunits lineto
+  0.5450 xunits  0.1820 yunits lineto
+  0.5450 xunits  0.0000 yunits lineto
+ closepath
+ fill
+ 0.000 setgray
+ 1.000000 setlinewidth
+  0.5050 xunits  0.0000 yunits moveto
+  0.5050 xunits  0.1820 yunits lineto
+  0.5450 xunits  0.1820 yunits lineto
+  0.5450 xunits  0.0000 yunits lineto
+ stroke
+ 1.000 setgray
+ newpath
+  0.5550 xunits  0.0000 yunits moveto
+  0.5550 xunits  0.1880 yunits lineto
+  0.5950 xunits  0.1880 yunits lineto
+  0.5950 xunits  0.0000 yunits lineto
+ closepath
+ fill
+ 0.000 setgray
+ 1.000000 setlinewidth
+  0.5550 xunits  0.0000 yunits moveto
+  0.5550 xunits  0.1880 yunits lineto
+  0.5950 xunits  0.1880 yunits lineto
+  0.5950 xunits  0.0000 yunits lineto
+ stroke
+ 1.000 setgray
+ newpath
+  0.6050 xunits  0.0000 yunits moveto
+  0.6050 xunits  0.1470 yunits lineto
+  0.6450 xunits  0.1470 yunits lineto
+  0.6450 xunits  0.0000 yunits lineto
+ closepath
+ fill
+ 0.000 setgray
+ 1.000000 setlinewidth
+  0.6050 xunits  0.0000 yunits moveto
+  0.6050 xunits  0.1470 yunits lineto
+  0.6450 xunits  0.1470 yunits lineto
+  0.6450 xunits  0.0000 yunits lineto
+ stroke
+ 1.000 setgray
+ newpath
+  0.6550 xunits  0.0000 yunits moveto
+  0.6550 xunits  0.0720 yunits lineto
+  0.6950 xunits  0.0720 yunits lineto
+  0.6950 xunits  0.0000 yunits lineto
+ closepath
+ fill
+ 0.000 setgray
+ 1.000000 setlinewidth
+  0.6550 xunits  0.0000 yunits moveto
+  0.6550 xunits  0.0720 yunits lineto
+  0.6950 xunits  0.0720 yunits lineto
+  0.6950 xunits  0.0000 yunits lineto
+ stroke
+ 1.000 setgray
+ newpath
+  0.7050 xunits  0.0000 yunits moveto
+  0.7050 xunits  0.0480 yunits lineto
+  0.7450 xunits  0.0480 yunits lineto
+  0.7450 xunits  0.0000 yunits lineto
+ closepath
+ fill
+ 0.000 setgray
+ 1.000000 setlinewidth
+  0.7050 xunits  0.0000 yunits moveto
+  0.7050 xunits  0.0480 yunits lineto
+  0.7450 xunits  0.0480 yunits lineto
+  0.7450 xunits  0.0000 yunits lineto
+ stroke
+ 1.000 setgray
+ newpath
+  0.7550 xunits  0.0000 yunits moveto
+  0.7550 xunits  0.0270 yunits lineto
+  0.7950 xunits  0.0270 yunits lineto
+  0.7950 xunits  0.0000 yunits lineto
+ closepath
+ fill
+ 0.000 setgray
+ 1.000000 setlinewidth
+  0.7550 xunits  0.0000 yunits moveto
+  0.7550 xunits  0.0270 yunits lineto
+  0.7950 xunits  0.0270 yunits lineto
+  0.7950 xunits  0.0000 yunits lineto
+ stroke
+ 1.000 setgray
+ newpath
+  0.8050 xunits  0.0000 yunits moveto
+  0.8050 xunits  0.0280 yunits lineto
+  0.8450 xunits  0.0280 yunits lineto
+  0.8450 xunits  0.0000 yunits lineto
+ closepath
+ fill
+ 0.000 setgray
+ 1.000000 setlinewidth
+  0.8050 xunits  0.0000 yunits moveto
+  0.8050 xunits  0.0280 yunits lineto
+  0.8450 xunits  0.0280 yunits lineto
+  0.8450 xunits  0.0000 yunits lineto
+ stroke
+ 1.000 setgray
+ newpath
+  0.8550 xunits  0.0000 yunits moveto
+  0.8550 xunits  0.0120 yunits lineto
+  0.8950 xunits  0.0120 yunits lineto
+  0.8950 xunits  0.0000 yunits lineto
+ closepath
+ fill
+ 0.000 setgray
+ 1.000000 setlinewidth
+  0.8550 xunits  0.0000 yunits moveto
+  0.8550 xunits  0.0120 yunits lineto
+  0.8950 xunits  0.0120 yunits lineto
+  0.8950 xunits  0.0000 yunits lineto
+ stroke
+ 1.000 setgray
+ newpath
+  0.9050 xunits  0.0000 yunits moveto
+  0.9050 xunits  0.0050 yunits lineto
+  0.9450 xunits  0.0050 yunits lineto
+  0.9450 xunits  0.0000 yunits lineto
+ closepath
+ fill
+ 0.000 setgray
+ 1.000000 setlinewidth
+  0.9050 xunits  0.0000 yunits moveto
+  0.9050 xunits  0.0050 yunits lineto
+  0.9450 xunits  0.0050 yunits lineto
+  0.9450 xunits  0.0000 yunits lineto
+ stroke
+ 1.000 setgray
+ newpath
+  0.9550 xunits  0.0000 yunits moveto
+  0.9550 xunits  0.0020 yunits lineto
+  0.9950 xunits  0.0020 yunits lineto
+  0.9950 xunits  0.0000 yunits lineto
+ closepath
+ fill
+ 0.000 setgray
+ 1.000000 setlinewidth
+  0.9550 xunits  0.0000 yunits moveto
+  0.9550 xunits  0.0020 yunits lineto
+  0.9950 xunits  0.0020 yunits lineto
+  0.9950 xunits  0.0000 yunits lineto
+ stroke
+ [] 0 setdash
+ [] 0 setdash
+ 1.000000 setlinewidth
+ 2 setlinecap
+  0.0000 xunits  1.0000 yunits moveto
+  0.0000 xunits  0.0000 yunits lineto
+  0.0000 xunits  0.0000 yunits moveto
+  1.0000 xunits  0.0000 yunits lineto
+  1.0000 xunits  1.0000 yunits lineto
+  0.0000 xunits  1.0000 yunits lineto
+ stroke
+ 0 setlinecap
+ /FontName /Times-Roman def
+ /FontName1 /Times-Roman1 def
+ /TextHeight 10.000000 def
+ TextHeight FontName FontName1 font
+  0.0000 xunits  0.0000 yunits moveto
+  0.0000 -5.0000 rlineto
+ stroke
+  0.0500 xunits  0.0000 yunits moveto
+  0.0000 -5.0000 rlineto
+ stroke
+ (5)
+ TextHeight  0.0000 yunits exch sub /Line exch def
+ dup stringwidth pop 2 div
+  0.0250 xunits exch sub
+ Line -5.0000 add moveto pop
+ (5) show 
+  0.1000 xunits  0.0000 yunits moveto
+  0.0000 -5.0000 rlineto
+ stroke
+ (10)
+ TextHeight  0.0000 yunits exch sub /Line exch def
+ dup stringwidth pop 2 div
+  0.0750 xunits exch sub
+ Line -5.0000 add moveto pop
+ (10) show 
+  0.1500 xunits  0.0000 yunits moveto
+  0.0000 -5.0000 rlineto
+ stroke
+ (15)
+ TextHeight  0.0000 yunits exch sub /Line exch def
+ dup stringwidth pop 2 div
+  0.1250 xunits exch sub
+ Line -5.0000 add moveto pop
+ (15) show 
+  0.2000 xunits  0.0000 yunits moveto
+  0.0000 -5.0000 rlineto
+ stroke
+ (20)
+ TextHeight  0.0000 yunits exch sub /Line exch def
+ dup stringwidth pop 2 div
+  0.1750 xunits exch sub
+ Line -5.0000 add moveto pop
+ (20) show 
+  0.2500 xunits  0.0000 yunits moveto
+  0.0000 -5.0000 rlineto
+ stroke
+ (25)
+ TextHeight  0.0000 yunits exch sub /Line exch def
+ dup stringwidth pop 2 div
+  0.2250 xunits exch sub
+ Line -5.0000 add moveto pop
+ (25) show 
+  0.3000 xunits  0.0000 yunits moveto
+  0.0000 -5.0000 rlineto
+ stroke
+ (30)
+ TextHeight  0.0000 yunits exch sub /Line exch def
+ dup stringwidth pop 2 div
+  0.2750 xunits exch sub
+ Line -5.0000 add moveto pop
+ (30) show 
+  0.3500 xunits  0.0000 yunits moveto
+  0.0000 -5.0000 rlineto
+ stroke
+ (35)
+ TextHeight  0.0000 yunits exch sub /Line exch def
+ dup stringwidth pop 2 div
+  0.3250 xunits exch sub
+ Line -5.0000 add moveto pop
+ (35) show 
+  0.4000 xunits  0.0000 yunits moveto
+  0.0000 -5.0000 rlineto
+ stroke
+ (40)
+ TextHeight  0.0000 yunits exch sub /Line exch def
+ dup stringwidth pop 2 div
+  0.3750 xunits exch sub
+ Line -5.0000 add moveto pop
+ (40) show 
+  0.4500 xunits  0.0000 yunits moveto
+  0.0000 -5.0000 rlineto
+ stroke
+ (45)
+ TextHeight  0.0000 yunits exch sub /Line exch def
+ dup stringwidth pop 2 div
+  0.4250 xunits exch sub
+ Line -5.0000 add moveto pop
+ (45) show 
+  0.5000 xunits  0.0000 yunits moveto
+  0.0000 -5.0000 rlineto
+ stroke
+ (50)
+ TextHeight  0.0000 yunits exch sub /Line exch def
+ dup stringwidth pop 2 div
+  0.4750 xunits exch sub
+ Line -5.0000 add moveto pop
+ (50) show 
+  0.5500 xunits  0.0000 yunits moveto
+  0.0000 -5.0000 rlineto
+ stroke
+ (55)
+ TextHeight  0.0000 yunits exch sub /Line exch def
+ dup stringwidth pop 2 div
+  0.5250 xunits exch sub
+ Line -5.0000 add moveto pop
+ (55) show 
+  0.6000 xunits  0.0000 yunits moveto
+  0.0000 -5.0000 rlineto
+ stroke
+ (60)
+ TextHeight  0.0000 yunits exch sub /Line exch def
+ dup stringwidth pop 2 div
+  0.5750 xunits exch sub
+ Line -5.0000 add moveto pop
+ (60) show 
+  0.6500 xunits  0.0000 yunits moveto
+  0.0000 -5.0000 rlineto
+ stroke
+ (65)
+ TextHeight  0.0000 yunits exch sub /Line exch def
+ dup stringwidth pop 2 div
+  0.6250 xunits exch sub
+ Line -5.0000 add moveto pop
+ (65) show 
+  0.7000 xunits  0.0000 yunits moveto
+  0.0000 -5.0000 rlineto
+ stroke
+ (70)
+ TextHeight  0.0000 yunits exch sub /Line exch def
+ dup stringwidth pop 2 div
+  0.6750 xunits exch sub
+ Line -5.0000 add moveto pop
+ (70) show 
+  0.7500 xunits  0.0000 yunits moveto
+  0.0000 -5.0000 rlineto
+ stroke
+ (75)
+ TextHeight  0.0000 yunits exch sub /Line exch def
+ dup stringwidth pop 2 div
+  0.7250 xunits exch sub
+ Line -5.0000 add moveto pop
+ (75) show 
+  0.8000 xunits  0.0000 yunits moveto
+  0.0000 -5.0000 rlineto
+ stroke
+ (80)
+ TextHeight  0.0000 yunits exch sub /Line exch def
+ dup stringwidth pop 2 div
+  0.7750 xunits exch sub
+ Line -5.0000 add moveto pop
+ (80) show 
+  0.8500 xunits  0.0000 yunits moveto
+  0.0000 -5.0000 rlineto
+ stroke
+ (85)
+ TextHeight  0.0000 yunits exch sub /Line exch def
+ dup stringwidth pop 2 div
+  0.8250 xunits exch sub
+ Line -5.0000 add moveto pop
+ (85) show 
+  0.9000 xunits  0.0000 yunits moveto
+  0.0000 -5.0000 rlineto
+ stroke
+ (90)
+ TextHeight  0.0000 yunits exch sub /Line exch def
+ dup stringwidth pop 2 div
+  0.8750 xunits exch sub
+ Line -5.0000 add moveto pop
+ (90) show 
+  0.9500 xunits  0.0000 yunits moveto
+  0.0000 -5.0000 rlineto
+ stroke
+ (95)
+ TextHeight  0.0000 yunits exch sub /Line exch def
+ dup stringwidth pop 2 div
+  0.9250 xunits exch sub
+ Line -5.0000 add moveto pop
+ (95) show 
+  1.0000 xunits  0.0000 yunits moveto
+  0.0000 -5.0000 rlineto
+ stroke
+ (100)
+ TextHeight  0.0000 yunits exch sub /Line exch def
+ dup stringwidth pop 2 div
+  0.9750 xunits exch sub
+ Line -5.0000 add moveto pop
+ (100) show 
+ /FontName /Times-Roman def
+ /FontName1 /Times-Roman1 def
+ /TextHeight 10.000000 def
+ TextHeight FontName FontName1 font
+  0.0000 xunits  0.0000 yunits moveto
+ -5.0000  0.0000 rlineto
+ stroke
+ /Line  0.0000 yunits TextHeight 2 div sub 2 add def
+ (0)
+  0.0000 xunits 4 sub -5.000000 add rightJustifyText
+  0.0000 xunits  0.1000 yunits moveto
+ -5.0000  0.0000 rlineto
+ stroke
+ /Line  0.1000 yunits TextHeight 2 div sub 2 add def
+ (100)
+  0.0000 xunits 4 sub -5.000000 add rightJustifyText
+  0.0000 xunits  0.2000 yunits moveto
+ -5.0000  0.0000 rlineto
+ stroke
+ /Line  0.2000 yunits TextHeight 2 div sub 2 add def
+ (200)
+  0.0000 xunits 4 sub -5.000000 add rightJustifyText
+  0.0000 xunits  0.3000 yunits moveto
+ -5.0000  0.0000 rlineto
+ stroke
+ /Line  0.3000 yunits TextHeight 2 div sub 2 add def
+ (300)
+  0.0000 xunits 4 sub -5.000000 add rightJustifyText
+  0.0000 xunits  0.4000 yunits moveto
+ -5.0000  0.0000 rlineto
+ stroke
+ /Line  0.4000 yunits TextHeight 2 div sub 2 add def
+ (400)
+  0.0000 xunits 4 sub -5.000000 add rightJustifyText
+  0.0000 xunits  0.5000 yunits moveto
+ -5.0000  0.0000 rlineto
+ stroke
+ /Line  0.5000 yunits TextHeight 2 div sub 2 add def
+ (500)
+  0.0000 xunits 4 sub -5.000000 add rightJustifyText
+  0.0000 xunits  0.6000 yunits moveto
+ -5.0000  0.0000 rlineto
+ stroke
+ /Line  0.6000 yunits TextHeight 2 div sub 2 add def
+ (600)
+  0.0000 xunits 4 sub -5.000000 add rightJustifyText
+  0.0000 xunits  0.7000 yunits moveto
+ -5.0000  0.0000 rlineto
+ stroke
+ /Line  0.7000 yunits TextHeight 2 div sub 2 add def
+ (700)
+  0.0000 xunits 4 sub -5.000000 add rightJustifyText
+  0.0000 xunits  0.8000 yunits moveto
+ -5.0000  0.0000 rlineto
+ stroke
+ /Line  0.8000 yunits TextHeight 2 div sub 2 add def
+ (800)
+  0.0000 xunits 4 sub -5.000000 add rightJustifyText
+  0.0000 xunits  0.9000 yunits moveto
+ -5.0000  0.0000 rlineto
+ stroke
+ /Line  0.9000 yunits TextHeight 2 div sub 2 add def
+ (900)
+  0.0000 xunits 4 sub -5.000000 add rightJustifyText
+  0.0000 xunits  1.0000 yunits moveto
+ -5.0000  0.0000 rlineto
+ stroke
+ /Line  1.0000 yunits TextHeight 2 div sub 2 add def
+ (1000)
+  0.0000 xunits 4 sub -5.000000 add rightJustifyText
+ 1.000000 setlinewidth
+ showpage
+ %%Trailer

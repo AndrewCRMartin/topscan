@@ -1,0 +1,1005 @@
+HEADER    DNA BINDING REGULATORY PROTEIN          01-DEC-87   3WRP      3WRP   3
+COMPND    $TRP APOREPRESSOR                                             3WRP   4
+SOURCE    (ESCHERICHIA $COLI)                                           3WRP   5
+AUTHOR    R.-G.ZHANG,P.B.SIGLER                                         3WRP   6
+REVDAT   2   31-JUL-94 3WRPA   3       JRNL   CRYST1 SCALE              3WRPA  1
+REVDAT   1   16-APR-88 3WRP    0                                        3WRP   7
+JRNL        AUTH   C.L.LAWSON,R.-G.ZHANG,R.W.SCHEVITZ,Z.OTWINOWSKI,     3WRP   8
+JRNL        AUTH 2 A.JOACHIMIAK,P.B.SIGLER                              3WRP   9
+JRNL        TITL   FLEXIBILITY OF THE /DNA$-BINDING DOMAINS OF $TRP     3WRP  10
+JRNL        TITL 2 REPRESSOR                                            3WRP  11
+JRNL        REF    PROTEINS.STRUCT.,FUNCT.,      V.   3    18 1988      3WRPA  2
+JRNL        REF  2 GENET.                                               3WRPA  3
+JRNL        REFN   ASTM PSFGEY  US ISSN 0887-3585                 0867  3WRPA  4
+REMARK   1                                                              3WRP  14
+REMARK   1 REFERENCE 1                                                  3WRP  15
+REMARK   1  AUTH   R.-G.ZHANG,A.JOACHIMIAK,C.L.LAWSON,R.W.SCHEVITZ,     3WRP  16
+REMARK   1  AUTH 2 Z.OTWINOWSKI,P.B.SIGLER                              3WRP  17
+REMARK   1  TITL   THE CRYSTAL STRUCTURE OF $TRP APOREPRESSOR AT 1.8    3WRP  18
+REMARK   1  TITL 2 ANGSTROMS SHOWS HOW BINDING TRYPTOPHAN ENHANCES      3WRP  19
+REMARK   1  TITL 3 /DNA$ AFFINITY                                       3WRP  20
+REMARK   1  REF    NATURE                        V. 327   891 1987      3WRP  21
+REMARK   1  REFN   ASTM NATUAS  UK ISSN 0028-0836                  006  3WRP  22
+REMARK   1 REFERENCE 2                                                  3WRP  23
+REMARK   1  AUTH   R.W.SCHEVITZ,Z.OTWINOWSKI,A.JOACHIMIAK,C.L.LAWSON,   3WRP  24
+REMARK   1  AUTH 2 P.B.SIGLER                                           3WRP  25
+REMARK   1  TITL   THE THREE-DIMENSIONAL STRUCTURE OF $TRP REPRESSOR    3WRP  26
+REMARK   1  REF    NATURE                        V. 317   782 1985      3WRP  27
+REMARK   1  REFN   ASTM NATUAS  UK ISSN 0028-0836                  006  3WRP  28
+REMARK   1 REFERENCE 3                                                  3WRP  29
+REMARK   1  AUTH   A.JOACHIMIAK,R.W.SCHEVITZ,R.L.KELLEY,C.YANOFSKY,     3WRP  30
+REMARK   1  AUTH 2 P.B.SIGLER                                           3WRP  31
+REMARK   1  TITL   FUNCTIONAL INFERENCES FROM CRYSTALS OF ESCHERICHIA   3WRP  32
+REMARK   1  TITL 2 $COLI $TRP REPRESSOR                                 3WRP  33
+REMARK   1  REF    J.BIOL.CHEM.                  V. 258 12641 1983      3WRP  34
+REMARK   1  REFN   ASTM JBCHA3  US ISSN 0021-9258                  071  3WRP  35
+REMARK   1 REFERENCE 4                                                  3WRP  36
+REMARK   1  AUTH   A.JOACHIMIAK,R.L.KELLEY,R.P.GUNSALUS,C.YANOFSKY,     3WRP  37
+REMARK   1  AUTH 2 P.B.SIGLER                                           3WRP  38
+REMARK   1  TITL   PURIFICATION AND CHARACTERIZATION OF $TRP REPRESSOR  3WRP  39
+REMARK   1  REF    PROC.NAT.ACAD.SCI.USA         V.  80   668 1983      3WRP  40
+REMARK   1  REFN   ASTM PNASA6  US ISSN 0027-8424                  040  3WRP  41
+REMARK   1 REFERENCE 5                                                  3WRP  42
+REMARK   1  AUTH   R.P.GUNSALUS,C.YANOFSKY                              3WRP  43
+REMARK   1  TITL   NUCLEOTIDE SEQUENCE AND EXPRESSION OF ESCHERICHIA    3WRP  44
+REMARK   1  TITL 2 $COLI $TRP*R, THE STRUCTURAL GENE FOR THE $TRP       3WRP  45
+REMARK   1  TITL 3 APOREPRESSOR                                         3WRP  46
+REMARK   1  REF    PROC.NAT.ACAD.SCI.USA         V.  77  7117 1980      3WRP  47
+REMARK   1  REFN   ASTM PNASA6  US ISSN 0027-8424                  040  3WRP  48
+REMARK   2                                                              3WRP  49
+REMARK   2 RESOLUTION. 1.8 ANGSTROMS.                                   3WRP  50
+REMARK   3                                                              3WRP  51
+REMARK   3 REFINEMENT. BY THE RESTRAINED LEAST-SQUARES PROCEDURE OF     3WRP  52
+REMARK   3  J. KONNERT AND W. HENDRICKSON (PROGRAM *PROLSQ*) AS         3WRP  53
+REMARK   3  MODIFIED BY B. FINZEL (PROGRAM *PROFFT*) AND USE OF         3WRP  54
+REMARK   3  PROGRAM *FRODO* OF T. A. JONES.  THE R VALUE IS 0.204.      3WRP  55
+REMARK   3  THE RMS DEVIATION FROM IDEALITY OF THE BOND LENGTHS IS      3WRP  56
+REMARK   3  0.013 ANGSTROMS.  THE RMS DEVIATION FROM IDEALITY OF THE    3WRP  57
+REMARK   3  BOND ANGLES IS 2.5 DEGREES.                                 3WRP  58
+REMARK   4                                                              3WRP  59
+REMARK   4 ----------------------------------------------------------   3WRP  60
+REMARK   4 TRP REPRESSOR IS A STABLE DIMERIC PROTEIN.  TO FOLLOW        3WRP  61
+REMARK   4 PROTEIN DATA BANK CONVENTIONS ONLY THE COORDINATES OF A      3WRP  62
+REMARK   4 MONOMER ARE PRESENTED IN THIS ENTRY.  ANY ANALYSIS OF THIS   3WRP  63
+REMARK   4 STRUCTURE REQUIRES THAT A FULL DIMER BE GENERATED AS         3WRP  64
+REMARK   4 DESCRIBED IN REMARK 5.                                       3WRP  65
+REMARK   4 ----------------------------------------------------------   3WRP  66
+REMARK   5                                                              3WRP  67
+REMARK   5 THE APOREPRESSOR MOLECULE CONSISTS OF A DIMER RELATED BY     3WRP  68
+REMARK   5 A CRYSTALLOGRAPHIC TRANSFORMATION.  COORDINATES FOR THE      3WRP  69
+REMARK   5 SYMMETRY RELATED CHAIN CAN BE GENERATED FROM THE CHAIN       3WRP  70
+REMARK   5 PRESENTED IN THIS ENTRY BY                                   3WRP  71
+REMARK   5      -1.0       0.0       0.0            0.0                 3WRP  72
+REMARK   5       0.0       1.0       0.0            0.0                 3WRP  73
+REMARK   5       0.0       0.0      -1.0            0.0                 3WRP  74
+REMARK   6                                                              3WRP  75
+REMARK   6 THE FIRST SEVEN RESIDUES OF THE TRP APOREPRESSOR ARE NOT     3WRP  76
+REMARK   6 WELL REPRESENTED IN THE CURRENT MAP AND COORDINATES FOR      3WRP  77
+REMARK   6 THESE RESIDUES ARE NOT INCLUDED IN THIS ENTRY.               3WRP  78
+REMARK   7                                                              3WRP  79
+REMARK   7 SITE *HTH* PRESENTS THOSE RESIDUES COMPRISING THE            3WRP  80
+REMARK   7 HELIX-TURN-HELIX DNA BINDING MOTIF.                          3WRP  81
+REMARK   8                                                              3WRP  82
+REMARK   8 COORDINATES FOR THE TRIGONAL FORM OF TRP REPRESSOR (ENTRY    3WRP  83
+REMARK   8 1WRP) AND FOR THE ORTHORHOMBIC FORM OF TRP REPRESSOR (ENTRY  3WRP  84
+REMARK   8 2WRP) ARE ALSO AVAILABLE FROM THE PROTEIN DATA BANK.         3WRP  85
+REMARK   9                                                              3WRPA  5
+REMARK   9 CORRECTION. CORRECT CELL DIMENSIONS AND CORRESPONDING        3WRPA  6
+REMARK   9 SCALE TRANSFORMATION.  UPDATE JRNL REFERENCE TO REFLECT      3WRPA  7
+REMARK   9 PUBLICATION.  31-JUL-94.                                     3WRPA  8
+SEQRES   1    108  MET ALA GLN GLN SER PRO TYR SER ALA ALA MET ALA GLU  3WRP  86
+SEQRES   2    108  GLN ARG HIS GLN GLU TRP LEU ARG PHE VAL ASP LEU LEU  3WRP  87
+SEQRES   3    108  LYS ASN ALA TYR GLN ASN ASP LEU HIS LEU PRO LEU LEU  3WRP  88
+SEQRES   4    108  ASN LEU MET LEU THR PRO ASP GLU ARG GLU ALA LEU GLY  3WRP  89
+SEQRES   5    108  THR ARG VAL ARG ILE VAL GLU GLU LEU LEU ARG GLY GLU  3WRP  90
+SEQRES   6    108  MET SER GLN ARG GLU LEU LYS ASN GLU LEU GLY ALA GLY  3WRP  91
+SEQRES   7    108  ILE ALA THR ILE THR ARG GLY SER ASN SER LEU LYS ALA  3WRP  92
+SEQRES   8    108  ALA PRO VAL GLU LEU ARG GLN TRP LEU GLU GLU VAL LEU  3WRP  93
+SEQRES   9    108  LEU LYS SER ASP                                      3WRP  94
+FORMUL   3  HOH   *84(H2 O1)                                            3WRP  95
+HELIX    1   A ALA     12  GLN     31  1                                3WRP  96
+HELIX    2   B HIS     35  MET     42  1                                3WRP  97
+HELIX    3   C ASP     46  ARG     63  1                                3WRP  98
+HELIX    4   D GLN     68  GLU     74  1                                3WRP  99
+HELIX    5   E ILE     79  ALA     91  1                                3WRP 100
+HELIX    6   F VAL     94  LEU    105  1                                3WRP 101
+SITE     1 HTH 24 GLN    68  ARG    69  GLU    70  LEU    71            3WRP 102
+SITE     2 HTH 24 LYS    72  ASN    73  GLU    74  LEU    75            3WRP 103
+SITE     3 HTH 24 GLY    76  ALA    77  GLY    78  ILE    79            3WRP 104
+SITE     4 HTH 24 ALA    80  THR    81  ILE    82  THR    83            3WRP 105
+SITE     5 HTH 24 ARG    84  GLY    85  SER    86  ASN    87            3WRP 106
+SITE     6 HTH 24 SER    88  LEU    89  LYS    90  ALA    91            3WRP 107
+CRYST1   57.400   34.200   44.500  90.00  90.00  90.00 P 21 2 21     4  3WRPA  9
+ORIGX1      1.000000  0.000000  0.000000        0.00000                 3WRP 109
+ORIGX2      0.000000  1.000000  0.000000        0.00000                 3WRP 110
+ORIGX3      0.000000  0.000000  1.000000        0.00000                 3WRP 111
+SCALE1      0.017422  0.000000  0.000000        0.00000                 3WRPA 10
+SCALE2      0.000000  0.029240  0.000000        0.00000                 3WRPA 11
+SCALE3      0.000000  0.000000  0.022472        0.00000                 3WRPA 12
+ATOM     57  N   SER     8       1.833  13.629  16.066  1.00  0.00      3WRP 115
+ATOM     58  CA  SER     8       2.561  14.302  17.141  1.00  0.00      3WRP 116
+ATOM     59  C   SER     8       1.714  15.449  17.701  1.00  0.00      3WRP 117
+ATOM     60  O   SER     8       1.776  16.607  17.247  1.00  0.00      3WRP 118
+ATOM     61  CB  SER     8       3.938  14.776  16.723  1.00  0.00      3WRP 119
+ATOM     62  OG  SER     8       4.579  15.592  17.688  1.00  0.00      3WRP 120
+ATOM     63  N   ALA     9       0.918  15.053  18.688  1.00  0.00      3WRP 121
+ATOM     64  CA  ALA     9       0.153  16.027  19.487  1.00  0.00      3WRP 122
+ATOM     65  C   ALA     9       1.138  16.706  20.437  1.00  0.00      3WRP 123
+ATOM     66  O   ALA     9       1.039  17.902  20.712  1.00  0.00      3WRP 124
+ATOM     67  CB  ALA     9      -0.968  15.321  20.229  1.00  0.00      3WRP 125
+ATOM     68  N   ALA    10       2.110  15.936  20.913  1.00  0.00      3WRP 126
+ATOM     69  CA  ALA    10       3.118  16.436  21.865  1.00  0.00      3WRP 127
+ATOM     70  C   ALA    10       3.872  17.588  21.239  1.00  0.00      3WRP 128
+ATOM     71  O   ALA    10       3.816  18.696  21.812  1.00  0.00      3WRP 129
+ATOM     72  CB  ALA    10       4.019  15.317  22.392  1.00  0.00      3WRP 130
+ATOM     73  N   MET    11       4.362  17.422  20.017  1.00  0.00      3WRP 131
+ATOM     74  CA  MET    11       5.089  18.456  19.293  1.00  0.00      3WRP 132
+ATOM     75  C   MET    11       4.201  19.277  18.342  1.00  0.00      3WRP 133
+ATOM     76  O   MET    11       4.732  19.709  17.299  1.00  0.00      3WRP 134
+ATOM     77  CB  MET    11       6.217  17.872  18.426  1.00  0.00      3WRP 135
+ATOM     78  CG  MET    11       7.147  16.976  19.188  1.00  0.00      3WRP 136
+ATOM     79  SD  MET    11       8.431  17.997  19.969  1.00  0.00      3WRP 137
+ATOM     80  CE  MET    11       9.124  18.853  18.545  1.00  0.00      3WRP 138
+ATOM     81  N   ALA    12       2.965  19.553  18.699  1.00  0.00      3WRP 139
+ATOM     82  CA  ALA    12       2.084  20.407  17.890  1.00  0.00      3WRP 140
+ATOM     83  C   ALA    12       2.569  21.846  17.913  1.00  0.00      3WRP 141
+ATOM     84  O   ALA    12       2.341  22.597  16.956  1.00  0.00      3WRP 142
+ATOM     85  CB  ALA    12       0.647  20.361  18.412  1.00  0.00      3WRP 143
+ATOM     86  N   GLU    13       3.235  22.234  19.001  1.00  0.00      3WRP 144
+ATOM     87  CA  GLU    13       3.698  23.633  19.103  1.00  0.00      3WRP 145
+ATOM     88  C   GLU    13       4.871  23.909  18.157  1.00  0.00      3WRP 146
+ATOM     89  O   GLU    13       4.930  25.001  17.541  1.00  0.00      3WRP 147
+ATOM     90  CB  GLU    13       4.112  24.000  20.523  1.00  0.00      3WRP 148
+ATOM     91  CG  GLU    13       4.637  25.421  20.749  1.00  0.00      3WRP 149
+ATOM     92  CD  GLU    13       3.568  26.470  20.788  1.00  0.00      3WRP 150
+ATOM     93  OE1 GLU    13       3.728  27.647  21.063  1.00  0.00      3WRP 151
+ATOM     94  OE2 GLU    13       2.460  25.936  20.564  1.00  0.00      3WRP 152
+ATOM     95  N   GLN    14       5.807  22.972  18.096  1.00  0.00      3WRP 153
+ATOM     96  CA  GLN    14       6.970  23.163  17.224  1.00  0.00      3WRP 154
+ATOM     97  C   GLN    14       6.479  23.254  15.766  1.00  0.00      3WRP 155
+ATOM     98  O   GLN    14       6.902  24.142  15.017  1.00  0.00      3WRP 156
+ATOM     99  CB  GLN    14       8.016  22.056  17.259  1.00  0.00      3WRP 157
+ATOM    100  CG  GLN    14       9.352  22.433  16.624  1.00  0.00      3WRP 158
+ATOM    101  CD  GLN    14       9.797  23.854  16.778  1.00  0.00      3WRP 159
+ATOM    102  OE1 GLN    14      10.365  24.270  15.733  1.00  0.00      3WRP 160
+ATOM    103  NE2 GLN    14       9.717  24.539  17.787  1.00  0.00      3WRP 161
+ATOM    104  N   ARG    15       5.634  22.304  15.477  1.00  0.00      3WRP 162
+ATOM    105  CA  ARG    15       5.011  22.137  14.153  1.00  0.00      3WRP 163
+ATOM    106  C   ARG    15       4.168  23.327  13.740  1.00  0.00      3WRP 164
+ATOM    107  O   ARG    15       4.035  23.614  12.518  1.00  0.00      3WRP 165
+ATOM    108  CB  ARG    15       4.303  20.800  14.074  1.00  0.00      3WRP 166
+ATOM    109  CG  ARG    15       5.049  19.599  13.552  1.00  0.00      3WRP 167
+ATOM    110  CD  ARG    15       5.960  18.781  14.370  1.00  0.00      3WRP 168
+ATOM    111  NE  ARG    15       7.341  18.910  14.068  1.00  0.00      3WRP 169
+ATOM    112  CZ  ARG    15       8.544  18.408  14.081  1.00  0.00      3WRP 170
+ATOM    113  NH1 ARG    15       8.896  17.215  14.535  1.00  0.00      3WRP 171
+ATOM    114  NH2 ARG    15       9.545  19.170  13.598  1.00  0.00      3WRP 172
+ATOM    115  N   HIS    16       3.641  24.046  14.714  1.00  0.00      3WRP 173
+ATOM    116  CA  HIS    16       2.863  25.261  14.521  1.00  0.00      3WRP 174
+ATOM    117  C   HIS    16       3.742  26.435  14.172  1.00  0.00      3WRP 175
+ATOM    118  O   HIS    16       3.535  27.366  13.391  1.00  0.00      3WRP 176
+ATOM    119  CB  HIS    16       1.948  25.653  15.738  1.00  0.00      3WRP 177
+ATOM    120  CG  HIS    16       0.900  26.595  15.184  1.00  0.00      3WRP 178
+ATOM    121  ND1 HIS    16       0.808  27.903  15.550  1.00  0.00      3WRP 179
+ATOM    122  CD2 HIS    16      -0.023  26.411  14.216  1.00  0.00      3WRP 180
+ATOM    123  CE1 HIS    16      -0.124  28.509  14.841  1.00  0.00      3WRP 181
+ATOM    124  NE2 HIS    16      -0.652  27.614  14.044  1.00  0.00      3WRP 182
+ATOM    125  N   GLN    17       4.871  26.501  14.902  1.00  0.00      3WRP 183
+ATOM    126  CA  GLN    17       5.897  27.501  14.634  1.00  0.00      3WRP 184
+ATOM    127  C   GLN    17       6.518  27.368  13.212  1.00  0.00      3WRP 185
+ATOM    128  O   GLN    17       6.773  28.418  12.582  1.00  0.00      3WRP 186
+ATOM    129  CB  GLN    17       6.973  27.296  15.713  1.00  0.00      3WRP 187
+ATOM    130  CG  GLN    17       6.322  27.205  17.093  1.00  0.00      3WRP 188
+ATOM    131  CD  GLN    17       6.450  28.543  17.788  1.00  0.00      3WRP 189
+ATOM    132  OE1 GLN    17       7.329  28.733  18.634  1.00  0.00      3WRP 190
+ATOM    133  NE2 GLN    17       5.548  29.429  17.412  1.00  0.00      3WRP 191
+ATOM    134  N   GLU    18       6.700  26.147  12.805  1.00  0.00      3WRP 192
+ATOM    135  CA  GLU    18       7.385  25.785  11.546  1.00  0.00      3WRP 193
+ATOM    136  C   GLU    18       6.482  26.131  10.372  1.00  0.00      3WRP 194
+ATOM    137  O   GLU    18       6.887  26.788   9.383  1.00  0.00      3WRP 195
+ATOM    138  CB  GLU    18       7.754  24.307  11.479  1.00  0.00      3WRP 196
+ATOM    139  CG  GLU    18       8.951  23.951  12.389  1.00  0.00      3WRP 197
+ATOM    140  CD  GLU    18       9.297  22.510  12.525  1.00  0.00      3WRP 198
+ATOM    141  OE1 GLU    18       8.621  21.595  12.106  1.00  0.00      3WRP 199
+ATOM    142  OE2 GLU    18      10.349  22.329  13.211  1.00  0.00      3WRP 200
+ATOM    143  N   TRP    19       5.208  25.901  10.656  1.00  0.00      3WRP 201
+ATOM    144  CA  TRP    19       4.143  26.301   9.680  1.00  0.00      3WRP 202
+ATOM    145  C   TRP    19       4.094  27.817   9.548  1.00  0.00      3WRP 203
+ATOM    146  O   TRP    19       4.144  28.386   8.412  1.00  0.00      3WRP 204
+ATOM    147  CB  TRP    19       2.864  25.591  10.148  1.00  0.00      3WRP 205
+ATOM    148  CG  TRP    19       1.616  26.189   9.594  1.00  0.00      3WRP 206
+ATOM    149  CD1 TRP    19       0.757  27.063  10.175  1.00  0.00      3WRP 207
+ATOM    150  CD2 TRP    19       1.307  26.212   8.178  1.00  0.00      3WRP 208
+ATOM    151  NE1 TRP    19      -0.171  27.532   9.257  1.00  0.00      3WRP 209
+ATOM    152  CE2 TRP    19       0.143  26.996   8.031  1.00  0.00      3WRP 210
+ATOM    153  CE3 TRP    19       1.926  25.675   7.057  1.00  0.00      3WRP 211
+ATOM    154  CZ2 TRP    19      -0.416  27.287   6.788  1.00  0.00      3WRP 212
+ATOM    155  CZ3 TRP    19       1.387  25.952   5.815  1.00  0.00      3WRP 213
+ATOM    156  CH2 TRP    19       0.193  26.646   5.714  1.00  0.00      3WRP 214
+ATOM    157  N   LEU    20       4.136  28.572  10.678  1.00  0.00      3WRP 215
+ATOM    158  CA  LEU    20       4.024  30.015  10.593  1.00  0.00      3WRP 216
+ATOM    159  C   LEU    20       5.191  30.646   9.819  1.00  0.00      3WRP 217
+ATOM    160  O   LEU    20       5.075  31.775   9.306  1.00  0.00      3WRP 218
+ATOM    161  CB  LEU    20       3.830  30.658  11.997  1.00  0.00      3WRP 219
+ATOM    162  CG  LEU    20       2.629  30.118  12.767  1.00  0.00      3WRP 220
+ATOM    163  CD1 LEU    20       2.708  30.545  14.273  1.00  0.00      3WRP 221
+ATOM    164  CD2 LEU    20       1.316  30.708  12.298  1.00  0.00      3WRP 222
+ATOM    165  N   ARG    21       6.313  29.989   9.878  1.00  0.00      3WRP 223
+ATOM    166  CA  ARG    21       7.531  30.406   9.147  1.00  0.00      3WRP 224
+ATOM    167  C   ARG    21       7.154  30.375   7.653  1.00  0.00      3WRP 225
+ATOM    168  O   ARG    21       7.294  31.406   6.974  1.00  0.00      3WRP 226
+ATOM    169  CB  ARG    21       8.726  29.529   9.514  1.00  0.00      3WRP 227
+ATOM    170  CG  ARG    21       9.557  30.099  10.664  1.00  0.00      3WRP 228
+ATOM    171  CD  ARG    21       9.870  29.201  11.782  1.00  0.00      3WRP 229
+ATOM    172  NE  ARG    21      10.873  28.193  11.622  1.00  0.00      3WRP 230
+ATOM    173  CZ  ARG    21      11.497  27.507  12.592  1.00  0.00      3WRP 231
+ATOM    174  NH1 ARG    21      12.410  26.590  12.254  1.00  0.00      3WRP 232
+ATOM    175  NH2 ARG    21      11.385  27.868  13.866  1.00  0.00      3WRP 233
+ATOM    176  N   PHE    22       6.677  29.222   7.197  1.00  0.00      3WRP 234
+ATOM    177  CA  PHE    22       6.213  29.124   5.772  1.00  0.00      3WRP 235
+ATOM    178  C   PHE    22       5.203  30.187   5.427  1.00  0.00      3WRP 236
+ATOM    179  O   PHE    22       5.475  31.048   4.569  1.00  0.00      3WRP 237
+ATOM    180  CB  PHE    22       5.794  27.675   5.506  1.00  0.00      3WRP 238
+ATOM    181  CG  PHE    22       5.137  27.514   4.162  1.00  0.00      3WRP 239
+ATOM    182  CD1 PHE    22       3.741  27.763   4.077  1.00  0.00      3WRP 240
+ATOM    183  CD2 PHE    22       5.945  27.568   3.012  1.00  0.00      3WRP 241
+ATOM    184  CE1 PHE    22       3.133  27.827   2.816  1.00  0.00      3WRP 242
+ATOM    185  CE2 PHE    22       5.325  27.574   1.749  1.00  0.00      3WRP 243
+ATOM    186  CZ  PHE    22       3.930  27.615   1.695  1.00  0.00      3WRP 244
+ATOM    187  N   VAL    23       4.135  30.411   6.269  1.00  0.00      3WRP 245
+ATOM    188  CA  VAL    23       3.190  31.466   5.945  1.00  0.00      3WRP 246
+ATOM    189  C   VAL    23       3.813  32.849   5.869  1.00  0.00      3WRP 247
+ATOM    190  O   VAL    23       3.331  33.622   5.018  1.00  0.00      3WRP 248
+ATOM    191  CB  VAL    23       1.845  31.496   6.726  1.00  0.00      3WRP 249
+ATOM    192  CG1 VAL    23       1.495  30.185   7.370  1.00  0.00      3WRP 250
+ATOM    193  CG2 VAL    23       1.594  32.704   7.578  1.00  0.00      3WRP 251
+ATOM    194  N   ASP    24       4.853  33.131   6.638  1.00  0.00      3WRP 252
+ATOM    195  CA  ASP    24       5.433  34.475   6.638  1.00  0.00      3WRP 253
+ATOM    196  C   ASP    24       6.370  34.666   5.412  1.00  0.00      3WRP 254
+ATOM    197  O   ASP    24       6.497  35.807   4.944  1.00  0.00      3WRP 255
+ATOM    198  CB  ASP    24       6.123  34.778   7.973  1.00  0.00      3WRP 256
+ATOM    199  CG  ASP    24       6.523  36.239   8.038  1.00  0.00      3WRP 257
+ATOM    200  OD1 ASP    24       5.811  37.098   8.596  1.00  0.00      3WRP 258
+ATOM    201  OD2 ASP    24       7.603  36.553   7.485  1.00  0.00      3WRP 259
+ATOM    202  N   LEU    25       6.929  33.557   4.983  1.00  0.00      3WRP 260
+ATOM    203  CA  LEU    25       7.770  33.530   3.772  1.00  0.00      3WRP 261
+ATOM    204  C   LEU    25       6.893  33.787   2.526  1.00  0.00      3WRP 262
+ATOM    205  O   LEU    25       7.252  34.667   1.738  1.00  0.00      3WRP 263
+ATOM    206  CB  LEU    25       8.532  32.213   3.726  1.00  0.00      3WRP 264
+ATOM    207  CG  LEU    25       9.429  31.998   2.503  1.00  0.00      3WRP 265
+ATOM    208  CD1 LEU    25      10.714  32.788   2.539  1.00  0.00      3WRP 266
+ATOM    209  CD2 LEU    25       9.739  30.526   2.347  1.00  0.00      3WRP 267
+ATOM    210  N   LEU    26       5.803  33.053   2.453  1.00  0.00      3WRP 268
+ATOM    211  CA  LEU    26       4.875  33.207   1.314  1.00  0.00      3WRP 269
+ATOM    212  C   LEU    26       4.351  34.624   1.304  1.00  0.00      3WRP 270
+ATOM    213  O   LEU    26       4.048  35.182   0.236  1.00  0.00      3WRP 271
+ATOM    214  CB  LEU    26       3.813  32.118   1.314  1.00  0.00      3WRP 272
+ATOM    215  CG  LEU    26       2.940  32.118   0.051  1.00  0.00      3WRP 273
+ATOM    216  CD1 LEU    26       3.836  31.801  -1.151  1.00  0.00      3WRP 274
+ATOM    217  CD2 LEU    26       1.838  31.097   0.249  1.00  0.00      3WRP 275
+ATOM    218  N   LYS    27       3.878  35.061   2.475  1.00  0.00      3WRP 276
+ATOM    219  CA  LYS    27       3.471  36.439   2.643  1.00  0.00      3WRP 277
+ATOM    220  C   LYS    27       4.448  37.369   1.911  1.00  0.00      3WRP 278
+ATOM    221  O   LYS    27       3.986  38.386   1.344  1.00  0.00      3WRP 279
+ATOM    222  CB  LYS    27       3.386  36.946   4.079  1.00  0.00      3WRP 280
+ATOM    223  CG  LYS    27       2.994  38.394   4.260  1.00  0.00      3WRP 281
+ATOM    224  CD  LYS    27       3.180  38.803   5.729  1.00  0.00      3WRP 282
+ATOM    225  CE  LYS    27       2.132  38.099   6.586  1.00  0.00      3WRP 283
+ATOM    226  NZ  LYS    27       2.646  36.794   7.097  1.00  0.00      3WRP 284
+ATOM    227  N   ASN    28       5.711  37.195   2.253  1.00  0.00      3WRP 285
+ATOM    228  CA  ASN    28       6.755  38.132   1.776  1.00  0.00      3WRP 286
+ATOM    229  C   ASN    28       6.958  37.966   0.258  1.00  0.00      3WRP 287
+ATOM    230  O   ASN    28       7.273  38.952  -0.414  1.00  0.00      3WRP 288
+ATOM    231  CB  ASN    28       8.016  37.922   2.607  1.00  0.00      3WRP 289
+ATOM    232  CG  ASN    28       7.898  38.599   3.990  1.00  0.00      3WRP 290
+ATOM    233  OD1 ASN    28       7.971  37.913   5.017  1.00  0.00      3WRP 291
+ATOM    234  ND2 ASN    28       7.779  39.922   3.978  1.00  0.00      3WRP 292
+ATOM    235  N   ALA    29       6.813  36.734  -0.207  1.00  0.00      3WRP 293
+ATOM    236  CA  ALA    29       6.957  36.466  -1.656  1.00  0.00      3WRP 294
+ATOM    237  C   ALA    29       5.834  37.134  -2.456  1.00  0.00      3WRP 295
+ATOM    238  O   ALA    29       6.079  37.648  -3.574  1.00  0.00      3WRP 296
+ATOM    239  CB  ALA    29       7.017  34.976  -1.934  1.00  0.00      3WRP 297
+ATOM    240  N   TYR    30       4.617  37.135  -1.900  1.00  0.00      3WRP 298
+ATOM    241  CA  TYR    30       3.502  37.799  -2.625  1.00  0.00      3WRP 299
+ATOM    242  C   TYR    30       3.773  39.297  -2.791  1.00  0.00      3WRP 300
+ATOM    243  O   TYR    30       3.360  39.880  -3.813  1.00  0.00      3WRP 301
+ATOM    244  CB  TYR    30       2.134  37.688  -1.930  1.00  0.00      3WRP 302
+ATOM    245  CG  TYR    30       1.263  36.521  -2.317  1.00  0.00      3WRP 303
+ATOM    246  CD1 TYR    30       0.566  36.497  -3.543  1.00  0.00      3WRP 304
+ATOM    247  CD2 TYR    30       1.030  35.461  -1.435  1.00  0.00      3WRP 305
+ATOM    248  CE1 TYR    30      -0.166  35.367  -3.902  1.00  0.00      3WRP 306
+ATOM    249  CE2 TYR    30       0.473  34.268  -1.869  1.00  0.00      3WRP 307
+ATOM    250  CZ  TYR    30      -0.343  34.323  -3.013  1.00  0.00      3WRP 308
+ATOM    251  OH  TYR    30      -0.918  33.139  -3.416  1.00  0.00      3WRP 309
+ATOM    252  N   GLN    31       4.351  39.929  -1.784  1.00  0.00      3WRP 310
+ATOM    253  CA  GLN    31       4.639  41.378  -1.878  1.00  0.00      3WRP 311
+ATOM    254  C   GLN    31       5.836  41.640  -2.816  1.00  0.00      3WRP 312
+ATOM    255  O   GLN    31       6.082  42.802  -3.140  1.00  0.00      3WRP 313
+ATOM    256  CB  GLN    31       4.813  42.089  -0.559  1.00  0.00      3WRP 314
+ATOM    257  CG  GLN    31       6.047  41.819   0.270  1.00  0.00      3WRP 315
+ATOM    258  CD  GLN    31       6.425  42.997   1.142  1.00  0.00      3WRP 316
+ATOM    259  OE1 GLN    31       6.557  44.133   0.684  1.00  0.00      3WRP 317
+ATOM    260  NE2 GLN    31       6.541  42.757   2.444  1.00  0.00      3WRP 318
+ATOM    261  N   ASN    32       6.573  40.606  -3.169  1.00  0.00      3WRP 319
+ATOM    262  CA  ASN    32       7.750  40.734  -4.044  1.00  0.00      3WRP 320
+ATOM    263  C   ASN    32       7.419  40.301  -5.480  1.00  0.00      3WRP 321
+ATOM    264  O   ASN    32       8.293  40.371  -6.357  1.00  0.00      3WRP 322
+ATOM    265  CB  ASN    32       8.939  39.938  -3.523  1.00  0.00      3WRP 323
+ATOM    266  CG  ASN    32       9.847  40.689  -2.575  1.00  0.00      3WRP 324
+ATOM    267  OD1 ASN    32       9.532  40.811  -1.374  1.00  0.00      3WRP 325
+ATOM    268  ND2 ASN    32      11.007  41.110  -3.090  1.00  0.00      3WRP 326
+ATOM    269  N   ASP    33       6.279  39.692  -5.641  1.00  0.00      3WRP 327
+ATOM    270  CA  ASP    33       5.812  39.074  -6.881  1.00  0.00      3WRP 328
+ATOM    271  C   ASP    33       6.649  37.827  -7.165  1.00  0.00      3WRP 329
+ATOM    272  O   ASP    33       6.857  37.457  -8.331  1.00  0.00      3WRP 330
+ATOM    273  CB  ASP    33       5.766  40.116  -7.996  1.00  0.00      3WRP 331
+ATOM    274  CG  ASP    33       4.643  41.112  -7.730  1.00  0.00      3WRP 332
+ATOM    275  OD1 ASP    33       4.494  41.628  -6.608  1.00  0.00      3WRP 333
+ATOM    276  OD2 ASP    33       3.858  41.315  -8.684  1.00  0.00      3WRP 334
+ATOM    277  N   LEU    34       7.034  37.138  -6.099  1.00  0.00      3WRP 335
+ATOM    278  CA  LEU    34       7.861  35.912  -6.227  1.00  0.00      3WRP 336
+ATOM    279  C   LEU    34       7.112  34.666  -5.768  1.00  0.00      3WRP 337
+ATOM    280  O   LEU    34       7.624  33.528  -5.793  1.00  0.00      3WRP 338
+ATOM    281  CB  LEU    34       9.154  36.221  -5.484  1.00  0.00      3WRP 339
+ATOM    282  CG  LEU    34      10.215  37.105  -6.131  1.00  0.00      3WRP 340
+ATOM    283  CD1 LEU    34      11.301  37.249  -5.042  1.00  0.00      3WRP 341
+ATOM    284  CD2 LEU    34      10.795  36.378  -7.353  1.00  0.00      3WRP 342
+ATOM    285  N   HIS    35       5.792  34.856  -5.736  1.00  0.00      3WRP 343
+ATOM    286  CA  HIS    35       4.869  33.848  -5.204  1.00  0.00      3WRP 344
+ATOM    287  C   HIS    35       4.728  32.675  -6.145  1.00  0.00      3WRP 345
+ATOM    288  O   HIS    35       4.585  31.555  -5.673  1.00  0.00      3WRP 346
+ATOM    289  CB  HIS    35       3.477  34.364  -4.738  1.00  0.00      3WRP 347
+ATOM    290  CG  HIS    35       2.825  35.178  -5.826  1.00  0.00      3WRP 348
+ATOM    291  ND1 HIS    35       3.217  36.460  -6.120  1.00  0.00      3WRP 349
+ATOM    292  CD2 HIS    35       1.730  34.911  -6.614  1.00  0.00      3WRP 350
+ATOM    293  CE1 HIS    35       2.427  36.955  -7.064  1.00  0.00      3WRP 351
+ATOM    294  NE2 HIS    35       1.568  36.036  -7.389  1.00  0.00      3WRP 352
+ATOM    295  N   LEU    36       4.778  32.900  -7.444  1.00  0.00      3WRP 353
+ATOM    296  CA  LEU    36       4.670  31.770  -8.396  1.00  0.00      3WRP 354
+ATOM    297  C   LEU    36       5.821  30.790  -8.332  1.00  0.00      3WRP 355
+ATOM    298  O   LEU    36       5.627  29.583  -8.118  1.00  0.00      3WRP 356
+ATOM    299  CB  LEU    36       4.423  32.380  -9.774  1.00  0.00      3WRP 357
+ATOM    300  CG  LEU    36       2.941  32.432 -10.154  1.00  0.00      3WRP 358
+ATOM    301  CD1 LEU    36       2.258  31.121  -9.855  1.00  0.00      3WRP 359
+ATOM    302  CD2 LEU    36       2.365  33.669  -9.514  1.00  0.00      3WRP 360
+ATOM    303  N   PRO    37       7.018  31.348  -8.438  1.00  0.00      3WRP 361
+ATOM    304  CA  PRO    37       8.241  30.550  -8.302  1.00  0.00      3WRP 362
+ATOM    305  C   PRO    37       8.324  29.868  -6.948  1.00  0.00      3WRP 363
+ATOM    306  O   PRO    37       8.484  28.645  -6.939  1.00  0.00      3WRP 364
+ATOM    307  CB  PRO    37       9.364  31.516  -8.599  1.00  0.00      3WRP 365
+ATOM    308  CG  PRO    37       8.734  32.707  -9.234  1.00  0.00      3WRP 366
+ATOM    309  CD  PRO    37       7.285  32.754  -8.715  1.00  0.00      3WRP 367
+ATOM    310  N   LEU    38       7.913  30.553  -5.889  1.00  0.00      3WRP 368
+ATOM    311  CA  LEU    38       8.041  29.956  -4.514  1.00  0.00      3WRP 369
+ATOM    312  C   LEU    38       7.155  28.726  -4.425  1.00  0.00      3WRP 370
+ATOM    313  O   LEU    38       7.541  27.623  -3.971  1.00  0.00      3WRP 371
+ATOM    314  CB  LEU    38       7.676  31.066  -3.474  1.00  0.00      3WRP 372
+ATOM    315  CG  LEU    38       7.841  30.622  -2.028  1.00  0.00      3WRP 373
+ATOM    316  CD1 LEU    38       9.187  29.959  -1.745  1.00  0.00      3WRP 374
+ATOM    317  CD2 LEU    38       7.602  31.775  -1.059  1.00  0.00      3WRP 375
+ATOM    318  N   LEU    39       5.946  28.903  -4.979  1.00  0.00      3WRP 376
+ATOM    319  CA  LEU    39       4.911  27.860  -4.902  1.00  0.00      3WRP 377
+ATOM    320  C   LEU    39       5.321  26.652  -5.706  1.00  0.00      3WRP 378
+ATOM    321  O   LEU    39       4.927  25.533  -5.372  1.00  0.00      3WRP 379
+ATOM    322  CB  LEU    39       3.539  28.488  -5.183  1.00  0.00      3WRP 380
+ATOM    323  CG  LEU    39       2.549  28.879  -4.115  1.00  0.00      3WRP 381
+ATOM    324  CD1 LEU    39       2.879  28.461  -2.692  1.00  0.00      3WRP 382
+ATOM    325  CD2 LEU    39       2.199  30.360  -4.155  1.00  0.00      3WRP 383
+ATOM    326  N   ASN    40       5.964  26.854  -6.867  1.00  0.00      3WRP 384
+ATOM    327  CA  ASN    40       6.438  25.747  -7.699  1.00  0.00      3WRP 385
+ATOM    328  C   ASN    40       7.586  25.007  -7.008  1.00  0.00      3WRP 386
+ATOM    329  O   ASN    40       7.928  23.845  -7.222  1.00  0.00      3WRP 387
+ATOM    330  CB  ASN    40       6.872  26.285  -9.082  1.00  0.00      3WRP 388
+ATOM    331  CG  ASN    40       5.719  26.708  -9.984  1.00  0.00      3WRP 389
+ATOM    332  OD1 ASN    40       5.919  27.508 -10.935  1.00  0.00      3WRP 390
+ATOM    333  ND2 ASN    40       4.551  26.140  -9.757  1.00  0.00      3WRP 391
+ATOM    334  N   LEU    41       8.314  25.795  -6.222  1.00  0.00      3WRP 392
+ATOM    335  CA  LEU    41       9.455  25.264  -5.456  1.00  0.00      3WRP 393
+ATOM    336  C   LEU    41       8.944  24.410  -4.281  1.00  0.00      3WRP 394
+ATOM    337  O   LEU    41       9.376  23.254  -4.102  1.00  0.00      3WRP 395
+ATOM    338  CB  LEU    41      10.241  26.499  -5.005  1.00  0.00      3WRP 396
+ATOM    339  CG  LEU    41      11.438  26.254  -4.096  1.00  0.00      3WRP 397
+ATOM    340  CD1 LEU    41      12.624  25.721  -4.886  1.00  0.00      3WRP 398
+ATOM    341  CD2 LEU    41      11.793  27.591  -3.433  1.00  0.00      3WRP 399
+ATOM    342  N   MET    42       7.999  24.961  -3.556  1.00  0.00      3WRP 400
+ATOM    343  CA  MET    42       7.511  24.301  -2.330  1.00  0.00      3WRP 401
+ATOM    344  C   MET    42       6.579  23.132  -2.544  1.00  0.00      3WRP 402
+ATOM    345  O   MET    42       6.391  22.296  -1.624  1.00  0.00      3WRP 403
+ATOM    346  CB  MET    42       6.961  25.374  -1.396  1.00  0.00      3WRP 404
+ATOM    347  CG  MET    42       7.997  26.445  -1.138  1.00  0.00      3WRP 405
+ATOM    348  SD  MET    42       9.231  25.719   0.019  1.00  0.00      3WRP 406
+ATOM    349  CE  MET    42      10.419  27.089  -0.048  1.00  0.00      3WRP 407
+ATOM    350  N   LEU    43       5.758  23.161  -3.585  1.00  0.00      3WRP 408
+ATOM    351  CA  LEU    43       4.697  22.157  -3.770  1.00  0.00      3WRP 409
+ATOM    352  C   LEU    43       4.886  21.310  -5.017  1.00  0.00      3WRP 410
+ATOM    353  O   LEU    43       5.440  21.801  -6.000  1.00  0.00      3WRP 411
+ATOM    354  CB  LEU    43       3.351  22.874  -3.807  1.00  0.00      3WRP 412
+ATOM    355  CG  LEU    43       2.923  23.842  -2.738  1.00  0.00      3WRP 413
+ATOM    356  CD1 LEU    43       1.837  24.759  -3.338  1.00  0.00      3WRP 414
+ATOM    357  CD2 LEU    43       2.315  23.003  -1.608  1.00  0.00      3WRP 415
+ATOM    358  N   THR    44       4.319  20.135  -4.943  1.00  0.00      3WRP 416
+ATOM    359  CA  THR    44       4.370  19.142  -6.026  1.00  0.00      3WRP 417
+ATOM    360  C   THR    44       3.236  19.461  -6.997  1.00  0.00      3WRP 418
+ATOM    361  O   THR    44       2.294  20.184  -6.643  1.00  0.00      3WRP 419
+ATOM    362  CB  THR    44       4.313  17.683  -5.443  1.00  0.00      3WRP 420
+ATOM    363  OG1 THR    44       3.079  17.677  -4.656  1.00  0.00      3WRP 421
+ATOM    364  CG2 THR    44       5.468  17.283  -4.503  1.00  0.00      3WRP 422
+ATOM    365  N   PRO    45       3.339  18.857  -8.158  1.00  0.00      3WRP 423
+ATOM    366  CA  PRO    45       2.307  19.104  -9.186  1.00  0.00      3WRP 424
+ATOM    367  C   PRO    45       0.980  18.593  -8.581  1.00  0.00      3WRP 425
+ATOM    368  O   PRO    45      -0.108  19.143  -8.804  1.00  0.00      3WRP 426
+ATOM    369  CB  PRO    45       2.806  18.212 -10.326  1.00  0.00      3WRP 427
+ATOM    370  CG  PRO    45       4.335  18.385 -10.215  1.00  0.00      3WRP 428
+ATOM    371  CD  PRO    45       4.541  18.162  -8.714  1.00  0.00      3WRP 429
+ATOM    372  N   ASP    46       1.127  17.394  -8.040  1.00  0.00      3WRP 430
+ATOM    373  CA  ASP    46       0.064  16.660  -7.349  1.00  0.00      3WRP 431
+ATOM    374  C   ASP    46      -0.631  17.559  -6.348  1.00  0.00      3WRP 432
+ATOM    375  O   ASP    46      -1.862  17.456  -6.146  1.00  0.00      3WRP 433
+ATOM    376  CB  ASP    46       0.679  15.434  -6.678  1.00  0.00      3WRP 434
+ATOM    377  CG  ASP    46       1.347  14.575  -7.738  1.00  0.00      3WRP 435
+ATOM    378  OD1 ASP    46       2.582  14.504  -7.847  1.00  0.00      3WRP 436
+ATOM    379  OD2 ASP    46       0.539  14.086  -8.549  1.00  0.00      3WRP 437
+ATOM    380  N   GLU    47       0.208  18.210  -5.541  1.00  0.00      3WRP 438
+ATOM    381  CA  GLU    47      -0.346  19.088  -4.491  1.00  0.00      3WRP 439
+ATOM    382  C   GLU    47      -1.028  20.278  -5.134  1.00  0.00      3WRP 440
+ATOM    383  O   GLU    47      -2.112  20.653  -4.677  1.00  0.00      3WRP 441
+ATOM    384  CB  GLU    47       0.705  19.589  -3.488  1.00  0.00      3WRP 442
+ATOM    385  CG  GLU    47       1.151  18.558  -2.455  1.00  0.00      3WRP 443
+ATOM    386  CD  GLU    47       2.570  18.572  -1.949  1.00  0.00      3WRP 444
+ATOM    387  OE1 GLU    47       2.955  17.716  -1.161  1.00  0.00      3WRP 445
+ATOM    388  OE2 GLU    47       3.268  19.515  -2.394  1.00  0.00      3WRP 446
+ATOM    389  N   ARG    48      -0.419  20.888  -6.140  1.00  0.00      3WRP 447
+ATOM    390  CA  ARG    48      -1.035  22.078  -6.770  1.00  0.00      3WRP 448
+ATOM    391  C   ARG    48      -2.338  21.688  -7.455  1.00  0.00      3WRP 449
+ATOM    392  O   ARG    48      -3.296  22.491  -7.408  1.00  0.00      3WRP 450
+ATOM    393  CB  ARG    48      -0.075  22.858  -7.660  1.00  0.00      3WRP 451
+ATOM    394  CG  ARG    48       1.263  23.251  -7.049  1.00  0.00      3WRP 452
+ATOM    395  CD  ARG    48       2.142  24.003  -7.990  1.00  0.00      3WRP 453
+ATOM    396  NE  ARG    48       2.635  23.220  -9.098  1.00  0.00      3WRP 454
+ATOM    397  CZ  ARG    48       3.738  22.530  -9.305  1.00  0.00      3WRP 455
+ATOM    398  NH1 ARG    48       3.877  21.894 -10.485  1.00  0.00      3WRP 456
+ATOM    399  NH2 ARG    48       4.834  22.531  -8.562  1.00  0.00      3WRP 457
+ATOM    400  N   GLU    49      -2.386  20.482  -8.002  1.00  0.00      3WRP 458
+ATOM    401  CA  GLU    49      -3.615  19.961  -8.617  1.00  0.00      3WRP 459
+ATOM    402  C   GLU    49      -4.718  19.837  -7.551  1.00  0.00      3WRP 460
+ATOM    403  O   GLU    49      -5.866  20.254  -7.770  1.00  0.00      3WRP 461
+ATOM    404  CB  GLU    49      -3.453  18.532  -9.144  1.00  0.00      3WRP 462
+ATOM    405  CG  GLU    49      -4.715  17.889  -9.719  1.00  0.00      3WRP 463
+ATOM    406  CD  GLU    49      -4.594  17.045 -10.960  1.00  0.00      3WRP 464
+ATOM    407  OE1 GLU    49      -5.557  16.806 -11.690  1.00  0.00      3WRP 465
+ATOM    408  OE2 GLU    49      -3.449  16.598 -11.186  1.00  0.00      3WRP 466
+ATOM    409  N   ALA    50      -4.298  19.253  -6.431  1.00  0.00      3WRP 467
+ATOM    410  CA  ALA    50      -5.263  19.060  -5.314  1.00  0.00      3WRP 468
+ATOM    411  C   ALA    50      -5.839  20.388  -4.868  1.00  0.00      3WRP 469
+ATOM    412  O   ALA    50      -7.068  20.407  -4.566  1.00  0.00      3WRP 470
+ATOM    413  CB  ALA    50      -4.734  18.225  -4.155  1.00  0.00      3WRP 471
+ATOM    414  N   LEU    51      -4.999  21.381  -4.581  1.00  0.00      3WRP 472
+ATOM    415  CA  LEU    51      -5.455  22.668  -4.124  1.00  0.00      3WRP 473
+ATOM    416  C   LEU    51      -6.473  23.259  -5.119  1.00  0.00      3WRP 474
+ATOM    417  O   LEU    51      -7.440  23.917  -4.689  1.00  0.00      3WRP 475
+ATOM    418  CB  LEU    51      -4.328  23.677  -3.840  1.00  0.00      3WRP 476
+ATOM    419  CG  LEU    51      -3.774  23.558  -2.401  1.00  0.00      3WRP 477
+ATOM    420  CD1 LEU    51      -3.657  22.081  -2.060  1.00  0.00      3WRP 478
+ATOM    421  CD2 LEU    51      -2.392  24.232  -2.394  1.00  0.00      3WRP 479
+ATOM    422  N   GLY    52      -6.131  23.076  -6.396  1.00  0.00      3WRP 480
+ATOM    423  CA  GLY    52      -7.053  23.657  -7.422  1.00  0.00      3WRP 481
+ATOM    424  C   GLY    52      -8.452  23.093  -7.175  1.00  0.00      3WRP 482
+ATOM    425  O   GLY    52      -9.468  23.741  -7.443  1.00  0.00      3WRP 483
+ATOM    426  N   THR    53      -8.432  21.781  -7.065  1.00  0.00      3WRP 484
+ATOM    427  CA  THR    53      -9.624  20.969  -6.849  1.00  0.00      3WRP 485
+ATOM    428  C   THR    53     -10.284  21.265  -5.503  1.00  0.00      3WRP 486
+ATOM    429  O   THR    53     -11.529  21.231  -5.520  1.00  0.00      3WRP 487
+ATOM    430  CB  THR    53      -9.347  19.445  -7.108  1.00  0.00      3WRP 488
+ATOM    431  OG1 THR    53      -8.994  19.396  -8.537  1.00  0.00      3WRP 489
+ATOM    432  CG2 THR    53     -10.503  18.570  -6.630  1.00  0.00      3WRP 490
+ATOM    433  N   ARG    54      -9.554  21.633  -4.465  1.00  0.00      3WRP 491
+ATOM    434  CA  ARG    54     -10.207  21.994  -3.186  1.00  0.00      3WRP 492
+ATOM    435  C   ARG    54     -11.045  23.248  -3.273  1.00  0.00      3WRP 493
+ATOM    436  O   ARG    54     -12.000  23.473  -2.496  1.00  0.00      3WRP 494
+ATOM    437  CB  ARG    54      -9.175  22.123  -2.004  1.00  0.00      3WRP 495
+ATOM    438  CG  ARG    54      -8.273  20.919  -2.025  1.00  0.00      3WRP 496
+ATOM    439  CD  ARG    54      -7.456  20.716  -0.785  1.00  0.00      3WRP 497
+ATOM    440  NE  ARG    54      -6.937  19.334  -0.806  1.00  0.00      3WRP 498
+ATOM    441  CZ  ARG    54      -5.858  19.102  -0.013  1.00  0.00      3WRP 499
+ATOM    442  NH1 ARG    54      -5.394  20.160   0.656  1.00  0.00      3WRP 500
+ATOM    443  NH2 ARG    54      -5.430  17.859   0.124  1.00  0.00      3WRP 501
+ATOM    444  N   VAL    55     -10.671  24.171  -4.154  1.00  0.00      3WRP 502
+ATOM    445  CA  VAL    55     -11.355  25.428  -4.360  1.00  0.00      3WRP 503
+ATOM    446  C   VAL    55     -12.802  25.131  -4.833  1.00  0.00      3WRP 504
+ATOM    447  O   VAL    55     -13.699  25.924  -4.495  1.00  0.00      3WRP 505
+ATOM    448  CB  VAL    55     -10.691  26.385  -5.341  1.00  0.00      3WRP 506
+ATOM    449  CG1 VAL    55     -11.659  27.543  -5.592  1.00  0.00      3WRP 507
+ATOM    450  CG2 VAL    55      -9.356  26.944  -4.850  1.00  0.00      3WRP 508
+ATOM    451  N   ARG    56     -12.836  24.174  -5.741  1.00  0.00      3WRP 509
+ATOM    452  CA  ARG    56     -14.086  23.739  -6.384  1.00  0.00      3WRP 510
+ATOM    453  C   ARG    56     -15.036  23.030  -5.419  1.00  0.00      3WRP 511
+ATOM    454  O   ARG    56     -16.278  23.242  -5.437  1.00  0.00      3WRP 512
+ATOM    455  CB  ARG    56     -13.775  22.823  -7.591  1.00  0.00      3WRP 513
+ATOM    456  CG  ARG    56     -13.841  23.613  -8.903  1.00  0.00      3WRP 514
+ATOM    457  CD  ARG    56     -13.359  25.010  -8.751  1.00  0.00      3WRP 515
+ATOM    458  NE  ARG    56     -11.917  25.024  -8.411  1.00  0.00      3WRP 516
+ATOM    459  CZ  ARG    56     -11.153  26.086  -8.728  1.00  0.00      3WRP 517
+ATOM    460  NH1 ARG    56     -11.709  27.145  -9.343  1.00  0.00      3WRP 518
+ATOM    461  NH2 ARG    56      -9.823  25.993  -8.657  1.00  0.00      3WRP 519
+ATOM    462  N   ILE    57     -14.427  22.236  -4.569  1.00  0.00      3WRP 520
+ATOM    463  CA  ILE    57     -15.230  21.578  -3.512  1.00  0.00      3WRP 521
+ATOM    464  C   ILE    57     -15.916  22.609  -2.637  1.00  0.00      3WRP 522
+ATOM    465  O   ILE    57     -17.106  22.390  -2.350  1.00  0.00      3WRP 523
+ATOM    466  CB  ILE    57     -14.458  20.492  -2.721  1.00  0.00      3WRP 524
+ATOM    467  CG1 ILE    57     -14.028  19.355  -3.685  1.00  0.00      3WRP 525
+ATOM    468  CG2 ILE    57     -15.324  19.895  -1.571  1.00  0.00      3WRP 526
+ATOM    469  CD1 ILE    57     -12.952  18.449  -2.988  1.00  0.00      3WRP 527
+ATOM    470  N   VAL    58     -15.186  23.592  -2.151  1.00  0.00      3WRP 528
+ATOM    471  CA  VAL    58     -15.700  24.628  -1.263  1.00  0.00      3WRP 529
+ATOM    472  C   VAL    58     -16.761  25.483  -1.952  1.00  0.00      3WRP 530
+ATOM    473  O   VAL    58     -17.848  25.735  -1.389  1.00  0.00      3WRP 531
+ATOM    474  CB  VAL    58     -14.514  25.443  -0.721  1.00  0.00      3WRP 532
+ATOM    475  CG1 VAL    58     -14.799  26.904  -0.421  1.00  0.00      3WRP 533
+ATOM    476  CG2 VAL    58     -13.921  24.766   0.508  1.00  0.00      3WRP 534
+ATOM    477  N   GLU    59     -16.435  25.796  -3.220  1.00  0.00      3WRP 535
+ATOM    478  CA  GLU    59     -17.387  26.570  -4.022  1.00  0.00      3WRP 536
+ATOM    479  C   GLU    59     -18.708  25.806  -4.104  1.00  0.00      3WRP 537
+ATOM    480  O   GLU    59     -19.764  26.414  -3.848  1.00  0.00      3WRP 538
+ATOM    481  CB  GLU    59     -16.903  26.763  -5.466  1.00  0.00      3WRP 539
+ATOM    482  CG  GLU    59     -17.268  28.108  -6.102  1.00  0.00      3WRP 540
+ATOM    483  CD  GLU    59     -16.894  28.176  -7.570  1.00  0.00      3WRP 541
+ATOM    484  OE1 GLU    59     -16.943  29.194  -8.221  1.00  0.00      3WRP 542
+ATOM    485  OE2 GLU    59     -16.529  27.051  -7.985  1.00  0.00      3WRP 543
+ATOM    486  N   GLU    60     -18.605  24.499  -4.337  1.00  0.00      3WRP 544
+ATOM    487  CA  GLU    60     -19.778  23.646  -4.532  1.00  0.00      3WRP 545
+ATOM    488  C   GLU    60     -20.485  23.338  -3.203  1.00  0.00      3WRP 546
+ATOM    489  O   GLU    60     -21.734  23.198  -3.184  1.00  0.00      3WRP 547
+ATOM    490  CB  GLU    60     -19.433  22.325  -5.170  1.00  0.00      3WRP 548
+ATOM    491  CG  GLU    60     -18.992  22.164  -6.602  1.00  0.00      3WRP 549
+ATOM    492  CD  GLU    60     -19.483  20.888  -7.238  1.00  0.00      3WRP 550
+ATOM    493  OE1 GLU    60     -19.463  19.793  -6.703  1.00  0.00      3WRP 551
+ATOM    494  OE2 GLU    60     -20.022  21.116  -8.349  1.00  0.00      3WRP 552
+ATOM    495  N   LEU    61     -19.725  23.251  -2.113  1.00  0.00      3WRP 553
+ATOM    496  CA  LEU    61     -20.358  23.004  -0.792  1.00  0.00      3WRP 554
+ATOM    497  C   LEU    61     -21.112  24.267  -0.421  1.00  0.00      3WRP 555
+ATOM    498  O   LEU    61     -22.264  24.189   0.055  1.00  0.00      3WRP 556
+ATOM    499  CB  LEU    61     -19.366  22.537   0.261  1.00  0.00      3WRP 557
+ATOM    500  CG  LEU    61     -18.556  21.269   0.151  1.00  0.00      3WRP 558
+ATOM    501  CD1 LEU    61     -17.398  21.277   1.154  1.00  0.00      3WRP 559
+ATOM    502  CD2 LEU    61     -19.381  20.027   0.450  1.00  0.00      3WRP 560
+ATOM    503  N   LEU    62     -20.576  25.404  -0.811  1.00  0.00      3WRP 561
+ATOM    504  CA  LEU    62     -21.196  26.697  -0.520  1.00  0.00      3WRP 562
+ATOM    505  C   LEU    62     -22.463  26.810  -1.388  1.00  0.00      3WRP 563
+ATOM    506  O   LEU    62     -23.327  27.594  -1.003  1.00  0.00      3WRP 564
+ATOM    507  CB  LEU    62     -20.287  27.883  -0.717  1.00  0.00      3WRP 565
+ATOM    508  CG  LEU    62     -19.077  28.051   0.186  1.00  0.00      3WRP 566
+ATOM    509  CD1 LEU    62     -18.572  29.472  -0.038  1.00  0.00      3WRP 567
+ATOM    510  CD2 LEU    62     -19.444  27.854   1.648  1.00  0.00      3WRP 568
+ATOM    511  N   ARG    63     -22.379  26.172  -2.547  1.00  0.00      3WRP 569
+ATOM    512  CA  ARG    63     -23.515  26.281  -3.491  1.00  0.00      3WRP 570
+ATOM    513  C   ARG    63     -24.752  25.508  -3.027  1.00  0.00      3WRP 571
+ATOM    514  O   ARG    63     -25.890  25.863  -3.388  1.00  0.00      3WRP 572
+ATOM    515  CB  ARG    63     -23.093  25.810  -4.885  1.00  0.00      3WRP 573
+ATOM    516  CG  ARG    63     -22.708  26.971  -5.777  1.00  0.00      3WRP 574
+ATOM    517  CD  ARG    63     -23.221  26.734  -7.179  1.00  0.00      3WRP 575
+ATOM    518  NE  ARG    63     -22.867  27.970  -7.896  1.00  0.00      3WRP 576
+ATOM    519  CZ  ARG    63     -21.605  28.142  -8.304  1.00  0.00      3WRP 577
+ATOM    520  NH1 ARG    63     -20.701  27.188  -8.137  1.00  0.00      3WRP 578
+ATOM    521  NH2 ARG    63     -21.263  29.317  -8.828  1.00  0.00      3WRP 579
+ATOM    522  N   GLY    64     -24.501  24.385  -2.398  1.00  0.00      3WRP 580
+ATOM    523  CA  GLY    64     -25.494  23.473  -1.896  1.00  0.00      3WRP 581
+ATOM    524  C   GLY    64     -26.334  22.768  -2.951  1.00  0.00      3WRP 582
+ATOM    525  O   GLY    64     -27.192  21.944  -2.554  1.00  0.00      3WRP 583
+ATOM    526  N   GLU    65     -26.019  22.902  -4.226  1.00  0.00      3WRP 584
+ATOM    527  CA  GLU    65     -26.845  22.216  -5.243  1.00  0.00      3WRP 585
+ATOM    528  C   GLU    65     -26.527  20.742  -5.453  1.00  0.00      3WRP 586
+ATOM    529  O   GLU    65     -27.466  20.024  -5.874  1.00  0.00      3WRP 587
+ATOM    530  CB  GLU    65     -26.781  22.903  -6.598  1.00  0.00      3WRP 588
+ATOM    531  CG  GLU    65     -26.810  24.422  -6.609  1.00  0.00      3WRP 589
+ATOM    532  CD  GLU    65     -28.124  25.098  -6.767  1.00  0.00      3WRP 590
+ATOM    533  OE1 GLU    65     -28.341  26.210  -6.317  1.00  0.00      3WRP 591
+ATOM    534  OE2 GLU    65     -28.885  24.488  -7.547  1.00  0.00      3WRP 592
+ATOM    535  N   MET    66     -25.257  20.373  -5.344  1.00  0.00      3WRP 593
+ATOM    536  CA  MET    66     -24.812  19.003  -5.596  1.00  0.00      3WRP 594
+ATOM    537  C   MET    66     -24.699  18.185  -4.300  1.00  0.00      3WRP 595
+ATOM    538  O   MET    66     -23.916  18.569  -3.429  1.00  0.00      3WRP 596
+ATOM    539  CB  MET    66     -23.459  18.904  -6.313  1.00  0.00      3WRP 597
+ATOM    540  CG  MET    66     -23.241  19.938  -7.380  1.00  0.00      3WRP 598
+ATOM    541  SD  MET    66     -21.862  19.441  -8.488  1.00  0.00      3WRP 599
+ATOM    542  CE  MET    66     -22.391  17.795  -8.939  1.00  0.00      3WRP 600
+ATOM    543  N   SER    67     -24.964  16.906  -4.449  1.00  0.00      3WRP 601
+ATOM    544  CA  SER    67     -24.785  15.888  -3.432  1.00  0.00      3WRP 602
+ATOM    545  C   SER    67     -23.318  15.436  -3.465  1.00  0.00      3WRP 603
+ATOM    546  O   SER    67     -22.618  15.481  -4.493  1.00  0.00      3WRP 604
+ATOM    547  CB  SER    67     -25.759  14.728  -3.597  1.00  0.00      3WRP 605
+ATOM    548  OG  SER    67     -25.120  13.608  -4.179  1.00  0.00      3WRP 606
+ATOM    549  N   GLN    68     -22.926  14.927  -2.313  1.00  0.00      3WRP 607
+ATOM    550  CA  GLN    68     -21.548  14.483  -2.034  1.00  0.00      3WRP 608
+ATOM    551  C   GLN    68     -21.042  13.601  -3.177  1.00  0.00      3WRP 609
+ATOM    552  O   GLN    68     -19.972  13.904  -3.728  1.00  0.00      3WRP 610
+ATOM    553  CB  GLN    68     -21.483  13.868  -0.663  1.00  0.00      3WRP 611
+ATOM    554  CG  GLN    68     -20.198  13.409  -0.038  1.00  0.00      3WRP 612
+ATOM    555  CD  GLN    68     -20.452  12.779   1.325  1.00  0.00      3WRP 613
+ATOM    556  OE1 GLN    68     -20.115  13.303   2.388  1.00  0.00      3WRP 614
+ATOM    557  NE2 GLN    68     -20.947  11.542   1.280  1.00  0.00      3WRP 615
+ATOM    558  N   ARG    69     -21.856  12.673  -3.647  1.00  0.00      3WRP 616
+ATOM    559  CA  ARG    69     -21.438  11.734  -4.701  1.00  0.00      3WRP 617
+ATOM    560  C   ARG    69     -21.368  12.373  -6.085  1.00  0.00      3WRP 618
+ATOM    561  O   ARG    69     -20.584  11.892  -6.924  1.00  0.00      3WRP 619
+ATOM    562  CB  ARG    69     -22.229  10.434  -4.738  1.00  0.00      3WRP 620
+ATOM    563  CG  ARG    69     -21.421   9.215  -4.274  1.00  0.00      3WRP 621
+ATOM    564  CD  ARG    69     -22.189   7.945  -4.349  1.00  0.00      3WRP 622
+ATOM    565  NE  ARG    69     -23.341   7.919  -3.461  1.00  0.00      3WRP 623
+ATOM    566  CZ  ARG    69     -24.367   7.079  -3.568  1.00  0.00      3WRP 624
+ATOM    567  NH1 ARG    69     -24.414   6.107  -4.481  1.00  0.00      3WRP 625
+ATOM    568  NH2 ARG    69     -25.486   7.346  -2.879  1.00  0.00      3WRP 626
+ATOM    569  N   GLU    70     -22.250  13.306  -6.357  1.00  0.00      3WRP 627
+ATOM    570  CA  GLU    70     -22.226  14.052  -7.641  1.00  0.00      3WRP 628
+ATOM    571  C   GLU    70     -20.892  14.800  -7.661  1.00  0.00      3WRP 629
+ATOM    572  O   GLU    70     -20.084  14.753  -8.605  1.00  0.00      3WRP 630
+ATOM    573  CB  GLU    70     -23.361  15.076  -7.694  1.00  0.00      3WRP 631
+ATOM    574  CG  GLU    70     -24.775  14.573  -7.834  1.00  0.00      3WRP 632
+ATOM    575  CD  GLU    70     -25.899  15.565  -7.800  1.00  0.00      3WRP 633
+ATOM    576  OE1 GLU    70     -25.891  16.627  -8.405  1.00  0.00      3WRP 634
+ATOM    577  OE2 GLU    70     -26.857  15.156  -7.089  1.00  0.00      3WRP 635
+ATOM    578  N   LEU    71     -20.562  15.249  -6.457  1.00  0.00      3WRP 636
+ATOM    579  CA  LEU    71     -19.333  15.990  -6.173  1.00  0.00      3WRP 637
+ATOM    580  C   LEU    71     -18.099  15.149  -6.484  1.00  0.00      3WRP 638
+ATOM    581  O   LEU    71     -17.090  15.687  -6.969  1.00  0.00      3WRP 639
+ATOM    582  CB  LEU    71     -19.415  16.596  -4.777  1.00  0.00      3WRP 640
+ATOM    583  CG  LEU    71     -19.633  18.093  -4.642  1.00  0.00      3WRP 641
+ATOM    584  CD1 LEU    71     -21.060  18.465  -5.019  1.00  0.00      3WRP 642
+ATOM    585  CD2 LEU    71     -19.362  18.532  -3.199  1.00  0.00      3WRP 643
+ATOM    586  N   LYS    72     -18.110  13.877  -6.224  1.00  0.00      3WRP 644
+ATOM    587  CA  LYS    72     -16.993  12.942  -6.566  1.00  0.00      3WRP 645
+ATOM    588  C   LYS    72     -16.875  12.686  -8.068  1.00  0.00      3WRP 646
+ATOM    589  O   LYS    72     -15.824  12.566  -8.758  1.00  0.00      3WRP 647
+ATOM    590  CB  LYS    72     -17.282  11.686  -5.806  1.00  0.00      3WRP 648
+ATOM    591  CG  LYS    72     -16.463  10.425  -5.990  1.00  0.00      3WRP 649
+ATOM    592  CD  LYS    72     -17.071   9.335  -5.086  1.00  0.00      3WRP 650
+ATOM    593  CE  LYS    72     -17.903   8.367  -5.911  1.00  0.00      3WRP 651
+ATOM    594  NZ  LYS    72     -18.685   7.466  -5.019  1.00  0.00      3WRP 652
+ATOM    595  N   ASN    73     -18.043  12.532  -8.656  1.00  0.00      3WRP 653
+ATOM    596  CA  ASN    73     -18.236  12.330 -10.097  1.00  0.00      3WRP 654
+ATOM    597  C   ASN    73     -17.889  13.567 -10.924  1.00  0.00      3WRP 655
+ATOM    598  O   ASN    73     -17.204  13.396 -11.963  1.00  0.00      3WRP 656
+ATOM    599  CB  ASN    73     -19.640  11.805 -10.382  1.00  0.00      3WRP 657
+ATOM    600  CG  ASN    73     -19.685  11.008 -11.678  1.00  0.00      3WRP 658
+ATOM    601  OD1 ASN    73     -19.917  11.571 -12.760  1.00  0.00      3WRP 659
+ATOM    602  ND2 ASN    73     -19.536   9.691 -11.555  1.00  0.00      3WRP 660
+ATOM    603  N   GLU    74     -18.445  14.738 -10.593  1.00  0.00      3WRP 661
+ATOM    604  CA  GLU    74     -18.167  15.880 -11.486  1.00  0.00      3WRP 662
+ATOM    605  C   GLU    74     -16.831  16.545 -11.238  1.00  0.00      3WRP 663
+ATOM    606  O   GLU    74     -16.298  17.260 -12.103  1.00  0.00      3WRP 664
+ATOM    607  CB  GLU    74     -19.229  16.983 -11.438  1.00  0.00      3WRP 665
+ATOM    608  CG  GLU    74     -20.671  16.576 -11.762  1.00  0.00      3WRP 666
+ATOM    609  CD  GLU    74     -20.803  16.072 -13.192  1.00  0.00      3WRP 667
+ATOM    610  OE1 GLU    74     -20.697  14.895 -13.463  1.00  0.00      3WRP 668
+ATOM    611  OE2 GLU    74     -20.708  16.989 -14.007  1.00  0.00      3WRP 669
+ATOM    612  N   LEU    75     -16.315  16.340 -10.026  1.00  0.00      3WRP 670
+ATOM    613  CA  LEU    75     -15.063  17.057  -9.651  1.00  0.00      3WRP 671
+ATOM    614  C   LEU    75     -13.901  16.063  -9.627  1.00  0.00      3WRP 672
+ATOM    615  O   LEU    75     -12.725  16.459  -9.764  1.00  0.00      3WRP 673
+ATOM    616  CB  LEU    75     -15.388  17.784  -8.349  1.00  0.00      3WRP 674
+ATOM    617  CG  LEU    75     -15.781  19.229  -8.250  1.00  0.00      3WRP 675
+ATOM    618  CD1 LEU    75     -16.892  19.660  -9.199  1.00  0.00      3WRP 676
+ATOM    619  CD2 LEU    75     -16.297  19.468  -6.816  1.00  0.00      3WRP 677
+ATOM    620  N   GLY    76     -14.189  14.787  -9.459  1.00  0.00      3WRP 678
+ATOM    621  CA  GLY    76     -13.135  13.757  -9.481  1.00  0.00      3WRP 679
+ATOM    622  C   GLY    76     -12.297  13.775  -8.196  1.00  0.00      3WRP 680
+ATOM    623  O   GLY    76     -11.180  13.228  -8.146  1.00  0.00      3WRP 681
+ATOM    624  N   ALA    77     -12.908  14.261  -7.148  1.00  0.00      3WRP 682
+ATOM    625  CA  ALA    77     -12.267  14.336  -5.805  1.00  0.00      3WRP 683
+ATOM    626  C   ALA    77     -12.754  13.189  -4.933  1.00  0.00      3WRP 684
+ATOM    627  O   ALA    77     -13.910  12.755  -5.067  1.00  0.00      3WRP 685
+ATOM    628  CB  ALA    77     -12.594  15.692  -5.225  1.00  0.00      3WRP 686
+ATOM    629  N   GLY    78     -11.831  12.514  -4.265  1.00  0.00      3WRP 687
+ATOM    630  CA  GLY    78     -12.178  11.423  -3.344  1.00  0.00      3WRP 688
+ATOM    631  C   GLY    78     -13.142  11.917  -2.258  1.00  0.00      3WRP 689
+ATOM    632  O   GLY    78     -13.117  13.087  -1.824  1.00  0.00      3WRP 690
+ATOM    633  N   ILE    79     -14.029  11.012  -1.888  1.00  0.00      3WRP 691
+ATOM    634  CA  ILE    79     -15.033  11.257  -0.831  1.00  0.00      3WRP 692
+ATOM    635  C   ILE    79     -14.415  11.802   0.448  1.00  0.00      3WRP 693
+ATOM    636  O   ILE    79     -15.018  12.713   1.044  1.00  0.00      3WRP 694
+ATOM    637  CB  ILE    79     -15.856   9.940  -0.591  1.00  0.00      3WRP 695
+ATOM    638  CG1 ILE    79     -16.923   9.740  -1.691  1.00  0.00      3WRP 696
+ATOM    639  CG2 ILE    79     -16.493   9.885   0.830  1.00  0.00      3WRP 697
+ATOM    640  CD1 ILE    79     -18.402  10.007  -1.292  1.00  0.00      3WRP 698
+ATOM    641  N   ALA    80     -13.311  11.260   0.933  1.00  0.00      3WRP 699
+ATOM    642  CA  ALA    80     -12.654  11.727   2.162  1.00  0.00      3WRP 700
+ATOM    643  C   ALA    80     -12.230  13.181   2.086  1.00  0.00      3WRP 701
+ATOM    644  O   ALA    80     -12.062  13.818   3.143  1.00  0.00      3WRP 702
+ATOM    645  CB  ALA    80     -11.450  10.873   2.516  1.00  0.00      3WRP 703
+ATOM    646  N   THR    81     -11.914  13.641   0.892  1.00  0.00      3WRP 704
+ATOM    647  CA  THR    81     -11.505  15.028   0.652  1.00  0.00      3WRP 705
+ATOM    648  C   THR    81     -12.681  15.975   0.809  1.00  0.00      3WRP 706
+ATOM    649  O   THR    81     -12.594  17.109   1.354  1.00  0.00      3WRP 707
+ATOM    650  CB  THR    81     -10.760  15.198  -0.749  1.00  0.00      3WRP 708
+ATOM    651  OG1 THR    81      -9.419  14.624  -0.576  1.00  0.00      3WRP 709
+ATOM    652  CG2 THR    81     -10.621  16.636  -1.250  1.00  0.00      3WRP 710
+ATOM    653  N   ILE    82     -13.839  15.446   0.444  1.00  0.00      3WRP 711
+ATOM    654  CA  ILE    82     -15.110  16.170   0.456  1.00  0.00      3WRP 712
+ATOM    655  C   ILE    82     -15.601  16.318   1.925  1.00  0.00      3WRP 713
+ATOM    656  O   ILE    82     -15.954  17.431   2.310  1.00  0.00      3WRP 714
+ATOM    657  CB  ILE    82     -16.149  15.401  -0.431  1.00  0.00      3WRP 715
+ATOM    658  CG1 ILE    82     -15.679  15.398  -1.921  1.00  0.00      3WRP 716
+ATOM    659  CG2 ILE    82     -17.566  16.018  -0.383  1.00  0.00      3WRP 717
+ATOM    660  CD1 ILE    82     -16.617  14.559  -2.835  1.00  0.00      3WRP 718
+ATOM    661  N   THR    83     -15.496  15.212   2.593  1.00  0.00      3WRP 719
+ATOM    662  CA  THR    83     -15.941  15.039   3.983  1.00  0.00      3WRP 720
+ATOM    663  C   THR    83     -15.156  15.929   4.932  1.00  0.00      3WRP 721
+ATOM    664  O   THR    83     -15.723  16.680   5.752  1.00  0.00      3WRP 722
+ATOM    665  CB  THR    83     -15.883  13.521   4.396  1.00  0.00      3WRP 723
+ATOM    666  OG1 THR    83     -16.725  12.804   3.424  1.00  0.00      3WRP 724
+ATOM    667  CG2 THR    83     -16.326  13.255   5.841  1.00  0.00      3WRP 725
+ATOM    668  N   ARG    84     -13.866  15.949   4.707  1.00  0.00      3WRP 726
+ATOM    669  CA  ARG    84     -12.923  16.810   5.449  1.00  0.00      3WRP 727
+ATOM    670  C   ARG    84     -13.154  18.245   5.036  1.00  0.00      3WRP 728
+ATOM    671  O   ARG    84     -13.154  19.174   5.844  1.00  0.00      3WRP 729
+ATOM    672  CB  ARG    84     -11.478  16.396   5.095  1.00  0.00      3WRP 730
+ATOM    673  CG  ARG    84     -10.362  16.943   5.987  1.00  0.00      3WRP 731
+ATOM    674  CD  ARG    84      -9.398  17.765   5.188  1.00  0.00      3WRP 732
+ATOM    675  NE  ARG    84      -8.639  18.775   5.901  1.00  0.00      3WRP 733
+ATOM    676  CZ  ARG    84      -8.450  20.045   5.602  1.00  0.00      3WRP 734
+ATOM    677  NH1 ARG    84      -8.959  20.581   4.459  1.00  0.00      3WRP 735
+ATOM    678  NH2 ARG    84      -8.057  20.944   6.510  1.00  0.00      3WRP 736
+ATOM    679  N   GLY    85     -13.466  18.410   3.735  1.00  0.00      3WRP 737
+ATOM    680  CA  GLY    85     -13.663  19.782   3.199  1.00  0.00      3WRP 738
+ATOM    681  C   GLY    85     -14.929  20.336   3.833  1.00  0.00      3WRP 739
+ATOM    682  O   GLY    85     -15.014  21.507   4.244  1.00  0.00      3WRP 740
+ATOM    683  N   SER    86     -15.849  19.413   4.057  1.00  0.00      3WRP 741
+ATOM    684  CA  SER    86     -17.133  19.696   4.735  1.00  0.00      3WRP 742
+ATOM    685  C   SER    86     -16.880  20.063   6.219  1.00  0.00      3WRP 743
+ATOM    686  O   SER    86     -17.481  21.053   6.652  1.00  0.00      3WRP 744
+ATOM    687  CB  SER    86     -18.026  18.469   4.685  1.00  0.00      3WRP 745
+ATOM    688  OG  SER    86     -19.395  18.837   4.794  1.00  0.00      3WRP 746
+ATOM    689  N   ASN    87     -16.104  19.214   6.859  1.00  0.00      3WRP 747
+ATOM    690  CA  ASN    87     -15.805  19.428   8.302  1.00  0.00      3WRP 748
+ATOM    691  C   ASN    87     -15.085  20.737   8.593  1.00  0.00      3WRP 749
+ATOM    692  O   ASN    87     -15.325  21.437   9.613  1.00  0.00      3WRP 750
+ATOM    693  CB  ASN    87     -14.934  18.277   8.774  1.00  0.00      3WRP 751
+ATOM    694  CG  ASN    87     -15.553  16.913   8.915  1.00  0.00      3WRP 752
+ATOM    695  OD1 ASN    87     -14.893  15.933   9.329  1.00  0.00      3WRP 753
+ATOM    696  ND2 ASN    87     -16.862  16.860   8.764  1.00  0.00      3WRP 754
+ATOM    697  N   SER    88     -14.104  21.064   7.744  1.00  0.00      3WRP 755
+ATOM    698  CA  SER    88     -13.266  22.247   7.997  1.00  0.00      3WRP 756
+ATOM    699  C   SER    88     -13.986  23.552   7.785  1.00  0.00      3WRP 757
+ATOM    700  O   SER    88     -13.745  24.617   8.416  1.00  0.00      3WRP 758
+ATOM    701  CB  SER    88     -11.891  22.127   7.342  1.00  0.00      3WRP 759
+ATOM    702  OG  SER    88     -11.911  22.078   5.932  1.00  0.00      3WRP 760
+ATOM    703  N   LEU    89     -14.949  23.482   6.859  1.00  0.00      3WRP 761
+ATOM    704  CA  LEU    89     -15.737  24.697   6.537  1.00  0.00      3WRP 762
+ATOM    705  C   LEU    89     -16.620  25.049   7.740  1.00  0.00      3WRP 763
+ATOM    706  O   LEU    89     -16.904  26.244   7.955  1.00  0.00      3WRP 764
+ATOM    707  CB  LEU    89     -16.465  24.356   5.239  1.00  0.00      3WRP 765
+ATOM    708  CG  LEU    89     -17.232  25.432   4.503  1.00  0.00      3WRP 766
+ATOM    709  CD1 LEU    89     -16.480  26.742   4.364  1.00  0.00      3WRP 767
+ATOM    710  CD2 LEU    89     -17.483  24.918   3.059  1.00  0.00      3WRP 768
+ATOM    711  N   LYS    90     -17.144  24.027   8.378  1.00  0.00      3WRP 769
+ATOM    712  CA  LYS    90     -18.052  24.248   9.536  1.00  0.00      3WRP 770
+ATOM    713  C   LYS    90     -17.270  24.872  10.692  1.00  0.00      3WRP 771
+ATOM    714  O   LYS    90     -17.721  25.846  11.328  1.00  0.00      3WRP 772
+ATOM    715  CB  LYS    90     -18.749  22.984   9.954  1.00  0.00      3WRP 773
+ATOM    716  CG  LYS    90     -17.956  21.798  10.469  1.00  0.00      3WRP 774
+ATOM    717  CD  LYS    90     -18.851  20.627  10.862  1.00  0.00      3WRP 775
+ATOM    718  CE  LYS    90     -18.012  19.481  11.384  1.00  0.00      3WRP 776
+ATOM    719  NZ  LYS    90     -18.551  18.151  11.037  1.00  0.00      3WRP 777
+ATOM    720  N   ALA    91     -16.043  24.408  10.839  1.00  0.00      3WRP 778
+ATOM    721  CA  ALA    91     -15.109  24.887  11.861  1.00  0.00      3WRP 779
+ATOM    722  C   ALA    91     -14.573  26.255  11.477  1.00  0.00      3WRP 780
+ATOM    723  O   ALA    91     -13.930  26.912  12.297  1.00  0.00      3WRP 781
+ATOM    724  CB  ALA    91     -13.962  23.909  12.083  1.00  0.00      3WRP 782
+ATOM    725  N   ALA    92     -14.839  26.684  10.264  1.00  0.00      3WRP 783
+ATOM    726  CA  ALA    92     -14.319  27.976   9.761  1.00  0.00      3WRP 784
+ATOM    727  C   ALA    92     -15.006  29.134  10.483  1.00  0.00      3WRP 785
+ATOM    728  O   ALA    92     -16.189  29.004  10.803  1.00  0.00      3WRP 786
+ATOM    729  CB  ALA    92     -14.642  28.041   8.273  1.00  0.00      3WRP 787
+ATOM    730  N   PRO    93     -14.237  30.160  10.795  1.00  0.00      3WRP 788
+ATOM    731  CA  PRO    93     -14.778  31.391  11.391  1.00  0.00      3WRP 789
+ATOM    732  C   PRO    93     -15.800  32.035  10.452  1.00  0.00      3WRP 790
+ATOM    733  O   PRO    93     -15.569  32.119   9.218  1.00  0.00      3WRP 791
+ATOM    734  CB  PRO    93     -13.544  32.271  11.597  1.00  0.00      3WRP 792
+ATOM    735  CG  PRO    93     -12.597  31.808  10.523  1.00  0.00      3WRP 793
+ATOM    736  CD  PRO    93     -12.815  30.290  10.434  1.00  0.00      3WRP 794
+ATOM    737  N   VAL    94     -16.895  32.537  11.006  1.00  0.00      3WRP 795
+ATOM    738  CA  VAL    94     -17.967  33.104  10.170  1.00  0.00      3WRP 796
+ATOM    739  C   VAL    94     -17.435  34.074   9.116  1.00  0.00      3WRP 797
+ATOM    740  O   VAL    94     -18.072  34.347   8.085  1.00  0.00      3WRP 798
+ATOM    741  CB  VAL    94     -19.129  33.691  11.002  1.00  0.00      3WRP 799
+ATOM    742  CG1 VAL    94     -18.676  34.653  12.093  1.00  0.00      3WRP 800
+ATOM    743  CG2 VAL    94     -20.078  34.439  10.061  1.00  0.00      3WRP 801
+ATOM    744  N   GLU    95     -16.456  34.836   9.526  1.00  0.00      3WRP 802
+ATOM    745  CA  GLU    95     -15.900  35.953   8.742  1.00  0.00      3WRP 803
+ATOM    746  C   GLU    95     -15.308  35.454   7.434  1.00  0.00      3WRP 804
+ATOM    747  O   GLU    95     -15.350  36.168   6.430  1.00  0.00      3WRP 805
+ATOM    748  CB  GLU    95     -14.832  36.659   9.554  1.00  0.00      3WRP 806
+ATOM    749  CG  GLU    95     -14.193  37.905   8.945  1.00  0.00      3WRP 807
+ATOM    750  CD  GLU    95     -12.966  38.298   9.739  1.00  0.00      3WRP 808
+ATOM    751  OE1 GLU    95     -12.761  39.405  10.202  1.00  0.00      3WRP 809
+ATOM    752  OE2 GLU    95     -12.322  37.263  10.027  1.00  0.00      3WRP 810
+ATOM    753  N   LEU    96     -14.751  34.250   7.509  1.00  0.00      3WRP 811
+ATOM    754  CA  LEU    96     -14.146  33.587   6.347  1.00  0.00      3WRP 812
+ATOM    755  C   LEU    96     -15.280  33.124   5.421  1.00  0.00      3WRP 813
+ATOM    756  O   LEU    96     -15.253  33.383   4.219  1.00  0.00      3WRP 814
+ATOM    757  CB  LEU    96     -13.295  32.386   6.778  1.00  0.00      3WRP 815
+ATOM    758  CG  LEU    96     -12.668  31.583   5.631  1.00  0.00      3WRP 816
+ATOM    759  CD1 LEU    96     -12.028  32.467   4.568  1.00  0.00      3WRP 817
+ATOM    760  CD2 LEU    96     -11.637  30.630   6.246  1.00  0.00      3WRP 818
+ATOM    761  N   ARG    97     -16.218  32.424   6.030  1.00  0.00      3WRP 819
+ATOM    762  CA  ARG    97     -17.407  31.901   5.337  1.00  0.00      3WRP 820
+ATOM    763  C   ARG    97     -18.101  32.964   4.502  1.00  0.00      3WRP 821
+ATOM    764  O   ARG    97     -18.572  32.755   3.352  1.00  0.00      3WRP 822
+ATOM    765  CB  ARG    97     -18.333  31.319   6.427  1.00  0.00      3WRP 823
+ATOM    766  CG  ARG    97     -18.075  29.881   6.850  1.00  0.00      3WRP 824
+ATOM    767  CD  ARG    97     -18.657  29.531   8.188  1.00  0.00      3WRP 825
+ATOM    768  NE  ARG    97     -19.737  30.402   8.596  1.00  0.00      3WRP 826
+ATOM    769  CZ  ARG    97     -20.146  30.640   9.844  1.00  0.00      3WRP 827
+ATOM    770  NH1 ARG    97     -19.628  30.042  10.921  1.00  0.00      3WRP 828
+ATOM    771  NH2 ARG    97     -20.890  31.730  10.054  1.00  0.00      3WRP 829
+ATOM    772  N   GLN    98     -18.302  34.132   5.080  1.00  0.00      3WRP 830
+ATOM    773  CA  GLN    98     -18.930  35.292   4.442  1.00  0.00      3WRP 831
+ATOM    774  C   GLN    98     -18.111  35.717   3.220  1.00  0.00      3WRP 832
+ATOM    775  O   GLN    98     -18.622  36.073   2.160  1.00  0.00      3WRP 833
+ATOM    776  CB  GLN    98     -19.107  36.443   5.433  1.00  0.00      3WRP 834
+ATOM    777  CG  GLN    98     -20.093  36.029   6.540  1.00  0.00      3WRP 835
+ATOM    778  CD  GLN    98     -20.381  37.137   7.520  1.00  0.00      3WRP 836
+ATOM    779  OE1 GLN    98     -21.523  37.560   7.642  1.00  0.00      3WRP 837
+ATOM    780  NE2 GLN    98     -19.352  37.599   8.231  1.00  0.00      3WRP 838
+ATOM    781  N   TRP    99     -16.812  35.826   3.456  1.00  0.00      3WRP 839
+ATOM    782  CA  TRP    99     -15.833  36.209   2.430  1.00  0.00      3WRP 840
+ATOM    783  C   TRP    99     -15.817  35.231   1.260  1.00  0.00      3WRP 841
+ATOM    784  O   TRP    99     -15.906  35.649   0.076  1.00  0.00      3WRP 842
+ATOM    785  CB  TRP    99     -14.461  36.446   3.070  1.00  0.00      3WRP 843
+ATOM    786  CG  TRP    99     -13.506  37.124   2.146  1.00  0.00      3WRP 844
+ATOM    787  CD1 TRP    99     -13.459  38.448   1.800  1.00  0.00      3WRP 845
+ATOM    788  CD2 TRP    99     -12.453  36.487   1.418  1.00  0.00      3WRP 846
+ATOM    789  NE1 TRP    99     -12.372  38.693   0.980  1.00  0.00      3WRP 847
+ATOM    790  CE2 TRP    99     -11.747  37.503   0.736  1.00  0.00      3WRP 848
+ATOM    791  CE3 TRP    99     -12.007  35.173   1.354  1.00  0.00      3WRP 849
+ATOM    792  CZ2 TRP    99     -10.660  37.219  -0.090  1.00  0.00      3WRP 850
+ATOM    793  CZ3 TRP    99     -10.909  34.895   0.559  1.00  0.00      3WRP 851
+ATOM    794  CH2 TRP    99     -10.254  35.900  -0.141  1.00  0.00      3WRP 852
+ATOM    795  N   LEU   100     -15.731  33.958   1.565  1.00  0.00      3WRP 853
+ATOM    796  CA  LEU   100     -15.725  32.932   0.496  1.00  0.00      3WRP 854
+ATOM    797  C   LEU   100     -17.022  32.989  -0.338  1.00  0.00      3WRP 855
+ATOM    798  O   LEU   100     -17.030  32.452  -1.477  1.00  0.00      3WRP 856
+ATOM    799  CB  LEU   100     -15.531  31.554   1.121  1.00  0.00      3WRP 857
+ATOM    800  CG  LEU   100     -14.168  31.189   1.718  1.00  0.00      3WRP 858
+ATOM    801  CD1 LEU   100     -14.347  29.862   2.450  1.00  0.00      3WRP 859
+ATOM    802  CD2 LEU   100     -13.135  31.102   0.576  1.00  0.00      3WRP 860
+ATOM    803  N   GLU   101     -18.141  33.256   0.319  1.00  0.00      3WRP 861
+ATOM    804  CA  GLU   101     -19.460  33.359  -0.360  1.00  0.00      3WRP 862
+ATOM    805  C   GLU   101     -19.463  34.479  -1.378  1.00  0.00      3WRP 863
+ATOM    806  O   GLU   101     -19.875  34.360  -2.554  1.00  0.00      3WRP 864
+ATOM    807  CB  GLU   101     -20.620  33.629   0.628  1.00  0.00      3WRP 865
+ATOM    808  CG  GLU   101     -21.075  32.361   1.386  1.00  0.00      3WRP 866
+ATOM    809  CD  GLU   101     -21.840  32.633   2.664  1.00  0.00      3WRP 867
+ATOM    810  OE1 GLU   101     -21.905  31.915   3.656  1.00  0.00      3WRP 868
+ATOM    811  OE2 GLU   101     -22.251  33.818   2.676  1.00  0.00      3WRP 869
+ATOM    812  N   GLU   102     -18.896  35.564  -0.953  1.00  0.00      3WRP 870
+ATOM    813  CA  GLU   102     -18.680  36.850  -1.577  1.00  0.00      3WRP 871
+ATOM    814  C   GLU   102     -17.864  36.662  -2.858  1.00  0.00      3WRP 872
+ATOM    815  O   GLU   102     -18.231  37.097  -3.961  1.00  0.00      3WRP 873
+ATOM    816  CB  GLU   102     -17.853  37.720  -0.632  1.00  0.00      3WRP 874
+ATOM    817  CG  GLU   102     -17.966  39.222  -0.595  1.00  0.00      3WRP 875
+ATOM    818  CD  GLU   102     -18.548  39.792   0.673  1.00  0.00      3WRP 876
+ATOM    819  OE1 GLU   102     -17.965  39.764   1.747  1.00  0.00      3WRP 877
+ATOM    820  OE2 GLU   102     -19.675  40.301   0.487  1.00  0.00      3WRP 878
+ATOM    821  N   VAL   103     -16.735  35.998  -2.649  1.00  0.00      3WRP 879
+ATOM    822  CA  VAL   103     -15.764  35.748  -3.731  1.00  0.00      3WRP 880
+ATOM    823  C   VAL   103     -16.127  34.589  -4.624  1.00  0.00      3WRP 881
+ATOM    824  O   VAL   103     -16.246  34.863  -5.852  1.00  0.00      3WRP 882
+ATOM    825  CB  VAL   103     -14.348  35.780  -3.125  1.00  0.00      3WRP 883
+ATOM    826  CG1 VAL   103     -13.258  35.322  -4.088  1.00  0.00      3WRP 884
+ATOM    827  CG2 VAL   103     -14.068  37.193  -2.631  1.00  0.00      3WRP 885
+ATOM    828  N   LEU   104     -16.384  33.394  -4.141  1.00  0.00      3WRP 886
+ATOM    829  CA  LEU   104     -16.697  32.225  -4.944  1.00  0.00      3WRP 887
+ATOM    830  C   LEU   104     -18.119  32.176  -5.508  1.00  0.00      3WRP 888
+ATOM    831  O   LEU   104     -18.391  31.372  -6.420  1.00  0.00      3WRP 889
+ATOM    832  CB  LEU   104     -16.367  30.931  -4.172  1.00  0.00      3WRP 890
+ATOM    833  CG  LEU   104     -14.943  30.815  -3.647  1.00  0.00      3WRP 891
+ATOM    834  CD1 LEU   104     -14.732  29.531  -2.859  1.00  0.00      3WRP 892
+ATOM    835  CD2 LEU   104     -13.967  30.813  -4.828  1.00  0.00      3WRP 893
+ATOM    836  N   LEU   105     -19.003  32.920  -4.903  1.00  0.00      3WRP 894
+ATOM    837  CA  LEU   105     -20.439  32.952  -5.196  1.00  0.00      3WRP 895
+ATOM    838  C   LEU   105     -20.919  34.382  -4.949  1.00  0.00      3WRP 896
+ATOM    839  O   LEU   105     -21.662  34.706  -4.020  1.00  0.00      3WRP 897
+ATOM    840  CB  LEU   105     -21.094  31.873  -4.340  1.00  0.00      3WRP 898
+ATOM    841  CG  LEU   105     -21.610  32.209  -2.953  1.00  0.00      3WRP 899
+ATOM    842  CD1 LEU   105     -23.048  32.724  -2.976  1.00  0.00      3WRP 900
+ATOM    843  CD2 LEU   105     -21.531  30.948  -2.098  1.00  0.00      3WRP 901
+ATOM    844  N   LYS   106     -20.322  35.263  -5.720  1.00  0.00      3WRP 902
+ATOM    845  CA  LYS   106     -20.539  36.715  -5.741  1.00  0.00      3WRP 903
+ATOM    846  C   LYS   106     -19.399  37.276  -6.607  1.00  0.00      3WRP 904
+ATOM    847  O   LYS   106     -19.373  38.381  -7.151  1.00  0.00      3WRP 905
+ATOM    848  CB  LYS   106     -20.650  37.387  -4.398  1.00  0.00      3WRP 906
+ATOM    849  CG  LYS   106     -22.073  37.546  -3.852  1.00  0.00      3WRP 907
+ATOM    850  CD  LYS   106     -22.049  38.398  -2.588  1.00  0.00      3WRP 908
+ATOM    851  CE  LYS   106     -23.435  38.742  -2.086  1.00  0.00      3WRP 909
+ATOM    852  NZ  LYS   106     -23.408  39.951  -1.220  1.00  0.00      3WRP 910
+ATOM    853  N   SER   107     -18.544  36.320  -6.890  1.00  0.00      3WRP 911
+ATOM    854  CA  SER   107     -17.392  36.294  -7.753  1.00  0.00      3WRP 912
+ATOM    855  C   SER   107     -16.532  37.543  -7.883  1.00  0.00      3WRP 913
+ATOM    856  O   SER   107     -16.952  38.675  -8.115  1.00  0.00      3WRP 914
+ATOM    857  CB  SER   107     -17.822  35.803  -9.142  1.00  0.00      3WRP 915
+ATOM    858  OG  SER   107     -17.945  34.386  -9.138  1.00  0.00      3WRP 916
+ATOM    859  N   ASP   108     -15.246  37.245  -7.918  1.00  0.00      3WRP 917
+ATOM    860  CA  ASP   108     -14.096  38.096  -8.161  1.00  0.00      3WRP 918
+ATOM    861  C   ASP   108     -12.874  37.423  -7.502  1.00  0.00      3WRP 919
+ATOM    862  O   ASP   108     -12.591  36.291  -7.965  1.00  0.00      3WRP 920
+ATOM    863  CB  ASP   108     -14.240  39.573  -7.844  1.00  0.00      3WRP 921
+ATOM    864  CG  ASP   108     -12.902  40.298  -7.828  1.00  0.00      3WRP 922
+ATOM    865  OD1 ASP   108     -11.896  39.749  -7.345  1.00  0.00      3WRP 923
+ATOM    866  OD2 ASP   108     -12.825  41.452  -8.292  1.00  0.00      3WRP 924
+TER     868      ASP   108                                              3WRP 925
+HETATM  869  O   HOH   110      -1.663  18.326 -12.835  1.00  0.00      3WRP 926
+HETATM  870  O   HOH   111       7.570  25.597 -13.628  1.00  0.00      3WRP 927
+HETATM  871  O   HOH   112       5.379  13.433   9.594  1.00  0.00      3WRP 928
+HETATM  872  O   HOH   113       2.949  28.583  -9.029  1.00  0.00      3WRP 929
+HETATM  873  O   HOH   114      10.628  41.113  -6.910  1.00  0.00      3WRP 930
+HETATM  874  O   HOH   115       4.607  35.242  -8.618  1.00  0.00      3WRP 931
+HETATM  875  O   HOH   116       8.871  28.412 -11.453  1.00  0.00      3WRP 932
+HETATM  876  O   HOH   117       1.008  20.676   0.302  1.00  0.00      3WRP 933
+HETATM  877  O   HOH   118      -8.421  17.604   1.834  1.00  0.00      3WRP 934
+HETATM  878  O   HOH   119     -15.218  21.407 -11.957  1.00  0.00      3WRP 935
+HETATM  879  O   HOH   120       0.846  11.805  -9.209  1.00  0.00      3WRP 936
+HETATM  880  O   HOH   121       5.406  13.820  -9.542  1.00  0.00      3WRP 937
+HETATM  881  O   HOH   122     -16.785  19.670 -13.532  1.00  0.00      3WRP 938
+HETATM  882  O   HOH   123     -19.803  28.068 -11.218  1.00  0.00      3WRP 939
+HETATM  883  O   HOH   124     -23.238  22.707  -5.465  1.00  0.00      3WRP 940
+HETATM  884  O   HOH   125     -14.705  22.076 -15.658  1.00  0.00      3WRP 941
+HETATM  885  O   HOH   126     -23.751  21.705  -0.878  1.00  0.00      3WRP 942
+HETATM  886  O   HOH   127     -19.347  23.807 -11.144  1.00  0.00      3WRP 943
+HETATM  887  O   HOH   128      10.186  43.461   2.294  1.00  0.00      3WRP 944
+HETATM  888  O   HOH   129     -21.704  30.042   7.406  1.00  0.00      3WRP 945
+HETATM  889  O   HOH   130     -11.197  19.338   0.812  1.00  0.00      3WRP 946
+HETATM  890  O   HOH   131     -12.463  22.714   2.647  1.00  0.00      3WRP 947
+HETATM  891  O   HOH   132     -11.935  19.611  -9.934  1.00  0.00      3WRP 948
+HETATM  892  O   HOH   133      -7.312  13.990  -0.896  1.00  0.00      3WRP 949
+HETATM  893  O   HOH   134     -11.732  24.986   9.113  1.00  0.00      3WRP 950
+HETATM  894  O   HOH   135     -22.701  36.044   2.949  1.00  0.00      3WRP 951
+HETATM  895  O   HOH   136       2.434  43.291   5.000  1.00  0.00      3WRP 952
+HETATM  896  O   HOH   137      10.377  28.129  -8.820  1.00  0.00      3WRP 953
+HETATM  897  O   HOH   138     -17.003  23.686  -9.310  1.00  0.00      3WRP 954
+HETATM  898  O   HOH   139     -21.394  23.295  -7.380  1.00  0.00      3WRP 955
+HETATM  899  O   HOH   140     -26.797  28.470  -3.150  1.00  0.00      3WRP 956
+HETATM  900  O   HOH   141       1.043  26.666  19.193  1.00  0.00      3WRP 957
+HETATM  901  O   HOH   142       3.862  26.682  -0.670  1.00  0.00      3WRP 958
+HETATM  902  O   HOH   143       1.547  26.212  -1.221  1.00  0.00      3WRP 959
+HETATM  903  O   HOH   144      -3.874  15.380  -6.445  1.00  0.00      3WRP 960
+HETATM  904  O   HOH   145      -9.479  15.691  -4.549  1.00  0.00      3WRP 961
+HETATM  905  O   HOH   146     -26.718  11.410  -5.631  1.00  0.00      3WRP 962
+HETATM  906  O   HOH   147     -22.602  11.187  -9.723  1.00  0.00      3WRP 963
+HETATM  907  O   HOH   148      -9.208  12.910  -8.351  1.00  0.00      3WRP 964
+HETATM  908  O   HOH   149     -20.543  22.997   5.482  1.00  0.00      3WRP 965
+HETATM  909  O   HOH   150     -14.595  28.726   6.064  1.00  0.00      3WRP 966
+HETATM  910  O   HOH   151     -21.320  25.653   4.820  1.00  0.00      3WRP 967
+HETATM  911  O   HOH   152     -11.666  21.350   0.862  1.00  0.00      3WRP 968
+HETATM  912  O   HOH   153      -9.390  11.503  -4.553  1.00  0.00      3WRP 969
+HETATM  913  O   HOH   154       1.887  18.330   1.515  1.00  0.00      3WRP 970
+HETATM  914  O   HOH   155       5.053  22.596  10.159  1.00  0.00      3WRP 971
+HETATM  915  O   HOH   156       3.223  29.802  22.190  1.00  0.00      3WRP 972
+HETATM  916  O   HOH   157       1.794  23.093  11.416  1.00  0.00      3WRP 973
+HETATM  917  O   HOH   158      -7.432  20.325 -10.252  1.00  0.00      3WRP 974
+HETATM  918  O   HOH   159       6.581  21.603  11.944  1.00  0.00      3WRP 975
+HETATM  919  O   HOH   160      12.797  20.796  12.217  1.00  0.00      3WRP 976
+HETATM  920  O   HOH   161       1.301  39.759   1.036  1.00  0.00      3WRP 977
+HETATM  921  O   HOH   162      10.221  34.557   6.321  1.00  0.00      3WRP 978
+HETATM  922  O   HOH   163       0.508  40.172   7.525  1.00  0.00      3WRP 979
+HETATM  923  O   HOH   164      10.606  40.277   1.752  1.00  0.00      3WRP 980
+HETATM  924  O   HOH   165      -8.124  15.349   2.686  1.00  0.00      3WRP 981
+HETATM  925  O   HOH   166     -22.461  23.385   2.919  1.00  0.00      3WRP 982
+HETATM  926  O   HOH   167     -25.355  19.035  -8.907  1.00  0.00      3WRP 983
+HETATM  927  O   HOH   168     -27.999  16.464  -6.252  1.00  0.00      3WRP 984
+HETATM  928  O   HOH   169       4.206  29.234 -12.524  1.00  0.00      3WRP 985
+HETATM  929  O   HOH   170     -12.659  44.158  -6.694  1.00  0.00      3WRP 986
+HETATM  930  O   HOH   171     -13.788  34.502  -7.924  1.00  0.00      3WRP 987
+HETATM  931  O   HOH   172       4.317  24.556  23.635  1.00  0.00      3WRP 988
+HETATM  932  O   HOH   173       3.771  29.489  17.904  1.00  0.00      3WRP 989
+HETATM  933  O   HOH   174       3.265  36.284 -10.732  1.00  0.00      3WRP 990
+HETATM  934  O   HOH   175     -15.644  40.016  -1.812  1.00  0.00      3WRP 991
+HETATM  935  O   HOH   176      -3.492  15.206  -9.170  1.00  0.00      3WRP 992
+HETATM  936  O   HOH   177       4.500  15.000  17.000  1.00  0.00      3WRP 993
+HETATM  937  O   HOH   178       1.000  18.000  20.000  1.00  0.00      3WRP 994
+HETATM  938  O   HOH   179       8.000  18.000  20.000  1.00  0.00      3WRP 995
+HETATM  939  O   HOH   180     -17.000  29.000  -8.000  1.00  0.00      3WRP 996
+HETATM  940  O   HOH   181     -20.000  21.000  -8.000  1.00  0.00      3WRP 997
+HETATM  941  O   HOH   182     -17.000  24.000   8.300  1.00  0.00      3WRP 998
+HETATM  942  O   HOH   183     -18.500  32.700   3.000  1.00  0.00      3WRP 999
+MASTER       76    0    0    6    0    0    6    6  884    1    0    9  3WRPA 13
+END                                                                     3WRP1001

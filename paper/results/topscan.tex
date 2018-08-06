@@ -1,0 +1,172 @@
+\documentclass{article}
+\usepackage{a4}
+\usepackage{rotating}
+\usepackage{epsfig}
+
+\newcommand{\degrees}{\mbox{${}^{\circ}$}}
+
+\title{Topscan --- A Tool for Rapid Comparison of Protein Topologies}
+\author{Andrew C.R.\ Martin}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+A novel and very simple algorithm is presented for comparing protein
+topologies. In essence, the structure of the protein is reduced to a
+string of letters encoding secondary structure and direction
+information using a 12-letter alphabet. A simple dynamic programming
+algorithm is then applied to compare two such strings and a score for
+the similarity is calculated. A library of these strings may be built
+from the Protein Databank (or a representative subset) and a new
+structure may then be scanned against this library. The algorithm is
+extremely fast, with a scan of a large TIM-barrel domain against a
+library of more than 2000 secondary structure strings completing in
+around 30 seconds on a 200MHz Pentium class processor.
+\end{abstract}
+
+\section{Introduction}
+As new structure data becomes available, the classification of protein
+folds is becoming more and more important. When a new structure is
+solved, one wishes to ask the question of whether this fold has been
+seen before. If the fold is one of the commonly occuring superfolds
+(e.g.\ immunoglobulin-fold, TIM barrel, $\alpha\beta$-plait, Rossman fold),
+then it can generally be recognised by eye. Automated servers to
+answer this question have recently been developed and rely on
+structure comparison programs. 
+
+Unfortunately, detailed structure comparison is a time-consuming
+process. The double-dynamic programming algorithm used in SSAP is
+particularly computer intensive making it impractical to run a full
+scan of a protein of any size. Our CATH-server has made use of
+sequence screening and a hierachical expension scheme through the
+representative levels in the CATH domain classification database to
+reduce the search, but in the worst case scenario, it could still be
+necessary to scan against all 2028 near-identical sequence
+representatives. We estimate approximately 2 weeks of computer time
+would be required to scan a large protein domain such as a TIM barrel
+in this way and this is clearly impractical for use as a server.
+
+This has led to the development of a novel simple algorithm for
+reducing the search space.
+
+\section{Methods}
+\subsection{Creating topology strings}
+The DSSP algorithm of Kabsch and Sander is used to assign secondary
+structure information to a protein. From these assignments, regions of
+$\beta$-sheet (Kabsch and Sander assignment, E) and of $\alpha$-helix
+(Kabsch and Sander assignment, H) are extracted. Only continuous
+regions of at least 3 or 4 residues with the same assignment are
+selected (this parameter may be defined separately for helix and
+strand). The topology of the protein is thus reduced to a string of E
+and H characters.
+
+To increase the information content of the topology string, the
+end-points of each secondary structure element so-identified are found
+and the vector between them is calculated. The direction of the vector
+is grouped into one of 6 classes depending on the largest component of
+the vector (i.e.\ positive or negative $x$, $y$, or $z$). This is
+equivalent to saying the element points up, down, left, right, forward,
+or back. The encoding is summarised in Table~\ref{tab:encoding}.
+
+\begin{table}
+\begin{center}
+\begin{tabular}{llll} \hline
+\multicolumn{2}{c}{Direction} & \multicolumn{2}{c}{Secondary Structure}\\ \cline{3-4}
+          &         & strand & helix  \\ \hline
+$+y$      & Up      & A      & G      \\
+$+x$      & Right   & B      & H      \\
+$-y$      & Down    & C      & I      \\
+$-x$      & Left    & D      & J      \\
+$+z$      & Back    & E      & K      \\
+$-z$      & Forward & F      & L      \\ \hline
+\end{tabular}
+\end{center}
+\caption{\label{tab:encoding}Encoding scheme used to represent
+          secondary structure and direction information}
+\end{table}
+
+\subsection{Alignment}
+Two topology strings are compared using a simple Needleman and Wunsch
+dynamic programming algorithm. A scoring matrix is used in the
+comparison based on the scores shown in Table~\ref{tab:matrix}. In
+essence, the same secondary structure in the same orientation score
+highest. Because of the boolean definition of whether a vector is in a
+given quadrant, it is possible that vectors actually point in very
+similar directions although they are in different quadrants (for
+example one points at $+$89\degrees\ while another points at
+$+$91\degrees). Vectors which are off by only one segment therefore
+also score highly.
+
+\begin{table}
+\begin{center}
+\begin{tabular}{lll}\hline
+                        & \multicolumn{2}{c}{Secondary structure} \\ \cline{2-3}
+Orientation             & Same  & Different     \\ \hline
+Same                    & 10    & 3             \\
+Off by 1 quadrant       & 8     & 1             \\
+Off by 2 quadrants      & 2     & 0             \\ \hline
+\end{tabular}
+\end{center}
+\caption{\label{tab:matrix} Scoring scheme employed in the matrix for
+the dynamic programming comparison of two topology strings.}
+\end{table}
+
+Because any pair of proteins is in an arbitrary relative orientation,
+the definition of ``up'' in one protein may not correspond to ``up''
+in the second. Therefore, one of the strings is permuted 23 times,
+such that the dynamic programming algorithm comparison is performed a
+total of 24 times (the 6 sides of a cube, each of which may be 4 ways
+up). Table~\ref{tab:permute} shows the modifications made to the
+encoding to achieve rotations about $x$, $y$ and $z$ axes.
+
+\begin{table}
+\begin{center}
+\begin{tabular}{llll}\hline
+        & \multicolumn{3}{c} {Rotation axis} \\ \cline{2-4}
+        & $x$           & $y$           & $z$           \\ \hline
+Old     & ABCDEFGHIJKL  & ABCDEFGHIJKL  & ABCDEFGHIJKL  \\
+New     & EBFDCAKHLJIG  & AECFDBGKILJH  & BCDAEFHIJGKL  \\ \hline
+\end{tabular}
+\end{center}
+\caption{\label{tab:permute} Modifications made to topology strings to
+        achieve rotations about the $x$, $y$ and $z$ axes.}
+\end{table}
+
+
+
+
+\section{Results and Discussion}
+\input results.tex
+\input best.tex
+\input worst.tex
+\input bars.tex
+\subsection{General Results}
+
+
+\subsection{Effect of Secondary Structure Length}
+
+
+\subsection{Problems}
+The algorithm has problems in discriminating, for example, a TIM
+barrel from a Rossmann fold. These are topologically somewhat similar
+--- in both cases, they consist of a core of $\beta$-sheet with
+helices on the outside. In the case of the TIM barrel the
+$\beta$-sheet is curved into a barrel where as the Rossmann fold has a
+relatively flat sheet. Because the differences between the two occur
+in a plane perpendicular to the direction of the secondary structure
+elements, the current method does not distinguish reliably between these
+architectures. 
+
+The assignment of secondary structure is the critical first stage. We
+have found that the DSSP algorithm can be over-sensitive to errors in
+the structure. For example, NMR structures often show little secondary
+structure in DSSP assignments whereas an intuitive visual inspection
+shows substantial secondary structure. The simplified secondary
+structure assignment scheme used within Rasmol actually appears to
+perform better in assigning secondary structures in an intuitive
+manner. 
+
+
+\end{document}
+

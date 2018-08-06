@@ -1,0 +1,31 @@
+! Distribution of highest scores for correct match for each NRep
+! These derived from the _n_a_l_L_ data set
+barchart
+shrfirst
+fill 5 98 100
+ticks 5 100
+centxlab
+size 5 8
+offset 1.5 2
+xlabel "Score"
+ylabel "Frequency"
+5 0
+10 3
+15 1
+20 2
+25 5
+30 10
+35 24
+40 40
+45 59
+50 102
+55 110
+60 176
+65 152
+70 226
+75 234
+80 261
+85 287
+90 393
+95 424
+100 282

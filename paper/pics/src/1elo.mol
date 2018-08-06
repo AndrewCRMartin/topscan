@@ -1,0 +1,32 @@
+! File: 1elo.mol
+! Creator: Inpharmatica iRasMol 1.0
+! Version: MolScript v1.3
+
+plot
+  frame off;
+  window 21;
+
+  read mol "1elo03";
+  transform atom *
+    by centre position atom *
+    by rotation x 180.0
+    by rotation z -57.0000
+    by rotation y -35.0000
+    by rotation x -110.000
+    by translation 1.5 0.459428 0.0;
+
+  set colourparts on;
+  set hsbrampreverse on;
+  set residuecolour from 433 to 483 from hsb 0.667 1 1 to hsb 1 1 1;
+
+  turn residue 436;
+  turn residue 437;
+  turn residue 454;
+  turn residue 455;
+  turn residue 456;
+  coil from 433 to 458;
+  helix from 458 to 463;
+  turn residue 464;
+  turn residue 465;
+  coil from 463 to 483;
+end_plot

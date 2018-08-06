@@ -1,0 +1,192 @@
+../fullrun/coverage_e3h3_L_nolimit.dat
+Coverage at 1% error = 17.888292
+Coverage at 5% error = 48.019167
+Error at 90% coverage = 30.196097
+Error at 95% coverage = 40.292113
+Error at 99% coverage = 61.555311
+../fullrun/coverage_e3h3_a_L_nolimit.dat
+Coverage at 1% error = 21.138269
+Coverage at 5% error = 49.920638
+Error at 90% coverage = 29.017680
+Error at 95% coverage = 39.301369
+Error at 99% coverage = 61.471721
+../fullrun/coverage_e3h3_a_l_L_nolimit.dat
+Coverage at 1% error = 24.923366
+Coverage at 5% error = 51.372110
+Error at 90% coverage = 29.126731
+Error at 95% coverage = 39.240134
+Error at 99% coverage = 60.815520
+../fullrun/coverage_e3h3_a_l_nolimit.dat
+Coverage at 1% error = 23.874575
+Coverage at 5% error = 51.459727
+Error at 90% coverage = 29.106706
+Error at 95% coverage = 39.145206
+Error at 99% coverage = 61.127978
+../fullrun/coverage_e3h3_a_nolimit.dat
+Coverage at 1% error = 19.839852
+Coverage at 5% error = 49.535988
+Error at 90% coverage = 29.069691
+Error at 95% coverage = 39.419587
+Error at 99% coverage = 62.228450
+../fullrun/coverage_e3h3_l_L_nolimit.dat
+Coverage at 1% error = 22.063258
+Coverage at 5% error = 49.797572
+Error at 90% coverage = 30.121281
+Error at 95% coverage = 40.109052
+Error at 99% coverage = 61.335311
+../fullrun/coverage_e3h3_l_nolimit.dat
+Coverage at 1% error = 20.851588
+Coverage at 5% error = 49.353431
+Error at 90% coverage = 29.783615
+Error at 95% coverage = 39.916780
+Error at 99% coverage = 62.100408
+../fullrun/coverage_e3h3_n_L_nolimit.dat
+Coverage at 1% error = 19.972030
+Coverage at 5% error = 48.708531
+Error at 90% coverage = 30.745294
+Error at 95% coverage = 41.104861
+Error at 99% coverage = 63.064121
+../fullrun/coverage_e3h3_n_a_L_nolimit.dat
+Coverage at 1% error = 23.170489
+Coverage at 5% error = 50.225766
+Error at 90% coverage = 29.708731
+Error at 95% coverage = 40.318960
+Error at 99% coverage = 62.559879
+../fullrun/coverage_e3h3_n_a_l_L_nolimit.dat
+Coverage at 1% error = 26.431258
+Coverage at 5% error = 51.746287
+Error at 90% coverage = 29.925784
+Error at 95% coverage = 40.263649
+Error at 99% coverage = 61.303900
+../fullrun/coverage_e3h3_n_a_l_nolimit.dat
+Coverage at 1% error = 25.590540
+Coverage at 5% error = 51.921336
+Error at 90% coverage = 29.742881
+Error at 95% coverage = 39.910132
+Error at 99% coverage = 61.010610
+../fullrun/coverage_e3h3_n_a_nolimit.dat
+Coverage at 1% error = 21.742916
+Coverage at 5% error = 50.323435
+Error at 90% coverage = 29.518664
+Error at 95% coverage = 39.938943
+Error at 99% coverage = 61.667322
+../fullrun/coverage_e3h3_n_l_L_nolimit.dat
+Coverage at 1% error = 24.244179
+Coverage at 5% error = 50.447761
+Error at 90% coverage = 31.002430
+Error at 95% coverage = 41.030025
+Error at 99% coverage = 62.396570
+../fullrun/coverage_e3h3_n_l_nolimit.dat
+Coverage at 1% error = 22.717131
+Coverage at 5% error = 50.359044
+Error at 90% coverage = 30.702139
+Error at 95% coverage = 40.528932
+Error at 99% coverage = 61.522308
+../fullrun/coverage_e3h3_n_nolimit.dat
+Coverage at 1% error = 18.552952
+Coverage at 5% error = 48.430526
+Error at 90% coverage = 30.468689
+Error at 95% coverage = 40.691396
+Error at 99% coverage = 63.703204
+../fullrun/coverage_e3h3_nolimit.dat
+Coverage at 1% error = 16.545551
+Coverage at 5% error = 47.142204
+Error at 90% coverage = 30.137720
+Error at 95% coverage = 40.246248
+Error at 99% coverage = 61.680850
+../fullrun/coverage_e4h4_L_nolimit.dat
+Coverage at 1% error = 17.121549
+Coverage at 5% error = 45.475856
+Error at 90% coverage = 32.334944
+Error at 95% coverage = 43.731759
+Error at 99% coverage = 66.842425
+../fullrun/coverage_e4h4_a_L_nolimit.dat
+Coverage at 1% error = 20.251580
+Coverage at 5% error = 47.441973
+Error at 90% coverage = 31.177722
+Error at 95% coverage = 42.939357
+Error at 99% coverage = 64.412893
+../fullrun/coverage_e4h4_a_l_L_nolimit.dat
+Coverage at 1% error = 23.463124
+Coverage at 5% error = 48.686751
+Error at 90% coverage = 31.690328
+Error at 95% coverage = 43.332765
+Error at 99% coverage = 65.797549
+../fullrun/coverage_e4h4_a_l_nolimit.dat
+Coverage at 1% error = 22.715588
+Coverage at 5% error = 48.592298
+Error at 90% coverage = 31.465439
+Error at 95% coverage = 43.046631
+Error at 99% coverage = 65.611148
+../fullrun/coverage_e4h4_a_nolimit.dat
+Coverage at 1% error = 19.168940
+Coverage at 5% error = 47.412232
+Error at 90% coverage = 31.326099
+Error at 95% coverage = 42.771458
+Error at 99% coverage = 65.781671
+../fullrun/coverage_e4h4_l_L_nolimit.dat
+Coverage at 1% error = 20.946502
+Coverage at 5% error = 47.386394
+Error at 90% coverage = 32.543894
+Error at 95% coverage = 44.046005
+Error at 99% coverage = 65.567850
+../fullrun/coverage_e4h4_l_nolimit.dat
+Coverage at 1% error = 20.257900
+Coverage at 5% error = 47.011299
+Error at 90% coverage = 32.409927
+Error at 95% coverage = 43.334505
+Error at 99% coverage = 65.819100
+../fullrun/coverage_e4h4_n_L_nolimit.dat
+Coverage at 1% error = 19.265900
+Coverage at 5% error = 46.534486
+Error at 90% coverage = 33.180699
+Error at 95% coverage = 44.761681
+Error at 99% coverage = 66.913270
+../fullrun/coverage_e4h4_n_a_L_nolimit.dat
+Coverage at 1% error = 22.113538
+Coverage at 5% error = 47.750504
+Error at 90% coverage = 32.207858
+Error at 95% coverage = 43.745822
+Error at 99% coverage = 65.893293
+../fullrun/coverage_e4h4_n_a_l_L_nolimit.dat
+Coverage at 1% error = 25.020266
+Coverage at 5% error = 48.979295
+Error at 90% coverage = 32.676848
+Error at 95% coverage = 44.491045
+Error at 99% coverage = 65.637609
+../fullrun/coverage_e4h4_n_a_l_nolimit.dat
+Coverage at 1% error = 24.390947
+Coverage at 5% error = 49.012735
+Error at 90% coverage = 32.538485
+Error at 95% coverage = 44.106905
+Error at 99% coverage = 66.037244
+../fullrun/coverage_e4h4_n_a_nolimit.dat
+Coverage at 1% error = 20.864725
+Coverage at 5% error = 48.221165
+Error at 90% coverage = 32.080785
+Error at 95% coverage = 43.936522
+Error at 99% coverage = 66.869520
+../fullrun/coverage_e4h4_n_l_L_nolimit.dat
+Coverage at 1% error = 22.865254
+Coverage at 5% error = 47.698373
+Error at 90% coverage = 33.603885
+Error at 95% coverage = 45.257149
+Error at 99% coverage = 67.133862
+../fullrun/coverage_e4h4_n_l_nolimit.dat
+Coverage at 1% error = 22.105561
+Coverage at 5% error = 47.792101
+Error at 90% coverage = 33.367773
+Error at 95% coverage = 44.623913
+Error at 99% coverage = 67.929963
+../fullrun/coverage_e4h4_n_nolimit.dat
+Coverage at 1% error = 17.735939
+Coverage at 5% error = 46.260856
+Error at 90% coverage = 33.053229
+Error at 95% coverage = 44.455848
+Error at 99% coverage = 67.089733
+../fullrun/coverage_e4h4_nolimit.dat
+Coverage at 1% error = 15.671546
+Coverage at 5% error = 45.072595
+Error at 90% coverage = 32.215420
+Error at 95% coverage = 43.642130
+Error at 99% coverage = 68.029399

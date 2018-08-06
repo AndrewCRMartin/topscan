@@ -1,0 +1,42 @@
+! File: 2ccy.mol
+! Creator: Inpharmatica iRasMol 1.0
+! Version: MolScript v1.3
+
+plot
+  frame off;
+  window 42;
+
+  read mol "2ccyA0";
+  transform atom *
+    by centre position atom *
+    by rotation x 180.0
+    by rotation z 110.639
+    by rotation x 30.3379
+    by translation -1.19976 1.52697 0.0;
+
+
+  coil from A2 to A5;
+  set planecolour blue;
+  cylinder from A5 to A30;
+  turn residue A31;
+  turn residue A32;
+  turn residue A33;
+  turn residue A38;
+  coil from A30 to A40;
+  set planecolour green;
+  cylinder from A40 to A58;
+  turn residue A60;
+  turn residue A63;
+  turn residue A66;
+  coil from A58 to A72;
+  helix from A72 to A75;
+  turn residue A76;
+  turn residue A77;
+  coil from A75 to A79;
+  set planecolour orange;
+  cylinder from A79 to A102;
+  coil from A102 to A104;
+  set planecolour red;
+  cylinder from A104 to A125;
+  coil from A125 to A128;
+end_plot

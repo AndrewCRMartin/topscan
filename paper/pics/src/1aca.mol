@@ -1,0 +1,33 @@
+! File: pics/1aca.mol
+! Creator: Inpharmatica iRasMol 1.0
+! Version: MolScript v1.3
+
+plot
+  frame off;
+  window 32;
+
+  read mol "1aca00";
+  transform atom *
+    by centre position atom *
+    by rotation x 180.0
+    by rotation z -50.4808
+    by rotation y 73.8581
+    by rotation x 130.618;
+
+  coil from 1 to 3;
+  set planecolour blue;
+  cylinder from 3 to 15;
+  coil from 15 to 20;
+  set planecolour green;
+  cylinder from 20 to 36;
+  coil from 36 to 51;
+  set planecolour orange;
+  cylinder from 51 to 62;
+  turn residue 62;
+  turn residue 63;
+  coil from 62 to 65;
+  set planecolour red;
+  cylinder from 65 to 84;
+  coil from 84 to 86;
+  coil from 1 to 2;
+end_plot

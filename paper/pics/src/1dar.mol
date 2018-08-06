@@ -1,0 +1,31 @@
+! File: 1dar.mol
+! Creator: Inpharmatica iRasMol 1.0
+! Version: MolScript v1.3
+
+plot
+  window 24;
+  frame off;
+
+  read mol "1dar03";
+  transform atom *
+    by centre position atom *
+    by rotation x 180.0
+    by rotation z -46.0000
+    by rotation y -44.0000
+    by rotation x -85.000
+    by translation 2.00000 -1.03486 0.0;
+
+  set colourparts on;
+  set hsbrampreverse on;
+  set residuecolour from 433 to 483 from hsb 0.667 1 1 to hsb 1 1 1;
+
+  coil from 433 to 439;
+  strand from 439 to 441;
+  coil from 441 to 451;
+  strand from 451 to 453;
+  coil from 453 to 470;
+  strand from 470 to 473;
+  turn residue 474;
+  turn residue 475;
+  coil from 473 to 483;
+end_plot

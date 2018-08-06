@@ -1,0 +1,1714 @@
+HEADER    GLYCOSIDASE                             01-JUN-94   1XNB      1XNB   2
+COMPND    XYLANASE (ENDO-1,4-BETA-XYLANASE) (E.C.3.2.1.8)               1XNB   3
+SOURCE    (BACILLUS CIRCULANS)                                          1XNB   4
+AUTHOR    R.L.CAMPBELL                                                  1XNB   5
+REVDAT   1   20-DEC-94 1XNB    0                                        1XNB   6
+JRNL        AUTH   R.L.CAMPBELL,D.R.ROSE,W.W.WAKARCHUK,R.J.TO,W.SUNG,   1XNB   7
+JRNL        AUTH 2 M.YAGUCHI                                            1XNB   8
+JRNL        TITL   HIGH-RESOLUTION STRUCTURES OF XYLANASES FROM B.      1XNB   9
+JRNL        TITL 2 CIRCULANS AND T. HARZIANUM IDENTIFY A NEW FOLDING    1XNB  10
+JRNL        TITL 3 PATTERN AND IMPLICATIONS FOR THE ATOMIC BASIS OF     1XNB  11
+JRNL        TITL 4 THE CATALYSIS                                        1XNB  12
+JRNL        REF    TO BE PUBLISHED                                      1XNB  13
+JRNL        REFN                                                  0353  1XNB  14
+REMARK   1                                                              1XNB  15
+REMARK   2                                                              1XNB  16
+REMARK   2 RESOLUTION. 1.49 ANGSTROMS.                                  1XNB  17
+REMARK   3                                                              1XNB  18
+REMARK   3 REFINEMENT.                                                  1XNB  19
+REMARK   3   PROGRAM                    X-PLOR                          1XNB  20
+REMARK   3   AUTHORS                    BRUNGER                         1XNB  21
+REMARK   3   R VALUE                    0.165                           1XNB  22
+REMARK   3   RMSD BOND DISTANCES        0.010  ANGSTROMS                1XNB  23
+REMARK   3   RMSD BOND ANGLES           1.61   DEGREES                  1XNB  24
+REMARK   3   RMSD DIHEDRAL ANGLES       26.896 DEGREES                  1XNB  25
+REMARK   3   RMSD IMPROPER ANGLES       1.190  DEGREES                  1XNB  26
+REMARK   3                                                              1XNB  27
+REMARK   3   NUMBER OF REFLECTIONS      27189                           1XNB  28
+REMARK   3   RESOLUTION RANGE        8. - 1.49 ANGSTROMS                1XNB  29
+REMARK   3   DATA CUTOFF                2.     SIGMA(F)                 1XNB  30
+REMARK   3   PERCENT COMPLETION         90.                             1XNB  31
+REMARK   3                                                              1XNB  32
+REMARK   3   NUMBER OF PROTEIN ATOMS                       1448         1XNB  33
+REMARK   3   NUMBER OF SOLVENT ATOMS                        154         1XNB  34
+REMARK   4                                                              1XNB  35
+REMARK   4 SITE AS1 (GLU 78, GLU 172) REFERS TO THE CATALYTIC ACIDIC    1XNB  36
+REMARK   4 RESIDUES.                                                    1XNB  37
+REMARK   5                                                              1XNB  38
+REMARK   5 SITE AS2 (TYR 5, TYR 69, TYR 80, TYR 166) REFERS TO THE      1XNB  39
+REMARK   5 GROUP OF TYROSINE RESIDUES IN THE ACTIVE SITE THAT APPEAR    1XNB  40
+REMARK   5 TO BE IMPORTANT FOR SUBSTRATE BINDING.                       1XNB  41
+REMARK   6                                                              1XNB  42
+REMARK   6 ALL NON-GLYCINE RESIDUES LIE WITHIN THE ALLOWED REGIONS OF   1XNB  43
+REMARK   6 A RAMACHANDRAN PLOT EXCEPT ASP 121 AND ALA 165.  THE         1XNB  44
+REMARK   6 ELECTRON DENSITY FOR BOTH ASP 121 AND ALA 165 IS VERY        1XNB  45
+REMARK   6 CLEAR.                                                       1XNB  46
+REMARK   7                                                              1XNB  47
+REMARK   7 CROSS REFERENCE TO SEQUENCE DATABASE                         1XNB  48
+REMARK   7 SWISS-PROT ENTRY NAME       PDB ENTRY CHAIN NAME             1XNB  49
+REMARK   7    XYNA_BACCI                                                1XNB  50
+SEQRES   1    185  ALA SER THR ASP TYR TRP GLN ASN TRP THR ASP GLY GLY  1XNB  51
+SEQRES   2    185  GLY ILE VAL ASN ALA VAL ASN GLY SER GLY GLY ASN TYR  1XNB  52
+SEQRES   3    185  SER VAL ASN TRP SER ASN THR GLY ASN PHE VAL VAL GLY  1XNB  53
+SEQRES   4    185  LYS GLY TRP THR THR GLY SER PRO PHE ARG THR ILE ASN  1XNB  54
+SEQRES   5    185  TYR ASN ALA GLY VAL TRP ALA PRO ASN GLY ASN GLY TYR  1XNB  55
+SEQRES   6    185  LEU THR LEU TYR GLY TRP THR ARG SER PRO LEU ILE GLU  1XNB  56
+SEQRES   7    185  TYR TYR VAL VAL ASP SER TRP GLY THR TYR ARG PRO THR  1XNB  57
+SEQRES   8    185  GLY THR TYR LYS GLY THR VAL LYS SER ASP GLY GLY THR  1XNB  58
+SEQRES   9    185  TYR ASP ILE TYR THR THR THR ARG TYR ASN ALA PRO SER  1XNB  59
+SEQRES  10    185  ILE ASP GLY ASP ARG THR THR PHE THR GLN TYR TRP SER  1XNB  60
+SEQRES  11    185  VAL ARG GLN SER LYS ARG PRO THR GLY SER ASN ALA THR  1XNB  61
+SEQRES  12    185  ILE THR PHE THR ASN HIS VAL ASN ALA TRP LYS SER HIS  1XNB  62
+SEQRES  13    185  GLY MET ASN LEU GLY SER ASN TRP ALA TYR GLN VAL MET  1XNB  63
+SEQRES  14    185  ALA THR GLU GLY TYR GLN SER SER GLY SER SER ASN VAL  1XNB  64
+SEQRES  15    185  THR VAL TRP                                          1XNB  65
+FTNOTE   1                                                              1XNB  66
+FTNOTE   1 CIS PROLINE - PRO      75                                    1XNB  67
+HET    SO4    191       5     SULFATE                                   1XNB  68
+FORMUL   2  SO4    O4 S1 --                                             1XNB  69
+FORMUL   3  HOH   *154(H2 O1)                                           1XNB  70
+HELIX    1   A THR    147  LYS    154  1                                1XNB  71
+SHEET    1   A 5 ILE    15  GLY    21  0                                1XNB  72
+SHEET    2   A 5 ASN    25  SER    31 -1  O  ASN    25   N  GLY    21   1XNB  73
+SHEET    3   A 5 GLY   178  VAL   184 -1  N  GLY   178   O  TRP    30   1XNB  74
+SHEET    4   A 5 ARG    49  PRO    60 -1  N  ASN    54   O  THR   183   1XNB  75
+SHEET    5   A 5 ASN   141  PHE   146 -1  N  ALA   142   O  TYR    53   1XNB  76
+SHEET    1   B 5 SER     2  THR    10  0                                1XNB  77
+SHEET    2   B 5 ASN    35  VAL    38 -1  N  VAL    37   O  TRP     9   1XNB  78
+SHEET    3   B 5 ALA   170  TYR   174 -1  N  THR   171   O  VAL    38   1XNB  79
+SHEET    4   B 5 ASN    63  LEU    66 -1  O  ASN    63   N  TYR   174   1XNB  80
+SHEET    5   B 5 SER    84  GLY    86 -1  N  SER    84   O  LEU    66   1XNB  81
+SHEET    1   C 6 GLY    96  SER   100  0                                1XNB  82
+SHEET    2   C 6 GLY   103  TYR   113 -1  N  GLY   103   O  SER   100   1XNB  83
+SHEET    3   C 6 PHE   125  VAL   131 -1  N  PHE   125   O  ARG   112   1XNB  84
+SHEET    4   C 6 ILE    77  VAL    81  1  N  GLU    78   O  THR   126   1XNB  85
+SHEET    5   C 6 LEU    68  ARG    73 -1  N  LEU    68   O  VAL    81   1XNB  86
+SHEET    6   C 6 ASN   163  VAL   168 -1  N  ASN   163   O  ARG    73   1XNB  87
+TURN     1   A SER    22  ASN    25                                     1XNB  88
+TURN     2   B SER   100  GLY   103                                     1XNB  89
+TURN     3   C SER   117  GLY   120                                     1XNB  90
+TURN     4   D LYS   154  GLY   157                                     1XNB  91
+SITE     1 AS1  2 GLU    78  GLU   172                                  1XNB  92
+SITE     1 AS2  4 TYR     5  TYR    69  TYR    80  TYR   166            1XNB  93
+CRYST1   44.000   52.780   78.390  90.00  90.00  90.00 P 21 21 21    4  1XNB  94
+ORIGX1      1.000000  0.000000  0.000000        0.00000                 1XNB  95
+ORIGX2      0.000000  1.000000  0.000000        0.00000                 1XNB  96
+ORIGX3      0.000000  0.000000  1.000000        0.00000                 1XNB  97
+SCALE1      0.022727  0.000000  0.000000        0.00000                 1XNB  98
+SCALE2      0.000000  0.018947  0.000000        0.00000                 1XNB  99
+SCALE3      0.000000  0.000000  0.012757        0.00000                 1XNB 100
+ATOM      1  N   ALA     1      33.557  42.394  20.301  1.00 18.33      1XNB 101
+ATOM      2  CA  ALA     1      33.605  43.008  21.659  1.00 19.31      1XNB 102
+ATOM      3  C   ALA     1      34.895  42.635  22.373  1.00 20.06      1XNB 103
+ATOM      4  O   ALA     1      35.547  41.645  22.028  1.00 20.69      1XNB 104
+ATOM      5  CB  ALA     1      32.412  42.539  22.485  1.00 19.54      1XNB 105
+ATOM      6  N   SER     2      35.283  43.452  23.344  1.00 19.88      1XNB 106
+ATOM      7  CA  SER     2      36.471  43.168  24.125  1.00 20.42      1XNB 107
+ATOM      8  C   SER     2      36.081  42.194  25.222  1.00 19.98      1XNB 108
+ATOM      9  O   SER     2      34.997  42.296  25.815  1.00 20.11      1XNB 109
+ATOM     10  CB  SER     2      37.028  44.434  24.773  1.00 22.28      1XNB 110
+ATOM     11  OG  SER     2      37.620  45.277  23.807  1.00 25.95      1XNB 111
+ATOM     12  N   THR     3      36.941  41.214  25.441  1.00 18.87      1XNB 112
+ATOM     13  CA  THR     3      36.725  40.233  26.477  1.00 17.86      1XNB 113
+ATOM     14  C   THR     3      37.320  40.879  27.715  1.00 17.15      1XNB 114
+ATOM     15  O   THR     3      38.242  41.689  27.608  1.00 18.90      1XNB 115
+ATOM     16  CB  THR     3      37.464  38.933  26.141  1.00 17.97      1XNB 116
+ATOM     17  OG1 THR     3      38.843  39.223  25.876  1.00 17.35      1XNB 117
+ATOM     18  CG2 THR     3      36.841  38.275  24.921  1.00 17.23      1XNB 118
+ATOM     19  N   ASP     4      36.757  40.599  28.876  1.00 15.85      1XNB 119
+ATOM     20  CA  ASP     4      37.264  41.188  30.109  1.00 15.18      1XNB 120
+ATOM     21  C   ASP     4      37.506  40.141  31.167  1.00 14.74      1XNB 121
+ATOM     22  O   ASP     4      37.689  40.464  32.336  1.00 16.12      1XNB 122
+ATOM     23  CB  ASP     4      36.290  42.247  30.643  1.00 16.17      1XNB 123
+ATOM     24  CG  ASP     4      34.884  41.704  30.873  1.00 18.31      1XNB 124
+ATOM     25  OD1 ASP     4      34.728  40.515  31.191  1.00 16.31      1XNB 125
+ATOM     26  OD2 ASP     4      33.921  42.489  30.745  1.00 21.64      1XNB 126
+ATOM     27  N   TYR     5      37.467  38.875  30.774  1.00 13.01      1XNB 127
+ATOM     28  CA  TYR     5      37.669  37.814  31.729  1.00 12.13      1XNB 128
+ATOM     29  C   TYR     5      38.605  36.747  31.175  1.00 12.00      1XNB 129
+ATOM     30  O   TYR     5      38.528  36.382  29.997  1.00 11.49      1XNB 130
+ATOM     31  CB  TYR     5      36.316  37.203  32.134  1.00 12.28      1XNB 131
+ATOM     32  CG  TYR     5      36.424  36.245  33.286  1.00 13.76      1XNB 132
+ATOM     33  CD1 TYR     5      36.570  36.705  34.592  1.00 15.67      1XNB 133
+ATOM     34  CD2 TYR     5      36.440  34.878  33.069  1.00 14.20      1XNB 134
+ATOM     35  CE1 TYR     5      36.738  35.815  35.647  1.00 17.33      1XNB 135
+ATOM     36  CE2 TYR     5      36.606  33.995  34.107  1.00 16.65      1XNB 136
+ATOM     37  CZ  TYR     5      36.760  34.461  35.392  1.00 16.54      1XNB 137
+ATOM     38  OH  TYR     5      36.973  33.557  36.409  1.00 21.10      1XNB 138
+ATOM     39  N   TRP     6      39.533  36.311  32.017  1.00 11.99      1XNB 139
+ATOM     40  CA  TRP     6      40.501  35.270  31.677  1.00 12.62      1XNB 140
+ATOM     41  C   TRP     6      40.298  34.123  32.665  1.00 12.35      1XNB 141
+ATOM     42  O   TRP     6      40.391  34.303  33.884  1.00 12.81      1XNB 142
+ATOM     43  CB  TRP     6      41.925  35.834  31.756  1.00 12.93      1XNB 143
+ATOM     44  CG  TRP     6      43.044  34.817  31.782  1.00 12.84      1XNB 144
+ATOM     45  CD1 TRP     6      43.961  34.656  32.780  1.00 13.87      1XNB 145
+ATOM     46  CD2 TRP     6      43.419  33.896  30.743  1.00 12.57      1XNB 146
+ATOM     47  NE1 TRP     6      44.884  33.705  32.427  1.00 14.55      1XNB 147
+ATOM     48  CE2 TRP     6      44.579  33.223  31.182  1.00 13.64      1XNB 148
+ATOM     49  CE3 TRP     6      42.892  33.577  29.490  1.00 12.99      1XNB 149
+ATOM     50  CZ2 TRP     6      45.221  32.252  30.409  1.00 13.34      1XNB 150
+ATOM     51  CZ3 TRP     6      43.532  32.605  28.723  1.00 13.06      1XNB 151
+ATOM     52  CH2 TRP     6      44.682  31.959  29.186  1.00 12.53      1XNB 152
+ATOM     53  N   GLN     7      39.923  32.969  32.124  1.00 12.18      1XNB 153
+ATOM     54  CA  GLN     7      39.664  31.763  32.895  1.00 13.01      1XNB 154
+ATOM     55  C   GLN     7      40.846  30.820  32.737  1.00 12.95      1XNB 155
+ATOM     56  O   GLN     7      41.210  30.448  31.620  1.00 11.41      1XNB 156
+ATOM     57  CB  GLN     7      38.386  31.095  32.366  1.00 14.28      1XNB 157
+ATOM     58  CG  GLN     7      38.101  29.699  32.902  1.00 16.44      1XNB 158
+ATOM     59  CD  GLN     7      37.854  29.678  34.399  1.00 17.76      1XNB 159
+ATOM     60  OE1 GLN     7      37.695  30.724  35.039  1.00 19.75      1XNB 160
+ATOM     61  NE2 GLN     7      37.811  28.481  34.967  1.00 19.97      1XNB 161
+ATOM     62  N   ASN     8      41.469  30.449  33.847  1.00 13.03      1XNB 162
+ATOM     63  CA  ASN     8      42.614  29.549  33.788  1.00 14.31      1XNB 163
+ATOM     64  C   ASN     8      42.596  28.701  35.045  1.00 14.87      1XNB 164
+ATOM     65  O   ASN     8      43.217  29.048  36.051  1.00 15.95      1XNB 165
+ATOM     66  CB  ASN     8      43.917  30.363  33.704  1.00 15.68      1XNB 166
+ATOM     67  CG  ASN     8      45.169  29.485  33.669  1.00 17.89      1XNB 167
+ATOM     68  OD1 ASN     8      46.285  29.971  33.882  1.00 21.37      1XNB 168
+ATOM     69  ND2 ASN     8      44.998  28.211  33.381  1.00 17.58      1XNB 169
+ATOM     70  N   TRP     9      41.869  27.595  34.985  1.00 13.77      1XNB 170
+ATOM     71  CA  TRP     9      41.747  26.710  36.124  1.00 14.45      1XNB 171
+ATOM     72  C   TRP     9      42.248  25.313  35.802  1.00 14.19      1XNB 172
+ATOM     73  O   TRP     9      41.991  24.788  34.721  1.00 12.93      1XNB 173
+ATOM     74  CB  TRP     9      40.277  26.624  36.571  1.00 16.92      1XNB 174
+ATOM     75  CG  TRP     9      40.043  25.627  37.684  1.00 18.88      1XNB 175
+ATOM     76  CD1 TRP     9      40.153  25.857  39.028  1.00 20.77      1XNB 176
+ATOM     77  CD2 TRP     9      39.691  24.237  37.543  1.00 19.76      1XNB 177
+ATOM     78  NE1 TRP     9      39.897  24.699  39.727  1.00 21.88      1XNB 178
+ATOM     79  CE2 TRP     9      39.610  23.693  38.841  1.00 20.89      1XNB 179
+ATOM     80  CE3 TRP     9      39.438  23.405  36.447  1.00 19.77      1XNB 180
+ATOM     81  CZ2 TRP     9      39.287  22.356  39.071  1.00 20.74      1XNB 181
+ATOM     82  CZ3 TRP     9      39.120  22.084  36.677  1.00 19.64      1XNB 182
+ATOM     83  CH2 TRP     9      39.046  21.571  37.980  1.00 19.85      1XNB 183
+ATOM     84  N   THR    10      42.967  24.719  36.748  1.00 14.15      1XNB 184
+ATOM     85  CA  THR    10      43.458  23.359  36.604  1.00 15.42      1XNB 185
+ATOM     86  C   THR    10      43.353  22.692  37.964  1.00 15.37      1XNB 186
+ATOM     87  O   THR    10      43.438  23.366  38.990  1.00 16.44      1XNB 187
+ATOM     88  CB  THR    10      44.936  23.303  36.151  1.00 16.87      1XNB 188
+ATOM     89  OG1 THR    10      45.398  21.947  36.204  1.00 17.95      1XNB 189
+ATOM     90  CG2 THR    10      45.825  24.160  37.057  1.00 18.37      1XNB 190
+ATOM     91  N   ASP    11      43.119  21.385  37.977  1.00 14.99      1XNB 191
+ATOM     92  CA  ASP    11      43.068  20.669  39.247  1.00 16.29      1XNB 192
+ATOM     93  C   ASP    11      44.492  20.308  39.694  1.00 17.51      1XNB 193
+ATOM     94  O   ASP    11      44.676  19.590  40.677  1.00 18.85      1XNB 194
+ATOM     95  CB  ASP    11      42.159  19.432  39.188  1.00 16.65      1XNB 195
+ATOM     96  CG  ASP    11      42.610  18.385  38.167  1.00 16.24      1XNB 196
+ATOM     97  OD1 ASP    11      43.732  18.458  37.614  1.00 16.25      1XNB 197
+ATOM     98  OD2 ASP    11      41.806  17.469  37.920  1.00 18.06      1XNB 198
+ATOM     99  N   GLY    12      45.488  20.773  38.938  1.00 17.14      1XNB 199
+ATOM    100  CA  GLY    12      46.880  20.537  39.289  1.00 17.85      1XNB 200
+ATOM    101  C   GLY    12      47.602  19.398  38.598  1.00 17.39      1XNB 201
+ATOM    102  O   GLY    12      48.833  19.288  38.695  1.00 18.33      1XNB 202
+ATOM    103  N   GLY    13      46.860  18.550  37.897  1.00 15.94      1XNB 203
+ATOM    104  CA  GLY    13      47.483  17.434  37.219  1.00 14.87      1XNB 204
+ATOM    105  C   GLY    13      48.154  17.758  35.898  1.00 15.19      1XNB 205
+ATOM    106  O   GLY    13      47.624  18.514  35.076  1.00 15.71      1XNB 206
+ATOM    107  N   GLY    14      49.333  17.180  35.699  1.00 13.67      1XNB 207
+ATOM    108  CA  GLY    14      50.066  17.359  34.463  1.00 12.80      1XNB 208
+ATOM    109  C   GLY    14      50.478  18.776  34.138  1.00 13.15      1XNB 209
+ATOM    110  O   GLY    14      50.580  19.636  35.024  1.00 14.89      1XNB 210
+ATOM    111  N   ILE    15      50.689  19.019  32.850  1.00 12.35      1XNB 211
+ATOM    112  CA  ILE    15      51.137  20.311  32.366  1.00 12.96      1XNB 212
+ATOM    113  C   ILE    15      50.043  21.031  31.599  1.00 11.08      1XNB 213
+ATOM    114  O   ILE    15      49.431  20.451  30.709  1.00 11.04      1XNB 214
+ATOM    115  CB  ILE    15      52.358  20.140  31.389  1.00 14.70      1XNB 215
+ATOM    116  CG1 ILE    15      53.480  19.345  32.069  1.00 16.58      1XNB 216
+ATOM    117  CG2 ILE    15      52.834  21.489  30.850  1.00 15.10      1XNB 217
+ATOM    118  CD1 ILE    15      53.917  19.894  33.413  1.00 18.49      1XNB 218
+ATOM    119  N   VAL    16      49.783  22.277  31.982  1.00 11.34      1XNB 219
+ATOM    120  CA  VAL    16      48.815  23.124  31.290  1.00 11.20      1XNB 220
+ATOM    121  C   VAL    16      49.526  24.459  31.083  1.00 12.26      1XNB 221
+ATOM    122  O   VAL    16      49.734  25.215  32.031  1.00 14.88      1XNB 222
+ATOM    123  CB  VAL    16      47.513  23.335  32.107  1.00 12.10      1XNB 223
+ATOM    124  CG1 VAL    16      46.551  24.268  31.345  1.00 14.00      1XNB 224
+ATOM    125  CG2 VAL    16      46.845  21.994  32.372  1.00 12.25      1XNB 225
+ATOM    126  N   ASN    17      50.011  24.691  29.871  1.00 11.04      1XNB 226
+ATOM    127  CA  ASN    17      50.698  25.940  29.564  1.00 11.00      1XNB 227
+ATOM    128  C   ASN    17      49.682  26.830  28.860  1.00 11.44      1XNB 228
+ATOM    129  O   ASN    17      49.469  26.709  27.650  1.00 12.32      1XNB 229
+ATOM    130  CB  ASN    17      51.916  25.674  28.666  1.00 12.42      1XNB 230
+ATOM    131  CG  ASN    17      52.563  26.956  28.149  1.00 14.36      1XNB 231
+ATOM    132  OD1 ASN    17      52.829  27.083  26.947  1.00 17.55      1XNB 232
+ATOM    133  ND2 ASN    17      52.821  27.900  29.039  1.00 14.17      1XNB 233
+ATOM    134  N   ALA    18      49.047  27.705  29.631  1.00 11.62      1XNB 234
+ATOM    135  CA  ALA    18      48.026  28.608  29.107  1.00 12.71      1XNB 235
+ATOM    136  C   ALA    18      48.611  29.994  28.918  1.00 13.84      1XNB 236
+ATOM    137  O   ALA    18      49.213  30.550  29.837  1.00 15.19      1XNB 237
+ATOM    138  CB  ALA    18      46.831  28.664  30.057  1.00 12.97      1XNB 238
+ATOM    139  N   VAL    19      48.435  30.552  27.729  1.00 13.17      1XNB 239
+ATOM    140  CA  VAL    19      48.945  31.876  27.417  1.00 14.12      1XNB 240
+ATOM    141  C   VAL    19      47.802  32.861  27.209  1.00 13.80      1XNB 241
+ATOM    142  O   VAL    19      46.903  32.625  26.401  1.00 12.62      1XNB 242
+ATOM    143  CB  VAL    19      49.801  31.866  26.136  1.00 14.88      1XNB 243
+ATOM    144  CG1 VAL    19      50.305  33.269  25.836  1.00 15.63      1XNB 244
+ATOM    145  CG2 VAL    19      50.962  30.884  26.282  1.00 16.37      1XNB 245
+ATOM    146  N   ASN    20      47.842  33.954  27.956  1.00 13.51      1XNB 246
+ATOM    147  CA  ASN    20      46.846  35.012  27.872  1.00 14.14      1XNB 247
+ATOM    148  C   ASN    20      47.403  35.973  26.812  1.00 14.74      1XNB 248
+ATOM    149  O   ASN    20      48.284  36.780  27.105  1.00 15.02      1XNB 249
+ATOM    150  CB  ASN    20      46.739  35.681  29.250  1.00 14.65      1XNB 250
+ATOM    151  CG  ASN    20      45.691  36.784  29.310  1.00 16.65      1XNB 251
+ATOM    152  OD1 ASN    20      45.199  37.254  28.295  1.00 16.50      1XNB 252
+ATOM    153  ND2 ASN    20      45.359  37.206  30.522  1.00 18.70      1XNB 253
+ATOM    154  N   GLY    21      46.948  35.823  25.570  1.00 13.55      1XNB 254
+ATOM    155  CA  GLY    21      47.443  36.653  24.482  1.00 14.08      1XNB 255
+ATOM    156  C   GLY    21      46.809  38.023  24.354  1.00 14.37      1XNB 256
+ATOM    157  O   GLY    21      46.047  38.440  25.222  1.00 13.97      1XNB 257
+ATOM    158  N   SER    22      47.130  38.741  23.274  1.00 13.91      1XNB 258
+ATOM    159  CA  SER    22      46.565  40.073  23.065  1.00 14.93      1XNB 259
+ATOM    160  C   SER    22      45.087  39.984  22.699  1.00 13.94      1XNB 260
+ATOM    161  O   SER    22      44.642  39.009  22.075  1.00 13.16      1XNB 261
+ATOM    162  CB  SER    22      47.326  40.856  21.976  1.00 16.96      1XNB 262
+ATOM    163  OG  SER    22      47.227  40.225  20.718  1.00 22.65      1XNB 263
+ATOM    164  N   GLY    23      44.337  41.009  23.094  1.00 13.47      1XNB 264
+ATOM    165  CA  GLY    23      42.921  41.053  22.799  1.00 12.04      1XNB 265
+ATOM    166  C   GLY    23      42.200  39.820  23.310  1.00 11.45      1XNB 266
+ATOM    167  O   GLY    23      42.354  39.425  24.458  1.00 11.61      1XNB 267
+ATOM    168  N   GLY    24      41.418  39.202  22.432  1.00 10.66      1XNB 268
+ATOM    169  CA  GLY    24      40.677  38.015  22.812  1.00 10.10      1XNB 269
+ATOM    170  C   GLY    24      41.371  36.714  22.462  1.00 10.48      1XNB 270
+ATOM    171  O   GLY    24      40.740  35.656  22.468  1.00  9.94      1XNB 271
+ATOM    172  N   ASN    25      42.670  36.765  22.191  1.00  9.74      1XNB 272
+ATOM    173  CA  ASN    25      43.403  35.561  21.831  1.00  8.61      1XNB 273
+ATOM    174  C   ASN    25      44.046  34.846  23.017  1.00  9.28      1XNB 274
+ATOM    175  O   ASN    25      44.513  35.472  23.965  1.00 10.02      1XNB 275
+ATOM    176  CB  ASN    25      44.505  35.902  20.807  1.00  9.73      1XNB 276
+ATOM    177  CG  ASN    25      45.343  34.701  20.433  1.00 10.64      1XNB 277
+ATOM    178  OD1 ASN    25      46.487  34.552  20.889  1.00 12.77      1XNB 278
+ATOM    179  ND2 ASN    25      44.787  33.828  19.602  1.00 10.25      1XNB 279
+ATOM    180  N   TYR    26      44.035  33.523  22.977  1.00  8.45      1XNB 280
+ATOM    181  CA  TYR    26      44.701  32.733  24.005  1.00  8.16      1XNB 281
+ATOM    182  C   TYR    26      45.129  31.422  23.378  1.00  8.88      1XNB 282
+ATOM    183  O   TYR    26      44.651  31.050  22.291  1.00  8.49      1XNB 283
+ATOM    184  CB  TYR    26      43.797  32.483  25.229  1.00  8.48      1XNB 284
+ATOM    185  CG  TYR    26      42.670  31.488  25.011  1.00  7.99      1XNB 285
+ATOM    186  CD1 TYR    26      42.859  30.128  25.235  1.00  8.33      1XNB 286
+ATOM    187  CD2 TYR    26      41.408  31.918  24.605  1.00  8.99      1XNB 287
+ATOM    188  CE1 TYR    26      41.828  29.221  25.059  1.00  9.33      1XNB 288
+ATOM    189  CE2 TYR    26      40.378  31.024  24.433  1.00  8.67      1XNB 289
+ATOM    190  CZ  TYR    26      40.587  29.679  24.653  1.00  8.78      1XNB 290
+ATOM    191  OH  TYR    26      39.559  28.777  24.435  1.00  9.17      1XNB 291
+ATOM    192  N   SER    27      46.087  30.751  24.010  1.00  9.06      1XNB 292
+ATOM    193  CA  SER    27      46.525  29.451  23.525  1.00  9.61      1XNB 293
+ATOM    194  C   SER    27      46.803  28.553  24.707  1.00  9.94      1XNB 294
+ATOM    195  O   SER    27      46.991  29.022  25.828  1.00 10.81      1XNB 295
+ATOM    196  CB  SER    27      47.752  29.568  22.608  1.00 10.92      1XNB 296
+ATOM    197  OG  SER    27      48.830  30.184  23.271  1.00 14.68      1XNB 297
+ATOM    198  N   VAL    28      46.732  27.255  24.475  1.00  9.22      1XNB 298
+ATOM    199  CA  VAL    28      46.996  26.283  25.523  1.00 10.15      1XNB 299
+ATOM    200  C   VAL    28      47.730  25.098  24.932  1.00 10.76      1XNB 300
+ATOM    201  O   VAL    28      47.414  24.660  23.819  1.00 11.05      1XNB 301
+ATOM    202  CB  VAL    28      45.689  25.680  26.135  1.00 11.46      1XNB 302
+ATOM    203  CG1 VAL    28      46.008  24.958  27.453  1.00 12.23      1XNB 303
+ATOM    204  CG2 VAL    28      44.631  26.726  26.338  1.00 13.51      1XNB 304
+ATOM    205  N   ASN    29      48.743  24.621  25.652  1.00 10.45      1XNB 305
+ATOM    206  CA  ASN    29      49.477  23.412  25.280  1.00 11.78      1XNB 306
+ATOM    207  C   ASN    29      49.310  22.595  26.541  1.00 10.44      1XNB 307
+ATOM    208  O   ASN    29      49.616  23.079  27.630  1.00 11.82      1XNB 308
+ATOM    209  CB  ASN    29      50.970  23.680  25.064  1.00 15.32      1XNB 309
+ATOM    210  CG  ASN    29      51.218  24.715  24.008  1.00 19.15      1XNB 310
+ATOM    211  OD1 ASN    29      50.878  24.521  22.838  1.00 23.12      1XNB 311
+ATOM    212  ND2 ASN    29      51.788  25.837  24.407  1.00 21.05      1XNB 312
+ATOM    213  N   TRP    30      48.790  21.385  26.428  1.00  8.92      1XNB 313
+ATOM    214  CA  TRP    30      48.593  20.572  27.616  1.00  7.45      1XNB 314
+ATOM    215  C   TRP    30      49.115  19.164  27.434  1.00  7.19      1XNB 315
+ATOM    216  O   TRP    30      49.138  18.634  26.315  1.00  8.11      1XNB 316
+ATOM    217  CB  TRP    30      47.121  20.596  28.068  1.00  7.83      1XNB 317
+ATOM    218  CG  TRP    30      46.125  19.855  27.214  1.00  7.67      1XNB 318
+ATOM    219  CD1 TRP    30      45.630  18.606  27.451  1.00  7.10      1XNB 319
+ATOM    220  CD2 TRP    30      45.388  20.371  26.089  1.00  7.62      1XNB 320
+ATOM    221  NE1 TRP    30      44.621  18.319  26.562  1.00  7.87      1XNB 321
+ATOM    222  CE2 TRP    30      44.455  19.384  25.715  1.00  6.76      1XNB 322
+ATOM    223  CE3 TRP    30      45.419  21.578  25.374  1.00  8.59      1XNB 323
+ATOM    224  CZ2 TRP    30      43.555  19.561  24.650  1.00  8.70      1XNB 324
+ATOM    225  CZ3 TRP    30      44.522  21.754  24.321  1.00  7.69      1XNB 325
+ATOM    226  CH2 TRP    30      43.608  20.750  23.975  1.00  7.65      1XNB 326
+ATOM    227  N   SER    31      49.531  18.556  28.536  1.00  8.43      1XNB 327
+ATOM    228  CA  SER    31      50.090  17.225  28.479  1.00  9.10      1XNB 328
+ATOM    229  C   SER    31      49.790  16.430  29.744  1.00  8.44      1XNB 329
+ATOM    230  O   SER    31      50.038  16.912  30.852  1.00  9.41      1XNB 330
+ATOM    231  CB  SER    31      51.609  17.351  28.297  1.00 10.68      1XNB 331
+ATOM    232  OG  SER    31      52.198  16.087  28.091  1.00 16.71      1XNB 332
+ATOM    233  N   ASN    32      49.228  15.233  29.567  1.00  9.08      1XNB 333
+ATOM    234  CA  ASN    32      48.921  14.294  30.660  1.00  9.01      1XNB 334
+ATOM    235  C   ASN    32      48.297  14.985  31.852  1.00  9.98      1XNB 335
+ATOM    236  O   ASN    32      48.775  14.900  32.985  1.00 10.34      1XNB 336
+ATOM    237  CB  ASN    32      50.209  13.597  31.087  1.00 11.25      1XNB 337
+ATOM    238  CG  ASN    32      50.852  12.850  29.947  1.00 13.09      1XNB 338
+ATOM    239  OD1 ASN    32      50.297  11.871  29.446  1.00 14.87      1XNB 339
+ATOM    240  ND2 ASN    32      52.022  13.306  29.528  1.00 13.95      1XNB 340
+ATOM    241  N   THR    33      47.177  15.632  31.591  1.00  9.98      1XNB 341
+ATOM    242  CA  THR    33      46.506  16.412  32.611  1.00  9.83      1XNB 342
+ATOM    243  C   THR    33      45.467  15.683  33.445  1.00  9.01      1XNB 343
+ATOM    244  O   THR    33      45.193  14.497  33.255  1.00  9.49      1XNB 344
+ATOM    245  CB  THR    33      45.740  17.588  31.939  1.00 10.23      1XNB 345
+ATOM    246  OG1 THR    33      44.697  17.050  31.109  1.00 10.47      1XNB 346
+ATOM    247  CG2 THR    33      46.678  18.442  31.104  1.00 10.13      1XNB 347
+ATOM    248  N   GLY    34      44.926  16.440  34.394  1.00  9.69      1XNB 348
+ATOM    249  CA  GLY    34      43.796  15.997  35.182  1.00  9.63      1XNB 349
+ATOM    250  C   GLY    34      42.704  16.743  34.407  1.00  9.84      1XNB 350
+ATOM    251  O   GLY    34      42.654  16.657  33.169  1.00  9.61      1XNB 351
+ATOM    252  N   ASN    35      41.907  17.560  35.089  1.00  9.19      1XNB 352
+ATOM    253  CA  ASN    35      40.855  18.353  34.442  1.00  9.43      1XNB 353
+ATOM    254  C   ASN    35      41.280  19.821  34.493  1.00  9.05      1XNB 354
+ATOM    255  O   ASN    35      41.870  20.272  35.470  1.00 10.02      1XNB 355
+ATOM    256  CB  ASN    35      39.524  18.166  35.195  1.00 10.39      1XNB 356
+ATOM    257  CG  ASN    35      38.340  18.888  34.540  1.00 13.36      1XNB 357
+ATOM    258  OD1 ASN    35      37.472  19.400  35.248  1.00 15.83      1XNB 358
+ATOM    259  ND2 ASN    35      38.274  18.897  33.210  1.00 13.29      1XNB 359
+ATOM    260  N   PHE    36      41.052  20.548  33.407  1.00  8.65      1XNB 360
+ATOM    261  CA  PHE    36      41.378  21.971  33.361  1.00  7.87      1XNB 361
+ATOM    262  C   PHE    36      40.414  22.654  32.411  1.00  7.39      1XNB 362
+ATOM    263  O   PHE    36      39.847  22.009  31.519  1.00  8.53      1XNB 363
+ATOM    264  CB  PHE    36      42.812  22.217  32.860  1.00  9.60      1XNB 364
+ATOM    265  CG  PHE    36      43.003  21.909  31.403  1.00  9.72      1XNB 365
+ATOM    266  CD1 PHE    36      43.323  20.628  30.993  1.00  9.71      1XNB 366
+ATOM    267  CD2 PHE    36      42.810  22.895  30.437  1.00 10.11      1XNB 367
+ATOM    268  CE1 PHE    36      43.447  20.328  29.643  1.00 11.13      1XNB 368
+ATOM    269  CE2 PHE    36      42.933  22.599  29.093  1.00 10.46      1XNB 369
+ATOM    270  CZ  PHE    36      43.250  21.315  28.696  1.00 10.05      1XNB 370
+ATOM    271  N   VAL    37      40.255  23.956  32.598  1.00  8.14      1XNB 371
+ATOM    272  CA  VAL    37      39.395  24.776  31.749  1.00  8.64      1XNB 372
+ATOM    273  C   VAL    37      40.100  26.109  31.575  1.00  8.55      1XNB 373
+ATOM    274  O   VAL    37      40.427  26.785  32.564  1.00  9.65      1XNB 374
+ATOM    275  CB  VAL    37      38.003  25.050  32.371  1.00  8.95      1XNB 375
+ATOM    276  CG1 VAL    37      37.157  25.880  31.387  1.00 10.41      1XNB 376
+ATOM    277  CG2 VAL    37      37.304  23.746  32.717  1.00 10.67      1XNB 377
+ATOM    278  N   VAL    38      40.353  26.475  30.324  1.00  7.70      1XNB 378
+ATOM    279  CA  VAL    38      41.022  27.728  30.005  1.00  8.07      1XNB 379
+ATOM    280  C   VAL    38      40.219  28.449  28.935  1.00  8.08      1XNB 380
+ATOM    281  O   VAL    38      39.744  27.822  28.003  1.00  9.18      1XNB 381
+ATOM    282  CB  VAL    38      42.443  27.453  29.442  1.00  9.27      1XNB 382
+ATOM    283  CG1 VAL    38      43.091  28.747  28.964  1.00 11.20      1XNB 383
+ATOM    284  CG2 VAL    38      43.300  26.774  30.495  1.00 10.34      1XNB 384
+ATOM    285  N   GLY    39      40.076  29.758  29.052  1.00  8.60      1XNB 385
+ATOM    286  CA  GLY    39      39.337  30.478  28.030  1.00  8.74      1XNB 386
+ATOM    287  C   GLY    39      39.208  31.961  28.294  1.00  8.93      1XNB 387
+ATOM    288  O   GLY    39      39.595  32.449  29.359  1.00  9.79      1XNB 388
+ATOM    289  N   LYS    40      38.705  32.679  27.298  1.00  8.26      1XNB 389
+ATOM    290  CA  LYS    40      38.492  34.112  27.424  1.00  7.70      1XNB 390
+ATOM    291  C   LYS    40      37.033  34.436  27.175  1.00  7.77      1XNB 391
+ATOM    292  O   LYS    40      36.356  33.754  26.406  1.00  7.96      1XNB 392
+ATOM    293  CB  LYS    40      39.375  34.903  26.453  1.00  8.97      1XNB 393
+ATOM    294  CG  LYS    40      40.795  35.083  26.950  1.00 11.20      1XNB 394
+ATOM    295  CD  LYS    40      41.540  36.076  26.090  1.00 11.09      1XNB 395
+ATOM    296  CE  LYS    40      42.896  36.364  26.703  1.00 11.98      1XNB 396
+ATOM    297  NZ  LYS    40      43.677  37.307  25.852  1.00 10.87      1XNB 397
+ATOM    298  N   GLY    41      36.557  35.479  27.835  1.00  8.05      1XNB 398
+ATOM    299  CA  GLY    41      35.180  35.858  27.663  1.00  8.34      1XNB 399
+ATOM    300  C   GLY    41      34.806  37.050  28.502  1.00  8.45      1XNB 400
+ATOM    301  O   GLY    41      35.552  38.037  28.575  1.00  8.58      1XNB 401
+ATOM    302  N   TRP    42      33.669  36.917  29.177  1.00  8.59      1XNB 402
+ATOM    303  CA  TRP    42      33.101  37.988  29.979  1.00  9.19      1XNB 403
+ATOM    304  C   TRP    42      32.855  37.619  31.434  1.00  9.37      1XNB 404
+ATOM    305  O   TRP    42      32.483  36.492  31.751  1.00  9.69      1XNB 405
+ATOM    306  CB  TRP    42      31.794  38.450  29.314  1.00  9.98      1XNB 406
+ATOM    307  CG  TRP    42      32.055  38.910  27.912  1.00 11.09      1XNB 407
+ATOM    308  CD1 TRP    42      32.372  40.175  27.518  1.00 12.42      1XNB 408
+ATOM    309  CD2 TRP    42      32.149  38.085  26.737  1.00 11.70      1XNB 409
+ATOM    310  NE1 TRP    42      32.673  40.189  26.179  1.00 13.57      1XNB 410
+ATOM    311  CE2 TRP    42      32.543  38.922  25.674  1.00 12.67      1XNB 411
+ATOM    312  CE3 TRP    42      31.950  36.720  26.485  1.00 11.73      1XNB 412
+ATOM    313  CZ2 TRP    42      32.743  38.442  24.381  1.00 11.97      1XNB 413
+ATOM    314  CZ3 TRP    42      32.152  36.243  25.196  1.00 12.62      1XNB 414
+ATOM    315  CH2 TRP    42      32.544  37.104  24.163  1.00 11.83      1XNB 415
+ATOM    316  N   THR    43      33.092  38.588  32.314  1.00 10.42      1XNB 416
+ATOM    317  CA  THR    43      32.924  38.414  33.749  1.00 11.50      1XNB 417
+ATOM    318  C   THR    43      31.472  38.102  34.110  1.00 11.37      1XNB 418
+ATOM    319  O   THR    43      31.208  37.324  35.028  1.00 11.60      1XNB 419
+ATOM    320  CB  THR    43      33.385  39.688  34.487  1.00 14.38      1XNB 420
+ATOM    321  OG1 THR    43      34.734  39.990  34.103  1.00 17.01      1XNB 421
+ATOM    322  CG2 THR    43      33.330  39.493  36.000  1.00 15.67      1XNB 422
+ATOM    323  N   THR    44      30.536  38.724  33.411  1.00 11.32      1XNB 423
+ATOM    324  CA  THR    44      29.131  38.466  33.670  1.00 12.06      1XNB 424
+ATOM    325  C   THR    44      28.466  37.977  32.393  1.00 10.68      1XNB 425
+ATOM    326  O   THR    44      28.422  38.684  31.383  1.00 11.17      1XNB 426
+ATOM    327  CB  THR    44      28.417  39.715  34.202  1.00 14.38      1XNB 427
+ATOM    328  OG1 THR    44      29.078  40.152  35.396  1.00 16.45      1XNB 428
+ATOM    329  CG2 THR    44      26.959  39.399  34.522  1.00 15.47      1XNB 429
+ATOM    330  N   GLY    45      28.030  36.729  32.428  1.00  8.66      1XNB 430
+ATOM    331  CA  GLY    45      27.373  36.154  31.277  1.00  9.19      1XNB 431
+ATOM    332  C   GLY    45      26.019  36.783  31.023  1.00  9.05      1XNB 432
+ATOM    333  O   GLY    45      25.418  37.407  31.902  1.00 10.24      1XNB 433
+ATOM    334  N   SER    46      25.524  36.585  29.812  1.00  9.07      1XNB 434
+ATOM    335  CA  SER    46      24.232  37.110  29.410  1.00  9.81      1XNB 435
+ATOM    336  C   SER    46      23.552  36.108  28.489  1.00  9.25      1XNB 436
+ATOM    337  O   SER    46      24.215  35.473  27.668  1.00  9.61      1XNB 437
+ATOM    338  CB  SER    46      24.425  38.423  28.643  1.00 10.40      1XNB 438
+ATOM    339  OG  SER    46      23.214  38.816  28.008  1.00 11.59      1XNB 439
+ATOM    340  N   PRO    47      22.230  35.914  28.653  1.00  9.61      1XNB 440
+ATOM    341  CA  PRO    47      21.496  34.983  27.796  1.00  9.41      1XNB 441
+ATOM    342  C   PRO    47      21.262  35.604  26.404  1.00  9.36      1XNB 442
+ATOM    343  O   PRO    47      20.758  34.928  25.501  1.00 10.32      1XNB 443
+ATOM    344  CB  PRO    47      20.185  34.774  28.566  1.00 10.25      1XNB 444
+ATOM    345  CG  PRO    47      19.976  36.090  29.226  1.00  9.90      1XNB 445
+ATOM    346  CD  PRO    47      21.362  36.458  29.717  1.00  9.37      1XNB 446
+ATOM    347  N   PHE    48      21.655  36.873  26.227  1.00  7.81      1XNB 447
+ATOM    348  CA  PHE    48      21.467  37.572  24.952  1.00  8.92      1XNB 448
+ATOM    349  C   PHE    48      22.751  37.762  24.151  1.00  9.45      1XNB 449
+ATOM    350  O   PHE    48      22.716  38.288  23.041  1.00  9.42      1XNB 450
+ATOM    351  CB  PHE    48      20.839  38.950  25.181  1.00 10.44      1XNB 451
+ATOM    352  CG  PHE    48      19.594  38.903  26.003  1.00 12.63      1XNB 452
+ATOM    353  CD1 PHE    48      18.519  38.135  25.589  1.00 14.40      1XNB 453
+ATOM    354  CD2 PHE    48      19.529  39.556  27.223  1.00 14.99      1XNB 454
+ATOM    355  CE1 PHE    48      17.393  38.013  26.392  1.00 16.04      1XNB 455
+ATOM    356  CE2 PHE    48      18.409  39.438  28.027  1.00 14.35      1XNB 456
+ATOM    357  CZ  PHE    48      17.347  38.667  27.612  1.00 14.83      1XNB 457
+ATOM    358  N   ARG    49      23.877  37.327  24.705  1.00  8.78      1XNB 458
+ATOM    359  CA  ARG    49      25.156  37.506  24.026  1.00  8.91      1XNB 459
+ATOM    360  C   ARG    49      25.354  36.622  22.806  1.00  7.43      1XNB 460
+ATOM    361  O   ARG    49      24.891  35.482  22.772  1.00  8.09      1XNB 461
+ATOM    362  CB  ARG    49      26.307  37.268  25.002  1.00  9.69      1XNB 462
+ATOM    363  CG  ARG    49      27.648  37.729  24.434  1.00 11.01      1XNB 463
+ATOM    364  CD  ARG    49      28.792  37.462  25.374  1.00 12.01      1XNB 464
+ATOM    365  NE  ARG    49      28.532  37.950  26.720  1.00 17.85      1XNB 465
+ATOM    366  CZ  ARG    49      28.657  39.215  27.102  1.00 17.63      1XNB 466
+ATOM    367  NH1 ARG    49      29.040  40.145  26.237  1.00 20.11      1XNB 467
+ATOM    368  NH2 ARG    49      28.430  39.538  28.368  1.00 19.26      1XNB 468
+ATOM    369  N   THR    50      25.981  37.185  21.776  1.00  7.62      1XNB 469
+ATOM    370  CA  THR    50      26.318  36.431  20.574  1.00  8.77      1XNB 470
+ATOM    371  C   THR    50      27.842  36.359  20.632  1.00  9.25      1XNB 471
+ATOM    372  O   THR    50      28.522  37.390  20.668  1.00 10.70      1XNB 472
+ATOM    373  CB  THR    50      25.857  37.148  19.298  1.00  9.53      1XNB 473
+ATOM    374  OG1 THR    50      24.436  37.299  19.338  1.00 10.49      1XNB 474
+ATOM    375  CG2 THR    50      26.233  36.350  18.073  1.00 10.41      1XNB 475
+ATOM    376  N   ILE    51      28.354  35.141  20.765  1.00  8.49      1XNB 476
+ATOM    377  CA  ILE    51      29.787  34.913  20.877  1.00  9.59      1XNB 477
+ATOM    378  C   ILE    51      30.419  34.581  19.532  1.00  9.65      1XNB 478
+ATOM    379  O   ILE    51      29.895  33.772  18.760  1.00  9.59      1XNB 479
+ATOM    380  CB  ILE    51      30.087  33.776  21.893  1.00  9.93      1XNB 480
+ATOM    381  CG1 ILE    51      29.532  34.125  23.284  1.00 11.66      1XNB 481
+ATOM    382  CG2 ILE    51      31.578  33.547  22.000  1.00 11.65      1XNB 482
+ATOM    383  CD1 ILE    51      28.071  33.699  23.502  1.00 11.63      1XNB 483
+ATOM    384  N   ASN    52      31.536  35.236  19.240  1.00  9.67      1XNB 484
+ATOM    385  CA  ASN    52      32.261  34.993  17.992  1.00  9.37      1XNB 485
+ATOM    386  C   ASN    52      33.613  34.425  18.357  1.00  8.75      1XNB 486
+ATOM    387  O   ASN    52      34.211  34.817  19.366  1.00  8.30      1XNB 487
+ATOM    388  CB  ASN    52      32.509  36.295  17.230  1.00 12.19      1XNB 488
+ATOM    389  CG  ASN    52      31.238  36.992  16.846  1.00 17.10      1XNB 489
+ATOM    390  OD1 ASN    52      30.584  36.605  15.878  1.00 20.50      1XNB 490
+ATOM    391  ND2 ASN    52      30.858  38.008  17.617  1.00 19.32      1XNB 491
+ATOM    392  N   TYR    53      34.092  33.487  17.558  1.00  8.34      1XNB 492
+ATOM    393  CA  TYR    53      35.413  32.930  17.815  1.00  8.40      1XNB 493
+ATOM    394  C   TYR    53      35.992  32.331  16.550  1.00  8.05      1XNB 494
+ATOM    395  O   TYR    53      35.290  32.116  15.562  1.00  8.15      1XNB 495
+ATOM    396  CB  TYR    53      35.395  31.876  18.948  1.00  8.59      1XNB 496
+ATOM    397  CG  TYR    53      34.823  30.533  18.534  1.00  8.34      1XNB 497
+ATOM    398  CD1 TYR    53      33.450  30.282  18.597  1.00  8.01      1XNB 498
+ATOM    399  CD2 TYR    53      35.651  29.526  18.041  1.00  8.07      1XNB 499
+ATOM    400  CE1 TYR    53      32.920  29.063  18.168  1.00  7.34      1XNB 500
+ATOM    401  CE2 TYR    53      35.132  28.310  17.614  1.00  6.68      1XNB 501
+ATOM    402  CZ  TYR    53      33.763  28.085  17.678  1.00  6.74      1XNB 502
+ATOM    403  OH  TYR    53      33.261  26.884  17.236  1.00  8.10      1XNB 503
+ATOM    404  N   ASN    54      37.303  32.147  16.566  1.00  7.44      1XNB 504
+ATOM    405  CA  ASN    54      38.007  31.531  15.461  1.00  8.22      1XNB 505
+ATOM    406  C   ASN    54      39.102  30.714  16.126  1.00  8.01      1XNB 506
+ATOM    407  O   ASN    54      39.986  31.271  16.783  1.00  7.77      1XNB 507
+ATOM    408  CB  ASN    54      38.625  32.584  14.523  1.00  8.61      1XNB 508
+ATOM    409  CG  ASN    54      39.280  31.958  13.285  1.00  9.55      1XNB 509
+ATOM    410  OD1 ASN    54      39.020  32.383  12.154  1.00 11.70      1XNB 510
+ATOM    411  ND2 ASN    54      40.133  30.974  13.488  1.00  8.66      1XNB 511
+ATOM    412  N   ALA    55      39.008  29.396  16.021  1.00  6.83      1XNB 512
+ATOM    413  CA  ALA    55      40.024  28.527  16.603  1.00  8.30      1XNB 513
+ATOM    414  C   ALA    55      41.071  28.252  15.520  1.00  9.02      1XNB 514
+ATOM    415  O   ALA    55      40.858  27.412  14.638  1.00  9.19      1XNB 515
+ATOM    416  CB  ALA    55      39.402  27.216  17.110  1.00  9.31      1XNB 516
+ATOM    417  N   GLY    56      42.168  29.002  15.567  1.00  9.63      1XNB 517
+ATOM    418  CA  GLY    56      43.237  28.828  14.596  1.00  9.86      1XNB 518
+ATOM    419  C   GLY    56      43.899  27.462  14.701  1.00 11.26      1XNB 519
+ATOM    420  O   GLY    56      44.457  26.948  13.722  1.00 11.89      1XNB 520
+ATOM    421  N   VAL    57      43.922  26.907  15.910  1.00  9.71      1XNB 521
+ATOM    422  CA  VAL    57      44.472  25.578  16.144  1.00  9.80      1XNB 522
+ATOM    423  C   VAL    57      43.522  24.838  17.084  1.00  9.35      1XNB 523
+ATOM    424  O   VAL    57      43.115  25.388  18.121  1.00  8.50      1XNB 524
+ATOM    425  CB  VAL    57      45.874  25.623  16.826  1.00 10.76      1XNB 525
+ATOM    426  CG1 VAL    57      46.365  24.211  17.128  1.00 11.09      1XNB 526
+ATOM    427  CG2 VAL    57      46.870  26.331  15.935  1.00 11.74      1XNB 527
+ATOM    428  N   TRP    58      43.101  23.643  16.680  1.00  9.02      1XNB 528
+ATOM    429  CA  TRP    58      42.259  22.794  17.519  1.00  9.01      1XNB 529
+ATOM    430  C   TRP    58      42.848  21.414  17.281  1.00 10.04      1XNB 530
+ATOM    431  O   TRP    58      42.517  20.742  16.314  1.00 10.47      1XNB 531
+ATOM    432  CB  TRP    58      40.765  22.848  17.144  1.00  8.77      1XNB 532
+ATOM    433  CG  TRP    58      39.942  21.908  18.000  1.00  8.67      1XNB 533
+ATOM    434  CD1 TRP    58      39.169  20.866  17.568  1.00  9.11      1XNB 534
+ATOM    435  CD2 TRP    58      39.900  21.863  19.440  1.00  8.61      1XNB 535
+ATOM    436  NE1 TRP    58      38.661  20.174  18.637  1.00  9.67      1XNB 536
+ATOM    437  CE2 TRP    58      39.092  20.761  19.799  1.00  8.83      1XNB 537
+ATOM    438  CE3 TRP    58      40.476  22.640  20.456  1.00  8.42      1XNB 538
+ATOM    439  CZ2 TRP    58      38.843  20.416  21.131  1.00  9.49      1XNB 539
+ATOM    440  CZ3 TRP    58      40.230  22.299  21.779  1.00  8.88      1XNB 540
+ATOM    441  CH2 TRP    58      39.420  21.194  22.104  1.00 10.02      1XNB 541
+ATOM    442  N   ALA    59      43.731  21.004  18.182  1.00  9.25      1XNB 542
+ATOM    443  CA  ALA    59      44.452  19.746  18.043  1.00 10.20      1XNB 543
+ATOM    444  C   ALA    59      44.503  18.887  19.303  1.00 11.28      1XNB 544
+ATOM    445  O   ALA    59      45.569  18.701  19.912  1.00 11.63      1XNB 545
+ATOM    446  CB  ALA    59      45.867  20.041  17.551  1.00 10.71      1XNB 546
+ATOM    447  N   PRO    60      43.342  18.415  19.766  1.00 11.35      1XNB 547
+ATOM    448  CA  PRO    60      43.350  17.578  20.962  1.00 11.57      1XNB 548
+ATOM    449  C   PRO    60      43.825  16.166  20.602  1.00 12.90      1XNB 549
+ATOM    450  O   PRO    60      43.473  15.642  19.550  1.00 13.73      1XNB 550
+ATOM    451  CB  PRO    60      41.874  17.580  21.386  1.00 12.09      1XNB 551
+ATOM    452  CG  PRO    60      41.147  17.676  20.069  1.00 11.86      1XNB 552
+ATOM    453  CD  PRO    60      41.961  18.706  19.315  1.00 11.77      1XNB 553
+ATOM    454  N   ASN    61      44.659  15.587  21.455  1.00 13.50      1XNB 554
+ATOM    455  CA  ASN    61      45.155  14.223  21.293  1.00 15.98      1XNB 555
+ATOM    456  C   ASN    61      44.509  13.442  22.424  1.00 17.18      1XNB 556
+ATOM    457  O   ASN    61      45.200  12.952  23.332  1.00 21.05      1XNB 557
+ATOM    458  CB  ASN    61      46.669  14.163  21.509  1.00 17.46      1XNB 558
+ATOM    459  CG  ASN    61      47.435  14.118  20.234  1.00 19.92      1XNB 559
+ATOM    460  OD1 ASN    61      46.872  14.231  19.150  1.00 22.68      1XNB 560
+ATOM    461  ND2 ASN    61      48.738  13.943  20.344  1.00 22.14      1XNB 561
+ATOM    462  N   GLY    62      43.185  13.430  22.444  1.00 14.50      1XNB 562
+ATOM    463  CA  GLY    62      42.470  12.729  23.488  1.00 12.29      1XNB 563
+ATOM    464  C   GLY    62      41.208  13.494  23.813  1.00 10.98      1XNB 564
+ATOM    465  O   GLY    62      40.700  14.226  22.963  1.00 10.80      1XNB 565
+ATOM    466  N   ASN    63      40.756  13.387  25.058  1.00  9.68      1XNB 566
+ATOM    467  CA  ASN    63      39.525  14.036  25.517  1.00  9.82      1XNB 567
+ATOM    468  C   ASN    63      39.685  15.535  25.774  1.00  9.39      1XNB 568
+ATOM    469  O   ASN    63      40.372  15.944  26.708  1.00  9.70      1XNB 569
+ATOM    470  CB  ASN    63      39.039  13.326  26.787  1.00 10.96      1XNB 570
+ATOM    471  CG  ASN    63      37.629  13.742  27.216  1.00 12.54      1XNB 571
+ATOM    472  OD1 ASN    63      37.068  13.161  28.150  1.00 16.87      1XNB 572
+ATOM    473  ND2 ASN    63      37.050  14.729  26.544  1.00 13.41      1XNB 573
+ATOM    474  N   GLY    64      39.068  16.343  24.915  1.00  8.72      1XNB 574
+ATOM    475  CA  GLY    64      39.109  17.791  25.048  1.00  8.20      1XNB 575
+ATOM    476  C   GLY    64      37.899  18.382  24.333  1.00  7.81      1XNB 576
+ATOM    477  O   GLY    64      37.445  17.806  23.341  1.00  7.90      1XNB 577
+ATOM    478  N   TYR    65      37.373  19.497  24.844  1.00  7.17      1XNB 578
+ATOM    479  CA  TYR    65      36.205  20.174  24.253  1.00  5.91      1XNB 579
+ATOM    480  C   TYR    65      36.523  21.624  23.867  1.00  6.24      1XNB 580
+ATOM    481  O   TYR    65      37.244  22.327  24.588  1.00  6.93      1XNB 581
+ATOM    482  CB  TYR    65      35.033  20.287  25.251  1.00  6.59      1XNB 582
+ATOM    483  CG  TYR    65      34.630  19.034  25.993  1.00  7.77      1XNB 583
+ATOM    484  CD1 TYR    65      34.611  17.793  25.367  1.00  8.33      1XNB 584
+ATOM    485  CD2 TYR    65      34.233  19.104  27.327  1.00  9.10      1XNB 585
+ATOM    486  CE1 TYR    65      34.212  16.661  26.048  1.00  9.70      1XNB 586
+ATOM    487  CE2 TYR    65      33.828  17.980  28.016  1.00 10.03      1XNB 587
+ATOM    488  CZ  TYR    65      33.821  16.757  27.374  1.00 11.03      1XNB 588
+ATOM    489  OH  TYR    65      33.435  15.614  28.059  1.00 12.58      1XNB 589
+ATOM    490  N   LEU    66      35.974  22.059  22.741  1.00  5.22      1XNB 590
+ATOM    491  CA  LEU    66      36.082  23.442  22.281  1.00  5.69      1XNB 591
+ATOM    492  C   LEU    66      34.619  23.826  22.519  1.00  6.27      1XNB 592
+ATOM    493  O   LEU    66      33.721  23.436  21.739  1.00  5.65      1XNB 593
+ATOM    494  CB  LEU    66      36.450  23.498  20.802  1.00  6.82      1XNB 594
+ATOM    495  CG  LEU    66      36.469  24.910  20.226  1.00  8.11      1XNB 595
+ATOM    496  CD1 LEU    66      37.502  25.761  20.998  1.00  9.96      1XNB 596
+ATOM    497  CD2 LEU    66      36.794  24.839  18.735  1.00  9.93      1XNB 597
+ATOM    498  N   THR    67      34.389  24.664  23.528  1.00  5.80      1XNB 598
+ATOM    499  CA  THR    67      33.022  24.911  23.960  1.00  6.29      1XNB 599
+ATOM    500  C   THR    67      32.758  26.237  24.648  1.00  5.63      1XNB 600
+ATOM    501  O   THR    67      33.648  26.795  25.283  1.00  6.05      1XNB 601
+ATOM    502  CB  THR    67      32.688  23.773  25.012  1.00  5.96      1XNB 602
+ATOM    503  OG1 THR    67      31.347  23.888  25.500  1.00  6.10      1XNB 603
+ATOM    504  CG2 THR    67      33.640  23.825  26.230  1.00  6.00      1XNB 604
+ATOM    505  N   LEU    68      31.549  26.766  24.480  1.00  5.40      1XNB 605
+ATOM    506  CA  LEU    68      31.142  27.951  25.227  1.00  5.49      1XNB 606
+ATOM    507  C   LEU    68      30.956  27.334  26.622  1.00  6.25      1XNB 607
+ATOM    508  O   LEU    68      30.435  26.207  26.764  1.00  6.00      1XNB 608
+ATOM    509  CB  LEU    68      29.810  28.497  24.724  1.00  6.82      1XNB 609
+ATOM    510  CG  LEU    68      29.326  29.737  25.471  1.00  8.11      1XNB 610
+ATOM    511  CD1 LEU    68      30.233  30.920  25.181  1.00 10.67      1XNB 611
+ATOM    512  CD2 LEU    68      27.877  30.037  25.090  1.00 10.31      1XNB 612
+ATOM    513  N   TYR    69      31.344  28.067  27.651  1.00  5.93      1XNB 613
+ATOM    514  CA  TYR    69      31.316  27.528  28.996  1.00  6.40      1XNB 614
+ATOM    515  C   TYR    69      30.968  28.609  29.991  1.00  6.50      1XNB 615
+ATOM    516  O   TYR    69      31.463  29.723  29.903  1.00  6.16      1XNB 616
+ATOM    517  CB  TYR    69      32.722  26.973  29.290  1.00  8.09      1XNB 617
+ATOM    518  CG  TYR    69      32.925  26.449  30.684  1.00  7.98      1XNB 618
+ATOM    519  CD1 TYR    69      32.446  25.194  31.045  1.00  8.47      1XNB 619
+ATOM    520  CD2 TYR    69      33.589  27.209  31.647  1.00  8.47      1XNB 620
+ATOM    521  CE1 TYR    69      32.611  24.716  32.318  1.00  9.84      1XNB 621
+ATOM    522  CE2 TYR    69      33.759  26.734  32.925  1.00  8.84      1XNB 622
+ATOM    523  CZ  TYR    69      33.262  25.490  33.253  1.00  8.62      1XNB 623
+ATOM    524  OH  TYR    69      33.399  25.033  34.541  1.00 10.16      1XNB 624
+ATOM    525  N   GLY    70      30.115  28.286  30.950  1.00  5.96      1XNB 625
+ATOM    526  CA  GLY    70      29.780  29.295  31.932  1.00  7.20      1XNB 626
+ATOM    527  C   GLY    70      29.007  28.735  33.101  1.00  6.73      1XNB 627
+ATOM    528  O   GLY    70      28.713  27.540  33.162  1.00  6.23      1XNB 628
+ATOM    529  N   TRP    71      28.695  29.612  34.046  1.00  7.44      1XNB 629
+ATOM    530  CA  TRP    71      27.946  29.213  35.224  1.00  7.19      1XNB 630
+ATOM    531  C   TRP    71      26.887  30.215  35.607  1.00  7.55      1XNB 631
+ATOM    532  O   TRP    71      26.966  31.393  35.258  1.00  7.51      1XNB 632
+ATOM    533  CB  TRP    71      28.860  29.165  36.458  1.00  8.22      1XNB 633
+ATOM    534  CG  TRP    71      29.883  28.093  36.504  1.00  9.29      1XNB 634
+ATOM    535  CD1 TRP    71      31.112  28.105  35.900  1.00  8.48      1XNB 635
+ATOM    536  CD2 TRP    71      29.807  26.869  37.245  1.00  9.15      1XNB 636
+ATOM    537  NE1 TRP    71      31.800  26.959  36.221  1.00  9.59      1XNB 637
+ATOM    538  CE2 TRP    71      31.027  26.184  37.046  1.00 10.03      1XNB 638
+ATOM    539  CE3 TRP    71      28.826  26.282  38.055  1.00  9.98      1XNB 639
+ATOM    540  CZ2 TRP    71      31.292  24.938  37.626  1.00 10.01      1XNB 640
+ATOM    541  CZ3 TRP    71      29.084  25.051  38.628  1.00 11.32      1XNB 641
+ATOM    542  CH2 TRP    71      30.307  24.389  38.411  1.00 10.98      1XNB 642
+ATOM    543  N   THR    72      25.896  29.720  36.335  1.00  8.76      1XNB 643
+ATOM    544  CA  THR    72      24.911  30.589  36.964  1.00  9.59      1XNB 644
+ATOM    545  C   THR    72      24.847  30.061  38.392  1.00 10.75      1XNB 645
+ATOM    546  O   THR    72      25.267  28.926  38.672  1.00  9.98      1XNB 646
+ATOM    547  CB  THR    72      23.468  30.521  36.394  1.00  9.73      1XNB 647
+ATOM    548  OG1 THR    72      22.934  29.201  36.542  1.00 10.64      1XNB 648
+ATOM    549  CG2 THR    72      23.412  30.979  34.957  1.00  9.39      1XNB 649
+ATOM    550  N   ARG    73      24.365  30.903  39.294  1.00 13.02      1XNB 650
+ATOM    551  CA  ARG    73      24.154  30.540  40.692  1.00 14.84      1XNB 651
+ATOM    552  C   ARG    73      22.654  30.748  40.903  1.00 15.51      1XNB 652
+ATOM    553  O   ARG    73      22.011  31.468  40.131  1.00 15.15      1XNB 653
+ATOM    554  CB  ARG    73      24.941  31.459  41.631  1.00 16.15      1XNB 654
+ATOM    555  CG  ARG    73      26.441  31.250  41.595  1.00 17.84      1XNB 655
+ATOM    556  CD  ARG    73      27.113  32.059  42.692  1.00 19.57      1XNB 656
+ATOM    557  NE  ARG    73      28.549  31.799  42.791  1.00 21.53      1XNB 657
+ATOM    558  CZ  ARG    73      29.475  32.466  42.110  1.00 22.76      1XNB 658
+ATOM    559  NH1 ARG    73      29.119  33.426  41.271  1.00 24.75      1XNB 659
+ATOM    560  NH2 ARG    73      30.760  32.195  42.288  1.00 24.48      1XNB 660
+ATOM    561  N   SER    74      22.104  30.100  41.928  1.00 17.17      1XNB 661
+ATOM    562  CA  SER    74      20.682  30.197  42.262  1.00 18.87      1XNB 662
+ATOM    563  C   SER    74      19.739  29.827  41.108  1.00 18.14      1XNB 663
+ATOM    564  O   SER    74      18.977  30.664  40.613  1.00 18.61      1XNB 664
+ATOM    565  CB  SER    74      20.361  31.602  42.787  1.00 20.01      1XNB 665
+ATOM    566  OG  SER    74      21.195  31.911  43.896  1.00 24.58      1XNB 666
+ATOM    567  N   PRO    75      19.773  28.561  40.670  1.00 18.19   1  1XNB 667
+ATOM    568  CA  PRO    75      20.634  27.494  41.193  1.00 17.70   1  1XNB 668
+ATOM    569  C   PRO    75      21.984  27.409  40.485  1.00 16.38   1  1XNB 669
+ATOM    570  O   PRO    75      22.218  28.062  39.463  1.00 15.18   1  1XNB 670
+ATOM    571  CB  PRO    75      19.807  26.240  40.942  1.00 18.39   1  1XNB 671
+ATOM    572  CG  PRO    75      19.145  26.555  39.648  1.00 19.26   1  1XNB 672
+ATOM    573  CD  PRO    75      18.727  28.004  39.791  1.00 19.15   1  1XNB 673
+ATOM    574  N   LEU    76      22.867  26.616  41.069  1.00 14.90      1XNB 674
+ATOM    575  CA  LEU    76      24.204  26.398  40.548  1.00 14.14      1XNB 675
+ATOM    576  C   LEU    76      24.113  25.506  39.311  1.00 13.02      1XNB 676
+ATOM    577  O   LEU    76      23.705  24.347  39.404  1.00 12.38      1XNB 677
+ATOM    578  CB  LEU    76      25.044  25.718  41.628  1.00 16.41      1XNB 678
+ATOM    579  CG  LEU    76      26.557  25.742  41.508  1.00 18.60      1XNB 679
+ATOM    580  CD1 LEU    76      27.053  27.180  41.498  1.00 18.69      1XNB 680
+ATOM    581  CD2 LEU    76      27.145  24.982  42.689  1.00 19.84      1XNB 681
+ATOM    582  N   ILE    77      24.501  26.044  38.156  1.00 11.27      1XNB 682
+ATOM    583  CA  ILE    77      24.449  25.287  36.907  1.00 10.49      1XNB 683
+ATOM    584  C   ILE    77      25.695  25.576  36.071  1.00  8.65      1XNB 684
+ATOM    585  O   ILE    77      26.112  26.730  35.959  1.00  9.15      1XNB 685
+ATOM    586  CB  ILE    77      23.194  25.675  36.064  1.00 11.63      1XNB 686
+ATOM    587  CG1 ILE    77      21.917  25.224  36.785  1.00 12.93      1XNB 687
+ATOM    588  CG2 ILE    77      23.258  25.040  34.673  1.00 11.10      1XNB 688
+ATOM    589  CD1 ILE    77      20.656  25.780  36.222  1.00 14.77      1XNB 689
+ATOM    590  N   GLU    78      26.327  24.519  35.570  1.00  7.61      1XNB 690
+ATOM    591  CA  GLU    78      27.506  24.631  34.705  1.00  7.45      1XNB 691
+ATOM    592  C   GLU    78      26.954  24.323  33.311  1.00  8.18      1XNB 692
+ATOM    593  O   GLU    78      26.373  23.249  33.107  1.00  9.31      1XNB 693
+ATOM    594  CB  GLU    78      28.536  23.577  35.110  1.00  8.03      1XNB 694
+ATOM    595  CG  GLU    78      29.867  23.622  34.344  1.00  9.53      1XNB 695
+ATOM    596  CD  GLU    78      30.828  22.537  34.806  1.00 10.97      1XNB 696
+ATOM    597  OE1 GLU    78      30.382  21.402  35.040  1.00 11.08      1XNB 697
+ATOM    598  OE2 GLU    78      32.047  22.805  34.944  1.00 11.56      1XNB 698
+ATOM    599  N   TYR    79      27.104  25.236  32.357  1.00  7.33      1XNB 699
+ATOM    600  CA  TYR    79      26.545  24.983  31.034  1.00  6.26      1XNB 700
+ATOM    601  C   TYR    79      27.596  24.969  29.929  1.00  7.21      1XNB 701
+ATOM    602  O   TYR    79      28.647  25.617  30.036  1.00  6.06      1XNB 702
+ATOM    603  CB  TYR    79      25.404  25.962  30.721  1.00  6.64      1XNB 703
+ATOM    604  CG  TYR    79      25.826  27.416  30.620  1.00  6.94      1XNB 704
+ATOM    605  CD1 TYR    79      26.456  27.898  29.470  1.00  6.26      1XNB 705
+ATOM    606  CD2 TYR    79      25.605  28.300  31.670  1.00  6.86      1XNB 706
+ATOM    607  CE1 TYR    79      26.855  29.211  29.369  1.00  6.79      1XNB 707
+ATOM    608  CE2 TYR    79      26.005  29.635  31.574  1.00  7.49      1XNB 708
+ATOM    609  CZ  TYR    79      26.631  30.077  30.420  1.00  7.04      1XNB 709
+ATOM    610  OH  TYR    79      27.054  31.379  30.296  1.00  9.24      1XNB 710
+ATOM    611  N   TYR    80      27.231  24.313  28.830  1.00  6.42      1XNB 711
+ATOM    612  CA  TYR    80      28.108  24.127  27.688  1.00  6.02      1XNB 712
+ATOM    613  C   TYR    80      27.405  24.202  26.345  1.00  6.46      1XNB 713
+ATOM    614  O   TYR    80      26.265  23.757  26.221  1.00  6.59      1XNB 714
+ATOM    615  CB  TYR    80      28.661  22.694  27.720  1.00  5.77      1XNB 715
+ATOM    616  CG  TYR    80      29.614  22.347  28.824  1.00  5.56      1XNB 716
+ATOM    617  CD1 TYR    80      29.156  21.865  30.048  1.00  7.46      1XNB 717
+ATOM    618  CD2 TYR    80      30.974  22.405  28.606  1.00  7.66      1XNB 718
+ATOM    619  CE1 TYR    80      30.040  21.447  31.024  1.00  7.54      1XNB 719
+ATOM    620  CE2 TYR    80      31.859  21.993  29.563  1.00  8.82      1XNB 720
+ATOM    621  CZ  TYR    80      31.391  21.513  30.768  1.00  9.70      1XNB 721
+ATOM    622  OH  TYR    80      32.300  21.079  31.710  1.00 10.09      1XNB 722
+ATOM    623  N   VAL    81      28.094  24.759  25.351  1.00  5.79      1XNB 723
+ATOM    624  CA  VAL    81      27.628  24.707  23.956  1.00  4.77      1XNB 724
+ATOM    625  C   VAL    81      28.899  24.199  23.258  1.00  5.69      1XNB 725
+ATOM    626  O   VAL    81      29.839  24.961  22.985  1.00  6.10      1XNB 726
+ATOM    627  CB  VAL    81      27.165  26.041  23.365  1.00  6.78      1XNB 727
+ATOM    628  CG1 VAL    81      26.782  25.809  21.904  1.00  7.13      1XNB 728
+ATOM    629  CG2 VAL    81      25.941  26.562  24.123  1.00  7.37      1XNB 729
+ATOM    630  N   VAL    82      28.942  22.893  23.044  1.00  5.00      1XNB 730
+ATOM    631  CA  VAL    82      30.111  22.237  22.470  1.00  5.75      1XNB 731
+ATOM    632  C   VAL    82      30.110  22.221  20.955  1.00  6.48      1XNB 732
+ATOM    633  O   VAL    82      29.254  21.581  20.354  1.00  6.64      1XNB 733
+ATOM    634  CB  VAL    82      30.224  20.779  23.001  1.00  6.05      1XNB 734
+ATOM    635  CG1 VAL    82      31.487  20.120  22.472  1.00  7.58      1XNB 735
+ATOM    636  CG2 VAL    82      30.228  20.753  24.529  1.00  6.48      1XNB 736
+ATOM    637  N   ASP    83      31.116  22.858  20.345  1.00  6.07      1XNB 737
+ATOM    638  CA  ASP    83      31.231  22.909  18.879  1.00  6.07      1XNB 738
+ATOM    639  C   ASP    83      32.157  21.839  18.315  1.00  6.70      1XNB 739
+ATOM    640  O   ASP    83      31.987  21.397  17.185  1.00  7.58      1XNB 740
+ATOM    641  CB  ASP    83      31.669  24.294  18.404  1.00  5.50      1XNB 741
+ATOM    642  CG  ASP    83      30.494  25.196  18.056  1.00  6.22      1XNB 742
+ATOM    643  OD1 ASP    83      29.336  24.724  18.051  1.00  7.68      1XNB 743
+ATOM    644  OD2 ASP    83      30.732  26.377  17.769  1.00  7.45      1XNB 744
+ATOM    645  N   SER    84      33.181  21.471  19.073  1.00  6.66      1XNB 745
+ATOM    646  CA  SER    84      34.077  20.416  18.647  1.00  6.79      1XNB 746
+ATOM    647  C   SER    84      34.647  19.705  19.864  1.00  6.79      1XNB 747
+ATOM    648  O   SER    84      34.518  20.175  21.000  1.00  6.96      1XNB 748
+ATOM    649  CB  SER    84      35.192  20.934  17.752  1.00  6.85      1XNB 749
+ATOM    650  OG  SER    84      35.903  19.821  17.247  1.00  7.31      1XNB 750
+ATOM    651  N   TRP    85      35.235  18.545  19.621  1.00  7.13      1XNB 751
+ATOM    652  CA  TRP    85      35.782  17.731  20.693  1.00  7.48      1XNB 752
+ATOM    653  C   TRP    85      36.910  16.877  20.137  1.00  8.52      1XNB 753
+ATOM    654  O   TRP    85      37.236  16.961  18.939  1.00  8.86      1XNB 754
+ATOM    655  CB  TRP    85      34.668  16.851  21.299  1.00  7.68      1XNB 755
+ATOM    656  CG  TRP    85      33.951  15.980  20.295  1.00  8.75      1XNB 756
+ATOM    657  CD1 TRP    85      34.296  14.712  19.922  1.00  9.79      1XNB 757
+ATOM    658  CD2 TRP    85      32.794  16.329  19.508  1.00  8.63      1XNB 758
+ATOM    659  NE1 TRP    85      33.439  14.256  18.944  1.00  9.96      1XNB 759
+ATOM    660  CE2 TRP    85      32.510  15.228  18.674  1.00  8.34      1XNB 760
+ATOM    661  CE3 TRP    85      31.975  17.465  19.428  1.00  8.91      1XNB 761
+ATOM    662  CZ2 TRP    85      31.443  15.228  17.771  1.00  8.03      1XNB 762
+ATOM    663  CZ3 TRP    85      30.916  17.456  18.524  1.00  9.49      1XNB 763
+ATOM    664  CH2 TRP    85      30.666  16.344  17.715  1.00  8.81      1XNB 764
+ATOM    665  N   GLY    86      37.522  16.089  21.011  1.00  8.48      1XNB 765
+ATOM    666  CA  GLY    86      38.608  15.223  20.604  1.00  8.50      1XNB 766
+ATOM    667  C   GLY    86      38.136  13.817  20.322  1.00  9.43      1XNB 767
+ATOM    668  O   GLY    86      37.387  13.563  19.371  1.00 10.88      1XNB 768
+ATOM    669  N   THR    87      38.521  12.900  21.187  1.00  9.32      1XNB 769
+ATOM    670  CA  THR    87      38.171  11.500  21.009  1.00 10.30      1XNB 770
+ATOM    671  C   THR    87      36.841  11.101  21.622  1.00 10.95      1XNB 771
+ATOM    672  O   THR    87      36.334  10.012  21.341  1.00 13.08      1XNB 772
+ATOM    673  CB  THR    87      39.259  10.595  21.621  1.00 10.08      1XNB 773
+ATOM    674  OG1 THR    87      39.501  11.003  22.977  1.00 11.54      1XNB 774
+ATOM    675  CG2 THR    87      40.557  10.691  20.816  1.00 11.32      1XNB 775
+ATOM    676  N   TYR    88      36.279  11.965  22.459  1.00 10.91      1XNB 776
+ATOM    677  CA  TYR    88      35.029  11.650  23.156  1.00 11.50      1XNB 777
+ATOM    678  C   TYR    88      33.969  12.725  22.975  1.00 10.14      1XNB 778
+ATOM    679  O   TYR    88      34.219  13.898  23.259  1.00  9.74      1XNB 779
+ATOM    680  CB  TYR    88      35.326  11.459  24.659  1.00 12.56      1XNB 780
+ATOM    681  CG  TYR    88      34.103  11.367  25.550  1.00 15.51      1XNB 781
+ATOM    682  CD1 TYR    88      33.263  10.262  25.493  1.00 17.62      1XNB 782
+ATOM    683  CD2 TYR    88      33.752  12.415  26.391  1.00 16.05      1XNB 783
+ATOM    684  CE1 TYR    88      32.098  10.215  26.241  1.00 18.53      1XNB 784
+ATOM    685  CE2 TYR    88      32.599  12.376  27.142  1.00 17.78      1XNB 785
+ATOM    686  CZ  TYR    88      31.769  11.279  27.060  1.00 19.28      1XNB 786
+ATOM    687  OH  TYR    88      30.580  11.273  27.764  1.00 21.63      1XNB 787
+ATOM    688  N   ARG    89      32.805  12.335  22.462  1.00 10.29      1XNB 788
+ATOM    689  CA  ARG    89      31.707  13.287  22.286  1.00  9.73      1XNB 789
+ATOM    690  C   ARG    89      30.882  13.221  23.567  1.00  9.24      1XNB 790
+ATOM    691  O   ARG    89      30.377  12.155  23.934  1.00  9.63      1XNB 791
+ATOM    692  CB  ARG    89      30.844  12.923  21.070  1.00  9.70      1XNB 792
+ATOM    693  CG  ARG    89      29.736  13.916  20.810  1.00  9.04      1XNB 793
+ATOM    694  CD  ARG    89      28.869  13.539  19.615  1.00  8.61      1XNB 794
+ATOM    695  NE  ARG    89      27.825  14.549  19.426  1.00  8.06      1XNB 795
+ATOM    696  CZ  ARG    89      26.568  14.415  19.846  1.00  7.30      1XNB 796
+ATOM    697  NH1 ARG    89      26.175  13.301  20.455  1.00  8.21      1XNB 797
+ATOM    698  NH2 ARG    89      25.735  15.441  19.751  1.00  8.63      1XNB 798
+ATOM    699  N   PRO    90      30.765  14.348  24.284  1.00  8.98      1XNB 799
+ATOM    700  CA  PRO    90      29.987  14.331  25.526  1.00  9.86      1XNB 800
+ATOM    701  C   PRO    90      28.492  14.125  25.302  1.00 10.87      1XNB 801
+ATOM    702  O   PRO    90      27.902  14.723  24.397  1.00 12.34      1XNB 802
+ATOM    703  CB  PRO    90      30.299  15.695  26.147  1.00 10.53      1XNB 803
+ATOM    704  CG  PRO    90      30.532  16.576  24.962  1.00 10.66      1XNB 804
+ATOM    705  CD  PRO    90      31.295  15.696  23.993  1.00 10.00      1XNB 805
+ATOM    706  N   THR    91      27.890  13.245  26.093  1.00 10.88      1XNB 806
+ATOM    707  CA  THR    91      26.455  12.991  25.983  1.00 12.78      1XNB 807
+ATOM    708  C   THR    91      25.877  12.865  27.392  1.00 13.02      1XNB 808
+ATOM    709  O   THR    91      26.618  12.865  28.375  1.00 15.00      1XNB 809
+ATOM    710  CB  THR    91      26.138  11.715  25.165  1.00 13.53      1XNB 810
+ATOM    711  OG1 THR    91      26.636  10.558  25.854  1.00 15.95      1XNB 811
+ATOM    712  CG2 THR    91      26.765  11.790  23.762  1.00 13.67      1XNB 812
+ATOM    713  N   GLY    92      24.557  12.797  27.495  1.00 12.40      1XNB 813
+ATOM    714  CA  GLY    92      23.909  12.671  28.793  1.00 12.19      1XNB 814
+ATOM    715  C   GLY    92      22.483  12.243  28.544  1.00 12.47      1XNB 815
+ATOM    716  O   GLY    92      22.234  11.458  27.626  1.00 12.93      1XNB 816
+ATOM    717  N   THR    93      21.551  12.749  29.348  1.00 11.12      1XNB 817
+ATOM    718  CA  THR    93      20.134  12.435  29.182  1.00 11.89      1XNB 818
+ATOM    719  C   THR    93      19.604  13.307  28.041  1.00 10.26      1XNB 819
+ATOM    720  O   THR    93      19.596  14.535  28.138  1.00 10.20      1XNB 820
+ATOM    721  CB  THR    93      19.373  12.731  30.486  1.00 12.72      1XNB 821
+ATOM    722  OG1 THR    93      19.927  11.922  31.532  1.00 14.34      1XNB 822
+ATOM    723  CG2 THR    93      17.887  12.428  30.339  1.00 13.42      1XNB 823
+ATOM    724  N   TYR    94      19.193  12.665  26.954  1.00 10.72      1XNB 824
+ATOM    725  CA  TYR    94      18.694  13.365  25.779  1.00 10.66      1XNB 825
+ATOM    726  C   TYR    94      17.373  14.098  26.027  1.00 10.63      1XNB 826
+ATOM    727  O   TYR    94      16.398  13.502  26.516  1.00 11.05      1XNB 827
+ATOM    728  CB  TYR    94      18.528  12.376  24.624  1.00 12.05      1XNB 828
+ATOM    729  CG  TYR    94      18.005  13.006  23.354  1.00 11.42      1XNB 829
+ATOM    730  CD1 TYR    94      18.845  13.720  22.512  1.00 12.30      1XNB 830
+ATOM    731  CD2 TYR    94      16.668  12.879  22.991  1.00 13.31      1XNB 831
+ATOM    732  CE1 TYR    94      18.374  14.283  21.347  1.00 12.81      1XNB 832
+ATOM    733  CE2 TYR    94      16.187  13.443  21.830  1.00 12.97      1XNB 833
+ATOM    734  CZ  TYR    94      17.044  14.143  21.011  1.00 12.96      1XNB 834
+ATOM    735  OH  TYR    94      16.566  14.715  19.856  1.00 14.70      1XNB 835
+ATOM    736  N   LYS    95      17.331  15.367  25.630  1.00  9.21      1XNB 836
+ATOM    737  CA  LYS    95      16.153  16.207  25.799  1.00 10.28      1XNB 837
+ATOM    738  C   LYS    95      15.519  16.634  24.483  1.00 10.67      1XNB 838
+ATOM    739  O   LYS    95      14.305  16.824  24.414  1.00 11.94      1XNB 839
+ATOM    740  CB  LYS    95      16.523  17.459  26.591  1.00 11.53      1XNB 840
+ATOM    741  CG  LYS    95      16.986  17.187  28.015  1.00 14.81      1XNB 841
+ATOM    742  CD  LYS    95      15.832  16.664  28.852  1.00 18.34      1XNB 842
+ATOM    743  CE  LYS    95      16.276  16.286  30.243  1.00 21.49      1XNB 843
+ATOM    744  NZ  LYS    95      15.151  15.604  30.936  1.00 25.81      1XNB 844
+ATOM    745  N   GLY    96      16.328  16.796  23.442  1.00  9.63      1XNB 845
+ATOM    746  CA  GLY    96      15.806  17.235  22.157  1.00  9.52      1XNB 846
+ATOM    747  C   GLY    96      16.940  17.838  21.352  1.00  9.31      1XNB 847
+ATOM    748  O   GLY    96      18.098  17.576  21.665  1.00  8.60      1XNB 848
+ATOM    749  N   THR    97      16.625  18.626  20.329  1.00  9.12      1XNB 849
+ATOM    750  CA  THR    97      17.656  19.255  19.497  1.00  9.34      1XNB 850
+ATOM    751  C   THR    97      17.336  20.716  19.253  1.00 10.18      1XNB 851
+ATOM    752  O   THR    97      16.202  21.168  19.477  1.00 11.43      1XNB 852
+ATOM    753  CB  THR    97      17.783  18.595  18.109  1.00  9.69      1XNB 853
+ATOM    754  OG1 THR    97      16.549  18.745  17.381  1.00 11.71      1XNB 854
+ATOM    755  CG2 THR    97      18.140  17.133  18.231  1.00  9.44      1XNB 855
+ATOM    756  N   VAL    98      18.350  21.464  18.834  1.00  9.67      1XNB 856
+ATOM    757  CA  VAL    98      18.182  22.869  18.498  1.00  9.58      1XNB 857
+ATOM    758  C   VAL    98      19.112  23.162  17.330  1.00  9.79      1XNB 858
+ATOM    759  O   VAL    98      20.251  22.681  17.297  1.00  9.42      1XNB 859
+ATOM    760  CB  VAL    98      18.484  23.825  19.695  1.00  9.89      1XNB 860
+ATOM    761  CG1 VAL    98      19.904  23.620  20.231  1.00 10.73      1XNB 861
+ATOM    762  CG2 VAL    98      18.297  25.280  19.261  1.00 11.43      1XNB 862
+ATOM    763  N   LYS    99      18.589  23.851  16.321  1.00  9.58      1XNB 863
+ATOM    764  CA  LYS    99      19.387  24.225  15.161  1.00 10.51      1XNB 864
+ATOM    765  C   LYS    99      19.801  25.669  15.390  1.00  9.66      1XNB 865
+ATOM    766  O   LYS    99      18.965  26.525  15.721  1.00 10.46      1XNB 866
+ATOM    767  CB  LYS    99      18.569  24.116  13.870  1.00 13.55      1XNB 867
+ATOM    768  CG  LYS    99      17.755  22.834  13.748  1.00 19.51      1XNB 868
+ATOM    769  CD  LYS    99      16.390  23.004  14.463  1.00 24.42      1XNB 869
+ATOM    770  CE  LYS    99      15.608  21.693  14.633  1.00 26.58      1XNB 870
+ATOM    771  NZ  LYS    99      16.312  20.718  15.519  1.00 26.87      1XNB 871
+ATOM    772  N   SER   100      21.097  25.942  15.280  1.00  8.51      1XNB 872
+ATOM    773  CA  SER   100      21.574  27.296  15.493  1.00  8.87      1XNB 873
+ATOM    774  C   SER   100      22.899  27.482  14.768  1.00  8.93      1XNB 874
+ATOM    775  O   SER   100      23.720  26.558  14.726  1.00  9.88      1XNB 875
+ATOM    776  CB  SER   100      21.774  27.544  17.004  1.00  9.71      1XNB 876
+ATOM    777  OG  SER   100      22.051  28.906  17.288  1.00 10.29      1XNB 877
+ATOM    778  N   ASP   101      23.095  28.666  14.196  1.00  8.29      1XNB 878
+ATOM    779  CA  ASP   101      24.349  28.998  13.530  1.00  9.37      1XNB 879
+ATOM    780  C   ASP   101      24.859  27.954  12.541  1.00 10.29      1XNB 880
+ATOM    781  O   ASP   101      26.048  27.644  12.522  1.00 11.25      1XNB 881
+ATOM    782  CB  ASP   101      25.425  29.286  14.587  1.00  8.66      1XNB 882
+ATOM    783  CG  ASP   101      24.956  30.279  15.620  1.00  9.02      1XNB 883
+ATOM    784  OD1 ASP   101      24.893  31.485  15.302  1.00 11.65      1XNB 884
+ATOM    785  OD2 ASP   101      24.614  29.852  16.745  1.00  8.07      1XNB 885
+ATOM    786  N   GLY   102      23.945  27.401  11.743  1.00 10.67      1XNB 886
+ATOM    787  CA  GLY   102      24.321  26.432  10.736  1.00 11.43      1XNB 887
+ATOM    788  C   GLY   102      24.519  25.009  11.199  1.00 12.16      1XNB 888
+ATOM    789  O   GLY   102      24.855  24.154  10.381  1.00 15.33      1XNB 889
+ATOM    790  N   GLY   103      24.333  24.738  12.487  1.00 10.79      1XNB 890
+ATOM    791  CA  GLY   103      24.515  23.385  12.969  1.00 10.20      1XNB 891
+ATOM    792  C   GLY   103      23.326  22.881  13.762  1.00  9.28      1XNB 892
+ATOM    793  O   GLY   103      22.434  23.662  14.107  1.00 10.35      1XNB 893
+ATOM    794  N   THR   104      23.268  21.566  13.961  1.00  8.90      1XNB 894
+ATOM    795  CA  THR   104      22.205  20.951  14.761  1.00  8.76      1XNB 895
+ATOM    796  C   THR   104      22.883  20.426  16.019  1.00  8.48      1XNB 896
+ATOM    797  O   THR   104      23.913  19.737  15.938  1.00  8.48      1XNB 897
+ATOM    798  CB  THR   104      21.534  19.803  14.025  1.00 10.19      1XNB 898
+ATOM    799  OG1 THR   104      20.980  20.317  12.806  1.00 13.49      1XNB 899
+ATOM    800  CG2 THR   104      20.421  19.188  14.883  1.00 10.05      1XNB 900
+ATOM    801  N   TYR   105      22.309  20.756  17.167  1.00  6.76      1XNB 901
+ATOM    802  CA  TYR   105      22.874  20.370  18.445  1.00  7.17      1XNB 902
+ATOM    803  C   TYR   105      21.913  19.492  19.225  1.00  7.84      1XNB 903
+ATOM    804  O   TYR   105      20.708  19.732  19.212  1.00  8.58      1XNB 904
+ATOM    805  CB  TYR   105      23.133  21.627  19.296  1.00  6.94      1XNB 905
+ATOM    806  CG  TYR   105      24.167  22.597  18.752  1.00  6.96      1XNB 906
+ATOM    807  CD1 TYR   105      23.855  23.458  17.707  1.00  7.57      1XNB 907
+ATOM    808  CD2 TYR   105      25.450  22.665  19.305  1.00  6.14      1XNB 908
+ATOM    809  CE1 TYR   105      24.781  24.360  17.226  1.00  8.29      1XNB 909
+ATOM    810  CE2 TYR   105      26.384  23.566  18.830  1.00  7.36      1XNB 910
+ATOM    811  CZ  TYR   105      26.044  24.412  17.793  1.00  7.95      1XNB 911
+ATOM    812  OH  TYR   105      26.948  25.354  17.321  1.00  8.58      1XNB 912
+ATOM    813  N   ASP   106      22.444  18.464  19.870  1.00  7.03      1XNB 913
+ATOM    814  CA  ASP   106      21.632  17.620  20.746  1.00  7.26      1XNB 914
+ATOM    815  C   ASP   106      21.657  18.314  22.102  1.00  6.47      1XNB 915
+ATOM    816  O   ASP   106      22.684  18.902  22.491  1.00  8.76      1XNB 916
+ATOM    817  CB  ASP   106      22.248  16.237  20.896  1.00  7.40      1XNB 917
+ATOM    818  CG  ASP   106      22.144  15.433  19.636  1.00  8.23      1XNB 918
+ATOM    819  OD1 ASP   106      21.059  15.475  19.022  1.00  8.43      1XNB 919
+ATOM    820  OD2 ASP   106      23.136  14.782  19.258  1.00  8.95      1XNB 920
+ATOM    821  N   ILE   107      20.549  18.251  22.826  1.00  6.53      1XNB 921
+ATOM    822  CA  ILE   107      20.455  18.862  24.149  1.00  7.02      1XNB 922
+ATOM    823  C   ILE   107      20.482  17.755  25.198  1.00  6.78      1XNB 923
+ATOM    824  O   ILE   107      19.710  16.796  25.118  1.00  7.02      1XNB 924
+ATOM    825  CB  ILE   107      19.154  19.682  24.286  1.00  7.71      1XNB 925
+ATOM    826  CG1 ILE   107      19.132  20.800  23.235  1.00  7.43      1XNB 926
+ATOM    827  CG2 ILE   107      19.030  20.241  25.707  1.00  6.90      1XNB 927
+ATOM    828  CD1 ILE   107      17.766  21.511  23.109  1.00  8.89      1XNB 928
+ATOM    829  N   TYR   108      21.375  17.884  26.170  1.00  6.86      1XNB 929
+ATOM    830  CA  TYR   108      21.508  16.883  27.230  1.00  7.04      1XNB 930
+ATOM    831  C   TYR   108      21.607  17.504  28.604  1.00  7.03      1XNB 931
+ATOM    832  O   TYR   108      22.017  18.662  28.746  1.00  6.26      1XNB 932
+ATOM    833  CB  TYR   108      22.812  16.085  27.086  1.00  7.69      1XNB 933
+ATOM    834  CG  TYR   108      23.010  15.349  25.788  1.00  8.59      1XNB 934
+ATOM    835  CD1 TYR   108      22.261  14.218  25.487  1.00  8.94      1XNB 935
+ATOM    836  CD2 TYR   108      23.982  15.759  24.879  1.00  8.12      1XNB 936
+ATOM    837  CE1 TYR   108      22.475  13.514  24.316  1.00  9.47      1XNB 937
+ATOM    838  CE2 TYR   108      24.202  15.066  23.710  1.00  8.64      1XNB 938
+ATOM    839  CZ  TYR   108      23.446  13.943  23.430  1.00 10.10      1XNB 939
+ATOM    840  OH  TYR   108      23.661  13.250  22.264  1.00  9.89      1XNB 940
+ATOM    841  N   THR   109      21.256  16.714  29.615  1.00  7.86      1XNB 941
+ATOM    842  CA  THR   109      21.464  17.139  30.997  1.00  8.51      1XNB 942
+ATOM    843  C   THR   109      22.241  16.027  31.670  1.00  8.81      1XNB 943
+ATOM    844  O   THR   109      22.132  14.843  31.296  1.00  9.00      1XNB 944
+ATOM    845  CB  THR   109      20.165  17.372  31.816  1.00  9.85      1XNB 945
+ATOM    846  OG1 THR   109      19.414  16.152  31.890  1.00 11.90      1XNB 946
+ATOM    847  CG2 THR   109      19.332  18.482  31.216  1.00 12.26      1XNB 947
+ATOM    848  N   THR   110      23.098  16.420  32.599  1.00  8.83      1XNB 948
+ATOM    849  CA  THR   110      23.872  15.481  33.399  1.00 10.03      1XNB 949
+ATOM    850  C   THR   110      23.956  16.096  34.794  1.00  9.97      1XNB 950
+ATOM    851  O   THR   110      23.591  17.256  35.004  1.00 10.75      1XNB 951
+ATOM    852  CB  THR   110      25.327  15.261  32.879  1.00 10.86      1XNB 952
+ATOM    853  OG1 THR   110      26.010  16.514  32.793  1.00 10.92      1XNB 953
+ATOM    854  CG2 THR   110      25.343  14.551  31.512  1.00 10.74      1XNB 954
+ATOM    855  N   THR   111      24.447  15.315  35.743  1.00 10.88      1XNB 955
+ATOM    856  CA  THR   111      24.609  15.775  37.109  1.00 11.05      1XNB 956
+ATOM    857  C   THR   111      25.998  15.365  37.562  1.00 11.49      1XNB 957
+ATOM    858  O   THR   111      26.474  14.287  37.214  1.00 12.19      1XNB 958
+ATOM    859  CB  THR   111      23.568  15.115  38.018  1.00 12.75      1XNB 959
+ATOM    860  OG1 THR   111      22.262  15.391  37.500  1.00 14.52      1XNB 960
+ATOM    861  CG2 THR   111      23.676  15.645  39.456  1.00 13.67      1XNB 961
+ATOM    862  N   ARG   112      26.671  16.268  38.262  1.00 10.99      1XNB 962
+ATOM    863  CA  ARG   112      27.998  16.011  38.821  1.00 12.03      1XNB 963
+ATOM    864  C   ARG   112      27.821  15.839  40.329  1.00 11.52      1XNB 964
+ATOM    865  O   ARG   112      27.089  16.599  40.970  1.00 11.79      1XNB 965
+ATOM    866  CB  ARG   112      28.931  17.190  38.548  1.00 14.43      1XNB 966
+ATOM    867  CG  ARG   112      29.282  17.340  37.094  1.00 16.00      1XNB 967
+ATOM    868  CD  ARG   112      30.386  16.391  36.694  1.00 19.98      1XNB 968
+ATOM    869  NE  ARG   112      31.687  16.993  36.964  1.00 23.53      1XNB 969
+ATOM    870  CZ  ARG   112      32.728  16.353  37.490  1.00 25.69      1XNB 970
+ATOM    871  NH1 ARG   112      32.640  15.065  37.816  1.00 26.95      1XNB 971
+ATOM    872  NH2 ARG   112      33.852  17.021  37.726  1.00 27.37      1XNB 972
+ATOM    873  N   TYR   113      28.468  14.823  40.881  1.00 11.46      1XNB 973
+ATOM    874  CA  TYR   113      28.369  14.521  42.306  1.00 12.13      1XNB 974
+ATOM    875  C   TYR   113      29.697  14.725  43.024  1.00 13.04      1XNB 975
+ATOM    876  O   TYR   113      30.714  14.134  42.632  1.00 13.85      1XNB 976
+ATOM    877  CB  TYR   113      27.901  13.072  42.495  1.00 12.63      1XNB 977
+ATOM    878  CG  TYR   113      26.568  12.790  41.828  1.00 13.18      1XNB 978
+ATOM    879  CD1 TYR   113      25.373  13.018  42.509  1.00 14.16      1XNB 979
+ATOM    880  CD2 TYR   113      26.508  12.336  40.517  1.00 13.55      1XNB 980
+ATOM    881  CE1 TYR   113      24.158  12.803  41.905  1.00 14.40      1XNB 981
+ATOM    882  CE2 TYR   113      25.287  12.115  39.899  1.00 13.89      1XNB 982
+ATOM    883  CZ  TYR   113      24.118  12.352  40.605  1.00 14.68      1XNB 983
+ATOM    884  OH  TYR   113      22.893  12.122  40.024  1.00 15.55      1XNB 984
+ATOM    885  N   ASN   114      29.668  15.545  44.075  1.00 12.95      1XNB 985
+ATOM    886  CA  ASN   114      30.849  15.844  44.894  1.00 13.07      1XNB 986
+ATOM    887  C   ASN   114      32.015  16.271  44.002  1.00 13.00      1XNB 987
+ATOM    888  O   ASN   114      33.131  15.742  44.100  1.00 13.38      1XNB 988
+ATOM    889  CB  ASN   114      31.239  14.610  45.719  1.00 14.70      1XNB 989
+ATOM    890  CG  ASN   114      32.215  14.943  46.839  1.00 15.89      1XNB 990
+ATOM    891  OD1 ASN   114      32.055  15.948  47.533  1.00 17.77      1XNB 991
+ATOM    892  ND2 ASN   114      33.204  14.086  47.039  1.00 17.35      1XNB 992
+ATOM    893  N   ALA   115      31.748  17.255  43.153  1.00 11.69      1XNB 993
+ATOM    894  CA  ALA   115      32.735  17.749  42.204  1.00 11.68      1XNB 994
+ATOM    895  C   ALA   115      33.032  19.210  42.472  1.00 11.60      1XNB 995
+ATOM    896  O   ALA   115      32.203  19.926  43.021  1.00 11.34      1XNB 996
+ATOM    897  CB  ALA   115      32.186  17.585  40.779  1.00 12.56      1XNB 997
+ATOM    898  N   PRO   116      34.221  19.680  42.065  1.00 12.27      1XNB 998
+ATOM    899  CA  PRO   116      34.581  21.085  42.282  1.00 13.00      1XNB 999
+ATOM    900  C   PRO   116      33.648  22.000  41.490  1.00 13.57      1XNB1000
+ATOM    901  O   PRO   116      33.305  21.710  40.337  1.00 13.91      1XNB1001
+ATOM    902  CB  PRO   116      36.007  21.169  41.724  1.00 13.75      1XNB1002
+ATOM    903  CG  PRO   116      36.513  19.756  41.785  1.00 15.47      1XNB1003
+ATOM    904  CD  PRO   116      35.309  18.942  41.401  1.00 13.17      1XNB1004
+ATOM    905  N   SER   117      33.212  23.089  42.109  1.00 13.88      1XNB1005
+ATOM    906  CA  SER   117      32.343  24.018  41.419  1.00 14.44      1XNB1006
+ATOM    907  C   SER   117      33.024  25.369  41.394  1.00 14.67      1XNB1007
+ATOM    908  O   SER   117      34.125  25.536  41.932  1.00 14.53      1XNB1008
+ATOM    909  CB  SER   117      30.999  24.141  42.131  1.00 15.38      1XNB1009
+ATOM    910  OG  SER   117      31.139  24.934  43.295  1.00 17.58      1XNB1010
+ATOM    911  N   ILE   118      32.322  26.349  40.842  1.00 14.22      1XNB1011
+ATOM    912  CA  ILE   118      32.835  27.699  40.728  1.00 16.04      1XNB1012
+ATOM    913  C   ILE   118      33.196  28.312  42.081  1.00 17.41      1XNB1013
+ATOM    914  O   ILE   118      34.165  29.049  42.173  1.00 18.47      1XNB1014
+ATOM    915  CB  ILE   118      31.828  28.599  39.968  1.00 15.36      1XNB1015
+ATOM    916  CG1 ILE   118      32.417  29.988  39.751  1.00 16.08      1XNB1016
+ATOM    917  CG2 ILE   118      30.496  28.666  40.702  1.00 14.47      1XNB1017
+ATOM    918  CD1 ILE   118      31.554  30.880  38.886  1.00 16.70      1XNB1018
+ATOM    919  N   ASP   119      32.453  27.951  43.125  1.00 19.80      1XNB1019
+ATOM    920  CA  ASP   119      32.665  28.478  44.480  1.00 22.05      1XNB1020
+ATOM    921  C   ASP   119      33.808  27.826  45.245  1.00 22.75      1XNB1021
+ATOM    922  O   ASP   119      34.069  28.199  46.397  1.00 24.19      1XNB1022
+ATOM    923  CB  ASP   119      31.398  28.285  45.324  1.00 24.51      1XNB1023
+ATOM    924  CG  ASP   119      30.259  29.194  44.905  1.00 26.62      1XNB1024
+ATOM    925  OD1 ASP   119      30.530  30.349  44.528  1.00 27.28      1XNB1025
+ATOM    926  OD2 ASP   119      29.088  28.748  44.981  1.00 29.67      1XNB1026
+ATOM    927  N   GLY   120      34.481  26.857  44.632  1.00 21.47      1XNB1027
+ATOM    928  CA  GLY   120      35.541  26.155  45.333  1.00 21.00      1XNB1028
+ATOM    929  C   GLY   120      34.885  25.008  46.091  1.00 20.33      1XNB1029
+ATOM    930  O   GLY   120      33.652  24.869  46.081  1.00 21.73      1XNB1030
+ATOM    931  N   ASP   121      35.684  24.198  46.769  1.00 18.93      1XNB1031
+ATOM    932  CA  ASP   121      35.169  23.050  47.511  1.00 17.86      1XNB1032
+ATOM    933  C   ASP   121      34.452  22.074  46.569  1.00 17.28      1XNB1033
+ATOM    934  O   ASP   121      34.741  22.070  45.368  1.00 20.06      1XNB1034
+ATOM    935  CB  ASP   121      34.302  23.503  48.697  1.00 16.46      1XNB1035
+ATOM    936  CG  ASP   121      35.132  24.185  49.775  1.00 16.11      1XNB1036
+ATOM    937  OD1 ASP   121      36.292  23.763  49.956  1.00 16.31      1XNB1037
+ATOM    938  OD2 ASP   121      34.646  25.148  50.405  1.00 16.02      1XNB1038
+ATOM    939  N   ARG   122      33.561  21.236  47.087  1.00 14.83      1XNB1039
+ATOM    940  CA  ARG   122      32.882  20.255  46.247  1.00 13.59      1XNB1040
+ATOM    941  C   ARG   122      31.396  20.221  46.524  1.00 12.41      1XNB1041
+ATOM    942  O   ARG   122      30.976  20.405  47.660  1.00 12.78      1XNB1042
+ATOM    943  CB  ARG   122      33.446  18.860  46.507  1.00 14.66      1XNB1043
+ATOM    944  CG  ARG   122      34.890  18.684  46.090  1.00 20.36      1XNB1044
+ATOM    945  CD  ARG   122      35.349  17.282  46.391  1.00 24.86      1XNB1045
+ATOM    946  NE  ARG   122      36.676  17.015  45.851  1.00 29.36      1XNB1046
+ATOM    947  CZ  ARG   122      37.044  15.857  45.308  1.00 32.11      1XNB1047
+ATOM    948  NH1 ARG   122      36.180  14.850  45.222  1.00 33.62      1XNB1048
+ATOM    949  NH2 ARG   122      38.292  15.689  44.887  1.00 33.46      1XNB1049
+ATOM    950  N   THR   123      30.600  19.955  45.493  1.00 11.55      1XNB1050
+ATOM    951  CA  THR   123      29.160  19.877  45.681  1.00 11.24      1XNB1051
+ATOM    952  C   THR   123      28.522  19.112  44.526  1.00 11.36      1XNB1052
+ATOM    953  O   THR   123      29.221  18.583  43.656  1.00 11.87      1XNB1053
+ATOM    954  CB  THR   123      28.537  21.284  45.839  1.00 11.75      1XNB1054
+ATOM    955  OG1 THR   123      27.239  21.163  46.437  1.00 13.15      1XNB1055
+ATOM    956  CG2 THR   123      28.436  22.008  44.492  1.00 11.87      1XNB1056
+ATOM    957  N   THR   124      27.201  18.988  44.572  1.00 10.37      1XNB1057
+ATOM    958  CA  THR   124      26.456  18.292  43.532  1.00 11.56      1XNB1058
+ATOM    959  C   THR   124      25.701  19.357  42.721  1.00 11.72      1XNB1059
+ATOM    960  O   THR   124      25.029  20.226  43.286  1.00 12.47      1XNB1060
+ATOM    961  CB  THR   124      25.470  17.292  44.164  1.00 11.78      1XNB1061
+ATOM    962  OG1 THR   124      26.210  16.228  44.796  1.00 13.61      1XNB1062
+ATOM    963  CG2 THR   124      24.529  16.727  43.104  1.00 12.80      1XNB1063
+ATOM    964  N   PHE   125      25.836  19.318  41.400  1.00  9.98      1XNB1064
+ATOM    965  CA  PHE   125      25.169  20.312  40.564  1.00  9.84      1XNB1065
+ATOM    966  C   PHE   125      24.813  19.750  39.202  1.00  9.32      1XNB1066
+ATOM    967  O   PHE   125      25.357  18.727  38.777  1.00  9.74      1XNB1067
+ATOM    968  CB  PHE   125      26.041  21.579  40.413  1.00 10.29      1XNB1068
+ATOM    969  CG  PHE   125      27.425  21.313  39.877  1.00 10.47      1XNB1069
+ATOM    970  CD1 PHE   125      27.668  21.289  38.506  1.00 10.34      1XNB1070
+ATOM    971  CD2 PHE   125      28.485  21.065  40.745  1.00 10.42      1XNB1071
+ATOM    972  CE1 PHE   125      28.937  21.019  38.014  1.00 10.75      1XNB1072
+ATOM    973  CE2 PHE   125      29.754  20.795  40.258  1.00 10.28      1XNB1073
+ATOM    974  CZ  PHE   125      29.975  20.772  38.883  1.00 10.45      1XNB1074
+ATOM    975  N   THR   126      23.878  20.417  38.536  1.00  9.94      1XNB1075
+ATOM    976  CA  THR   126      23.427  20.017  37.212  1.00 10.22      1XNB1076
+ATOM    977  C   THR   126      24.225  20.726  36.126  1.00  9.14      1XNB1077
+ATOM    978  O   THR   126      24.719  21.846  36.325  1.00  9.57      1XNB1078
+ATOM    979  CB  THR   126      21.953  20.385  37.015  1.00 13.30      1XNB1079
+ATOM    980  OG1 THR   126      21.197  19.903  38.132  1.00 16.04      1XNB1080
+ATOM    981  CG2 THR   126      21.404  19.742  35.746  1.00 15.05      1XNB1081
+ATOM    982  N   GLN   127      24.385  20.035  35.003  1.00  8.81      1XNB1082
+ATOM    983  CA  GLN   127      25.079  20.570  33.832  1.00  8.30      1XNB1083
+ATOM    984  C   GLN   127      24.086  20.550  32.667  1.00  8.16      1XNB1084
+ATOM    985  O   GLN   127      23.337  19.574  32.500  1.00  9.32      1XNB1085
+ATOM    986  CB  GLN   127      26.269  19.690  33.449  1.00  8.54      1XNB1086
+ATOM    987  CG  GLN   127      27.314  19.489  34.538  1.00  9.02      1XNB1087
+ATOM    988  CD  GLN   127      28.409  18.539  34.090  1.00 10.06      1XNB1088
+ATOM    989  OE1 GLN   127      28.165  17.359  33.850  1.00 11.84      1XNB1089
+ATOM    990  NE2 GLN   127      29.604  19.058  33.920  1.00 10.08      1XNB1090
+ATOM    991  N   TYR   128      24.050  21.638  31.910  1.00  7.31      1XNB1091
+ATOM    992  CA  TYR   128      23.190  21.731  30.722  1.00  6.89      1XNB1092
+ATOM    993  C   TYR   128      24.143  21.705  29.537  1.00  6.84      1XNB1093
+ATOM    994  O   TYR   128      25.162  22.412  29.549  1.00  7.00      1XNB1094
+ATOM    995  CB  TYR   128      22.439  23.054  30.673  1.00  7.03      1XNB1095
+ATOM    996  CG  TYR   128      21.344  23.233  31.685  1.00  7.37      1XNB1096
+ATOM    997  CD1 TYR   128      20.889  22.172  32.460  1.00  8.14      1XNB1097
+ATOM    998  CD2 TYR   128      20.762  24.478  31.860  1.00  8.11      1XNB1098
+ATOM    999  CE1 TYR   128      19.872  22.360  33.388  1.00  9.59      1XNB1099
+ATOM   1000  CE2 TYR   128      19.753  24.677  32.780  1.00  8.85      1XNB1100
+ATOM   1001  CZ  TYR   128      19.314  23.618  33.539  1.00  8.74      1XNB1101
+ATOM   1002  OH  TYR   128      18.304  23.827  34.460  1.00 10.45      1XNB1102
+ATOM   1003  N   TRP   129      23.786  20.939  28.510  1.00  6.33      1XNB1103
+ATOM   1004  CA  TRP   129      24.629  20.830  27.316  1.00  5.80      1XNB1104
+ATOM   1005  C   TRP   129      23.889  20.959  26.002  1.00  7.10      1XNB1105
+ATOM   1006  O   TRP   129      22.758  20.486  25.880  1.00  7.11      1XNB1106
+ATOM   1007  CB  TRP   129      25.264  19.434  27.197  1.00  6.15      1XNB1107
+ATOM   1008  CG  TRP   129      26.022  18.916  28.364  1.00  7.19      1XNB1108
+ATOM   1009  CD1 TRP   129      25.501  18.423  29.525  1.00  7.69      1XNB1109
+ATOM   1010  CD2 TRP   129      27.448  18.784  28.475  1.00  7.77      1XNB1110
+ATOM   1011  NE1 TRP   129      26.509  17.991  30.349  1.00  8.78      1XNB1111
+ATOM   1012  CE2 TRP   129      27.716  18.201  29.728  1.00  7.99      1XNB1112
+ATOM   1013  CE3 TRP   129      28.522  19.099  27.630  1.00  7.43      1XNB1113
+ATOM   1014  CZ2 TRP   129      29.021  17.922  30.162  1.00  8.28      1XNB1114
+ATOM   1015  CZ3 TRP   129      29.810  18.818  28.061  1.00  8.36      1XNB1115
+ATOM   1016  CH2 TRP   129      30.047  18.237  29.313  1.00  9.01      1XNB1116
+ATOM   1017  N   SER   130      24.533  21.634  25.050  1.00  6.37      1XNB1117
+ATOM   1018  CA  SER   130      24.102  21.648  23.654  1.00  5.65      1XNB1118
+ATOM   1019  C   SER   130      25.390  21.110  23.025  1.00  5.76      1XNB1119
+ATOM   1020  O   SER   130      26.453  21.717  23.210  1.00  6.51      1XNB1120
+ATOM   1021  CB  SER   130      23.798  23.039  23.104  1.00  7.12      1XNB1121
+ATOM   1022  OG  SER   130      22.459  23.411  23.408  1.00  6.86      1XNB1122
+ATOM   1023  N   VAL   131      25.319  19.949  22.380  1.00  5.13      1XNB1123
+ATOM   1024  CA  VAL   131      26.498  19.332  21.758  1.00  6.17      1XNB1124
+ATOM   1025  C   VAL   131      26.247  19.160  20.261  1.00  6.11      1XNB1125
+ATOM   1026  O   VAL   131      25.290  18.499  19.857  1.00  6.96      1XNB1126
+ATOM   1027  CB  VAL   131      26.804  17.958  22.398  1.00  6.21      1XNB1127
+ATOM   1028  CG1 VAL   131      28.108  17.387  21.823  1.00  7.21      1XNB1128
+ATOM   1029  CG2 VAL   131      26.920  18.093  23.922  1.00  8.46      1XNB1129
+ATOM   1030  N   ARG   132      27.080  19.773  19.424  1.00  6.43      1XNB1130
+ATOM   1031  CA  ARG   132      26.879  19.677  17.982  1.00  5.69      1XNB1131
+ATOM   1032  C   ARG   132      26.869  18.202  17.550  1.00  6.19      1XNB1132
+ATOM   1033  O   ARG   132      27.604  17.381  18.100  1.00  6.18      1XNB1133
+ATOM   1034  CB  ARG   132      27.973  20.451  17.249  1.00  6.42      1XNB1134
+ATOM   1035  CG  ARG   132      27.494  21.097  15.954  1.00  7.29      1XNB1135
+ATOM   1036  CD  ARG   132      28.582  22.053  15.451  1.00  7.89      1XNB1136
+ATOM   1037  NE  ARG   132      28.239  22.752  14.215  1.00 10.10      1XNB1137
+ATOM   1038  CZ  ARG   132      28.396  22.240  12.999  1.00 10.26      1XNB1138
+ATOM   1039  NH1 ARG   132      28.875  21.010  12.846  1.00  9.86      1XNB1139
+ATOM   1040  NH2 ARG   132      28.120  22.983  11.934  1.00 11.85      1XNB1140
+ATOM   1041  N   GLN   133      26.021  17.855  16.581  1.00  7.10      1XNB1141
+ATOM   1042  CA  GLN   133      25.941  16.461  16.143  1.00  7.59      1XNB1142
+ATOM   1043  C   GLN   133      27.190  15.996  15.411  1.00  7.01      1XNB1143
+ATOM   1044  O   GLN   133      27.544  14.820  15.480  1.00  8.26      1XNB1144
+ATOM   1045  CB  GLN   133      24.676  16.216  15.318  1.00  8.18      1XNB1145
+ATOM   1046  CG  GLN   133      23.410  16.324  16.168  1.00  7.94      1XNB1146
+ATOM   1047  CD  GLN   133      22.137  15.987  15.411  1.00  8.89      1XNB1147
+ATOM   1048  OE1 GLN   133      21.094  15.707  16.024  1.00 12.31      1XNB1148
+ATOM   1049  NE2 GLN   133      22.206  16.004  14.096  1.00  7.45      1XNB1149
+ATOM   1050  N   SER   134      27.828  16.924  14.702  1.00  7.17      1XNB1150
+ATOM   1051  CA  SER   134      29.085  16.668  13.987  1.00  8.01      1XNB1151
+ATOM   1052  C   SER   134      30.020  17.819  14.387  1.00  8.06      1XNB1152
+ATOM   1053  O   SER   134      29.554  18.908  14.741  1.00  7.85      1XNB1153
+ATOM   1054  CB  SER   134      28.855  16.648  12.467  1.00 10.34      1XNB1154
+ATOM   1055  OG  SER   134      28.346  17.886  12.001  1.00 11.70      1XNB1155
+ATOM   1056  N   LYS   135      31.328  17.583  14.356  1.00  7.33      1XNB1156
+ATOM   1057  CA  LYS   135      32.278  18.630  14.724  1.00  7.86      1XNB1157
+ATOM   1058  C   LYS   135      32.211  19.821  13.784  1.00  8.51      1XNB1158
+ATOM   1059  O   LYS   135      32.131  19.662  12.554  1.00 10.36      1XNB1159
+ATOM   1060  CB  LYS   135      33.721  18.096  14.740  1.00  7.67      1XNB1160
+ATOM   1061  CG  LYS   135      33.955  17.003  15.752  1.00  9.33      1XNB1161
+ATOM   1062  CD  LYS   135      35.391  16.523  15.757  1.00  9.91      1XNB1162
+ATOM   1063  CE  LYS   135      35.552  15.335  16.689  1.00 11.58      1XNB1163
+ATOM   1064  NZ  LYS   135      36.997  14.948  16.847  1.00 13.64      1XNB1164
+ATOM   1065  N   ARG   136      32.232  21.020  14.354  1.00  8.88      1XNB1165
+ATOM   1066  CA  ARG   136      32.231  22.226  13.551  1.00  9.10      1XNB1166
+ATOM   1067  C   ARG   136      33.661  22.411  13.034  1.00  9.52      1XNB1167
+ATOM   1068  O   ARG   136      34.619  22.261  13.789  1.00 10.25      1XNB1168
+ATOM   1069  CB  ARG   136      31.839  23.432  14.398  1.00  9.03      1XNB1169
+ATOM   1070  CG  ARG   136      31.492  24.672  13.597  1.00  8.94      1XNB1170
+ATOM   1071  CD  ARG   136      30.966  25.746  14.517  1.00  8.64      1XNB1171
+ATOM   1072  NE  ARG   136      30.394  26.881  13.803  1.00  8.31      1XNB1172
+ATOM   1073  CZ  ARG   136      29.640  27.822  14.367  1.00  7.52      1XNB1173
+ATOM   1074  NH1 ARG   136      29.360  27.773  15.664  1.00  8.19      1XNB1174
+ATOM   1075  NH2 ARG   136      29.142  28.809  13.635  1.00  8.39      1XNB1175
+ATOM   1076  N   PRO   137      33.826  22.672  11.729  1.00 10.49      1XNB1176
+ATOM   1077  CA  PRO   137      35.185  22.867  11.198  1.00 10.93      1XNB1177
+ATOM   1078  C   PRO   137      35.824  24.050  11.926  1.00 10.44      1XNB1178
+ATOM   1079  O   PRO   137      35.125  24.978  12.334  1.00 12.33      1XNB1179
+ATOM   1080  CB  PRO   137      34.922  23.241   9.741  1.00 12.26      1XNB1180
+ATOM   1081  CG  PRO   137      33.681  22.493   9.427  1.00 12.17      1XNB1181
+ATOM   1082  CD  PRO   137      32.827  22.722  10.649  1.00 11.02      1XNB1182
+ATOM   1083  N   THR   138      37.130  24.009  12.138  1.00 10.62      1XNB1183
+ATOM   1084  CA  THR   138      37.800  25.106  12.816  1.00 10.83      1XNB1184
+ATOM   1085  C   THR   138      38.657  25.903  11.836  1.00 10.80      1XNB1185
+ATOM   1086  O   THR   138      38.820  25.499  10.684  1.00 12.68      1XNB1186
+ATOM   1087  CB  THR   138      38.651  24.604  13.993  1.00 11.52      1XNB1187
+ATOM   1088  OG1 THR   138      39.583  23.612  13.534  1.00 13.05      1XNB1188
+ATOM   1089  CG2 THR   138      37.741  24.005  15.082  1.00 11.86      1XNB1189
+ATOM   1090  N   GLY   139      39.136  27.061  12.273  1.00 10.60      1XNB1190
+ATOM   1091  CA  GLY   139      39.959  27.894  11.414  1.00 11.30      1XNB1191
+ATOM   1092  C   GLY   139      39.159  29.010  10.764  1.00 11.97      1XNB1192
+ATOM   1093  O   GLY   139      39.726  29.906  10.143  1.00 14.29      1XNB1193
+ATOM   1094  N   SER   140      37.842  28.967  10.934  1.00 10.88      1XNB1194
+ATOM   1095  CA  SER   140      36.949  29.970  10.380  1.00 11.58      1XNB1195
+ATOM   1096  C   SER   140      36.306  30.811  11.470  1.00  9.96      1XNB1196
+ATOM   1097  O   SER   140      36.390  30.478  12.657  1.00 10.78      1XNB1197
+ATOM   1098  CB  SER   140      35.835  29.288   9.591  1.00 13.34      1XNB1198
+ATOM   1099  OG  SER   140      36.340  28.697   8.411  1.00 17.69      1XNB1199
+ATOM   1100  N   ASN   141      35.703  31.923  11.063  1.00  9.89      1XNB1200
+ATOM   1101  CA  ASN   141      34.993  32.807  11.984  1.00 10.49      1XNB1201
+ATOM   1102  C   ASN   141      33.640  32.158  12.284  1.00 10.43      1XNB1202
+ATOM   1103  O   ASN   141      32.776  32.065  11.407  1.00 11.55      1XNB1203
+ATOM   1104  CB  ASN   141      34.786  34.184  11.350  1.00 10.96      1XNB1204
+ATOM   1105  CG  ASN   141      36.082  34.948  11.183  1.00 13.42      1XNB1205
+ATOM   1106  OD1 ASN   141      37.064  34.693  11.888  1.00 12.05      1XNB1206
+ATOM   1107  ND2 ASN   141      36.086  35.904  10.271  1.00 15.36      1XNB1207
+ATOM   1108  N   ALA   142      33.466  31.725  13.527  1.00  9.76      1XNB1208
+ATOM   1109  CA  ALA   142      32.256  31.037  13.953  1.00 10.13      1XNB1209
+ATOM   1110  C   ALA   142      31.455  31.885  14.913  1.00 10.62      1XNB1210
+ATOM   1111  O   ALA   142      31.999  32.725  15.636  1.00 11.70      1XNB1211
+ATOM   1112  CB  ALA   142      32.617  29.704  14.601  1.00 10.00      1XNB1212
+ATOM   1113  N   THR   143      30.155  31.642  14.923  1.00  9.74      1XNB1213
+ATOM   1114  CA  THR   143      29.242  32.363  15.781  1.00  9.25      1XNB1214
+ATOM   1115  C   THR   143      28.389  31.403  16.597  1.00  9.11      1XNB1215
+ATOM   1116  O   THR   143      28.016  30.326  16.125  1.00  9.03      1XNB1216
+ATOM   1117  CB  THR   143      28.283  33.225  14.939  1.00 11.00      1XNB1217
+ATOM   1118  OG1 THR   143      29.053  34.082  14.078  1.00 14.18      1XNB1218
+ATOM   1119  CG2 THR   143      27.385  34.067  15.818  1.00 12.83      1XNB1219
+ATOM   1120  N   ILE   144      28.194  31.746  17.863  1.00  7.13      1XNB1220
+ATOM   1121  CA  ILE   144      27.304  30.986  18.727  1.00  7.74      1XNB1221
+ATOM   1122  C   ILE   144      26.265  32.001  19.216  1.00  7.23      1XNB1222
+ATOM   1123  O   ILE   144      26.593  32.933  19.956  1.00  8.19      1XNB1223
+ATOM   1124  CB  ILE   144      28.027  30.342  19.926  1.00  7.04      1XNB1224
+ATOM   1125  CG1 ILE   144      28.979  29.244  19.435  1.00  8.21      1XNB1225
+ATOM   1126  CG2 ILE   144      26.985  29.787  20.923  1.00  8.51      1XNB1226
+ATOM   1127  CD1 ILE   144      29.806  28.602  20.538  1.00  8.35      1XNB1227
+ATOM   1128  N   THR   145      25.035  31.864  18.720  1.00  7.20      1XNB1228
+ATOM   1129  CA  THR   145      23.924  32.744  19.100  1.00  7.68      1XNB1229
+ATOM   1130  C   THR   145      23.329  32.081  20.343  1.00  7.81      1XNB1230
+ATOM   1131  O   THR   145      22.438  31.222  20.265  1.00  7.88      1XNB1231
+ATOM   1132  CB  THR   145      22.919  32.843  17.945  1.00  7.89      1XNB1232
+ATOM   1133  OG1 THR   145      23.606  33.321  16.778  1.00  9.53      1XNB1233
+ATOM   1134  CG2 THR   145      21.803  33.823  18.287  1.00  9.07      1XNB1234
+ATOM   1135  N   PHE   146      23.865  32.471  21.493  1.00  7.74      1XNB1235
+ATOM   1136  CA  PHE   146      23.491  31.852  22.752  1.00  7.32      1XNB1236
+ATOM   1137  C   PHE   146      22.024  31.901  23.105  1.00  7.58      1XNB1237
+ATOM   1138  O   PHE   146      21.505  30.950  23.693  1.00  7.49      1XNB1238
+ATOM   1139  CB  PHE   146      24.377  32.379  23.887  1.00  7.94      1XNB1239
+ATOM   1140  CG  PHE   146      24.242  31.621  25.177  1.00  7.49      1XNB1240
+ATOM   1141  CD1 PHE   146      24.328  30.232  25.206  1.00  8.17      1XNB1241
+ATOM   1142  CD2 PHE   146      24.058  32.305  26.370  1.00  9.15      1XNB1242
+ATOM   1143  CE1 PHE   146      24.237  29.542  26.412  1.00 10.29      1XNB1243
+ATOM   1144  CE2 PHE   146      23.965  31.619  27.577  1.00 10.09      1XNB1244
+ATOM   1145  CZ  PHE   146      24.056  30.240  27.594  1.00  9.32      1XNB1245
+ATOM   1146  N   THR   147      21.338  32.952  22.666  1.00  7.22      1XNB1246
+ATOM   1147  CA  THR   147      19.918  33.072  22.955  1.00  8.76      1XNB1247
+ATOM   1148  C   THR   147      19.114  31.877  22.401  1.00  8.56      1XNB1248
+ATOM   1149  O   THR   147      18.151  31.435  23.034  1.00  8.95      1XNB1249
+ATOM   1150  CB  THR   147      19.354  34.393  22.407  1.00  9.29      1XNB1250
+ATOM   1151  OG1 THR   147      17.967  34.498  22.753  1.00 17.29      1XNB1251
+ATOM   1152  CG2 THR   147      19.457  34.420  20.925  1.00 10.80      1XNB1252
+ATOM   1153  N   ASN   148      19.524  31.330  21.253  1.00  7.98      1XNB1253
+ATOM   1154  CA  ASN   148      18.827  30.180  20.665  1.00  8.94      1XNB1254
+ATOM   1155  C   ASN   148      18.911  28.965  21.582  1.00  8.77      1XNB1255
+ATOM   1156  O   ASN   148      17.961  28.193  21.694  1.00  9.24      1XNB1256
+ATOM   1157  CB  ASN   148      19.411  29.788  19.306  1.00 10.27      1XNB1257
+ATOM   1158  CG  ASN   148      19.114  30.794  18.212  1.00 12.90      1XNB1258
+ATOM   1159  OD1 ASN   148      19.841  30.864  17.205  1.00 15.60      1XNB1259
+ATOM   1160  ND2 ASN   148      18.061  31.573  18.384  1.00 11.65      1XNB1260
+ATOM   1161  N   HIS   149      20.056  28.802  22.243  1.00  7.86      1XNB1261
+ATOM   1162  CA  HIS   149      20.266  27.685  23.156  1.00  7.11      1XNB1262
+ATOM   1163  C   HIS   149      19.484  27.876  24.442  1.00  7.00      1XNB1263
+ATOM   1164  O   HIS   149      18.794  26.963  24.882  1.00  7.91      1XNB1264
+ATOM   1165  CB  HIS   149      21.761  27.498  23.433  1.00  6.40      1XNB1265
+ATOM   1166  CG  HIS   149      22.528  27.086  22.215  1.00  6.30      1XNB1266
+ATOM   1167  ND1 HIS   149      22.660  25.767  21.836  1.00  7.14      1XNB1267
+ATOM   1168  CD2 HIS   149      23.154  27.817  21.263  1.00  7.01      1XNB1268
+ATOM   1169  CE1 HIS   149      23.334  25.705  20.701  1.00  7.65      1XNB1269
+ATOM   1170  NE2 HIS   149      23.645  26.935  20.333  1.00  7.59      1XNB1270
+ATOM   1171  N   VAL   150      19.544  29.080  25.005  1.00  6.86      1XNB1271
+ATOM   1172  CA  VAL   150      18.811  29.389  26.227  1.00  7.61      1XNB1272
+ATOM   1173  C   VAL   150      17.311  29.135  26.017  1.00  8.52      1XNB1273
+ATOM   1174  O   VAL   150      16.653  28.493  26.846  1.00  8.81      1XNB1274
+ATOM   1175  CB  VAL   150      19.036  30.850  26.637  1.00  7.83      1XNB1275
+ATOM   1176  CG1 VAL   150      18.107  31.227  27.797  1.00  8.84      1XNB1276
+ATOM   1177  CG2 VAL   150      20.506  31.049  27.034  1.00  8.37      1XNB1277
+ATOM   1178  N   ASN   151      16.793  29.571  24.876  1.00  9.29      1XNB1278
+ATOM   1179  CA  ASN   151      15.377  29.387  24.586  1.00 11.24      1XNB1279
+ATOM   1180  C   ASN   151      14.995  27.929  24.381  1.00 10.59      1XNB1280
+ATOM   1181  O   ASN   151      13.959  27.479  24.883  1.00 10.88      1XNB1281
+ATOM   1182  CB  ASN   151      14.959  30.261  23.408  1.00 13.92      1XNB1282
+ATOM   1183  CG  ASN   151      14.940  31.732  23.777  1.00 17.37      1XNB1283
+ATOM   1184  OD1 ASN   151      14.704  32.075  24.939  1.00 22.68      1XNB1284
+ATOM   1185  ND2 ASN   151      15.207  32.605  22.812  1.00 19.98      1XNB1285
+ATOM   1186  N   ALA   152      15.828  27.182  23.664  1.00  9.29      1XNB1286
+ATOM   1187  CA  ALA   152      15.562  25.759  23.458  1.00  8.80      1XNB1287
+ATOM   1188  C   ALA   152      15.632  25.020  24.793  1.00  9.40      1XNB1288
+ATOM   1189  O   ALA   152      14.815  24.133  25.072  1.00  9.19      1XNB1289
+ATOM   1190  CB  ALA   152      16.558  25.166  22.472  1.00 10.43      1XNB1290
+ATOM   1191  N   TRP   153      16.595  25.387  25.631  1.00  8.90      1XNB1291
+ATOM   1192  CA  TRP   153      16.726  24.743  26.929  1.00  9.07      1XNB1292
+ATOM   1193  C   TRP   153      15.482  25.006  27.779  1.00  9.85      1XNB1293
+ATOM   1194  O   TRP   153      14.947  24.095  28.407  1.00 10.33      1XNB1294
+ATOM   1195  CB  TRP   153      17.971  25.244  27.669  1.00  8.30      1XNB1295
+ATOM   1196  CG  TRP   153      19.288  24.848  27.032  1.00  8.37      1XNB1296
+ATOM   1197  CD1 TRP   153      19.484  23.956  26.007  1.00  8.49      1XNB1297
+ATOM   1198  CD2 TRP   153      20.589  25.339  27.394  1.00  8.13      1XNB1298
+ATOM   1199  NE1 TRP   153      20.832  23.863  25.715  1.00  8.81      1XNB1299
+ATOM   1200  CE2 TRP   153      21.527  24.700  26.550  1.00  7.94      1XNB1300
+ATOM   1201  CE3 TRP   153      21.051  26.258  28.349  1.00  8.37      1XNB1301
+ATOM   1202  CZ2 TRP   153      22.904  24.953  26.632  1.00  8.15      1XNB1302
+ATOM   1203  CZ3 TRP   153      22.415  26.510  28.427  1.00  8.80      1XNB1303
+ATOM   1204  CH2 TRP   153      23.323  25.858  27.575  1.00  9.37      1XNB1304
+ATOM   1205  N   LYS   154      15.012  26.248  27.755  1.00 10.78      1XNB1305
+ATOM   1206  CA  LYS   154      13.832  26.648  28.519  1.00 12.47      1XNB1306
+ATOM   1207  C   LYS   154      12.617  25.810  28.103  1.00 12.90      1XNB1307
+ATOM   1208  O   LYS   154      11.833  25.386  28.952  1.00 12.34      1XNB1308
+ATOM   1209  CB  LYS   154      13.566  28.131  28.271  1.00 14.87      1XNB1309
+ATOM   1210  CG  LYS   154      12.615  28.802  29.224  1.00 20.58      1XNB1310
+ATOM   1211  CD  LYS   154      12.621  30.311  28.967  1.00 23.50      1XNB1311
+ATOM   1212  CE  LYS   154      14.057  30.851  28.943  1.00 25.16      1XNB1312
+ATOM   1213  NZ  LYS   154      14.163  32.323  28.736  1.00 28.61      1XNB1313
+ATOM   1214  N   SER   155      12.504  25.515  26.812  1.00 13.20      1XNB1314
+ATOM   1215  CA  SER   155      11.382  24.731  26.301  1.00 14.59      1XNB1315
+ATOM   1216  C   SER   155      11.379  23.294  26.820  1.00 15.91      1XNB1316
+ATOM   1217  O   SER   155      10.355  22.610  26.755  1.00 15.72      1XNB1317
+ATOM   1218  CB  SER   155      11.364  24.748  24.772  1.00 16.58      1XNB1318
+ATOM   1219  OG  SER   155      12.302  23.830  24.229  1.00 19.14      1XNB1319
+ATOM   1220  N   HIS   156      12.526  22.823  27.308  1.00 14.66      1XNB1320
+ATOM   1221  CA  HIS   156      12.622  21.473  27.856  1.00 14.83      1XNB1321
+ATOM   1222  C   HIS   156      12.757  21.496  29.377  1.00 14.85      1XNB1322
+ATOM   1223  O   HIS   156      13.253  20.542  29.981  1.00 15.82      1XNB1323
+ATOM   1224  CB  HIS   156      13.793  20.711  27.229  1.00 16.07      1XNB1324
+ATOM   1225  CG  HIS   156      13.633  20.467  25.766  1.00 17.79      1XNB1325
+ATOM   1226  ND1 HIS   156      14.196  21.278  24.806  1.00 18.42      1XNB1326
+ATOM   1227  CD2 HIS   156      12.951  19.511  25.094  1.00 17.63      1XNB1327
+ATOM   1228  CE1 HIS   156      13.874  20.832  23.606  1.00 17.71      1XNB1328
+ATOM   1229  NE2 HIS   156      13.119  19.760  23.755  1.00 19.86      1XNB1329
+ATOM   1230  N   GLY   157      12.320  22.593  29.989  1.00 13.46      1XNB1330
+ATOM   1231  CA  GLY   157      12.389  22.725  31.435  1.00 13.69      1XNB1331
+ATOM   1232  C   GLY   157      13.783  22.914  32.030  1.00 14.02      1XNB1332
+ATOM   1233  O   GLY   157      13.978  22.708  33.221  1.00 15.43      1XNB1333
+ATOM   1234  N   MET   158      14.744  23.327  31.211  1.00 11.64      1XNB1334
+ATOM   1235  CA  MET   158      16.116  23.550  31.662  1.00 11.75      1XNB1335
+ATOM   1236  C   MET   158      16.298  25.048  31.846  1.00 11.56      1XNB1336
+ATOM   1237  O   MET   158      16.701  25.759  30.924  1.00 11.60      1XNB1337
+ATOM   1238  CB  MET   158      17.102  23.010  30.618  1.00 10.25      1XNB1338
+ATOM   1239  CG  MET   158      17.037  21.502  30.454  1.00 11.19      1XNB1339
+ATOM   1240  SD  MET   158      17.774  20.925  28.937  1.00 11.75      1XNB1340
+ATOM   1241  CE  MET   158      16.756  21.615  27.755  1.00 19.79      1XNB1341
+ATOM   1242  N   ASN   159      15.965  25.521  33.038  1.00 12.11      1XNB1342
+ATOM   1243  CA  ASN   159      16.052  26.936  33.350  1.00 12.75      1XNB1343
+ATOM   1244  C   ASN   159      17.348  27.288  34.046  1.00 12.47      1XNB1344
+ATOM   1245  O   ASN   159      17.790  26.592  34.961  1.00 12.34      1XNB1345
+ATOM   1246  CB  ASN   159      14.849  27.348  34.199  1.00 16.25      1XNB1346
+ATOM   1247  CG  ASN   159      13.536  27.094  33.482  1.00 17.84      1XNB1347
+ATOM   1248  OD1 ASN   159      12.776  26.195  33.848  1.00 22.73      1XNB1348
+ATOM   1249  ND2 ASN   159      13.308  27.822  32.403  1.00 20.24      1XNB1349
+ATOM   1250  N   LEU   160      17.965  28.367  33.589  1.00 12.09      1XNB1350
+ATOM   1251  CA  LEU   160      19.223  28.816  34.160  1.00 13.53      1XNB1351
+ATOM   1252  C   LEU   160      18.995  29.587  35.463  1.00 14.50      1XNB1352
+ATOM   1253  O   LEU   160      17.872  30.016  35.747  1.00 15.22      1XNB1353
+ATOM   1254  CB  LEU   160      19.981  29.661  33.128  1.00 13.61      1XNB1354
+ATOM   1255  CG  LEU   160      20.579  28.818  32.001  1.00 13.13      1XNB1355
+ATOM   1256  CD1 LEU   160      21.009  29.713  30.873  1.00 15.00      1XNB1356
+ATOM   1257  CD2 LEU   160      21.751  28.001  32.514  1.00 13.37      1XNB1357
+ATOM   1258  N   GLY   161      20.047  29.735  36.264  1.00 14.43      1XNB1358
+ATOM   1259  CA  GLY   161      19.932  30.459  37.518  1.00 15.47      1XNB1359
+ATOM   1260  C   GLY   161      19.770  31.950  37.292  1.00 15.86      1XNB1360
+ATOM   1261  O   GLY   161      19.989  32.454  36.178  1.00 16.04      1XNB1361
+ATOM   1262  N   SER   162      19.430  32.678  38.352  1.00 17.10      1XNB1362
+ATOM   1263  CA  SER   162      19.238  34.119  38.228  1.00 17.62      1XNB1363
+ATOM   1264  C   SER   162      20.505  34.953  38.424  1.00 17.17      1XNB1364
+ATOM   1265  O   SER   162      20.527  36.133  38.085  1.00 18.06      1XNB1365
+ATOM   1266  CB  SER   162      18.153  34.593  39.193  1.00 18.72      1XNB1366
+ATOM   1267  OG  SER   162      18.485  34.230  40.516  1.00 21.37      1XNB1367
+ATOM   1268  N   ASN   163      21.550  34.362  38.992  1.00 16.33      1XNB1368
+ATOM   1269  CA  ASN   163      22.786  35.101  39.206  1.00 16.25      1XNB1369
+ATOM   1270  C   ASN   163      23.823  34.595  38.212  1.00 15.22      1XNB1370
+ATOM   1271  O   ASN   163      24.290  33.470  38.317  1.00 15.66      1XNB1371
+ATOM   1272  CB  ASN   163      23.273  34.918  40.647  1.00 19.97      1XNB1372
+ATOM   1273  CG  ASN   163      24.538  35.717  40.951  1.00 24.24      1XNB1373
+ATOM   1274  OD1 ASN   163      25.436  35.239  41.650  1.00 28.26      1XNB1374
+ATOM   1275  ND2 ASN   163      24.613  36.936  40.432  1.00 26.49      1XNB1375
+ATOM   1276  N   TRP   164      24.151  35.416  37.224  1.00 13.32      1XNB1376
+ATOM   1277  CA  TRP   164      25.115  35.031  36.198  1.00 13.06      1XNB1377
+ATOM   1278  C   TRP   164      26.578  35.225  36.564  1.00 12.44      1XNB1378
+ATOM   1279  O   TRP   164      26.986  36.305  37.007  1.00 13.27      1XNB1379
+ATOM   1280  CB  TRP   164      24.820  35.788  34.902  1.00 13.23      1XNB1380
+ATOM   1281  CG  TRP   164      23.542  35.367  34.252  1.00 14.26      1XNB1381
+ATOM   1282  CD1 TRP   164      22.272  35.655  34.666  1.00 15.20      1XNB1382
+ATOM   1283  CD2 TRP   164      23.410  34.516  33.109  1.00 14.07      1XNB1383
+ATOM   1284  NE1 TRP   164      21.360  35.020  33.856  1.00 16.07      1XNB1384
+ATOM   1285  CE2 TRP   164      22.032  34.315  32.893  1.00 14.47      1XNB1385
+ATOM   1286  CE3 TRP   164      24.324  33.900  32.249  1.00 13.72      1XNB1386
+ATOM   1287  CZ2 TRP   164      21.550  33.521  31.859  1.00 14.45      1XNB1387
+ATOM   1288  CZ3 TRP   164      23.844  33.119  31.230  1.00 14.34      1XNB1388
+ATOM   1289  CH2 TRP   164      22.470  32.933  31.039  1.00 14.08      1XNB1389
+ATOM   1290  N   ALA   165      27.367  34.179  36.357  1.00 11.12      1XNB1390
+ATOM   1291  CA  ALA   165      28.801  34.235  36.609  1.00 10.38      1XNB1391
+ATOM   1292  C   ALA   165      29.492  34.404  35.244  1.00  9.93      1XNB1392
+ATOM   1293  O   ALA   165      28.852  34.831  34.273  1.00  9.99      1XNB1393
+ATOM   1294  CB  ALA   165      29.276  32.978  37.321  1.00 12.34      1XNB1394
+ATOM   1295  N   TYR   166      30.763  34.033  35.141  1.00  8.85      1XNB1395
+ATOM   1296  CA  TYR   166      31.481  34.218  33.881  1.00  8.56      1XNB1396
+ATOM   1297  C   TYR   166      30.948  33.377  32.721  1.00  8.63      1XNB1397
+ATOM   1298  O   TYR   166      30.253  32.367  32.926  1.00  8.87      1XNB1398
+ATOM   1299  CB  TYR   166      32.992  34.007  34.070  1.00  9.10      1XNB1399
+ATOM   1300  CG  TYR   166      33.387  32.615  34.498  1.00 10.11      1XNB1400
+ATOM   1301  CD1 TYR   166      33.430  31.576  33.584  1.00 10.26      1XNB1401
+ATOM   1302  CD2 TYR   166      33.734  32.342  35.820  1.00  9.71      1XNB1402
+ATOM   1303  CE1 TYR   166      33.808  30.299  33.959  1.00 12.33      1XNB1403
+ATOM   1304  CE2 TYR   166      34.116  31.065  36.213  1.00 11.71      1XNB1404
+ATOM   1305  CZ  TYR   166      34.152  30.049  35.277  1.00 11.30      1XNB1405
+ATOM   1306  OH  TYR   166      34.539  28.782  35.634  1.00 12.64      1XNB1406
+ATOM   1307  N   GLN   167      31.324  33.780  31.508  1.00  8.14      1XNB1407
+ATOM   1308  CA  GLN   167      30.890  33.137  30.271  1.00  7.90      1XNB1408
+ATOM   1309  C   GLN   167      32.083  33.241  29.323  1.00  7.36      1XNB1409
+ATOM   1310  O   GLN   167      32.468  34.349  28.950  1.00  7.43      1XNB1410
+ATOM   1311  CB  GLN   167      29.697  33.927  29.735  1.00  8.32      1XNB1411
+ATOM   1312  CG  GLN   167      29.069  33.412  28.460  1.00  8.70      1XNB1412
+ATOM   1313  CD  GLN   167      27.824  34.214  28.121  1.00  9.15      1XNB1413
+ATOM   1314  OE1 GLN   167      27.886  35.428  27.964  1.00  9.97      1XNB1414
+ATOM   1315  NE2 GLN   167      26.684  33.547  28.068  1.00 11.15      1XNB1415
+ATOM   1316  N   VAL   168      32.673  32.107  28.955  1.00  6.54      1XNB1416
+ATOM   1317  CA  VAL   168      33.864  32.123  28.103  1.00  6.76      1XNB1417
+ATOM   1318  C   VAL   168      33.852  31.090  26.985  1.00  6.78      1XNB1418
+ATOM   1319  O   VAL   168      33.082  30.132  27.029  1.00  7.22      1XNB1419
+ATOM   1320  CB  VAL   168      35.150  31.859  28.969  1.00  8.06      1XNB1420
+ATOM   1321  CG1 VAL   168      35.294  32.909  30.057  1.00  7.95      1XNB1421
+ATOM   1322  CG2 VAL   168      35.102  30.477  29.599  1.00  8.87      1XNB1422
+ATOM   1323  N   MET   169      34.670  31.315  25.957  1.00  6.34      1XNB1423
+ATOM   1324  CA  MET   169      34.824  30.336  24.875  1.00  6.77      1XNB1424
+ATOM   1325  C   MET   169      36.069  29.610  25.363  1.00  7.21      1XNB1425
+ATOM   1326  O   MET   169      37.182  30.167  25.357  1.00  7.47      1XNB1426
+ATOM   1327  CB  MET   169      35.090  30.981  23.516  1.00  7.22      1XNB1427
+ATOM   1328  CG  MET   169      35.051  29.954  22.400  1.00  9.99      1XNB1428
+ATOM   1329  SD  MET   169      33.377  29.235  22.265  1.00 10.40      1XNB1429
+ATOM   1330  CE  MET   169      32.534  30.500  21.951  1.00 17.73      1XNB1430
+ATOM   1331  N   ALA   170      35.881  28.363  25.746  1.00  6.85      1XNB1431
+ATOM   1332  CA  ALA   170      36.931  27.587  26.368  1.00  6.85      1XNB1432
+ATOM   1333  C   ALA   170      37.447  26.340  25.708  1.00  7.22      1XNB1433
+ATOM   1334  O   ALA   170      36.827  25.750  24.823  1.00  6.63      1XNB1434
+ATOM   1335  CB  ALA   170      36.451  27.205  27.782  1.00  8.78      1XNB1435
+ATOM   1336  N   THR   171      38.602  25.933  26.221  1.00  7.03      1XNB1436
+ATOM   1337  CA  THR   171      39.232  24.675  25.890  1.00  6.45      1XNB1437
+ATOM   1338  C   THR   171      39.208  23.919  27.238  1.00  7.07      1XNB1438
+ATOM   1339  O   THR   171      39.734  24.415  28.242  1.00  7.59      1XNB1439
+ATOM   1340  CB  THR   171      40.704  24.847  25.485  1.00  7.65      1XNB1440
+ATOM   1341  OG1 THR   171      40.775  25.563  24.252  1.00  8.13      1XNB1441
+ATOM   1342  CG2 THR   171      41.366  23.472  25.313  1.00  8.24      1XNB1442
+ATOM   1343  N   GLU   172      38.518  22.782  27.292  1.00  7.36      1XNB1443
+ATOM   1344  CA  GLU   172      38.475  21.975  28.515  1.00  7.49      1XNB1444
+ATOM   1345  C   GLU   172      39.090  20.622  28.188  1.00  8.63      1XNB1445
+ATOM   1346  O   GLU   172      38.842  20.076  27.116  1.00  9.50      1XNB1446
+ATOM   1347  CB  GLU   172      37.034  21.761  29.023  1.00  8.55      1XNB1447
+ATOM   1348  CG  GLU   172      37.001  20.711  30.134  1.00 10.54      1XNB1448
+ATOM   1349  CD  GLU   172      35.715  20.663  30.940  1.00 13.00      1XNB1449
+ATOM   1350  OE1 GLU   172      34.777  21.421  30.635  1.00 12.74      1XNB1450
+ATOM   1351  OE2 GLU   172      35.662  19.860  31.898  1.00 14.39      1XNB1451
+ATOM   1352  N   GLY   173      39.913  20.090  29.081  1.00  8.12      1XNB1452
+ATOM   1353  CA  GLY   173      40.504  18.793  28.818  1.00  8.57      1XNB1453
+ATOM   1354  C   GLY   173      40.391  17.902  30.027  1.00  8.68      1XNB1454
+ATOM   1355  O   GLY   173      40.192  18.391  31.142  1.00  9.23      1XNB1455
+ATOM   1356  N   TYR   174      40.453  16.597  29.798  1.00  9.42      1XNB1456
+ATOM   1357  CA  TYR   174      40.395  15.627  30.875  1.00 10.23      1XNB1457
+ATOM   1358  C   TYR   174      41.316  14.468  30.547  1.00  9.94      1XNB1458
+ATOM   1359  O   TYR   174      41.098  13.752  29.570  1.00 10.06      1XNB1459
+ATOM   1360  CB  TYR   174      38.977  15.098  31.086  1.00 12.94      1XNB1460
+ATOM   1361  CG  TYR   174      38.920  14.146  32.251  1.00 16.64      1XNB1461
+ATOM   1362  CD1 TYR   174      39.248  14.574  33.537  1.00 18.33      1XNB1462
+ATOM   1363  CD2 TYR   174      38.598  12.807  32.065  1.00 18.29      1XNB1463
+ATOM   1364  CE1 TYR   174      39.264  13.690  34.608  1.00 20.67      1XNB1464
+ATOM   1365  CE2 TYR   174      38.607  11.919  33.129  1.00 19.79      1XNB1465
+ATOM   1366  CZ  TYR   174      38.941  12.366  34.396  1.00 20.67      1XNB1466
+ATOM   1367  OH  TYR   174      38.937  11.483  35.458  1.00 24.51      1XNB1467
+ATOM   1368  N   GLN   175      42.369  14.317  31.352  1.00  9.85      1XNB1468
+ATOM   1369  CA  GLN   175      43.367  13.253  31.193  1.00 10.64      1XNB1469
+ATOM   1370  C   GLN   175      43.789  13.073  29.736  1.00 10.14      1XNB1470
+ATOM   1371  O   GLN   175      43.715  11.978  29.170  1.00 11.13      1XNB1471
+ATOM   1372  CB  GLN   175      42.847  11.945  31.791  1.00 13.22      1XNB1472
+ATOM   1373  CG  GLN   175      42.565  12.074  33.282  1.00 16.06      1XNB1473
+ATOM   1374  CD  GLN   175      42.400  10.741  33.992  1.00 19.75      1XNB1474
+ATOM   1375  OE1 GLN   175      42.498  10.675  35.224  1.00 21.12      1XNB1475
+ATOM   1376  NE2 GLN   175      42.137   9.680  33.234  1.00 20.28      1XNB1476
+ATOM   1377  N   SER   176      44.298  14.150  29.153  1.00 10.09      1XNB1477
+ATOM   1378  CA  SER   176      44.690  14.125  27.758  1.00  8.85      1XNB1478
+ATOM   1379  C   SER   176      45.846  15.097  27.495  1.00  8.86      1XNB1479
+ATOM   1380  O   SER   176      46.438  15.657  28.435  1.00  9.01      1XNB1480
+ATOM   1381  CB  SER   176      43.470  14.500  26.898  1.00 10.01      1XNB1481
+ATOM   1382  OG  SER   176      43.045  15.840  27.137  1.00 10.48      1XNB1482
+ATOM   1383  N   SER   177      46.173  15.261  26.220  1.00  9.15      1XNB1483
+ATOM   1384  CA  SER   177      47.229  16.165  25.777  1.00  8.73      1XNB1484
+ATOM   1385  C   SER   177      46.725  16.827  24.512  1.00  9.80      1XNB1485
+ATOM   1386  O   SER   177      45.783  16.328  23.887  1.00  9.58      1XNB1486
+ATOM   1387  CB  SER   177      48.498  15.382  25.453  1.00  9.68      1XNB1487
+ATOM   1388  OG  SER   177      48.928  14.630  26.577  1.00 11.63      1XNB1488
+ATOM   1389  N   GLY   178      47.305  17.966  24.152  1.00  9.52      1XNB1489
+ATOM   1390  CA  GLY   178      46.879  18.632  22.933  1.00  9.40      1XNB1490
+ATOM   1391  C   GLY   178      47.288  20.084  22.872  1.00  9.32      1XNB1491
+ATOM   1392  O   GLY   178      48.056  20.550  23.713  1.00  9.25      1XNB1492
+ATOM   1393  N   SER   179      46.745  20.794  21.889  1.00  9.31      1XNB1493
+ATOM   1394  CA  SER   179      47.027  22.212  21.692  1.00  9.56      1XNB1494
+ATOM   1395  C   SER   179      45.809  22.905  21.107  1.00  8.38      1XNB1495
+ATOM   1396  O   SER   179      45.016  22.286  20.402  1.00  9.76      1XNB1496
+ATOM   1397  CB  SER   179      48.184  22.405  20.698  1.00 11.69      1XNB1497
+ATOM   1398  OG  SER   179      49.419  22.025  21.268  1.00 19.66      1XNB1498
+ATOM   1399  N   SER   180      45.639  24.170  21.449  1.00  9.09      1XNB1499
+ATOM   1400  CA  SER   180      44.568  24.983  20.905  1.00  8.30      1XNB1500
+ATOM   1401  C   SER   180      45.026  26.433  20.894  1.00  8.95      1XNB1501
+ATOM   1402  O   SER   180      45.913  26.837  21.663  1.00  9.91      1XNB1502
+ATOM   1403  CB  SER   180      43.268  24.865  21.709  1.00 10.00      1XNB1503
+ATOM   1404  OG  SER   180      43.366  25.532  22.957  1.00 12.48      1XNB1504
+ATOM   1405  N   ASN   181      44.463  27.196  19.975  1.00  8.69      1XNB1505
+ATOM   1406  CA  ASN   181      44.752  28.616  19.849  1.00  8.35      1XNB1506
+ATOM   1407  C   ASN   181      43.407  29.155  19.381  1.00  8.49      1XNB1507
+ATOM   1408  O   ASN   181      42.903  28.759  18.323  1.00  8.43      1XNB1508
+ATOM   1409  CB  ASN   181      45.850  28.869  18.808  1.00  9.25      1XNB1509
+ATOM   1410  CG  ASN   181      46.321  30.300  18.818  1.00 10.25      1XNB1510
+ATOM   1411  OD1 ASN   181      45.524  31.220  18.666  1.00 11.81      1XNB1511
+ATOM   1412  ND2 ASN   181      47.616  30.502  19.025  1.00 12.56      1XNB1512
+ATOM   1413  N   VAL   182      42.810  30.011  20.201  1.00  7.48      1XNB1513
+ATOM   1414  CA  VAL   182      41.481  30.538  19.933  1.00  7.14      1XNB1514
+ATOM   1415  C   VAL   182      41.416  32.045  20.159  1.00  7.92      1XNB1515
+ATOM   1416  O   VAL   182      42.006  32.569  21.111  1.00  7.72      1XNB1516
+ATOM   1417  CB  VAL   182      40.450  29.884  20.889  1.00  8.14      1XNB1517
+ATOM   1418  CG1 VAL   182      39.017  30.277  20.503  1.00  9.79      1XNB1518
+ATOM   1419  CG2 VAL   182      40.608  28.358  20.909  1.00  7.87      1XNB1519
+ATOM   1420  N   THR   183      40.652  32.723  19.310  1.00  6.92      1XNB1520
+ATOM   1421  CA  THR   183      40.451  34.165  19.411  1.00  7.18      1XNB1521
+ATOM   1422  C   THR   183      38.952  34.369  19.600  1.00  7.50      1XNB1522
+ATOM   1423  O   THR   183      38.156  33.823  18.833  1.00  7.52      1XNB1523
+ATOM   1424  CB  THR   183      40.967  34.870  18.140  1.00  8.18      1XNB1524
+ATOM   1425  OG1 THR   183      42.359  34.559  17.992  1.00  9.68      1XNB1525
+ATOM   1426  CG2 THR   183      40.794  36.393  18.243  1.00  8.45      1XNB1526
+ATOM   1427  N   VAL   184      38.583  35.118  20.634  1.00  7.37      1XNB1527
+ATOM   1428  CA  VAL   184      37.184  35.353  21.007  1.00  7.85      1XNB1528
+ATOM   1429  C   VAL   184      36.822  36.830  20.944  1.00  8.56      1XNB1529
+ATOM   1430  O   VAL   184      37.633  37.673  21.335  1.00  8.70      1XNB1530
+ATOM   1431  CB  VAL   184      36.976  34.891  22.468  1.00  8.79      1XNB1531
+ATOM   1432  CG1 VAL   184      35.500  34.935  22.847  1.00  9.37      1XNB1532
+ATOM   1433  CG2 VAL   184      37.537  33.500  22.654  1.00  9.24      1XNB1533
+ATOM   1434  N   TRP   185      35.622  37.144  20.449  1.00  8.57      1XNB1534
+ATOM   1435  CA  TRP   185      35.144  38.526  20.390  1.00  9.45      1XNB1535
+ATOM   1436  C   TRP   185      33.609  38.578  20.361  1.00  9.76      1XNB1536
+ATOM   1437  O   TRP   185      32.968  37.506  20.384  1.00  9.60      1XNB1537
+ATOM   1438  CB  TRP   185      35.753  39.303  19.203  1.00  9.69      1XNB1538
+ATOM   1439  CG  TRP   185      35.301  38.877  17.826  1.00 10.63      1XNB1539
+ATOM   1440  CD1 TRP   185      34.357  39.489  17.041  1.00 11.78      1XNB1540
+ATOM   1441  CD2 TRP   185      35.817  37.787  17.047  1.00 11.09      1XNB1541
+ATOM   1442  NE1 TRP   185      34.263  38.854  15.825  1.00 12.12      1XNB1542
+ATOM   1443  CE2 TRP   185      35.149  37.807  15.801  1.00 11.27      1XNB1543
+ATOM   1444  CE3 TRP   185      36.778  36.799  17.280  1.00 10.48      1XNB1544
+ATOM   1445  CZ2 TRP   185      35.415  36.874  14.793  1.00 11.89      1XNB1545
+ATOM   1446  CZ3 TRP   185      37.041  35.875  16.272  1.00 11.85      1XNB1546
+ATOM   1447  CH2 TRP   185      36.361  35.922  15.046  1.00 11.64      1XNB1547
+ATOM   1448  OXT TRP   185      33.063  39.695  20.358  1.00 12.68      1XNB1548
+TER    1449      TRP   185                                              1XNB1549
+HETATM 1450  S   SO4   191      30.984  44.570  19.327  1.00 58.25      1XNB1550
+HETATM 1451  O1  SO4   191      32.040  45.244  20.034  1.00 58.10      1XNB1551
+HETATM 1452  O2  SO4   191      30.006  44.025  20.270  1.00 57.34      1XNB1552
+HETATM 1453  O3  SO4   191      31.618  43.485  18.600  1.00 57.68      1XNB1553
+HETATM 1454  O4  SO4   191      30.369  45.491  18.402  1.00 57.44      1XNB1554
+HETATM 1455  O   HOH   200      25.414  27.632  18.217  1.00  7.62      1XNB1555
+HETATM 1456  O   HOH   201      23.501  12.657  17.671  1.00 11.00      1XNB1556
+HETATM 1457  O   HOH   202      26.692  40.072  22.095  1.00 13.55      1XNB1557
+HETATM 1458  O   HOH   203      19.970  13.122  18.324  1.00 10.52      1XNB1558
+HETATM 1459  O   HOH   204      22.420  35.377  21.425  1.00 13.78      1XNB1559
+HETATM 1460  O   HOH   205      36.997  28.304  14.213  1.00  7.63      1XNB1560
+HETATM 1461  O   HOH   206      27.112  25.395  14.487  1.00 11.51      1XNB1561
+HETATM 1462  O   HOH   207      26.192  12.709  16.957  1.00 13.85      1XNB1562
+HETATM 1463  O   HOH   208      36.531  20.461  14.541  1.00 12.26      1XNB1563
+HETATM 1464  O   HOH   209      36.685  14.732  23.729  1.00 10.78      1XNB1564
+HETATM 1465  O   HOH   210      20.517  36.910  19.836  1.00 14.77      1XNB1565
+HETATM 1466  O   HOH   211      27.407  32.608  32.695  1.00  9.35      1XNB1566
+HETATM 1467  O   HOH   212      23.561  17.049  12.019  1.00 23.27      1XNB1567
+HETATM 1468  O   HOH   213      18.337  14.999  14.913  1.00 15.21      1XNB1568
+HETATM 1469  O   HOH   214      32.341  19.737  36.107  1.00 17.68      1XNB1569
+HETATM 1470  O   HOH   215      28.080  25.921  11.452  1.00 17.76      1XNB1570
+HETATM 1471  O   HOH   216      39.440  36.060  12.454  1.00 25.62      1XNB1571
+HETATM 1472  O   HOH   218      34.920  26.424  14.883  1.00 13.22      1XNB1572
+HETATM 1473  O   HOH   219      22.306  22.371  40.416  1.00 18.54      1XNB1573
+HETATM 1474  O   HOH   220      49.987  13.930  17.330  1.00 13.95      1XNB1574
+HETATM 1475  O   HOH   221      17.415  28.175  29.769  1.00 12.89      1XNB1575
+HETATM 1476  O   HOH   222      21.712  11.323  21.667  1.00 14.38      1XNB1576
+HETATM 1477  O   HOH   224      24.666  14.263  46.049  1.00 15.09      1XNB1577
+HETATM 1478  O   HOH   225      20.100  14.573  12.847  1.00 19.85      1XNB1578
+HETATM 1479  O   HOH   226      48.372  33.340  19.083  1.00 20.65      1XNB1579
+HETATM 1480  O   HOH   227      40.037  38.011  34.281  1.00 26.73      1XNB1580
+HETATM 1481  O   HOH   228      41.914  25.083  13.192  1.00 23.77      1XNB1581
+HETATM 1482  O   HOH   229      15.790  28.240  20.023  1.00 19.70      1XNB1582
+HETATM 1483  O   HOH   230      38.282  35.992   7.848  1.00 22.32      1XNB1583
+HETATM 1484  O   HOH   231      21.026  30.602  13.883  1.00 27.17      1XNB1584
+HETATM 1485  O   HOH   232      41.959  11.313  26.677  1.00 18.25      1XNB1585
+HETATM 1486  O   HOH   235      37.181  17.304  28.237  1.00 19.48      1XNB1586
+HETATM 1487  O   HOH   236      28.346  31.342  12.152  1.00 28.09      1XNB1587
+HETATM 1488  O   HOH   237      19.144   9.655  26.607  1.00 26.33      1XNB1588
+HETATM 1489  O   HOH   238      31.948  14.739  13.527  1.00 20.62      1XNB1589
+HETATM 1490  O   HOH   240      42.239  30.940  11.624  1.00 35.14      1XNB1590
+HETATM 1491  O   HOH   241      25.707  19.683  12.852  1.00 19.78      1XNB1591
+HETATM 1492  O   HOH   242      12.595  15.339  22.542  1.00 35.98      1XNB1592
+HETATM 1493  O   HOH   243      35.952  17.113  30.869  1.00 24.14      1XNB1593
+HETATM 1494  O   HOH   244      44.893  19.412  34.945  1.00 16.06      1XNB1594
+HETATM 1495  O   HOH   246      29.478  40.645  23.535  1.00 23.58      1XNB1595
+HETATM 1496  O   HOH   247      31.273  41.290  31.494  1.00 21.68      1XNB1596
+HETATM 1497  O   HOH   248      32.470   9.595  21.551  1.00 24.79      1XNB1597
+HETATM 1498  O   HOH   249      23.469  38.270  37.223  1.00 28.78      1XNB1598
+HETATM 1499  O   HOH   300      32.217  18.336  32.458  1.00 20.25      1XNB1599
+HETATM 1500  O   HOH   301      16.749  30.079  31.514  1.00 16.87      1XNB1600
+HETATM 1501  O   HOH   302      30.465  39.177  21.345  1.00 19.10      1XNB1601
+HETATM 1502  O   HOH   303      26.832  19.147  48.499  1.00 26.30      1XNB1602
+HETATM 1503  O   HOH   304      20.868   9.444  23.670  1.00 21.91      1XNB1603
+HETATM 1504  O   HOH   305      19.120  36.792  35.694  1.00 46.17      1XNB1604
+HETATM 1505  O   HOH   306      34.313  21.203  34.221  1.00 22.63      1XNB1605
+HETATM 1506  O   HOH   307      27.670  10.480  20.415  1.00 24.11      1XNB1606
+HETATM 1507  O   HOH   308      17.515  34.474  25.730  1.00 25.78      1XNB1607
+HETATM 1508  O   HOH   309      30.191  13.075  39.132  1.00 26.16      1XNB1608
+HETATM 1509  O   HOH   310      48.066  21.489  35.852  1.00 22.72      1XNB1609
+HETATM 1510  O   HOH   312      32.653  16.014  30.727  1.00 26.25      1XNB1610
+HETATM 1511  O   HOH   313      29.619  13.048  14.888  1.00 21.29      1XNB1611
+HETATM 1512  O   HOH   314      14.020  33.138  17.070  1.00 56.28      1XNB1612
+HETATM 1513  O   HOH   316      29.471  15.110  33.289  1.00 27.22      1XNB1613
+HETATM 1514  O   HOH   317      38.239  21.630  10.722  1.00 30.40      1XNB1614
+HETATM 1515  O   HOH   318      43.339  36.896  13.023  1.00 44.92      1XNB1615
+HETATM 1516  O   HOH   320      47.171  26.674  34.197  1.00 39.29      1XNB1616
+HETATM 1517  O   HOH   321      20.614  13.304  41.445  1.00 25.89      1XNB1617
+HETATM 1518  O   HOH   322      49.820  28.273  32.301  1.00 34.01      1XNB1618
+HETATM 1519  O   HOH   324      43.800  23.121  13.885  1.00 26.45      1XNB1619
+HETATM 1520  O   HOH   325      50.899  23.038  34.659  1.00 32.32      1XNB1620
+HETATM 1521  O   HOH   326      28.611  14.825  29.207  1.00 28.85      1XNB1621
+HETATM 1522  O   HOH   328      40.034  38.353  28.332  1.00 24.18      1XNB1622
+HETATM 1523  O   HOH   329      51.154  13.243  25.886  1.00 33.14      1XNB1623
+HETATM 1524  O   HOH   330      53.180  15.511  31.016  1.00 30.74      1XNB1624
+HETATM 1525  O   HOH   331      24.737  15.259  48.561  1.00 29.55      1XNB1625
+HETATM 1526  O   HOH   332      47.787  12.301  27.613  1.00 25.48      1XNB1626
+HETATM 1527  O   HOH   333      35.622  28.245  38.121  1.00 29.04      1XNB1627
+HETATM 1528  O   HOH   334      36.494  18.478  37.872  1.00 36.54      1XNB1628
+HETATM 1529  O   HOH   335      35.631  27.416  48.735  1.00 30.84      1XNB1629
+HETATM 1530  O   HOH   336      39.507  41.317  24.084  1.00 23.84      1XNB1630
+HETATM 1531  O   HOH   337      48.737  26.179  20.897  1.00 25.43      1XNB1631
+HETATM 1532  O   HOH   338      49.238  37.391  21.698  1.00 37.61      1XNB1632
+HETATM 1533  O   HOH   339      49.127  12.191  24.102  1.00 42.75      1XNB1633
+HETATM 1534  O   HOH   340      50.440  35.038  22.356  1.00 38.43      1XNB1634
+HETATM 1535  O   HOH   342      23.112  38.862  32.703  1.00 26.51      1XNB1635
+HETATM 1536  O   HOH   343      39.103  20.861  13.637  1.00 21.74      1XNB1636
+HETATM 1537  O   HOH   347      29.849   9.768  22.729  1.00 30.36      1XNB1637
+HETATM 1538  O   HOH   348      15.745  24.704  16.661  1.00 28.86      1XNB1638
+HETATM 1539  O   HOH   351      38.979  17.057  16.658  1.00 30.12      1XNB1639
+HETATM 1540  O   HOH   352      49.375  28.182  19.070  1.00 29.45      1XNB1640
+HETATM 1541  O   HOH   353      51.239  16.424  37.763  1.00 28.33      1XNB1641
+HETATM 1542  O   HOH   354      31.880  25.657  50.170  1.00 41.94      1XNB1642
+HETATM 1543  O   HOH   355      33.966  38.991  12.002  1.00 32.63      1XNB1643
+HETATM 1544  O   HOH   357      37.116   8.014  19.514  1.00 37.79      1XNB1644
+HETATM 1545  O   HOH   358      44.061  26.670  38.630  1.00 34.67      1XNB1645
+HETATM 1546  O   HOH   359      31.440  23.446  45.442  1.00 30.98      1XNB1646
+HETATM 1547  O   HOH   360      25.184  32.671  12.736  1.00 36.38      1XNB1647
+HETATM 1548  O   HOH   361      16.925  28.064  17.273  1.00 30.92      1XNB1648
+HETATM 1549  O   HOH   362      47.113  36.618  32.819  1.00 36.92      1XNB1649
+HETATM 1550  O   HOH   364      35.496  12.039  17.427  1.00 52.86      1XNB1650
+HETATM 1551  O   HOH   366      50.143  27.917  24.878  1.00 38.40      1XNB1651
+HETATM 1552  O   HOH   367      16.344  13.962  33.675  1.00 46.82      1XNB1652
+HETATM 1553  O   HOH   368      26.638  40.826  30.642  1.00 51.61      1XNB1653
+HETATM 1554  O   HOH   369       8.446  20.443  26.947  1.00 36.46      1XNB1654
+HETATM 1555  O   HOH   380      28.266  26.377  47.268  1.00 41.49      1XNB1655
+HETATM 1556  O   HOH   383      30.700  33.625  10.976  1.00 33.00      1XNB1656
+HETATM 1557  O   HOH   397      17.116  24.889  37.101  1.00 50.16      1XNB1657
+HETATM 1558  O   HOH   400      18.111  32.647  31.304  1.00 23.93      1XNB1658
+HETATM 1559  O   HOH   401      22.159  25.306  43.477  1.00 37.63      1XNB1659
+HETATM 1560  O   HOH   402      43.919  36.026  16.250  1.00 25.60      1XNB1660
+HETATM 1561  O   HOH   403      13.769  14.707  19.933  1.00 27.24      1XNB1661
+HETATM 1562  O   HOH   405      16.762  33.381  20.298  1.00 27.62      1XNB1662
+HETATM 1563  O   HOH   406      23.610  28.906  43.972  1.00 26.71      1XNB1663
+HETATM 1564  O   HOH   407      10.951  26.060  31.514  1.00 29.41      1XNB1664
+HETATM 1565  O   HOH   408      43.208  31.838  17.072  1.00 25.20      1XNB1665
+HETATM 1566  O   HOH   410      16.930  17.334  14.514  1.00 43.61      1XNB1666
+HETATM 1567  O   HOH   411      54.666  28.886  25.383  1.00 42.36      1XNB1667
+HETATM 1568  O   HOH   412      42.267  32.587  14.630  1.00 42.50      1XNB1668
+HETATM 1569  O   HOH   413      51.048  19.700  24.389  1.00 31.90      1XNB1669
+HETATM 1570  O   HOH   414      27.540  10.514  17.653  1.00 32.43      1XNB1670
+HETATM 1571  O   HOH   416      34.158  20.114  38.187  1.00 33.73      1XNB1671
+HETATM 1572  O   HOH   417      19.856  13.877  33.563  1.00 38.68      1XNB1672
+HETATM 1573  O   HOH   418      41.495  35.182  14.237  1.00 42.28      1XNB1673
+HETATM 1574  O   HOH   419      45.778  43.585  23.505  1.00 56.56      1XNB1674
+HETATM 1575  O   HOH   420      40.585  31.903  36.216  1.00 38.63      1XNB1675
+HETATM 1576  O   HOH   425      21.137  27.977  11.639  1.00 34.16      1XNB1676
+HETATM 1577  O   HOH   428      40.559   7.040  22.699  1.00 49.01      1XNB1677
+HETATM 1578  O   HOH   429      52.068  30.627  29.963  1.00 43.83      1XNB1678
+HETATM 1579  O   HOH   501      24.544  12.475  35.077  1.00 27.31      1XNB1679
+HETATM 1580  O   HOH   502      48.217  33.392  22.757  1.00 28.41      1XNB1680
+HETATM 1581  O   HOH   503      38.418  25.128  46.834  1.00 45.50      1XNB1681
+HETATM 1582  O   HOH   504      47.741  17.212  19.025  1.00 43.97      1XNB1682
+HETATM 1583  O   HOH   505      11.388  23.565  34.829  1.00 45.19      1XNB1683
+HETATM 1584  O   HOH   508      31.048  11.224  43.731  1.00 46.15      1XNB1684
+HETATM 1585  O   HOH   509      18.330  33.441  34.151  1.00 36.55      1XNB1685
+HETATM 1586  O   HOH   511      32.065  36.152  10.365  1.00 39.42      1XNB1686
+HETATM 1587  O   HOH   513      14.968  24.122  35.387  1.00 30.92      1XNB1687
+HETATM 1588  O   HOH   514      29.472  32.386  46.302  1.00 40.45      1XNB1688
+HETATM 1589  O   HOH   515      40.702  10.970  29.237  1.00 36.31      1XNB1689
+HETATM 1590  O   HOH   518      14.749  16.558  11.536  1.00 50.28      1XNB1690
+HETATM 1591  O   HOH   521       9.100  24.794  33.357  1.00 51.59      1XNB1691
+HETATM 1592  O   HOH   524      35.848  25.825  35.835  1.00 40.32      1XNB1692
+HETATM 1593  O   HOH   525      38.846  23.426  49.263  1.00 41.82      1XNB1693
+HETATM 1594  O   HOH   528      36.113  15.370  39.779  1.00 53.45      1XNB1694
+HETATM 1595  O   HOH   529      42.953  38.991  28.780  1.00 57.86      1XNB1695
+HETATM 1596  O   HOH   530      22.777   9.984  38.340  1.00 42.53      1XNB1696
+HETATM 1597  O   HOH   531      36.615  29.771  47.993  1.00 45.40      1XNB1697
+HETATM 1598  O   HOH   532      22.920  22.675  43.074  1.00 47.75      1XNB1698
+HETATM 1599  O   HOH   533      38.547  27.826  47.953  1.00 41.72      1XNB1699
+HETATM 1600  O   HOH   534      16.387   9.997  26.781  1.00 45.98      1XNB1700
+HETATM 1601  O   HOH   535      12.270  13.523  24.802  1.00 51.79      1XNB1701
+HETATM 1602  O   HOH   536      41.513  35.001  10.674  1.00 51.96      1XNB1702
+HETATM 1603  O   HOH   540      32.521   7.458  23.283  1.00 44.07      1XNB1703
+HETATM 1604  O   HOH   542      25.368   9.509  21.086  1.00 48.75      1XNB1704
+HETATM 1605  O   HOH   543      29.272   9.655  25.418  1.00 48.35      1XNB1705
+HETATM 1606  O   HOH   544      24.319   9.164  23.753  1.00 40.94      1XNB1706
+HETATM 1607  O   HOH   545      43.372   9.117  29.480  1.00 46.70      1XNB1707
+HETATM 1608  O   HOH   549      51.645  19.055  37.530  1.00 41.56      1XNB1708
+CONECT 1450 1451 1452 1453 1454                                         1XNB1709
+CONECT 1451 1450                                                        1XNB1710
+CONECT 1452 1450                                                        1XNB1711
+CONECT 1453 1450                                                        1XNB1712
+CONECT 1454 1450                                                        1XNB1713
+MASTER       36    2    1    1   16    4    2    6 1607    1    5   15  1XNB1714
+END                                                                     1XNB1715

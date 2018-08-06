@@ -1,0 +1,185 @@
+#!rasmol -script
+# File: 1dar.ras
+# Creator: Inpharmatica iRasMol 1.0
+
+load pdb "1dar03"
+background [0,0,0]
+set ambient 40
+set specular off
+
+reset
+slab off
+rotate z 46
+rotate y -44
+rotate x -85
+translate y 4
+zoom 149
+
+set axes off
+set boundingbox off
+set unitcell off
+set hbond sidechain
+set bondmode and
+dots off
+
+
+# Avoid Colour Problems!
+select all
+colour bonds none
+colour backbone none
+colour hbonds none
+colour ssbonds none
+colour ribbons none
+colour white
+
+# Atoms
+select (atomno>=2929) and (atomno<=2938)
+colour atoms [0,0,255]
+select (atomno>=2939) and (atomno<=2948)
+colour atoms [0,33,255]
+select (atomno>=2949) and (atomno<=2953)
+colour atoms [0,66,255]
+select (atomno>=2954) and (atomno<=2963)
+colour atoms [0,99,255]
+select (atomno>=2964) and (atomno<=2968)
+colour atoms [0,132,255]
+select (atomno>=2969) and (atomno<=2978)
+colour atoms [0,165,255]
+select atomno=2979
+colour atoms [0,198,255]
+select (atomno>=2980) and (atomno<=2984)
+colour atoms [0,255,214]
+select (atomno>=2985) and (atomno<=2994)
+colour atoms [0,255,181]
+select (atomno>=2995) and (atomno<=3004)
+colour atoms [0,255,148]
+select (atomno>=3005) and (atomno<=3008)
+colour atoms [0,255,115]
+select (atomno>=3009) and (atomno<=3017)
+colour atoms [0,255,82]
+select (atomno>=3018) and (atomno<=3022)
+colour atoms [0,255,49]
+select atomno=3023
+colour atoms [0,255,16]
+select (atomno>=3024) and (atomno<=3028)
+colour atoms [148,255,0]
+select (atomno>=3029) and (atomno<=3038)
+colour atoms [181,255,0]
+select (atomno>=3039) and (atomno<=3043)
+colour atoms [214,255,0]
+select (atomno>=3044) and (atomno<=3053)
+colour atoms [247,255,0]
+select (atomno>=3054) and (atomno<=3058)
+colour atoms [255,231,0]
+select (atomno>=3059) and (atomno<=3068)
+colour atoms [255,198,0]
+select (atomno>=3069) and (atomno<=3078)
+colour atoms [255,165,0]
+select (atomno>=3079) and (atomno<=3082)
+colour atoms [255,132,0]
+select (atomno>=3083) and (atomno<=3098)
+colour atoms [255,99,0]
+select (atomno>=3099) and (atomno<=3107)
+colour atoms [255,66,0]
+select (atomno>=3108) and (atomno<=3119)
+colour atoms [255,33,0]
+select (atomno>=3120) and (atomno<=3131)
+colour atoms [255,0,0]
+select all
+spacefill off
+
+# Bonds
+wireframe off
+
+# Ribbons
+structure
+set strands 5
+set cartoon on
+set cartoon 100
+select atomno=2930
+trace 100
+select atomno=2935
+trace 100
+select atomno=2940
+trace 100
+select atomno=2945
+trace 100
+select atomno=2950
+trace 100
+select atomno=2955
+trace 100
+select atomno=2960
+cartoon 380
+select atomno=2965
+cartoon 380
+select atomno=2970
+cartoon 380
+select atomno=2975
+trace 100
+select atomno=2981
+trace 100
+select atomno=2986
+cartoon 380
+select atomno=2991
+trace 100
+select atomno=2996
+cartoon 380
+select atomno=3001
+cartoon 380
+select atomno=3006
+cartoon 380
+select atomno=3010
+trace 100
+select atomno=3015
+trace 100
+select atomno=3019
+trace 100
+select atomno=3025
+trace 100
+select atomno=3030
+trace 100
+select atomno=3035
+trace 100
+select atomno=3040
+trace 100
+select atomno=3045
+cartoon 380
+select atomno=3050
+cartoon 380
+select atomno=3055
+cartoon 380
+select atomno=3060
+cartoon 380
+select atomno=3065
+trace 100
+select atomno=3070
+trace 100
+select atomno=3075
+trace 100
+select atomno=3080
+cartoon 380
+select atomno=3084
+trace 100
+select atomno=3093
+trace 100
+select atomno=3100
+trace 100
+select atomno=3109
+cartoon 380
+select atomno=3116
+trace 100
+select atomno=3121
+trace 100
+
+# Backbone
+select all
+backbone off
+
+# Labels
+labels off
+
+# Monitors
+monitors off
+
+ssbonds off
+hbonds off

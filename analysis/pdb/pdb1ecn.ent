@@ -1,0 +1,1366 @@
+HEADER    OXYGEN TRANSPORT                        07-MAR-79   1ECN      1ECN   3
+COMPND    HEMOGLOBIN (ERYTHROCRUORIN, CYANO MET)                        1ECN   4
+SOURCE    (CHIRONOMOUS THUMMI THUMMI) (FRACTION III)                    1ECN   5
+AUTHOR    W.STEIGEMANN,E.WEBER                                          1ECN   6
+REVDAT   5   30-SEP-83 1ECND   1       REVDAT                           1ECND  1
+REVDAT   4   15-SEP-81 1ECNC   1       JRNL                             1ECND  2
+REVDAT   3   20-APR-81 1ECNB   1       HELIX                            1ECND  3
+REVDAT   2   07-MAY-80 1ECNA   1       REMARK                           1ECND  4
+REVDAT   1   05-JUL-79 1ECN    0                                        1ECND  5
+JRNL        AUTH   W.STEIGEMANN,E.WEBER                                 1ECN   7
+JRNL        TITL   STRUCTURE OF ERYTHROCRUORIN IN DIFFERENT LIGAND      1ECN   8
+JRNL        TITL 2 STATES REFINED AT 1.4 ANGSTROMS RESOLUTION           1ECN   9
+JRNL        REF    J.MOL.BIOL.                   V. 127   309 1979      1ECNC  1
+JRNL        REFN   ASTM JMOBAK  UK ISSN 0022-2836                  070  1ECN  11
+REMARK   1                                                              1ECN  12
+REMARK   1 REFERENCE 1                                                  1ECN  13
+REMARK   1  AUTH   E.WEBER,W.STEIGEMANN,T.A.JONES,R.HUBER               1ECN  14
+REMARK   1  TITL   THE STRUCTURE OF OXY-*ERYTHROCRUORIN AT 1.4          1ECN  15
+REMARK   1  TITL 2 ANGSTROMS RESOLUTION                                 1ECN  16
+REMARK   1  REF    J.MOL.BIOL.                   V. 120   327 1978      1ECNA  1
+REMARK   1  REFN   ASTM JMOBAK  UK ISSN 0022-2836                  070  1ECN  18
+REMARK   1 REFERENCE 2                                                  1ECN  19
+REMARK   1  AUTH   R.HUBER,O.EPP,W.STEIGEMANN,H.FORMANEK                1ECN  20
+REMARK   1  TITL   THE ATOMIC STRUCTURE OF ERYTHROCRUORIN IN THE LIGHT  1ECN  21
+REMARK   1  TITL 2 OF THE CHEMICAL SEQUENCE AND ITS COMPARISON WITH     1ECN  22
+REMARK   1  TITL 3 MYOGLOBIN                                            1ECN  23
+REMARK   1  REF    EUR.J.BIOCHEM.                V.  19    42 1971      1ECN  24
+REMARK   1  REFN   ASTM EJBCAI  IX ISSN 0014-2956                  262  1ECN  25
+REMARK   1 REFERENCE 3                                                  1ECN  26
+REMARK   1  AUTH   R.HUBER,O.EPP,H.FORMANEK                             1ECN  27
+REMARK   1  TITL   STRUCTURES OF DEOXY- AND CARBOMONOXY-ERYTHROCRUORIN  1ECN  28
+REMARK   1  REF    J.MOL.BIOL.                   V.  52   349 1970      1ECN  29
+REMARK   1  REFN   ASTM JMOBAK  UK ISSN 0022-2836                  070  1ECN  30
+REMARK   2                                                              1ECN  31
+REMARK   2 RESOLUTION. 1.4 ANGSTROMS.                                   1ECN  32
+REMARK   3                                                              1ECN  33
+REMARK   3 REFINEMENT. CYCLIC REAL-SPACE REFINEMENT WITH CHAIN          1ECN  34
+REMARK   3  CONSTRAINT.  SEE J.DEISENHOFER,W.STEIGEMANN, ACTA CRYST.,   1ECN  35
+REMARK   3  VOL. B31, P. 238, 1975.  FREE TEMPERATURE FACTORS FOR       1ECN  36
+REMARK   3  PROTEIN ATOMS, TEMPERATURE FACTORS AND OCCUPANCIES FOR      1ECN  37
+REMARK   3  SOLVENT MOLECULES.                                          1ECN  38
+REMARK   4                                                              1ECN  39
+REMARK   4 FOR OXYGEN TRANSPORT PROTEINS NORMALLY A RESIDUE             1ECN  40
+REMARK   4 IDENTIFICATION SCHEME IS USED WHICH IS BASED ON THE          1ECN  41
+REMARK   4 SECONDARY STRUCTURE.  THIS SCHEME HAS ALSO BEEN APPLIED TO   1ECN  42
+REMARK   4 THIS STRUCTURE.  SINCE THE RESIDUES ARE NUMBERED             1ECN  43
+REMARK   4 SEQUENTIALLY IN THE PROTEIN DATA BANK, THE FOLLOWING TABLE   1ECN  44
+REMARK   4 GIVES THE RELATIONSHIP BETWEEN THESE TWO SCHEMES FOR THIS    1ECN  45
+REMARK   4 STRUCTURE.                                                   1ECN  46
+REMARK   4                                                              1ECN  47
+REMARK   4         1             NA3                                    1ECN  48
+REMARK   4         2 -  17        A1 -  A16                             1ECN  49
+REMARK   4        18             AB1                                    1ECN  50
+REMARK   4        19 -  30        B5 -  B16                             1ECN  51
+REMARK   4        31 -  37        C1 -  C7                              1ECN  52
+REMARK   4        38 -  44       CD1 - CD7                              1ECN  53
+REMARK   4        45 -  51        D1 -  D7                              1ECN  54
+REMARK   4        52 -  71        E1 -  E20                             1ECN  55
+REMARK   4        72 -  79       EF1 - EF8                              1ECN  56
+REMARK   4        80 -  88        F1 -  F9                              1ECN  57
+REMARK   4        89 -  92       FG2 - FG5                              1ECN  58
+REMARK   4        93 - 111        G1 -  G19                             1ECN  59
+REMARK   4       112 - 113       GH1 - GH2                              1ECN  60
+REMARK   4       114 - 115       GH5 - GH6                              1ECN  61
+REMARK   4       116 - 136        H2 -  H22                             1ECN  62
+REMARK   5                                                              1ECN  63
+REMARK   5 ATOM CB OF RESIDUE ALA 115 (GH6) IS INVISIBLE IN THE         1ECN  64
+REMARK   5 ELECTRON DENSITY.  NO COORDINATES ARE GIVEN FOR THIS ATOM.   1ECN  65
+REMARK   6                                                              1ECNA  2
+REMARK   6 CORRECTION. CORRECT FORMAT IN REFERENCE 1.  07-MAY-80.       1ECNA  3
+REMARK   7                                                              1ECNB  1
+REMARK   7 CORRECTION. CORRECT RESIDUE IDENTIFICATION ON HELIX 8        1ECNB  2
+REMARK   7  RECORD.  20-APR-81.                                         1ECNB  3
+REMARK   8                                                              1ECNC  2
+REMARK   8 CORRECTION. CORRECT JOURNAL NAME ON JRNL REFERENCE.          1ECNC  3
+REMARK   8  15-SEP-81.                                                  1ECNC  4
+REMARK   9                                                              1ECND  6
+REMARK   9 CORRECTION. INSERT REVDAT RECORDS. 30-SEP-83.                1ECND  7
+SEQRES   1    136  LEU SER ALA ASP GLN ILE SER THR VAL GLN ALA SER PHE  1ECN  66
+SEQRES   2    136  ASP LYS VAL LYS GLY ASP PRO VAL GLY ILE LEU TYR ALA  1ECN  67
+SEQRES   3    136  VAL PHE LYS ALA ASP PRO SER ILE MET ALA LYS PHE THR  1ECN  68
+SEQRES   4    136  GLN PHE ALA GLY LYS ASP LEU GLU SER ILE LYS GLY THR  1ECN  69
+SEQRES   5    136  ALA PRO PHE GLU THR HIS ALA ASN ARG ILE VAL GLY PHE  1ECN  70
+SEQRES   6    136  PHE SER LYS ILE ILE GLY GLU LEU PRO ASN ILE GLU ALA  1ECN  71
+SEQRES   7    136  ASP VAL ASN THR PHE VAL ALA SER HIS LYS PRO ARG GLY  1ECN  72
+SEQRES   8    136  VAL THR HIS ASP GLN LEU ASN ASN PHE ARG ALA GLY PHE  1ECN  73
+SEQRES   9    136  VAL SER TYR MET LYS ALA HIS THR ASP PHE ALA GLY ALA  1ECN  74
+SEQRES  10    136  GLU ALA ALA TRP GLY ALA THR LEU ASP THR PHE PHE GLY  1ECN  75
+SEQRES  11    136  MET ILE PHE SER LYS MET                              1ECN  76
+FTNOTE   1                                                              1ECN  77
+FTNOTE   1 RESIDUE PRO 74 IS A CIS-PROLINE.                             1ECN  78
+FTNOTE   2                                                              1ECN  79
+FTNOTE   2 AN OCCUPANCY OF 0.0 DENOTES ATOMS THAT HAVE NOT BEEN         1ECN  80
+FTNOTE   2 LOCALIZED IN THE ELECTRON DENSITY.                           1ECN  81
+FTNOTE   3                                                              1ECN  82
+FTNOTE   3 IN THE CYANO MET STRUCTURE TWO ALTERNATE LOCATIONS HAVE      1ECN  83
+FTNOTE   3 BEEN FOUND FOR THE CATALYTIC RESIDUES HIS 58 AND ILE 62.     1ECN  84
+FTNOTE   3 THE PRESENCE OF THIS HALF OCCUPIED WATER MOLECULE THAT IS    1ECN  85
+FTNOTE   3 BOUND TO THE CN-LIGAND CORRESPONDS TO THE USUAL              1ECN  86
+FTNOTE   3 CONFORMATION WHERE THE HISTIDINE POINTS OUT TO THE SOLVENT.  1ECN  87
+HET    HEM      1      45     PROTOPORPHYRIN IX WITH FE3+ AND CYANIDE   1ECN  88
+FORMUL   2  HEM    C34 H32 N4 O4 FE1 +++ .                              1ECN  89
+FORMUL   2  HEM    C1 N1                                                1ECN  90
+FORMUL   3  HOH   *94(H2 O1)                                            1ECN  91
+HELIX    1   A SER      2  LYS     17  1 FROM SER 12 ON DISTORTED TO 5  1ECN  92
+HELIX    2   B ASP     19  ASP     31  1                                1ECN  93
+HELIX    3   C ASP     31  PHE     38  5                                1ECN  94
+HELIX    4   D ASP     45  LYS     50  1 DISTORTION TO TYPE 5           1ECN  95
+HELIX    5   E THR     52  GLU     72  1                                1ECN  96
+HELIX    6   F ILE     76  LYS     88  1 INCLUDES EF-REGION             1ECN  97
+HELIX    7  FG HIS     87  GLY     91  5                                1ECN  98
+HELIX    8   G THR     93  THR    112  1                                1ECNB  4
+HELIX    9   H ALA    117  PHE    133  1                                1ECN 100
+CRYST1   54.300   54.300   35.600  90.00  90.00 120.00 P 32          3  1ECN 101
+ORIGX1      1.000000  0.000000  0.000000        0.00000                 1ECN 102
+ORIGX2      0.000000  1.000000  0.000000        0.00000                 1ECN 103
+ORIGX3      0.000000  0.000000  1.000000        0.00000                 1ECN 104
+SCALE1       .018420   .010630  0.000000        0.00000                 1ECN 105
+SCALE2      0.000000   .021270  0.000000        0.00000                 1ECN 106
+SCALE3      0.000000  0.000000   .028090        0.00000                 1ECN 107
+ATOM      1  N   LEU     1     -15.152  11.599  27.167  1.00 23.69      1ECN 108
+ATOM      2  CA  LEU     1     -14.292  10.739  26.346  1.00 16.04      1ECN 109
+ATOM      3  C   LEU     1     -14.740   9.289  26.508  1.00 20.33      1ECN 110
+ATOM      4  O   LEU     1     -14.467   8.653  27.530  1.00 19.35      1ECN 111
+ATOM      5  CB  LEU     1     -12.818  10.900  26.770  1.00 17.75      1ECN 112
+ATOM      6  CG  LEU     1     -11.751  10.462  25.789  1.00 21.99      1ECN 113
+ATOM      7  CD1 LEU     1     -11.862  11.278  24.525  1.00 21.34      1ECN 114
+ATOM      8  CD2 LEU     1     -10.377  10.630  26.386  1.00 22.01      1ECN 115
+ATOM      9  N   SER     2     -15.423   8.789  25.499  1.00 18.58      1ECN 116
+ATOM     10  CA  SER     2     -15.999   7.443  25.566  1.00 17.40      1ECN 117
+ATOM     11  C   SER     2     -15.370   6.550  24.501  1.00 19.83      1ECN 118
+ATOM     12  O   SER     2     -14.562   7.011  23.684  1.00 10.31      1ECN 119
+ATOM     13  CB  SER     2     -17.496   7.493  25.366  1.00 18.08      1ECN 120
+ATOM     14  OG  SER     2     -17.856   8.287  24.239  1.00 43.97      1ECN 121
+ATOM     15  N   ALA     3     -15.744   5.286  24.528  1.00 16.78      1ECN 122
+ATOM     16  CA  ALA     3     -15.083   4.284  23.683  1.00 10.29      1ECN 123
+ATOM     17  C   ALA     3     -15.152   4.548  22.180  1.00  9.25      1ECN 124
+ATOM     18  O   ALA     3     -14.229   4.201  21.431  1.00  9.82      1ECN 125
+ATOM     19  CB  ALA     3     -15.804   2.949  23.915  1.00 13.99      1ECN 126
+ATOM     20  N   ASP     4     -16.242   5.158  21.765  1.00 10.68      1ECN 127
+ATOM     21  CA  ASP     4     -16.447   5.445  20.337  1.00 11.66      1ECN 128
+ATOM     22  C   ASP     4     -15.408   6.464  19.880  1.00 11.29      1ECN 129
+ATOM     23  O   ASP     4     -14.821   6.329  18.800  1.00 11.91      1ECN 130
+ATOM     24  CB  ASP     4     -17.879   5.974  20.112  1.00 15.68      1ECN 131
+ATOM     25  CG  ASP     4     -18.069   7.328  20.732  1.00 28.87      1ECN 132
+ATOM     26  OD1 ASP     4     -18.540   8.295  20.161  1.00 39.54      1ECN 133
+ATOM     27  OD2 ASP     4     -17.777   7.408  21.892  1.00 19.46      1ECN 134
+ATOM     28  N   GLN     5     -15.192   7.468  20.714  1.00 12.05      1ECN 135
+ATOM     29  CA  GLN     5     -14.249   8.543  20.375  1.00  9.85      1ECN 136
+ATOM     30  C   GLN     5     -12.822   8.010  20.496  1.00  8.67      1ECN 137
+ATOM     31  O   GLN     5     -11.935   8.389  19.719  1.00  9.16      1ECN 138
+ATOM     32  CB  GLN     5     -14.404   9.770  21.314  1.00 12.06      1ECN 139
+ATOM     33  CG  GLN     5     -15.733  10.541  21.223  1.00 13.17      1ECN 140
+ATOM     34  CD  GLN     5     -15.839  11.791  22.172  1.00 12.33      1ECN 141
+ATOM     35  AE1 GLN     5     -16.092  12.880  21.754  1.00 24.90      1ECN 142
+ATOM     36  AE2 GLN     5     -15.628  11.412  23.320  1.00 18.70      1ECN 143
+ATOM     37  N   ILE     6     -12.621   7.139  21.472  1.00 11.04      1ECN 144
+ATOM     38  CA  ILE     6     -11.256   6.607  21.753  1.00  9.66      1ECN 145
+ATOM     39  C   ILE     6     -10.819   5.759  20.562  1.00 11.28      1ECN 146
+ATOM     40  O   ILE     6      -9.656   5.809  20.137  1.00 10.20      1ECN 147
+ATOM     41  CB  ILE     6     -11.261   5.715  23.009  1.00 10.46      1ECN 148
+ATOM     42  CG1 ILE     6     -11.394   6.535  24.317  1.00 13.65      1ECN 149
+ATOM     43  CG2 ILE     6      -9.956   4.938  22.824  1.00 10.11      1ECN 150
+ATOM     44  CD1 ILE     6     -11.775   5.683  25.544  1.00 14.94      1ECN 151
+ATOM     45  N   SER     7     -11.756   4.992  20.041  1.00 10.80      1ECN 152
+ATOM     46  CA  SER     7     -11.460   4.116  18.898  1.00  9.35      1ECN 153
+ATOM     47  C   SER     7     -11.203   4.862  17.606  1.00 11.77      1ECN 154
+ATOM     48  O   SER     7     -10.331   4.476  16.840  1.00  9.78      1ECN 155
+ATOM     49  CB  SER     7     -12.611   3.160  18.659  1.00 11.90      1ECN 156
+ATOM     50  OG  SER     7     -13.820   3.843  18.350  1.00 14.03      1ECN 157
+ATOM     51  N   THR     8     -11.962   5.921  17.403  1.00 10.70      1ECN 158
+ATOM     52  CA  THR     8     -11.703   6.831  16.294  1.00  9.51      1ECN 159
+ATOM     53  C   THR     8     -10.314   7.467  16.296  1.00  9.30      1ECN 160
+ATOM     54  O   THR     8      -9.644   7.532  15.257  1.00  7.91      1ECN 161
+ATOM     55  CB  THR     8     -12.786   7.923  16.333  1.00 10.21      1ECN 162
+ATOM     56  OG1 THR     8     -13.998   7.218  16.086  1.00 10.97      1ECN 163
+ATOM     57  CG2 THR     8     -12.572   8.981  15.286  1.00 10.79      1ECN 164
+ATOM     58  N   VAL     9      -9.902   7.930  17.448  1.00 10.02      1ECN 165
+ATOM     59  CA  VAL     9      -8.584   8.561  17.581  1.00  9.15      1ECN 166
+ATOM     60  C   VAL     9      -7.454   7.556  17.372  1.00 10.65      1ECN 167
+ATOM     61  O   VAL     9      -6.423   7.884  16.784  1.00 10.05      1ECN 168
+ATOM     62  CB  VAL     9      -8.455   9.189  18.946  1.00 12.76      1ECN 169
+ATOM     63  CG1 VAL     9      -7.024   9.253  19.493  1.00 15.92      1ECN 170
+ATOM     64  CG2 VAL     9      -9.167  10.510  19.032  1.00 12.61      1ECN 171
+ATOM     65  N   GLN    10      -7.666   6.348  17.832  1.00 10.82      1ECN 172
+ATOM     66  CA  GLN    10      -6.590   5.345  17.865  1.00 10.57      1ECN 173
+ATOM     67  C   GLN    10      -6.419   4.771  16.501  1.00 10.72      1ECN 174
+ATOM     68  O   GLN    10      -5.304   4.440  16.082  1.00 11.80      1ECN 175
+ATOM     69  CB  GLN    10      -6.910   4.193  18.860  1.00  9.18      1ECN 176
+ATOM     70  CG  GLN    10      -6.657   4.474  20.348  1.00 10.64      1ECN 177
+ATOM     71  CD  GLN    10      -7.269   3.414  21.333  1.00 11.38      1ECN 178
+ATOM     72  AE1 GLN    10      -6.975   3.389  22.487  1.00 14.03      1ECN 179
+ATOM     73  AE2 GLN    10      -8.043   2.703  20.694  1.00 11.77      1ECN 180
+ATOM     74  N   ALA    11      -7.528   4.661  15.794  1.00 12.10      1ECN 181
+ATOM     75  CA  ALA    11      -7.482   4.364  14.355  1.00 11.82      1ECN 182
+ATOM     76  C   ALA    11      -6.751   5.463  13.586  1.00 14.03      1ECN 183
+ATOM     77  O   ALA    11      -5.961   5.182  12.675  1.00 10.64      1ECN 184
+ATOM     78  CB  ALA    11      -8.917   4.339  13.806  1.00  9.76      1ECN 185
+ATOM     79  N   SER    12      -7.024   6.699  13.963  1.00 12.29      1ECN 186
+ATOM     80  CA  SER    12      -6.469   7.852  13.235  1.00 13.46      1ECN 187
+ATOM     81  C   SER    12      -4.979   7.935  13.455  1.00 10.93      1ECN 188
+ATOM     82  O   SER    12      -4.227   8.162  12.512  1.00 11.70      1ECN 189
+ATOM     83  CB  SER    12      -7.132   9.131  13.697  1.00 11.88      1ECN 190
+ATOM     84  OG  SER    12      -6.413  10.273  13.289  1.00 12.85      1ECN 191
+ATOM     85  N   PHE    13      -4.572   7.753  14.698  1.00 11.63      1ECN 192
+ATOM     86  CA  PHE    13      -3.157   7.796  15.044  1.00 13.16      1ECN 193
+ATOM     87  C   PHE    13      -2.309   6.663  14.472  1.00 15.63      1ECN 194
+ATOM     88  O   PHE    13      -1.100   6.816  14.266  1.00 11.54      1ECN 195
+ATOM     89  CB  PHE    13      -3.006   7.793  16.555  1.00 10.90      1ECN 196
+ATOM     90  CG  PHE    13      -1.635   8.090  17.074  1.00 12.76      1ECN 197
+ATOM     91  CD1 PHE    13       -.943   7.114  17.678  1.00 12.72      1ECN 198
+ATOM     92  CD2 PHE    13      -1.032   9.299  16.866  1.00 13.89      1ECN 199
+ATOM     93  CE1 PHE    13        .370   7.331  18.166  1.00 14.71      1ECN 200
+ATOM     94  CE2 PHE    13        .312   9.494  17.325  1.00 17.01      1ECN 201
+ATOM     95  CZ  PHE    13        .963   8.535  17.976  1.00 15.37      1ECN 202
+ATOM     96  N   ASP    14      -2.952   5.544  14.225  1.00 13.43      1ECN 203
+ATOM     97  CA  ASP    14      -2.242   4.352  13.749  1.00 16.63      1ECN 204
+ATOM     98  C   ASP    14      -1.682   4.627  12.354  1.00 15.24      1ECN 205
+ATOM     99  O   ASP    14       -.650   4.071  11.966  1.00 14.04      1ECN 206
+ATOM    100  CB  ASP    14      -3.194   3.149  13.739  1.00 16.98      1ECN 207
+ATOM    101  CG  ASP    14      -2.438   1.854  13.610  1.00 18.45      1ECN 208
+ATOM    102  OD1 ASP    14      -2.544   1.075  12.687  1.00 22.41      1ECN 209
+ATOM    103  OD2 ASP    14      -1.633   1.638  14.470  1.00 17.68      1ECN 210
+ATOM    104  N   LYS    15      -2.369   5.481  11.622  1.00 13.93      1ECN 211
+ATOM    105  CA  LYS    15      -1.916   5.865  10.277  1.00 13.67      1ECN 212
+ATOM    106  C   LYS    15       -.618   6.672  10.235  1.00 15.71      1ECN 213
+ATOM    107  O   LYS    15        .114   6.641   9.238  1.00 17.10      1ECN 214
+ATOM    108  CB  LYS    15      -2.968   6.699   9.556  1.00 22.56      1ECN 215
+ATOM    109  CG  LYS    15      -4.269   5.988   9.311  1.00 23.80      1ECN 216
+ATOM    110  CD  LYS    15      -5.406   6.985   9.106  0.00  0.00   2  1ECN 217
+ATOM    111  CE  LYS    15      -6.280   6.596   7.928  0.00  0.00   2  1ECN 218
+ATOM    112  NZ  LYS    15      -7.018   7.769   7.412  0.00  0.00   2  1ECN 219
+ATOM    113  N   VAL    16       -.350   7.384  11.316  1.00 15.04      1ECN 220
+ATOM    114  CA  VAL    16        .754   8.356  11.334  1.00 18.43      1ECN 221
+ATOM    115  C   VAL    16       1.904   8.079  12.301  1.00 13.78      1ECN 222
+ATOM    116  O   VAL    16       2.950   8.737  12.247  1.00 16.61      1ECN 223
+ATOM    117  CB  VAL    16        .214   9.738  11.668  1.00 15.01      1ECN 224
+ATOM    118  CG1 VAL    16       -.897  10.251  10.722  1.00 19.09      1ECN 225
+ATOM    119  CG2 VAL    16       -.169   9.857  13.118  1.00 11.79      1ECN 226
+ATOM    120  N   LYS    17       1.696   7.112  13.169  1.00 14.71      1ECN 227
+ATOM    121  CA  LYS    17       2.644   6.857  14.263  1.00 13.55      1ECN 228
+ATOM    122  C   LYS    17       4.003   6.359  13.774  1.00 13.35      1ECN 229
+ATOM    123  O   LYS    17       4.980   6.333  14.533  1.00 17.24      1ECN 230
+ATOM    124  CB  LYS    17       2.098   5.822  15.241  1.00 20.54      1ECN 231
+ATOM    125  CG  LYS    17       1.869   4.446  14.643  1.00 18.73      1ECN 232
+ATOM    126  CD  LYS    17       1.874   3.369  15.727  1.00 36.52      1ECN 233
+ATOM    127  CE  LYS    17       1.455   2.016  15.175  1.00 43.95      1ECN 234
+ATOM    128  NZ  LYS    17       1.792   1.904  13.738  1.00 46.37      1ECN 235
+ATOM    129  N   GLY    18       4.049   5.969  12.514  1.00 13.26      1ECN 236
+ATOM    130  CA  GLY    18       5.313   5.551  11.893  1.00 14.22      1ECN 237
+ATOM    131  C   GLY    18       6.139   6.692  11.299  1.00 18.98      1ECN 238
+ATOM    132  O   GLY    18       7.167   6.459  10.652  1.00 15.15      1ECN 239
+ATOM    133  N   ASP    19       5.679   7.908  11.522  1.00 12.44      1ECN 240
+ATOM    134  CA  ASP    19       6.412   9.096  11.060  1.00 12.41      1ECN 241
+ATOM    135  C   ASP    19       6.689  10.038  12.230  1.00  8.47      1ECN 242
+ATOM    136  O   ASP    19       6.292  11.207  12.206  1.00  8.35      1ECN 243
+ATOM    137  CB  ASP    19       5.601   9.813   9.962  1.00  8.77      1ECN 244
+ATOM    138  CG  ASP    19       6.357  10.980   9.400  1.00 10.83      1ECN 245
+ATOM    139  OD1 ASP    19       7.567  11.082   9.391  1.00 11.77      1ECN 246
+ATOM    140  OD2 ASP    19       5.684  11.823   8.879  1.00 11.06      1ECN 247
+ATOM    141  N   PRO    20       7.365   9.517  13.238  1.00 10.52      1ECN 248
+ATOM    142  CA  PRO    20       7.843  10.366  14.355  1.00  8.70      1ECN 249
+ATOM    143  C   PRO    20       8.565  11.650  13.946  1.00  8.28      1ECN 250
+ATOM    144  O   PRO    20       8.361  12.709  14.550  1.00  7.91      1ECN 251
+ATOM    145  CB  PRO    20       8.529   9.394  15.260  1.00 10.86      1ECN 252
+ATOM    146  CG  PRO    20       8.943   8.184  14.444  1.00 13.64      1ECN 253
+ATOM    147  CD  PRO    20       8.008   8.211  13.238  1.00 12.12      1ECN 254
+ATOM    148  N   VAL    21       9.400  11.539  12.927  1.00  9.51      1ECN 255
+ATOM    149  CA  VAL    21      10.303  12.698  12.530  1.00 10.34      1ECN 256
+ATOM    150  C   VAL    21       9.426  13.820  11.988  1.00  7.81      1ECN 257
+ATOM    151  O   VAL    21       9.599  14.990  12.348  1.00  9.36      1ECN 258
+ATOM    152  CB  VAL    21      11.258  12.192  11.476  1.00 10.81      1ECN 259
+ATOM    153  CG1 VAL    21      11.712  13.279  10.477  1.00 12.02      1ECN 260
+ATOM    154  CG2 VAL    21      12.415  11.457  12.091  1.00  9.58      1ECN 261
+ATOM    155  N   GLY    22       8.498  13.450  11.132  1.00 10.34      1ECN 262
+ATOM    156  CA  GLY    22       7.525  14.414  10.607  1.00 10.52      1ECN 263
+ATOM    157  C   GLY    22       6.679  15.167  11.633  1.00  9.59      1ECN 264
+ATOM    158  O   GLY    22       6.315  16.328  11.424  1.00  9.07      1ECN 265
+ATOM    159  N   ILE    23       6.380  14.494  12.724  1.00 10.25      1ECN 266
+ATOM    160  CA  ILE    23       5.447  15.040  13.718  1.00  9.84      1ECN 267
+ATOM    161  C   ILE    23       6.271  16.043  14.526  1.00 10.48      1ECN 268
+ATOM    162  O   ILE    23       5.797  17.143  14.838  1.00  9.64      1ECN 269
+ATOM    163  CB  ILE    23       4.879  13.933  14.642  1.00  8.89      1ECN 270
+ATOM    164  CG1 ILE    23       3.771  13.085  13.956  1.00 10.13      1ECN 271
+ATOM    165  CG2 ILE    23       4.446  14.735  15.868  1.00  9.95      1ECN 272
+ATOM    166  CD1 ILE    23       3.527  11.713  14.628  1.00  8.58      1ECN 273
+ATOM    167  N   LEU    24       7.492  15.654  14.854  1.00 13.58      1ECN 274
+ATOM    168  CA  LEU    24       8.375  16.507  15.660  1.00 11.06      1ECN 275
+ATOM    169  C   LEU    24       8.767  17.748  14.856  1.00  9.04      1ECN 276
+ATOM    170  O   LEU    24       8.841  18.858  15.399  1.00 10.08      1ECN 277
+ATOM    171  CB  LEU    24       9.631  15.727  16.083  1.00 10.41      1ECN 278
+ATOM    172  CG  LEU    24      10.645  16.432  16.942  1.00 10.89      1ECN 279
+ATOM    173  CD1 LEU    24      10.008  16.854  18.230  1.00 14.69      1ECN 280
+ATOM    174  CD2 LEU    24      11.813  15.527  17.214  1.00 13.47      1ECN 281
+ATOM    175  N   TYR    25       9.013  17.544  13.576  1.00 10.82      1ECN 282
+ATOM    176  CA  TYR    25       9.268  18.668  12.662  1.00 11.01      1ECN 283
+ATOM    177  C   TYR    25       8.140  19.699  12.651  1.00 10.88      1ECN 284
+ATOM    178  O   TYR    25       8.382  20.908  12.749  1.00  9.79      1ECN 285
+ATOM    179  CB  TYR    25       9.484  18.117  11.242  1.00  7.78      1ECN 286
+ATOM    180  CG  TYR    25       9.543  19.179  10.138  1.00 13.35      1ECN 287
+ATOM    181  CD1 TYR    25      10.771  19.822   9.912  1.00 12.34      1ECN 288
+ATOM    182  CD2 TYR    25       8.426  19.554   9.441  1.00 15.01      1ECN 289
+ATOM    183  CE1 TYR    25      10.839  20.842   8.875  1.00 12.20      1ECN 290
+ATOM    184  CE2 TYR    25       8.480  20.553   8.423  1.00 26.50      1ECN 291
+ATOM    185  CZ  TYR    25       9.713  21.187   8.215  1.00 13.75      1ECN 292
+ATOM    186  OH  TYR    25       9.771  22.170   7.251  1.00 18.68      1ECN 293
+ATOM    187  N   ALA    26       6.927  19.208  12.529  1.00 10.03      1ECN 294
+ATOM    188  CA  ALA    26       5.747  20.076  12.631  1.00  9.15      1ECN 295
+ATOM    189  C   ALA    26       5.614  20.883  13.923  1.00 10.51      1ECN 296
+ATOM    190  O   ALA    26       5.197  22.048  13.904  1.00 10.88      1ECN 297
+ATOM    191  CB  ALA    26       4.519  19.155  12.570  1.00 10.57      1ECN 298
+ATOM    192  N   VAL    27       5.970  20.254  15.026  1.00 11.02      1ECN 299
+ATOM    193  CA  VAL    27       5.923  20.927  16.330  1.00 11.96      1ECN 300
+ATOM    194  C   VAL    27       7.005  21.998  16.488  1.00 11.18      1ECN 301
+ATOM    195  O   VAL    27       6.730  23.112  16.950  1.00 10.88      1ECN 302
+ATOM    196  CB  VAL    27       6.069  19.898  17.435  1.00 12.83      1ECN 303
+ATOM    197  CG1 VAL    27       6.358  20.492  18.808  1.00 12.60      1ECN 304
+ATOM    198  CG2 VAL    27       4.927  18.917  17.444  1.00 13.84      1ECN 305
+ATOM    199  N   PHE    28       8.219  21.644  16.103  1.00 11.79      1ECN 306
+ATOM    200  CA  PHE    28       9.332  22.608  16.115  1.00 11.84      1ECN 307
+ATOM    201  C   PHE    28       9.114  23.802  15.186  1.00  9.33      1ECN 308
+ATOM    202  O   PHE    28       9.516  24.929  15.496  1.00 11.22      1ECN 309
+ATOM    203  CB  PHE    28      10.613  21.895  15.730  1.00 11.38      1ECN 310
+ATOM    204  CG  PHE    28      11.366  21.159  16.799  1.00 10.18      1ECN 311
+ATOM    205  CD1 PHE    28      10.816  21.044  17.994  1.00  9.26      1ECN 312
+ATOM    206  CD2 PHE    28      12.555  20.531  16.543  1.00 11.40      1ECN 313
+ATOM    207  CE1 PHE    28      11.475  20.347  19.045  1.00 12.56      1ECN 314
+ATOM    208  CE2 PHE    28      13.189  19.793  17.576  1.00  9.86      1ECN 315
+ATOM    209  CZ  PHE    28      12.664  19.745  18.797  1.00 12.97      1ECN 316
+ATOM    210  N   LYS    29       8.480  23.538  14.061  1.00 10.81      1ECN 317
+ATOM    211  CA  LYS    29       8.169  24.604  13.098  1.00 10.84      1ECN 318
+ATOM    212  C   LYS    29       7.075  25.572  13.543  1.00 14.12      1ECN 319
+ATOM    213  O   LYS    29       7.087  26.756  13.184  1.00 10.86      1ECN 320
+ATOM    214  CB  LYS    29       7.718  24.029  11.761  1.00 13.99      1ECN 321
+ATOM    215  CG  LYS    29       7.773  25.004  10.604  1.00 17.61      1ECN 322
+ATOM    216  CD  LYS    29       7.225  24.370   9.328  1.00 23.04      1ECN 323
+ATOM    217  CE  LYS    29       7.902  23.042   9.027  0.00  0.00   2  1ECN 324
+ATOM    218  NZ  LYS    29       7.088  22.235   8.093  0.00  0.00   2  1ECN 325
+ATOM    219  N   ALA    30       6.144  25.056  14.317  1.00 12.19      1ECN 326
+ATOM    220  CA  ALA    30       5.089  25.899  14.900  1.00 10.52      1ECN 327
+ATOM    221  C   ALA    30       5.604  26.866  15.968  1.00 11.70      1ECN 328
+ATOM    222  O   ALA    30       5.100  27.972  16.107  1.00 11.68      1ECN 329
+ATOM    223  CB  ALA    30       4.076  24.979  15.596  1.00 10.90      1ECN 330
+ATOM    224  N   ASP    31       6.607  26.423  16.704  1.00 10.46      1ECN 331
+ATOM    225  CA  ASP    31       7.197  27.252  17.740  1.00 11.05      1ECN 332
+ATOM    226  C   ASP    31       8.684  26.966  17.944  1.00 10.07      1ECN 333
+ATOM    227  O   ASP    31       9.052  26.055  18.696  1.00 10.26      1ECN 334
+ATOM    228  CB  ASP    31       6.434  27.029  19.051  1.00  9.95      1ECN 335
+ATOM    229  CG  ASP    31       6.939  27.937  20.134  1.00 10.52      1ECN 336
+ATOM    230  OD1 ASP    31       7.948  28.610  20.059  1.00  9.63      1ECN 337
+ATOM    231  OD2 ASP    31       6.238  28.021  21.099  1.00 10.53      1ECN 338
+ATOM    232  N   PRO    32       9.516  27.750  17.315  1.00 12.22      1ECN 339
+ATOM    233  CA  PRO    32      10.985  27.605  17.468  1.00 10.99      1ECN 340
+ATOM    234  C   PRO    32      11.608  27.718  18.830  1.00  8.36      1ECN 341
+ATOM    235  O   PRO    32      12.752  27.303  19.046  1.00  8.72      1ECN 342
+ATOM    236  CB  PRO    32      11.535  28.332  16.292  1.00 13.32      1ECN 343
+ATOM    237  CG  PRO    32      10.482  29.298  15.787  1.00 20.05      1ECN 344
+ATOM    238  CD  PRO    32       9.165  28.716  16.288  1.00 14.01      1ECN 345
+ATOM    239  N   SER    33      10.849  28.279  19.755  1.00 10.51      1ECN 346
+ATOM    240  CA  SER    33      11.288  28.359  21.157  1.00 10.49      1ECN 347
+ATOM    241  C   SER    33      11.239  27.016  21.883  1.00 10.88      1ECN 348
+ATOM    242  O   SER    33      11.864  26.838  22.933  1.00 10.79      1ECN 349
+ATOM    243  CB  SER    33      10.426  29.333  21.924  1.00 11.51      1ECN 350
+ATOM    244  OG  SER    33       9.172  28.766  22.287  1.00 10.70      1ECN 351
+ATOM    245  N   ILE    34      10.497  26.093  21.315  1.00 12.05      1ECN 352
+ATOM    246  CA  ILE    34      10.500  24.711  21.810  1.00 10.74      1ECN 353
+ATOM    247  C   ILE    34      11.827  24.091  21.372  1.00 10.59      1ECN 354
+ATOM    248  O   ILE    34      12.537  23.478  22.178  1.00 10.31      1ECN 355
+ATOM    249  CB  ILE    34       9.318  23.893  21.225  1.00 13.83      1ECN 356
+ATOM    250  CG1 ILE    34       7.933  24.403  21.703  1.00 11.30      1ECN 357
+ATOM    251  CG2 ILE    34       9.687  22.466  21.634  1.00 10.93      1ECN 358
+ATOM    252  CD1 ILE    34       6.738  23.593  21.141  1.00 12.13      1ECN 359
+ATOM    253  N   MET    35      12.139  24.255  20.104  1.00 11.50      1ECN 360
+ATOM    254  CA  MET    35      13.417  23.770  19.574  1.00 12.24      1ECN 361
+ATOM    255  C   MET    35      14.653  24.309  20.296  1.00 13.03      1ECN 362
+ATOM    256  O   MET    35      15.630  23.578  20.508  1.00 14.83      1ECN 363
+ATOM    257  CB  MET    35      13.550  24.147  18.076  1.00 11.48      1ECN 364
+ATOM    258  CG  MET    35      14.803  23.553  17.497  1.00 13.25      1ECN 365
+ATOM    259  SD  MET    35      14.765  23.593  15.729  1.00 13.12      1ECN 366
+ATOM    260  CE  MET    35      15.674  25.083  15.463  1.00 16.60      1ECN 367
+ATOM    261  N   ALA    36      14.595  25.578  20.667  1.00 15.22      1ECN 368
+ATOM    262  CA  ALA    36      15.691  26.203  21.419  1.00 12.45      1ECN 369
+ATOM    263  C   ALA    36      16.003  25.739  22.844  1.00 17.49      1ECN 370
+ATOM    264  O   ALA    36      17.037  26.101  23.417  1.00 15.31      1ECN 371
+ATOM    265  CB  ALA    36      15.306  27.687  21.527  1.00 15.16      1ECN 372
+ATOM    266  N   LYS    37      15.110  24.948  23.396  1.00 14.87      1ECN 373
+ATOM    267  CA  LYS    37      15.354  24.316  24.700  1.00 12.46      1ECN 374
+ATOM    268  C   LYS    37      16.182  23.035  24.645  1.00 16.27      1ECN 375
+ATOM    269  O   LYS    37      16.574  22.487  25.683  1.00 16.04      1ECN 376
+ATOM    270  CB  LYS    37      14.043  23.955  25.392  1.00 16.68      1ECN 377
+ATOM    271  CG  LYS    37      13.223  25.142  25.854  1.00 21.09      1ECN 378
+ATOM    272  CD  LYS    37      12.519  24.835  27.166  1.00 41.13      1ECN 379
+ATOM    273  CE  LYS    37      11.315  25.736  27.375  0.00  0.00   2  1ECN 380
+ATOM    274  NZ  LYS    37      11.244  26.200  28.776  0.00  0.00   2  1ECN 381
+ATOM    275  N   PHE    38      16.438  22.576  23.440  1.00 15.35      1ECN 382
+ATOM    276  CA  PHE    38      17.249  21.368  23.249  1.00 14.17      1ECN 383
+ATOM    277  C   PHE    38      18.675  21.815  22.920  1.00 15.99      1ECN 384
+ATOM    278  O   PHE    38      18.907  22.494  21.911  1.00 14.10      1ECN 385
+ATOM    279  CB  PHE    38      16.634  20.523  22.142  1.00 15.73      1ECN 386
+ATOM    280  CG  PHE    38      15.312  19.851  22.367  1.00 14.41      1ECN 387
+ATOM    281  CD1 PHE    38      14.185  20.602  22.393  1.00 13.60      1ECN 388
+ATOM    282  CD2 PHE    38      15.196  18.486  22.467  1.00 18.96      1ECN 389
+ATOM    283  CE1 PHE    38      12.897  20.023  22.588  1.00 12.58      1ECN 390
+ATOM    284  CE2 PHE    38      13.890  17.908  22.620  1.00 17.19      1ECN 391
+ATOM    285  CZ  PHE    38      12.789  18.678  22.711  1.00 16.68      1ECN 392
+ATOM    286  N   THR    39      19.608  21.429  23.779  1.00 18.83      1ECN 393
+ATOM    287  CA  THR    39      21.026  21.748  23.551  1.00 13.22      1ECN 394
+ATOM    288  C   THR    39      21.505  21.194  22.212  1.00 18.36      1ECN 395
+ATOM    289  O   THR    39      22.375  21.779  21.554  1.00 20.11      1ECN 396
+ATOM    290  CB  THR    39      21.820  21.162  24.731  1.00 13.14      1ECN 397
+ATOM    291  OG1 THR    39      21.793  19.758  24.502  1.00 29.62      1ECN 398
+ATOM    292  CG2 THR    39      21.201  21.488  26.060  1.00 28.22      1ECN 399
+ATOM    293  N   GLN    40      20.933  20.077  21.828  1.00 17.70      1ECN 400
+ATOM    294  CA  GLN    40      21.336  19.417  20.583  1.00 16.83      1ECN 401
+ATOM    295  C   GLN    40      20.826  20.000  19.272  1.00 14.61      1ECN 402
+ATOM    296  O   GLN    40      21.379  19.729  18.197  1.00 16.18      1ECN 403
+ATOM    297  CB  GLN    40      20.893  17.980  20.647  1.00 21.19      1ECN 404
+ATOM    298  CG  GLN    40      21.337  17.185  19.500  0.00  0.00   2  1ECN 405
+ATOM    299  CD  GLN    40      22.849  17.198  19.252  0.00  0.00   2  1ECN 406
+ATOM    300  AE1 GLN    40      23.274  17.706  18.175  0.00  0.00   2  1ECN 407
+ATOM    301  AE2 GLN    40      23.604  16.638  20.115  0.00  0.00   2  1ECN 408
+ATOM    302  N   PHE    41      19.780  20.794  19.376  1.00 17.83      1ECN 409
+ATOM    303  CA  PHE    41      19.225  21.466  18.195  1.00 16.16      1ECN 410
+ATOM    304  C   PHE    41      19.273  22.995  18.167  1.00 11.13      1ECN 411
+ATOM    305  O   PHE    41      19.092  23.615  17.150  1.00 13.92      1ECN 412
+ATOM    306  CB  PHE    41      17.772  21.057  18.023  1.00 15.48      1ECN 413
+ATOM    307  CG  PHE    41      17.591  19.565  18.046  1.00 12.52      1ECN 414
+ATOM    308  CD1 PHE    41      16.574  19.031  18.765  1.00 14.75      1ECN 415
+ATOM    309  CD2 PHE    41      18.370  18.727  17.331  1.00 11.58      1ECN 416
+ATOM    310  CE1 PHE    41      16.343  17.627  18.813  1.00 16.42      1ECN 417
+ATOM    311  CE2 PHE    41      18.098  17.318  17.354  1.00 16.33      1ECN 418
+ATOM    312  CZ  PHE    41      17.130  16.801  18.091  1.00 15.40      1ECN 419
+ATOM    313  N   ALA    42      19.514  23.580  19.332  1.00 13.82      1ECN 420
+ATOM    314  CA  ALA    42      19.394  25.038  19.488  1.00 15.46      1ECN 421
+ATOM    315  C   ALA    42      20.443  25.640  18.553  1.00 13.10      1ECN 422
+ATOM    316  O   ALA    42      21.545  25.096  18.397  1.00 16.53      1ECN 423
+ATOM    317  CB  ALA    42      19.782  25.486  20.904  1.00 15.54      1ECN 424
+ATOM    318  N   GLY    43      20.088  26.752  17.941  1.00 15.18      1ECN 425
+ATOM    319  CA  GLY    43      20.929  27.334  16.916  1.00 13.59      1ECN 426
+ATOM    320  C   GLY    43      21.232  26.711  15.554  1.00 13.98      1ECN 427
+ATOM    321  O   GLY    43      22.183  27.108  14.869  1.00 14.42      1ECN 428
+ATOM    322  N   LYS    44      20.424  25.743  15.182  1.00 14.55      1ECN 429
+ATOM    323  CA  LYS    44      20.636  25.024  13.914  1.00 14.56      1ECN 430
+ATOM    324  C   LYS    44      19.422  25.242  13.014  1.00 10.90      1ECN 431
+ATOM    325  O   LYS    44      18.406  25.810  13.442  1.00 12.13      1ECN 432
+ATOM    326  CB  LYS    44      20.841  23.532  14.155  1.00 15.19      1ECN 433
+ATOM    327  CG  LYS    44      22.111  23.179  14.901  1.00 22.51      1ECN 434
+ATOM    328  CD  LYS    44      22.353  21.671  14.884  1.00 24.01      1ECN 435
+ATOM    329  CE  LYS    44      23.679  21.316  15.530  0.00  0.00   2  1ECN 436
+ATOM    330  NZ  LYS    44      23.920  19.859  15.469  0.00  0.00   2  1ECN 437
+ATOM    331  N   ASP    45      19.544  24.791  11.780  1.00 13.05      1ECN 438
+ATOM    332  CA  ASP    45      18.525  25.076  10.768  1.00 10.75      1ECN 439
+ATOM    333  C   ASP    45      17.658  23.822  10.854  1.00 14.25      1ECN 440
+ATOM    334  O   ASP    45      18.138  22.701  10.635  1.00 10.80      1ECN 441
+ATOM    335  CB  ASP    45      19.189  25.314   9.397  1.00 10.24      1ECN 442
+ATOM    336  CG  ASP    45      18.247  24.992   8.266  1.00 11.57      1ECN 443
+ATOM    337  OD1 ASP    45      18.527  24.302   7.302  1.00 12.27      1ECN 444
+ATOM    338  OD2 ASP    45      17.129  25.414   8.385  1.00 12.43      1ECN 445
+ATOM    339  N   LEU    46      16.399  24.030  11.171  1.00 13.29      1ECN 446
+ATOM    340  CA  LEU    46      15.475  22.908  11.345  1.00 11.38      1ECN 447
+ATOM    341  C   LEU    46      15.437  22.011  10.108  1.00  9.46      1ECN 448
+ATOM    342  O   LEU    46      15.351  20.780  10.219  1.00 10.06      1ECN 449
+ATOM    343  CB  LEU    46      14.053  23.426  11.639  1.00 11.38      1ECN 450
+ATOM    344  CG  LEU    46      12.906  22.436  11.568  1.00 12.97      1ECN 451
+ATOM    345  CD1 LEU    46      13.109  21.353  12.600  1.00 12.16      1ECN 452
+ATOM    346  CD2 LEU    46      11.585  23.128  11.808  1.00 14.45      1ECN 453
+ATOM    347  N   GLU    47      15.499  22.643   8.949  1.00 12.24      1ECN 454
+ATOM    348  CA  GLU    47      15.425  21.905   7.683  1.00 14.06      1ECN 455
+ATOM    349  C   GLU    47      16.643  21.005   7.490  1.00 19.18      1ECN 456
+ATOM    350  O   GLU    47      16.560  19.957   6.832  1.00 19.60      1ECN 457
+ATOM    351  CB  GLU    47      15.343  22.857   6.458  1.00 16.22      1ECN 458
+ATOM    352  CG  GLU    47      14.086  23.744   6.355  1.00 18.68      1ECN 459
+ATOM    353  CD  GLU    47      12.712  22.970   6.448  1.00 16.35      1ECN 460
+ATOM    354  OE1 GLU    47      11.798  23.381   7.098  1.00 21.40      1ECN 461
+ATOM    355  OE2 GLU    47      12.797  21.955   5.755  1.00 19.89      1ECN 462
+ATOM    356  N   SER    48      17.758  21.428   8.065  1.00 14.18      1ECN 463
+ATOM    357  CA  SER    48      18.968  20.593   8.078  1.00 18.73      1ECN 464
+ATOM    358  C   SER    48      19.126  19.432   9.058  1.00 18.50      1ECN 465
+ATOM    359  O   SER    48      19.779  18.428   8.752  1.00 23.01      1ECN 466
+ATOM    360  CB  SER    48      20.194  21.435   8.338  1.00 16.19      1ECN 467
+ATOM    361  OG  SER    48      20.397  22.402   7.317  1.00 22.52      1ECN 468
+ATOM    362  N   ILE    49      18.529  19.590  10.222  1.00 16.79      1ECN 469
+ATOM    363  CA  ILE    49      18.605  18.554  11.254  1.00 20.43      1ECN 470
+ATOM    364  C   ILE    49      17.471  17.536  11.158  1.00 17.25      1ECN 471
+ATOM    365  O   ILE    49      17.594  16.405  11.639  1.00 14.83      1ECN 472
+ATOM    366  CB  ILE    49      18.533  19.151  12.682  1.00 13.39      1ECN 473
+ATOM    367  CG1 ILE    49      17.184  19.862  12.966  1.00 21.42      1ECN 474
+ATOM    368  CG2 ILE    49      19.782  20.032  12.718  1.00 21.93      1ECN 475
+ATOM    369  CD1 ILE    49      17.069  20.428  14.398  1.00 15.34      1ECN 476
+ATOM    370  N   LYS    50      16.389  17.956  10.540  1.00 16.15      1ECN 477
+ATOM    371  CA  LYS    50      15.290  17.035  10.247  1.00 14.25      1ECN 478
+ATOM    372  C   LYS    50      15.594  15.618   9.782  1.00 25.63      1ECN 479
+ATOM    373  O   LYS    50      14.988  14.648  10.263  1.00 18.51      1ECN 480
+ATOM    374  CB  LYS    50      14.373  17.586   9.161  1.00 15.13      1ECN 481
+ATOM    375  CG  LYS    50      13.087  16.807   8.957  1.00 20.26      1ECN 482
+ATOM    376  CD  LYS    50      12.388  17.224   7.667  1.00 37.64      1ECN 483
+ATOM    377  CE  LYS    50      10.991  16.624   7.565  1.00 43.15      1ECN 484
+ATOM    378  NZ  LYS    50      10.335  17.023   6.302  0.00  0.00   2  1ECN 485
+ATOM    379  N   GLY    51      16.526  15.514   8.853  1.00 21.04      1ECN 486
+ATOM    380  CA  GLY    51      17.171  14.228   8.568  1.00 20.67      1ECN 487
+ATOM    381  C   GLY    51      18.352  13.509   9.224  1.00 13.51      1ECN 488
+ATOM    382  O   GLY    51      18.946  12.596   8.633  1.00 23.85      1ECN 489
+ATOM    383  N   THR    52      18.674  13.929  10.435  1.00 16.69      1ECN 490
+ATOM    384  CA  THR    52      19.884  13.440  11.111  1.00 12.31      1ECN 491
+ATOM    385  C   THR    52      19.435  12.424  12.159  1.00 14.87      1ECN 492
+ATOM    386  O   THR    52      18.252  12.372  12.529  1.00 12.50      1ECN 493
+ATOM    387  CB  THR    52      20.606  14.665  11.704  1.00 14.96      1ECN 494
+ATOM    388  OG1 THR    52      19.688  15.175  12.666  1.00 12.30      1ECN 495
+ATOM    389  CG2 THR    52      20.911  15.708  10.664  1.00 15.70      1ECN 496
+ATOM    390  N   ALA    53      20.386  11.629  12.621  1.00 12.75      1ECN 497
+ATOM    391  CA  ALA    53      20.104  10.660  13.685  1.00 11.74      1ECN 498
+ATOM    392  C   ALA    53      19.653  11.086  15.081  1.00 11.25      1ECN 499
+ATOM    393  O   ALA    53      18.827  10.411  15.715  1.00 12.71      1ECN 500
+ATOM    394  CB  ALA    53      21.444   9.930  13.874  1.00 11.01      1ECN 501
+ATOM    395  N   PRO    54      20.201  12.201  15.541  1.00 13.47      1ECN 502
+ATOM    396  CA  PRO    54      19.765  12.787  16.816  1.00 11.83      1ECN 503
+ATOM    397  C   PRO    54      18.321  13.282  16.852  1.00  9.36      1ECN 504
+ATOM    398  O   PRO    54      17.636  13.176  17.838  1.00 10.50      1ECN 505
+ATOM    399  CB  PRO    54      20.879  13.699  17.201  1.00 19.96      1ECN 506
+ATOM    400  CG  PRO    54      22.050  13.455  16.274  1.00 17.84      1ECN 507
+ATOM    401  CD  PRO    54      21.426  12.801  15.045  1.00 17.11      1ECN 508
+ATOM    402  N   PHE    55      17.881  13.818  15.730  1.00 13.10      1ECN 509
+ATOM    403  CA  PHE    55      16.475  14.206  15.583  1.00  8.65      1ECN 510
+ATOM    404  C   PHE    55      15.528  13.014  15.661  1.00  8.67      1ECN 511
+ATOM    405  O   PHE    55      14.520  13.048  16.383  1.00  9.46      1ECN 512
+ATOM    406  CB  PHE    55      16.286  14.924  14.262  1.00 10.41      1ECN 513
+ATOM    407  CG  PHE    55      15.054  15.762  14.089  1.00 10.24      1ECN 514
+ATOM    408  CD1 PHE    55      15.071  17.042  14.511  1.00 14.59      1ECN 515
+ATOM    409  CD2 PHE    55      13.936  15.291  13.444  1.00 10.89      1ECN 516
+ATOM    410  CE1 PHE    55      13.941  17.896  14.362  1.00 12.95      1ECN 517
+ATOM    411  CE2 PHE    55      12.819  16.171  13.260  1.00  9.49      1ECN 518
+ATOM    412  CZ  PHE    55      12.830  17.424  13.743  1.00  9.21      1ECN 519
+ATOM    413  N   GLU    56      15.864  11.978  14.915  1.00 11.19      1ECN 520
+ATOM    414  CA  GLU    56      15.082  10.739  14.959  1.00 14.87      1ECN 521
+ATOM    415  C   GLU    56      15.035  10.041  16.317  1.00 13.31      1ECN 522
+ATOM    416  O   GLU    56      13.988   9.509  16.721  1.00  9.89      1ECN 523
+ATOM    417  CB  GLU    56      15.629   9.673  13.967  1.00 12.37      1ECN 524
+ATOM    418  CG  GLU    56      14.904   8.312  13.940  1.00 15.49      1ECN 525
+ATOM    419  CD  GLU    56      14.792   7.646  12.516  1.00 43.95      1ECN 526
+ATOM    420  OE1 GLU    56      13.866   6.952  12.215  1.00 45.09      1ECN 527
+ATOM    421  OE2 GLU    56      15.776   7.985  11.861  1.00 45.09      1ECN 528
+ATOM    422  N   THR    57      16.167  10.053  16.999  1.00 12.28      1ECN 529
+ATOM    423  CA  THR    57      16.241   9.468  18.310  1.00  9.95      1ECN 530
+ATOM    424  C   THR    57      15.285  10.181  19.265  1.00 11.61      1ECN 531
+ATOM    425  O   THR    57      14.497   9.537  19.972  1.00 10.73      1ECN 532
+ATOM    426  CB  THR    57      17.701   9.572  18.773  1.00 16.25      1ECN 533
+ATOM    427  OG1 THR    57      18.386   8.626  17.962  1.00 18.58      1ECN 534
+ATOM    428  CG2 THR    57      17.863   9.236  20.227  1.00 17.91      1ECN 535
+ATOM    429  N   HIS    58      15.367  11.499  19.269  1.00 10.80      1ECN 536
+ATOM    430  CA  HIS    58      14.445  12.309  20.084  1.00 10.17      1ECN 537
+ATOM    431  C   HIS    58      12.980  12.155  19.682  1.00  7.99      1ECN 538
+ATOM    432  O   HIS    58      12.088  12.071  20.539  1.00 10.14      1ECN 539
+ATOM    433  CB  HIS    58      14.848  13.777  19.970  1.00  8.79      1ECN 540
+ATOM    434  CG AHIS    58      15.933  14.076  20.971   .50 11.71      1ECN 541
+ATOM    435  CG BHIS    58      13.815  14.265  20.949   .50  6.92      1ECN 542
+ATOM    436  ND1AHIS    58      17.269  14.134  20.615   .50 26.84      1ECN 543
+ATOM    437  ND1BHIS    58      12.771  15.090  20.567   .50 12.94      1ECN 544
+ATOM    438  CD2AHIS    58      15.886  14.303  22.309   .50 13.19      1ECN 545
+ATOM    439  CD2BHIS    58      13.678  14.074  22.285   .50 43.95      1ECN 546
+ATOM    440  CE1AHIS    58      17.981  14.382  21.697   .50 29.45      1ECN 547
+ATOM    441  CE1BHIS    58      12.051  15.376  21.635   .50  7.98      1ECN 548
+ATOM    442  NE2AHIS    58      17.165  14.511  22.718   .50 19.09      1ECN 549
+ATOM    443  NE2BHIS    58      12.567  14.754  22.670   .50 14.33      1ECN 550
+ATOM    444  N   ALA    59      12.755  12.124  18.391  1.00  9.77      1ECN 551
+ATOM    445  CA  ALA    59      11.386  12.097  17.868  1.00  9.29      1ECN 552
+ATOM    446  C   ALA    59      10.757  10.790  18.347  1.00 12.27      1ECN 553
+ATOM    447  O   ALA    59       9.567  10.744  18.695  1.00  8.49      1ECN 554
+ATOM    448  CB  ALA    59      11.388  12.039  16.367  1.00  9.22      1ECN 555
+ATOM    449  N   ASN    60      11.563   9.746  18.355  1.00 10.19      1ECN 556
+ATOM    450  CA  ASN    60      11.071   8.417  18.743  1.00  9.61      1ECN 557
+ATOM    451  C   ASN    60      10.698   8.357  20.223  1.00  8.47      1ECN 558
+ATOM    452  O   ASN    60       9.740   7.668  20.608  1.00  8.69      1ECN 559
+ATOM    453  CB  ASN    60      12.142   7.351  18.430  1.00 10.83      1ECN 560
+ATOM    454  CG  ASN    60      12.000   6.825  17.060  1.00 11.33      1ECN 561
+ATOM    455  AD1 ASN    60      12.900   6.764  16.245  1.00 27.85      1ECN 562
+ATOM    456  AD2 ASN    60      10.746   6.316  16.738  1.00 20.14      1ECN 563
+ATOM    457  N   ARG    61      11.460   9.079  21.034  1.00 10.22      1ECN 564
+ATOM    458  CA  ARG    61      11.163   9.166  22.471  1.00 10.14      1ECN 565
+ATOM    459  C   ARG    61       9.855   9.898  22.769  1.00  9.38      1ECN 566
+ATOM    460  O   ARG    61       9.036   9.436  23.578  1.00  9.57      1ECN 567
+ATOM    461  CB  ARG    61      12.285   9.897  23.233  1.00 11.47      1ECN 568
+ATOM    462  CG  ARG    61      13.593   9.097  23.356  1.00 13.38      1ECN 569
+ATOM    463  CD  ARG    61      14.581   9.856  24.212  1.00 13.12      1ECN 570
+ATOM    464  NE  ARG    61      15.814   9.079  24.403  1.00 22.11      1ECN 571
+ATOM    465  CZ  ARG    61      17.041   9.618  24.327  1.00 20.29      1ECN 572
+ATOM    466  NH1 ARG    61      17.247  10.903  24.639  1.00 29.55      1ECN 573
+ATOM    467  NH2 ARG    61      18.050   8.857  23.942  1.00 22.55      1ECN 574
+ATOM    468  N   ILE    62       9.681  11.027  22.115  1.00 11.84      1ECN 575
+ATOM    469  CA  ILE    62       8.591  11.951  22.478  1.00 11.79      1ECN 576
+ATOM    470  C   ILE    62       7.284  11.366  21.947  1.00  8.62      1ECN 577
+ATOM    471  O   ILE    62       6.279  11.284  22.670  1.00  9.90      1ECN 578
+ATOM    472  CB  ILE    62       8.807  13.350  21.862  1.00 12.92      1ECN 579
+ATOM    473  CG1AILE    62      10.016  14.096  22.477   .50 13.98      1ECN 580
+ATOM    474  CG1BILE    62       7.690  14.347  22.258   .50 12.94      1ECN 581
+ATOM    475  CG2AILE    62       7.432  13.991  22.069   .50 12.35      1ECN 582
+ATOM    476  CG2BILE    62       8.930  13.021  20.371   .50 43.95      1ECN 583
+ATOM    477  CD1AILE    62      10.720  15.055  21.491   .50 11.24      1ECN 584
+ATOM    478  CD1BILE    62       6.456  14.298  21.327   .50 10.89      1ECN 585
+ATOM    479  N   VAL    63       7.318  10.967  20.695  1.00 11.66      1ECN 586
+ATOM    480  CA  VAL    63       6.128  10.389  20.060  1.00  7.37      1ECN 587
+ATOM    481  C   VAL    63       5.824   8.971  20.543  1.00 12.25      1ECN 588
+ATOM    482  O   VAL    63       4.661   8.541  20.559  1.00 10.41      1ECN 589
+ATOM    483  CB  VAL    63       6.307  10.377  18.549  1.00 12.10      1ECN 590
+ATOM    484  CG1 VAL    63       5.255   9.539  17.771  1.00 11.55      1ECN 591
+ATOM    485  CG2 VAL    63       6.463  11.760  17.985  1.00  8.78      1ECN 592
+ATOM    486  N   GLY    64       6.874   8.268  20.928  1.00 11.30      1ECN 593
+ATOM    487  CA  GLY    64       6.708   7.021  21.687  1.00 11.06      1ECN 594
+ATOM    488  C   GLY    64       5.913   7.105  22.993  1.00  8.00      1ECN 595
+ATOM    489  O   GLY    64       5.106   6.214  23.303  1.00  8.10      1ECN 596
+ATOM    490  N   PHE    65       6.154   8.173  23.739  1.00 10.35      1ECN 597
+ATOM    491  CA  PHE    65       5.430   8.395  24.998  1.00  9.36      1ECN 598
+ATOM    492  C   PHE    65       4.002   8.872  24.746  1.00  8.98      1ECN 599
+ATOM    493  O   PHE    65       3.068   8.503  25.471  1.00  8.80      1ECN 600
+ATOM    494  CB  PHE    65       6.181   9.406  25.837  1.00  9.48      1ECN 601
+ATOM    495  CG  PHE    65       5.745   9.456  27.269  1.00  9.19      1ECN 602
+ATOM    496  CD1 PHE    65       5.038  10.522  27.703  1.00 11.34      1ECN 603
+ATOM    497  CD2 PHE    65       5.967   8.415  28.132  1.00 11.31      1ECN 604
+ATOM    498  CE1 PHE    65       4.583  10.622  29.049  1.00 13.63      1ECN 605
+ATOM    499  CE2 PHE    65       5.466   8.506  29.476  1.00 15.20      1ECN 606
+ATOM    500  CZ  PHE    65       4.824   9.604  29.910  1.00 11.42      1ECN 607
+ATOM    501  N   PHE    66       3.855   9.687  23.721  1.00 12.17      1ECN 608
+ATOM    502  CA  PHE    66       2.526  10.155  23.317  1.00 12.97      1ECN 609
+ATOM    503  C   PHE    66       1.713   8.950  22.846  1.00  8.68      1ECN 610
+ATOM    504  O   PHE    66        .514   8.836  23.137  1.00 12.18      1ECN 611
+ATOM    505  CB  PHE    66       2.669  11.197  22.227  1.00 12.14      1ECN 612
+ATOM    506  CG  PHE    66       1.410  11.893  21.791  1.00  9.63      1ECN 613
+ATOM    507  CD1 PHE    66        .805  12.753  22.640  1.00 20.70      1ECN 614
+ATOM    508  CD2 PHE    66        .893  11.742  20.525  1.00 18.84      1ECN 615
+ATOM    509  CE1 PHE    66       -.381  13.457  22.284  1.00 14.81      1ECN 616
+ATOM    510  CE2 PHE    66       -.280  12.489  20.159  1.00 16.49      1ECN 617
+ATOM    511  CZ  PHE    66       -.902  13.293  21.042  1.00 12.96      1ECN 618
+ATOM    512  N   SER    67       2.379   8.072  22.127  1.00 11.59      1ECN 619
+ATOM    513  CA  SER    67       1.756   6.807  21.722  1.00  8.70      1ECN 620
+ATOM    514  C   SER    67       1.287   5.901  22.861  1.00 12.86      1ECN 621
+ATOM    515  O   SER    67        .237   5.244  22.758  1.00 10.15      1ECN 622
+ATOM    516  CB  SER    67       2.712   5.989  20.884  1.00 13.26      1ECN 623
+ATOM    517  OG  SER    67       2.072   4.855  20.298  1.00 15.72      1ECN 624
+ATOM    518  N   LYS    68       2.070   5.876  23.930  1.00 10.23      1ECN 625
+ATOM    519  CA  LYS    68       1.641   5.208  25.168  1.00  9.30      1ECN 626
+ATOM    520  C   LYS    68        .312   5.787  25.650  1.00 12.71      1ECN 627
+ATOM    521  O   LYS    68       -.570   5.054  26.121  1.00  9.94      1ECN 628
+ATOM    522  CB  LYS    68       2.679   5.359  26.270  1.00  9.72      1ECN 629
+ATOM    523  CG  LYS    68       2.318   4.667  27.570  1.00  9.04      1ECN 630
+ATOM    524  CD  LYS    68       3.569   4.327  28.368  1.00 12.06      1ECN 631
+ATOM    525  CE  LYS    68       3.301   4.372  29.861  1.00 17.16      1ECN 632
+ATOM    526  NZ  LYS    68       1.958   3.834  30.173  1.00 13.71      1ECN 633
+ATOM    527  N   ILE    69        .189   7.096  25.526  1.00 12.85      1ECN 634
+ATOM    528  CA  ILE    69       -.885   7.820  26.219  1.00 11.55      1ECN 635
+ATOM    529  C   ILE    69      -2.142   7.533  25.401  1.00 11.49      1ECN 636
+ATOM    530  O   ILE    69      -3.220   7.279  25.957  1.00 10.80      1ECN 637
+ATOM    531  CB  ILE    69       -.607   9.342  26.270  1.00 11.49      1ECN 638
+ATOM    532  CG1 ILE    69        .341   9.737  27.428  1.00 14.12      1ECN 639
+ATOM    533  CG2 ILE    69      -2.025   9.914  26.322  1.00 18.79      1ECN 640
+ATOM    534  CD1 ILE    69        .779  11.215  27.392  1.00 23.70      1ECN 641
+ATOM    535  N   ILE    70      -1.983   7.580  24.094  1.00 10.58      1ECN 642
+ATOM    536  CA  ILE    70      -3.118   7.357  23.196  1.00  8.12      1ECN 643
+ATOM    537  C   ILE    70      -3.610   5.926  23.328  1.00 14.22      1ECN 644
+ATOM    538  O   ILE    70      -4.823   5.671  23.288  1.00 12.23      1ECN 645
+ATOM    539  CB  ILE    70      -2.730   7.590  21.711  1.00 10.12      1ECN 646
+ATOM    540  CG1 ILE    70      -2.467   9.084  21.384  1.00 11.67      1ECN 647
+ATOM    541  CG2 ILE    70      -3.898   6.933  20.970  1.00 12.21      1ECN 648
+ATOM    542  CD1 ILE    70      -3.608  10.026  21.826  1.00 20.28      1ECN 649
+ATOM    543  N   GLY    71      -2.682   5.007  23.486  1.00 14.65      1ECN 650
+ATOM    544  CA  GLY    71      -3.023   3.596  23.660  1.00 10.53      1ECN 651
+ATOM    545  C   GLY    71      -3.781   3.207  24.919  1.00 13.59      1ECN 652
+ATOM    546  O   GLY    71      -4.549   2.235  24.911  1.00 19.74      1ECN 653
+ATOM    547  N   GLU    72      -3.581   3.957  25.983  1.00 11.42      1ECN 654
+ATOM    548  CA  GLU    72      -4.327   3.760  27.224  1.00 10.47      1ECN 655
+ATOM    549  C   GLU    72      -5.495   4.637  27.674  1.00 11.18      1ECN 656
+ATOM    550  O   GLU    72      -5.919   4.588  28.836  1.00 13.13      1ECN 657
+ATOM    551  CB  GLU    72      -3.433   3.833  28.480  1.00 12.16      1ECN 658
+ATOM    552  CG  GLU    72      -2.939   5.233  28.883  1.00 11.56      1ECN 659
+ATOM    553  CD  GLU    72      -1.495   5.267  29.479  1.00 18.77      1ECN 660
+ATOM    554  OE1 GLU    72       -.916   4.270  29.778  1.00 16.31      1ECN 661
+ATOM    555  OE2 GLU    72      -1.147   6.442  29.542  1.00 16.90      1ECN 662
+ATOM    556  N   LEU    73      -5.996   5.427  26.749  1.00 13.57      1ECN 663
+ATOM    557  CA  LEU    73      -7.147   6.296  27.042  1.00 11.51      1ECN 664
+ATOM    558  C   LEU    73      -8.270   5.390  27.550  1.00 11.31      1ECN 665
+ATOM    559  O   LEU    73      -8.478   4.279  27.034  1.00 10.81      1ECN 666
+ATOM    560  CB  LEU    73      -7.563   7.064  25.767  1.00 11.89      1ECN 667
+ATOM    561  CG  LEU    73      -6.556   8.013  25.147  1.00 10.08      1ECN 668
+ATOM    562  CD1 LEU    73      -6.965   8.316  23.732  1.00 10.10      1ECN 669
+ATOM    563  CD2 LEU    73      -6.475   9.280  25.951  1.00 11.13      1ECN 670
+ATOM    564  N   PRO    74      -9.014   5.900  28.490  1.00 14.66   1  1ECN 671
+ATOM    565  CA  PRO    74      -8.624   7.202  29.127  1.00 12.73   1  1ECN 672
+ATOM    566  C   PRO    74      -7.837   7.336  30.433  1.00 11.19   1  1ECN 673
+ATOM    567  O   PRO    74      -7.941   8.350  31.134  1.00 15.65   1  1ECN 674
+ATOM    568  CB  PRO    74      -9.943   7.750  29.577  1.00 19.19   1  1ECN 675
+ATOM    569  CG  PRO    74     -10.807   6.558  29.953  1.00 18.25   1  1ECN 676
+ATOM    570  CD  PRO    74     -10.152   5.385  29.230  1.00 13.28   1  1ECN 677
+ATOM    571  N   ASN    75      -7.064   6.311  30.741  1.00 14.22      1ECN 678
+ATOM    572  CA  ASN    75      -6.489   6.168  32.088  1.00 13.64      1ECN 679
+ATOM    573  C   ASN    75      -5.103   6.734  31.938  1.00 11.67      1ECN 680
+ATOM    574  O   ASN    75      -4.109   5.993  31.930  1.00 14.14      1ECN 681
+ATOM    575  CB  ASN    75      -6.524   4.684  32.512  1.00 21.73      1ECN 682
+ATOM    576  CG  ASN    75      -5.513   4.404  33.587  1.00 16.80      1ECN 683
+ATOM    577  AD1 ASN    75      -4.662   3.536  33.528  1.00 23.22      1ECN 684
+ATOM    578  AD2 ASN    75      -5.546   5.260  34.675  1.00 19.81      1ECN 685
+ATOM    579  N   ILE    76      -5.035   8.049  31.816  1.00 12.31      1ECN 686
+ATOM    580  CA  ILE    76      -3.770   8.713  31.519  1.00 11.10      1ECN 687
+ATOM    581  C   ILE    76      -3.071   9.522  32.615  1.00  8.79      1ECN 688
+ATOM    582  O   ILE    76      -1.988  10.079  32.394  1.00  9.91      1ECN 689
+ATOM    583  CB  ILE    76      -3.925   9.741  30.372  1.00 10.78      1ECN 690
+ATOM    584  CG1 ILE    76      -4.798  10.960  30.765  1.00 10.57      1ECN 691
+ATOM    585  CG2 ILE    76      -4.459   8.864  29.237  1.00 10.15      1ECN 692
+ATOM    586  CD1 ILE    76      -4.982  11.989  29.625  1.00 13.03      1ECN 693
+ATOM    587  N   GLU    77      -3.698   9.576  33.778  1.00 10.29      1ECN 694
+ATOM    588  CA  GLU    77      -3.235  10.469  34.851  1.00 10.69      1ECN 695
+ATOM    589  C   GLU    77      -1.795  10.226  35.312  1.00  8.46      1ECN 696
+ATOM    590  O   GLU    77      -1.027  11.171  35.521  1.00  9.39      1ECN 697
+ATOM    591  CB  GLU    77      -4.115  10.344  36.124  1.00 15.41      1ECN 698
+ATOM    592  CG  GLU    77      -3.798  11.304  37.283  1.00 17.81      1ECN 699
+ATOM    593  CD  GLU    77      -5.055  11.987  37.938  1.00 36.89      1ECN 700
+ATOM    594  OE1 GLU    77      -5.983  11.350  38.330  0.00  0.00   2  1ECN 701
+ATOM    595  OE2 GLU    77      -4.863  13.200  37.948  1.00 26.35      1ECN 702
+ATOM    596  N   ALA    78      -1.450   8.963  35.464  1.00 11.04      1ECN 703
+ATOM    597  CA  ALA    78       -.144   8.593  36.029  1.00 11.58      1ECN 704
+ATOM    598  C   ALA    78        .954   9.033  35.058  1.00  7.99      1ECN 705
+ATOM    599  O   ALA    78       2.014   9.515  35.473  1.00  8.72      1ECN 706
+ATOM    600  CB  ALA    78       -.033   7.066  36.136  1.00 12.35      1ECN 707
+ATOM    601  N   ASP    79        .684   8.859  33.784  1.00 10.30      1ECN 708
+ATOM    602  CA  ASP    79       1.628   9.294  32.744  1.00  9.83      1ECN 709
+ATOM    603  C   ASP    79       1.769  10.805  32.576  1.00  7.90      1ECN 710
+ATOM    604  O   ASP    79       2.853  11.311  32.260  1.00  8.74      1ECN 711
+ATOM    605  CB  ASP    79       1.206   8.701  31.380  1.00  9.14      1ECN 712
+ATOM    606  CG  ASP    79       1.617   7.260  31.255  1.00 10.14      1ECN 713
+ATOM    607  OD1 ASP    79       2.442   6.712  31.958  1.00 12.49      1ECN 714
+ATOM    608  OD2 ASP    79       1.022   6.617  30.426  1.00 11.85      1ECN 715
+ATOM    609  N   VAL    80        .671  11.506  32.786  1.00  9.85      1ECN 716
+ATOM    610  CA  VAL    80        .696  12.975  32.780  1.00  8.62      1ECN 717
+ATOM    611  C   VAL    80       1.488  13.481  33.990  1.00  8.64      1ECN 718
+ATOM    612  O   VAL    80       2.214  14.477  33.901  1.00  8.61      1ECN 719
+ATOM    613  CB  VAL    80       -.728  13.513  32.794  1.00 10.76      1ECN 720
+ATOM    614  CG1 VAL    80       -.853  15.019  33.115  1.00 11.10      1ECN 721
+ATOM    615  CG2 VAL    80      -1.495  13.127  31.553  1.00 11.25      1ECN 722
+ATOM    616  N   ASN    81       1.335  12.787  35.104  1.00  9.23      1ECN 723
+ATOM    617  CA  ASN    81       2.160  13.063  36.292  1.00  8.06      1ECN 724
+ATOM    618  C   ASN    81       3.659  12.922  36.021  1.00  7.96      1ECN 725
+ATOM    619  O   ASN    81       4.457  13.787  36.399  1.00  7.98      1ECN 726
+ATOM    620  CB  ASN    81       1.755  12.109  37.435  1.00 13.01      1ECN 727
+ATOM    621  CG  ASN    81        .548  12.621  38.174  1.00 10.73      1ECN 728
+ATOM    622  AD1 ASN    81        .023  13.704  37.986  1.00 10.29      1ECN 729
+ATOM    623  AD2 ASN    81       -.021  11.733  39.080  1.00 11.79      1ECN 730
+ATOM    624  N   THR    82       4.018  11.835  35.373  1.00  9.95      1ECN 731
+ATOM    625  CA  THR    82       5.406  11.645  34.920  1.00 11.86      1ECN 732
+ATOM    626  C   THR    82       5.925  12.718  33.964  1.00 10.68      1ECN 733
+ATOM    627  O   THR    82       7.055  13.203  34.103  1.00  9.22      1ECN 734
+ATOM    628  CB  THR    82       5.477  10.263  34.248  1.00  8.73      1ECN 735
+ATOM    629  OG1 THR    82       5.232   9.349  35.309  1.00  9.97      1ECN 736
+ATOM    630  CG2 THR    82       6.815   9.995  33.619  1.00 14.07      1ECN 737
+ATOM    631  N   PHE    83       5.097  13.073  33.005  1.00  9.97      1ECN 738
+ATOM    632  CA  PHE    83       5.416  14.184  32.102  1.00  9.38      1ECN 739
+ATOM    633  C   PHE    83       5.666  15.514  32.814  1.00 11.22      1ECN 740
+ATOM    634  O   PHE    83       6.609  16.242  32.482  1.00  9.66      1ECN 741
+ATOM    635  CB  PHE    83       4.285  14.358  31.105  1.00  9.25      1ECN 742
+ATOM    636  CG  PHE    83       4.376  15.664  30.375  1.00  9.14      1ECN 743
+ATOM    637  CD1 PHE    83       5.189  15.767  29.296  1.00  9.03      1ECN 744
+ATOM    638  CD2 PHE    83       3.595  16.736  30.713  1.00 10.07      1ECN 745
+ATOM    639  CE1 PHE    83       5.310  16.974  28.555  1.00  9.71      1ECN 746
+ATOM    640  CE2 PHE    83       3.690  17.938  29.933  1.00 13.04      1ECN 747
+ATOM    641  CZ  PHE    83       4.557  18.044  28.908  1.00 10.59      1ECN 748
+ATOM    642  N   VAL    84       4.818  15.813  33.782  1.00  9.77      1ECN 749
+ATOM    643  CA  VAL    84       4.918  17.083  34.516  1.00 11.41      1ECN 750
+ATOM    644  C   VAL    84       6.207  17.068  35.344  1.00  8.92      1ECN 751
+ATOM    645  O   VAL    84       6.916  18.078  35.432  1.00  9.22      1ECN 752
+ATOM    646  CB  VAL    84       3.691  17.265  35.397  1.00  8.11      1ECN 753
+ATOM    647  CG1 VAL    84       3.848  18.305  36.530  1.00  9.85      1ECN 754
+ATOM    648  CG2 VAL    84       2.440  17.486  34.587  1.00  9.06      1ECN 755
+ATOM    649  N   ALA    85       6.491  15.926  35.941  1.00 11.14      1ECN 756
+ATOM    650  CA  ALA    85       7.735  15.757  36.710  1.00 13.30      1ECN 757
+ATOM    651  C   ALA    85       9.043  16.005  35.957  1.00 10.54      1ECN 758
+ATOM    652  O   ALA    85      10.001  16.559  36.508  1.00 12.05      1ECN 759
+ATOM    653  CB  ALA    85       7.771  14.289  37.159  1.00 14.59      1ECN 760
+ATOM    654  N   SER    86       9.064  15.592  34.709  1.00 11.61      1ECN 761
+ATOM    655  CA  SER    86      10.253  15.787  33.869  1.00 13.15      1ECN 762
+ATOM    656  C   SER    86      10.295  17.129  33.140  1.00 16.56      1ECN 763
+ATOM    657  O   SER    86      11.372  17.641  32.813  1.00 16.08      1ECN 764
+ATOM    658  CB  SER    86      10.338  14.699  32.818  1.00 12.63      1ECN 765
+ATOM    659  OG  SER    86       9.219  14.715  31.938  1.00 13.69      1ECN 766
+ATOM    660  N   HIS    87       9.123  17.680  32.898  1.00 13.55      1ECN 767
+ATOM    661  CA  HIS    87       9.018  18.946  32.163  1.00 12.04      1ECN 768
+ATOM    662  C   HIS    87       8.796  20.275  32.890  1.00 13.34      1ECN 769
+ATOM    663  O   HIS    87       9.182  21.340  32.394  1.00 14.30      1ECN 770
+ATOM    664  CB  HIS    87       7.870  18.840  31.157  1.00 13.20      1ECN 771
+ATOM    665  CG  HIS    87       8.308  18.047  29.947  1.00 14.80      1ECN 772
+ATOM    666  ND1 HIS    87       8.561  16.685  30.004  1.00 12.80      1ECN 773
+ATOM    667  CD2 HIS    87       8.564  18.421  28.666  1.00 10.94      1ECN 774
+ATOM    668  CE1 HIS    87       8.952  16.277  28.813  1.00 13.37      1ECN 775
+ATOM    669  NE2 HIS    87       8.936  17.301  27.992  1.00 12.64      1ECN 776
+ATOM    670  N   LYS    88       8.174  20.192  34.054  1.00 15.75      1ECN 777
+ATOM    671  CA  LYS    88       7.910  21.392  34.861  1.00 26.28      1ECN 778
+ATOM    672  C   LYS    88       9.204  22.105  35.261  1.00 25.81      1ECN 779
+ATOM    673  O   LYS    88       9.268  23.341  35.276  1.00 19.48      1ECN 780
+ATOM    674  CB  LYS    88       7.143  21.047  36.132  1.00 24.13      1ECN 781
+ATOM    675  CG  LYS    88       6.492  22.230  36.811  1.00 23.25      1ECN 782
+ATOM    676  CD  LYS    88       5.806  21.804  38.106  1.00 37.65      1ECN 783
+ATOM    677  CE  LYS    88       5.961  22.858  39.189  0.00  0.00   2  1ECN 784
+ATOM    678  NZ  LYS    88       5.376  22.392  40.466  0.00  0.00   2  1ECN 785
+ATOM    679  N   PRO    89      10.219  21.319  35.579  1.00 15.25      1ECN 786
+ATOM    680  CA  PRO    89      11.555  21.872  35.854  1.00 18.44      1ECN 787
+ATOM    681  C   PRO    89      12.378  22.415  34.687  1.00 17.05      1ECN 788
+ATOM    682  O   PRO    89      13.369  23.126  34.882  1.00 24.74      1ECN 789
+ATOM    683  CB  PRO    89      12.341  20.692  36.329  1.00 30.54      1ECN 790
+ATOM    684  CG  PRO    89      11.422  19.515  36.609  1.00 36.00      1ECN 791
+ATOM    685  CD  PRO    89      10.088  19.926  35.994  1.00 17.66      1ECN 792
+ATOM    686  N   ARG    90      11.956  22.072  33.490  1.00 14.42      1ECN 793
+ATOM    687  CA  ARG    90      12.498  22.712  32.287  1.00 13.28      1ECN 794
+ATOM    688  C   ARG    90      11.816  24.007  31.844  1.00  8.56      1ECN 795
+ATOM    689  O   ARG    90      12.152  24.573  30.794  1.00 12.38      1ECN 796
+ATOM    690  CB  ARG    90      12.426  21.767  31.065  1.00 13.82      1ECN 797
+ATOM    691  CG  ARG    90      12.916  20.334  31.339  1.00 14.69      1ECN 798
+ATOM    692  CD  ARG    90      12.792  19.488  30.081  1.00  8.75      1ECN 799
+ATOM    693  NE  ARG    90      13.725  18.353  30.110  1.00 13.94      1ECN 800
+ATOM    694  CZ  ARG    90      13.334  17.065  29.961  1.00 15.93      1ECN 801
+ATOM    695  NH1 ARG    90      12.079  16.761  29.591  1.00 13.32      1ECN 802
+ATOM    696  NH2 ARG    90      14.212  16.106  30.178  1.00 15.86      1ECN 803
+ATOM    697  N   GLY    91      10.872  24.456  32.650  1.00 14.76      1ECN 804
+ATOM    698  CA  GLY    91      10.155  25.705  32.355  1.00 12.05      1ECN 805
+ATOM    699  C   GLY    91       9.258  25.810  31.126  1.00 11.86      1ECN 806
+ATOM    700  O   GLY    91       9.072  26.899  30.563  1.00 12.76      1ECN 807
+ATOM    701  N   VAL    92       8.715  24.681  30.731  1.00 12.01      1ECN 808
+ATOM    702  CA  VAL    92       7.751  24.668  29.631  1.00  9.31      1ECN 809
+ATOM    703  C   VAL    92       6.560  25.539  30.026  1.00 10.48      1ECN 810
+ATOM    704  O   VAL    92       6.030  25.424  31.139  1.00 11.68      1ECN 811
+ATOM    705  CB  VAL    92       7.333  23.223  29.334  1.00 12.75      1ECN 812
+ATOM    706  CG1 VAL    92       6.201  23.070  28.281  1.00 12.41      1ECN 813
+ATOM    707  CG2 VAL    92       8.509  22.334  29.034  1.00 14.26      1ECN 814
+ATOM    708  N   THR    93       6.159  26.400  29.113  1.00 13.10      1ECN 815
+ATOM    709  CA  THR    93       5.004  27.276  29.353  1.00 11.90      1ECN 816
+ATOM    710  C   THR    93       3.712  26.814  28.690  1.00 12.54      1ECN 817
+ATOM    711  O   THR    93       3.725  25.930  27.819  1.00 10.19      1ECN 818
+ATOM    712  CB  THR    93       5.399  28.656  28.853  1.00 11.70      1ECN 819
+ATOM    713  OG1 THR    93       5.382  28.543  27.434  1.00  9.88      1ECN 820
+ATOM    714  CG2 THR    93       6.749  29.099  29.328  1.00 13.64      1ECN 821
+ATOM    715  N   HIS    94       2.632  27.391  29.108  1.00 12.48      1ECN 822
+ATOM    716  CA  HIS    94       1.318  27.061  28.529  1.00 13.79      1ECN 823
+ATOM    717  C   HIS    94       1.288  27.405  27.042  1.00 10.80      1ECN 824
+ATOM    718  O   HIS    94        .683  26.682  26.235  1.00 12.57      1ECN 825
+ATOM    719  CB  HIS    94        .238  27.821  29.283  1.00 14.60      1ECN 826
+ATOM    720  CG  HIS    94       -.215  27.170  30.563  1.00 18.28      1ECN 827
+ATOM    721  ND1 HIS    94      -1.437  27.457  31.147  1.00 27.19      1ECN 828
+ATOM    722  CD2 HIS    94        .394  26.276  31.382  1.00 15.23      1ECN 829
+ATOM    723  CE1 HIS    94      -1.543  26.769  32.265  1.00 19.58      1ECN 830
+ATOM    724  NE2 HIS    94       -.462  26.035  32.407  1.00 14.53      1ECN 831
+ATOM    725  N   ASP    95       1.940  28.510  26.704  1.00 12.02      1ECN 832
+ATOM    726  CA  ASP    95       2.054  28.912  25.298  1.00 12.68      1ECN 833
+ATOM    727  C   ASP    95       2.732  27.854  24.432  1.00 10.53      1ECN 834
+ATOM    728  O   ASP    95       2.274  27.557  23.316  1.00 11.50      1ECN 835
+ATOM    729  CB  ASP    95       2.844  30.230  25.190  1.00 21.63      1ECN 836
+ATOM    730  CG  ASP    95       2.077  31.372  25.797  1.00 22.92      1ECN 837
+ATOM    731  OD1 ASP    95       2.516  32.131  26.638  0.00  0.00   2  1ECN 838
+ATOM    732  OD2 ASP    95        .804  31.577  25.284  1.00 19.48      1ECN 839
+ATOM    733  N   GLN    96       3.801  27.320  24.956  1.00 12.67      1ECN 840
+ATOM    734  CA  GLN    96       4.548  26.310  24.221  1.00 11.10      1ECN 841
+ATOM    735  C   GLN    96       3.716  25.038  24.084  1.00 10.59      1ECN 842
+ATOM    736  O   GLN    96       3.726  24.382  23.032  1.00 10.21      1ECN 843
+ATOM    737  CB  GLN    96       5.834  26.051  24.950  1.00 10.34      1ECN 844
+ATOM    738  CG  GLN    96       6.866  27.052  24.673  1.00 12.27      1ECN 845
+ATOM    739  CD  GLN    96       8.130  26.930  25.528  1.00 13.82      1ECN 846
+ATOM    740  AE1 GLN    96       9.216  27.371  25.053  1.00 17.11      1ECN 847
+ATOM    741  AE2 GLN    96       8.038  26.331  26.650  1.00 12.11      1ECN 848
+ATOM    742  N   LEU    97       3.010  24.708  25.151  1.00 12.37      1ECN 849
+ATOM    743  CA  LEU    97       2.158  23.514  25.148  1.00  9.91      1ECN 850
+ATOM    744  C   LEU    97       1.071  23.651  24.086  1.00 10.23      1ECN 851
+ATOM    745  O   LEU    97        .776  22.696  23.353  1.00 10.82      1ECN 852
+ATOM    746  CB  LEU    97       1.517  23.309  26.532  1.00 13.85      1ECN 853
+ATOM    747  CG  LEU    97       2.007  22.152  27.374  1.00 24.16      1ECN 854
+ATOM    748  CD1 LEU    97       3.265  21.582  26.762  1.00 24.42      1ECN 855
+ATOM    749  CD2 LEU    97       2.277  22.604  28.783  1.00 12.84      1ECN 856
+ATOM    750  N   ASN    98        .493  24.836  24.021  1.00 14.00      1ECN 857
+ATOM    751  CA  ASN    98       -.543  25.088  23.032  1.00 11.96      1ECN 858
+ATOM    752  C   ASN    98       -.070  25.131  21.584  1.00 16.35      1ECN 859
+ATOM    753  O   ASN    98       -.822  24.785  20.661  1.00 10.47      1ECN 860
+ATOM    754  CB  ASN    98      -1.218  26.429  23.341  1.00 12.26      1ECN 861
+ATOM    755  CG  ASN    98      -2.257  26.279  24.418  1.00 16.04      1ECN 862
+ATOM    756  AD1 ASN    98      -2.594  27.159  25.180  1.00 27.51      1ECN 863
+ATOM    757  AD2 ASN    98      -2.901  25.044  24.467  1.00 20.48      1ECN 864
+ATOM    758  N   ASN    99       1.168  25.555  21.408  1.00 14.86      1ECN 865
+ATOM    759  CA  ASN    99       1.816  25.467  20.096  1.00 10.96      1ECN 866
+ATOM    760  C   ASN    99       2.190  24.052  19.664  1.00 10.53      1ECN 867
+ATOM    761  O   ASN    99       2.158  23.725  18.471  1.00 10.42      1ECN 868
+ATOM    762  CB  ASN    99       3.092  26.326  20.074  1.00 10.25      1ECN 869
+ATOM    763  CG  ASN    99       2.778  27.763  20.074  1.00 18.64      1ECN 870
+ATOM    764  AD1 ASN    99       3.532  28.638  20.440  1.00 14.22      1ECN 871
+ATOM    765  AD2 ASN    99       1.536  28.092  19.549  1.00 19.89      1ECN 872
+ATOM    766  N   PHE   100       2.540  23.235  20.642  1.00 13.64      1ECN 873
+ATOM    767  CA  PHE   100       2.721  21.795  20.391  1.00 10.96      1ECN 874
+ATOM    768  C   PHE   100       1.423  21.194  19.858  1.00  8.97      1ECN 875
+ATOM    769  O   PHE   100       1.428  20.444  18.874  1.00  8.99      1ECN 876
+ATOM    770  CB  PHE   100       3.138  21.114  21.681  1.00 11.27      1ECN 877
+ATOM    771  CG  PHE   100       3.435  19.647  21.551  1.00 12.34      1ECN 878
+ATOM    772  CD1 PHE   100       2.405  18.767  21.459  1.00 12.43      1ECN 879
+ATOM    773  CD2 PHE   100       4.715  19.173  21.437  1.00 16.07      1ECN 880
+ATOM    774  CE1 PHE   100       2.622  17.367  21.320  1.00 17.35      1ECN 881
+ATOM    775  CE2 PHE   100       4.922  17.765  21.254  1.00 18.25      1ECN 882
+ATOM    776  CZ  PHE   100       3.891  16.900  21.232  1.00 17.76      1ECN 883
+ATOM    777  N   ARG   101        .333  21.533  20.518  1.00  9.98      1ECN 884
+ATOM    778  CA  ARG   101       -.987  21.074  20.074  1.00  9.37      1ECN 885
+ATOM    779  C   ARG   101      -1.310  21.538  18.660  1.00 11.01      1ECN 886
+ATOM    780  O   ARG   101      -1.775  20.748  17.823  1.00  8.92      1ECN 887
+ATOM    781  CB  ARG   101      -2.108  21.583  21.000  1.00  8.58      1ECN 888
+ATOM    782  CG  ARG   101      -3.532  21.416  20.431  1.00 11.30      1ECN 889
+ATOM    783  CD  ARG   101      -4.558  21.589  21.532  1.00 10.14      1ECN 890
+ATOM    784  NE  ARG   101      -5.868  21.050  21.127  1.00 11.43      1ECN 891
+ATOM    785  CZ  ARG   101      -6.941  21.027  21.939  1.00  8.92      1ECN 892
+ATOM    786  NH1 ARG   101      -6.808  21.216  23.257  1.00 11.28      1ECN 893
+ATOM    787  NH2 ARG   101      -8.126  20.813  21.414  1.00 14.77      1ECN 894
+ATOM    788  N   ALA   102      -1.062  22.814  18.412  1.00 10.84      1ECN 895
+ATOM    789  CA  ALA   102      -1.319  23.387  17.115  1.00 10.82      1ECN 896
+ATOM    790  C   ALA   102       -.476  22.736  16.018  1.00 10.13      1ECN 897
+ATOM    791  O   ALA   102       -.970  22.461  14.915  1.00 10.04      1ECN 898
+ATOM    792  CB  ALA   102       -.901  24.848  17.141  1.00 12.04      1ECN 899
+ATOM    793  N   GLY   103        .786  22.500  16.336  1.00 11.54      1ECN 900
+ATOM    794  CA  GLY   103       1.695  21.831  15.388  1.00 10.73      1ECN 901
+ATOM    795  C   GLY   103       1.269  20.399  15.069  1.00  9.40      1ECN 902
+ATOM    796  O   GLY   103       1.293  19.974  13.905  1.00  9.72      1ECN 903
+ATOM    797  N   PHE   104        .888  19.680  16.103  1.00 11.18      1ECN 904
+ATOM    798  CA  PHE   104        .424  18.296  15.928  1.00 14.27      1ECN 905
+ATOM    799  C   PHE   104       -.817  18.229  15.041  1.00 11.09      1ECN 906
+ATOM    800  O   PHE   104       -.908  17.387  14.135  1.00 10.88      1ECN 907
+ATOM    801  CB  PHE   104        .129  17.691  17.281  1.00 10.94      1ECN 908
+ATOM    802  CG  PHE   104       -.436  16.299  17.206  1.00 12.58      1ECN 909
+ATOM    803  CD1 PHE   104      -1.738  16.094  17.498  1.00 12.99      1ECN 910
+ATOM    804  CD2 PHE   104        .306  15.242  16.754  1.00 14.24      1ECN 911
+ATOM    805  CE1 PHE   104      -2.336  14.804  17.428  1.00 12.63      1ECN 912
+ATOM    806  CE2 PHE   104       -.317  13.951  16.645  1.00 15.13      1ECN 913
+ATOM    807  CZ  PHE   104      -1.595  13.756  17.022  1.00 20.73      1ECN 914
+ATOM    808  N   VAL   105      -1.755  19.116  15.312  1.00 10.94      1ECN 915
+ATOM    809  CA  VAL   105      -3.022  19.123  14.571  1.00 12.32      1ECN 916
+ATOM    810  C   VAL   105      -2.799  19.538  13.117  1.00 10.20      1ECN 917
+ATOM    811  O   VAL   105      -3.436  19.001  12.199  1.00 10.41      1ECN 918
+ATOM    812  CB  VAL   105      -4.009  20.066  15.246  1.00 12.76      1ECN 919
+ATOM    813  CG1 VAL   105      -5.199  20.512  14.357  1.00 15.76      1ECN 920
+ATOM    814  CG2 VAL   105      -4.464  19.548  16.585  1.00 14.36      1ECN 921
+ATOM    815  N   SER   106      -1.898  20.490  12.928  1.00 13.05      1ECN 922
+ATOM    816  CA  SER   106      -1.461  20.859  11.577  1.00 13.48      1ECN 923
+ATOM    817  C   SER   106       -.847  19.689  10.809  1.00 14.31      1ECN 924
+ATOM    818  O   SER   106      -1.167  19.463   9.632  1.00 11.03      1ECN 925
+ATOM    819  CB  SER   106       -.435  21.972  11.631  1.00 17.83      1ECN 926
+ATOM    820  OG ASER   106       -.103  22.454  10.333   .50 13.90      1ECN 927
+ATOM    821  OG BSER   106      -1.043  23.245  11.818   .50 21.82      1ECN 928
+ATOM    822  N   TYR   107        .025  18.962  11.484  1.00 13.20      1ECN 929
+ATOM    823  CA  TYR   107        .511  17.682  10.954  1.00 11.51      1ECN 930
+ATOM    824  C   TYR   107       -.587  16.709  10.525  1.00 10.43      1ECN 931
+ATOM    825  O   TYR   107       -.583  16.203   9.393  1.00 10.97      1ECN 932
+ATOM    826  CB  TYR   107       1.394  17.002  12.014  1.00 13.32      1ECN 933
+ATOM    827  CG  TYR   107       1.875  15.708  11.341  1.00 11.81      1ECN 934
+ATOM    828  CD1 TYR   107       1.099  14.545  11.515  1.00 12.16      1ECN 935
+ATOM    829  CD2 TYR   107       3.056  15.652  10.656  1.00 11.91      1ECN 936
+ATOM    830  CE1 TYR   107       1.552  13.309  10.890  1.00 13.14      1ECN 937
+ATOM    831  CE2 TYR   107       3.510  14.445  10.042  1.00 10.42      1ECN 938
+ATOM    832  CZ  TYR   107       2.728  13.299  10.229  1.00 13.40      1ECN 939
+ATOM    833  OH  TYR   107       3.171  12.123   9.658  1.00 13.42      1ECN 940
+ATOM    834  N   MET   108      -1.509  16.464  11.433  1.00 11.18      1ECN 941
+ATOM    835  CA  MET   108      -2.621  15.548  11.146  1.00 12.82      1ECN 942
+ATOM    836  C   MET   108      -3.530  15.939   9.983  1.00 11.01      1ECN 943
+ATOM    837  O   MET   108      -3.974  15.080   9.204  1.00 14.53      1ECN 944
+ATOM    838  CB  MET   108      -3.528  15.402  12.396  1.00 12.44      1ECN 945
+ATOM    839  CG  MET   108      -2.782  14.745  13.536  1.00 14.37      1ECN 946
+ATOM    840  SD  MET   108      -2.276  13.080  13.124  1.00 10.27      1ECN 947
+ATOM    841  CE  MET   108      -3.870  12.364  12.832  1.00 16.35      1ECN 948
+ATOM    842  N   LYS   109      -3.797  17.228   9.879  1.00 12.09      1ECN 949
+ATOM    843  CA  LYS   109      -4.586  17.748   8.753  1.00 14.42      1ECN 950
+ATOM    844  C   LYS   109      -3.900  17.694   7.387  1.00 19.73      1ECN 951
+ATOM    845  O   LYS   109      -4.556  17.497   6.354  1.00 16.28      1ECN 952
+ATOM    846  CB  LYS   109      -4.979  19.204   8.977  1.00 14.40      1ECN 953
+ATOM    847  CG  LYS   109      -6.174  19.404   9.894  1.00 16.92      1ECN 954
+ATOM    848  CD  LYS   109      -6.598  20.869   9.927  1.00 30.81      1ECN 955
+ATOM    849  CE  LYS   109      -8.051  21.018  10.344  0.00  0.00   2  1ECN 956
+ATOM    850  NZ  LYS   109      -8.279  22.314  10.988  0.00  0.00   2  1ECN 957
+ATOM    851  N   ALA   110      -2.589  17.871   7.403  1.00 15.94      1ECN 958
+ATOM    852  CA  ALA   110      -1.810  17.857   6.156  1.00 14.87      1ECN 959
+ATOM    853  C   ALA   110      -1.465  16.449   5.671  1.00 15.99      1ECN 960
+ATOM    854  O   ALA   110      -1.072  16.251   4.512  1.00 13.92      1ECN 961
+ATOM    855  CB  ALA   110       -.467  18.557   6.427  1.00 16.09      1ECN 962
+ATOM    856  N   HIS   111      -1.617  15.493   6.562  1.00 15.24      1ECN 963
+ATOM    857  CA  HIS   111      -1.311  14.098   6.233  1.00 15.22      1ECN 964
+ATOM    858  C   HIS   111      -2.384  13.010   6.215  1.00 18.02      1ECN 965
+ATOM    859  O   HIS   111      -2.172  11.914   5.673  1.00 16.71      1ECN 966
+ATOM    860  CB  HIS   111       -.252  13.577   7.201  1.00 12.37      1ECN 967
+ATOM    861  CG  HIS   111       1.039  14.346   7.085  1.00 17.42      1ECN 968
+ATOM    862  ND1 HIS   111       2.121  13.866   6.368  1.00 19.43      1ECN 969
+ATOM    863  CD2 HIS   111       1.428  15.535   7.613  1.00 12.13      1ECN 970
+ATOM    864  CE1 HIS   111       3.110  14.733   6.471  1.00 13.48      1ECN 971
+ATOM    865  NE2 HIS   111       2.702  15.752   7.194  1.00 19.23      1ECN 972
+ATOM    866  N   THR   112      -3.519  13.328   6.806  1.00 17.94      1ECN 973
+ATOM    867  CA  THR   112      -4.691  12.441   6.709  1.00 16.80      1ECN 974
+ATOM    868  C   THR   112      -5.958  13.205   6.324  1.00 24.49      1ECN 975
+ATOM    869  O   THR   112      -5.940  14.434   6.175  1.00 18.10      1ECN 976
+ATOM    870  CB  THR   112      -4.843  11.746   8.082  1.00 16.07      1ECN 977
+ATOM    871  OG1 THR   112      -5.357  12.764   8.934  1.00 14.69      1ECN 978
+ATOM    872  CG2 THR   112      -3.536  11.223   8.613  1.00 13.47      1ECN 979
+ATOM    873  N   ASP   113      -7.035  12.466   6.165  1.00 26.07      1ECN 980
+ATOM    874  CA  ASP   113      -8.343  13.090   5.960  1.00 33.06      1ECN 981
+ATOM    875  C   ASP   113      -8.883  13.292   7.377  1.00 17.90      1ECN 982
+ATOM    876  O   ASP   113      -9.531  12.407   7.944  1.00 20.17      1ECN 983
+ATOM    877  CB  ASP   113      -9.215  12.175   5.084  1.00 29.08      1ECN 984
+ATOM    878  CG  ASP   113     -10.477  12.873   4.650  1.00 32.49      1ECN 985
+ATOM    879  OD1 ASP   113     -11.030  13.763   5.270  1.00 39.71      1ECN 986
+ATOM    880  OD2 ASP   113     -10.909  12.541   3.579  1.00 45.09      1ECN 987
+ATOM    881  N   PHE   114      -8.601  14.457   7.930  1.00 27.02      1ECN 988
+ATOM    882  CA  PHE   114      -8.748  14.663   9.376  1.00 14.68      1ECN 989
+ATOM    883  C   PHE   114     -10.199  14.888   9.801  1.00 13.91      1ECN 990
+ATOM    884  O   PHE   114     -10.514  14.888  10.997  1.00 13.43      1ECN 991
+ATOM    885  CB  PHE   114      -7.913  15.841   9.804  1.00 16.44      1ECN 992
+ATOM    886  CG  PHE   114      -7.799  16.123  11.274  1.00 15.92      1ECN 993
+ATOM    887  CD1 PHE   114      -7.216  15.207  12.081  1.00 15.18      1ECN 994
+ATOM    888  CD2 PHE   114      -8.195  17.317  11.814  1.00 12.69      1ECN 995
+ATOM    889  CE1 PHE   114      -7.061  15.425  13.481  1.00 14.69      1ECN 996
+ATOM    890  CE2 PHE   114      -7.993  17.545  13.219  1.00 22.08      1ECN 997
+ATOM    891  CZ  PHE   114      -7.470  16.595  14.016  1.00 17.97      1ECN 998
+ATOM    892  N   ALA   115     -11.050  15.084   8.813  1.00 28.14      1ECN 999
+ATOM    893  CA  ALA   115     -12.331  15.764   9.051  1.00 18.22      1ECN1000
+ATOM    894  C   ALA   115     -13.159  14.772   9.868  1.00 14.83      1ECN1001
+ATOM    895  O   ALA   115     -13.871  15.158  10.806  1.00 15.53      1ECN1002
+ATOM    897  N   GLY   116     -13.057  13.510   9.498  1.00 15.16      1ECN1003
+ATOM    898  CA  GLY   116     -13.723  12.444  10.259  1.00 12.44      1ECN1004
+ATOM    899  C   GLY   116     -13.311  12.094  11.691  1.00 12.75      1ECN1005
+ATOM    900  O   GLY   116     -14.079  11.472  12.441  1.00 14.12      1ECN1006
+ATOM    901  N   ALA   117     -12.106  12.495  12.048  1.00 11.02      1ECN1007
+ATOM    902  CA  ALA   117     -11.597  12.242  13.402  1.00  9.75      1ECN1008
+ATOM    903  C   ALA   117     -11.468  13.511  14.246  1.00  9.09      1ECN1009
+ATOM    904  O   ALA   117     -11.054  13.459  15.414  1.00  8.63      1ECN1010
+ATOM    905  CB  ALA   117     -10.176  11.667  13.275  1.00  9.93      1ECN1011
+ATOM    906  N   GLU   118     -11.821  14.630  13.642  1.00 10.09      1ECN1012
+ATOM    907  CA  GLU   118     -11.674  15.928  14.315  1.00 10.06      1ECN1013
+ATOM    908  C   GLU   118     -12.245  16.172  15.712  1.00 10.10      1ECN1014
+ATOM    909  O   GLU   118     -11.546  16.666  16.607  1.00  8.11      1ECN1015
+ATOM    910  CB  GLU   118     -12.319  17.079  13.493  1.00 15.08      1ECN1016
+ATOM    911  CG  GLU   118     -11.535  18.396  13.422  1.00 37.92      1ECN1017
+ATOM    912  CD  GLU   118     -12.022  19.393  12.319  1.00 43.95      1ECN1018
+ATOM    913  OE1 GLU   118     -12.951  20.121  12.496  1.00 45.09      1ECN1019
+ATOM    914  OE2 GLU   118     -11.297  19.263  11.345  1.00 30.60      1ECN1020
+ATOM    915  N   ALA   119     -13.507  15.825  15.876  1.00 10.36      1ECN1021
+ATOM    916  CA  ALA   119     -14.161  15.950  17.188  1.00  6.96      1ECN1022
+ATOM    917  C   ALA   119     -13.639  15.010  18.256  1.00  7.40      1ECN1023
+ATOM    918  O   ALA   119     -13.510  15.399  19.424  1.00  7.54      1ECN1024
+ATOM    919  CB  ALA   119     -15.642  15.594  16.986  1.00  9.15      1ECN1025
+ATOM    920  N   ALA   120     -13.348  13.788  17.858  1.00  8.67      1ECN1026
+ATOM    921  CA  ALA   120     -12.684  12.836  18.759  1.00  6.93      1ECN1027
+ATOM    922  C   ALA   120     -11.297  13.288  19.221  1.00  6.25      1ECN1028
+ATOM    923  O   ALA   120     -10.947  13.165  20.401  1.00  7.39      1ECN1029
+ATOM    924  CB  ALA   120     -12.473  11.525  17.986  1.00  7.03      1ECN1030
+ATOM    925  N   TRP   121     -10.527  13.803  18.282  1.00  8.67      1ECN1031
+ATOM    926  CA  TRP   121      -9.229  14.397  18.614  1.00  8.22      1ECN1032
+ATOM    927  C   TRP   121      -9.371  15.622  19.519  1.00  6.42      1ECN1033
+ATOM    928  O   TRP   121      -8.600  15.806  20.457  1.00  7.39      1ECN1034
+ATOM    929  CB  TRP   121      -8.509  14.764  17.333  1.00  6.25      1ECN1035
+ATOM    930  CG  TRP   121      -7.602  13.605  16.782  1.00 10.37      1ECN1036
+ATOM    931  CD1 TRP   121      -7.639  12.983  15.598  1.00  7.23      1ECN1037
+ATOM    932  CD2 TRP   121      -6.499  13.058  17.436  1.00  6.57      1ECN1038
+ATOM    933  NE1 TRP   121      -6.611  11.965  15.540  1.00  9.75      1ECN1039
+ATOM    934  CE2 TRP   121      -5.921  12.057  16.609  1.00  8.04      1ECN1040
+ATOM    935  CE3 TRP   121      -5.940  13.314  18.651  1.00  8.55      1ECN1041
+ATOM    936  CZ2 TRP   121      -4.797  11.292  16.929  1.00  8.80      1ECN1042
+ATOM    937  CZ3 TRP   121      -4.813  12.527  18.971  1.00  9.96      1ECN1043
+ATOM    938  CH2 TRP   121      -4.247  11.590  18.119  1.00  7.75      1ECN1044
+ATOM    939  N   GLY   122     -10.367  16.433  19.226  1.00  8.67      1ECN1045
+ATOM    940  CA  GLY   122     -10.721  17.553  20.107  1.00 10.10      1ECN1046
+ATOM    941  C   GLY   122     -10.977  17.135  21.557  1.00  8.88      1ECN1047
+ATOM    942  O   GLY   122     -10.412  17.712  22.496  1.00  7.74      1ECN1048
+ATOM    943  N   ALA   123     -11.806  16.147  21.721  1.00  9.15      1ECN1049
+ATOM    944  CA  ALA   123     -12.139  15.648  23.064  1.00 11.72      1ECN1050
+ATOM    945  C   ALA   123     -10.895  15.110  23.773  1.00  8.18      1ECN1051
+ATOM    946  O   ALA   123     -10.656  15.405  24.951  1.00  9.38      1ECN1052
+ATOM    947  CB  ALA   123     -13.103  14.457  22.926  1.00  8.33      1ECN1053
+ATOM    948  N   THR   124     -10.123  14.327  23.049  1.00 11.14      1ECN1054
+ATOM    949  CA  THR   124      -8.894  13.758  23.602  1.00 10.11      1ECN1055
+ATOM    950  C   THR   124      -7.887  14.798  24.060  1.00  8.02      1ECN1056
+ATOM    951  O   THR   124      -7.323  14.701  25.157  1.00  8.40      1ECN1057
+ATOM    952  CB  THR   124      -8.284  12.849  22.517  1.00 11.86      1ECN1058
+ATOM    953  OG1 THR   124      -9.249  11.830  22.331  1.00  9.04      1ECN1059
+ATOM    954  CG2 THR   124      -6.981  12.244  22.937  1.00  9.38      1ECN1060
+ATOM    955  N   LEU   125      -7.667  15.784  23.213  1.00 10.90      1ECN1061
+ATOM    956  CA  LEU   125      -6.613  16.775  23.461  1.00  8.32      1ECN1062
+ATOM    957  C   LEU   125      -7.059  17.781  24.525  1.00 10.40      1ECN1063
+ATOM    958  O   LEU   125      -6.243  18.285  25.308  1.00  9.11      1ECN1064
+ATOM    959  CB  LEU   125      -6.266  17.516  22.154  1.00  7.54      1ECN1065
+ATOM    960  CG  LEU   125      -5.563  16.736  21.060  1.00  8.89      1ECN1066
+ATOM    961  CD1 LEU   125      -5.457  17.590  19.818  1.00 11.12      1ECN1067
+ATOM    962  CD2 LEU   125      -4.190  16.310  21.513  1.00 11.71      1ECN1068
+ATOM    963  N   ASP   126      -8.345  18.062  24.539  1.00 10.20      1ECN1069
+ATOM    964  CA  ASP   126      -8.934  18.908  25.596  1.00  9.89      1ECN1070
+ATOM    965  C   ASP   126      -8.838  18.240  26.970  1.00  9.57      1ECN1071
+ATOM    966  O   ASP   126      -8.554  18.896  27.981  1.00  9.48      1ECN1072
+ATOM    967  CB  ASP   126     -10.394  19.205  25.252  1.00 10.65      1ECN1073
+ATOM    968  CG  ASP   126     -10.496  20.313  24.261  1.00 10.88      1ECN1074
+ATOM    969  OD1 ASP   126      -9.566  20.996  23.882  1.00  8.54      1ECN1075
+ATOM    970  OD2 ASP   126     -11.587  20.479  23.786  1.00  8.74      1ECN1076
+ATOM    971  N   THR   127      -9.078  16.946  26.990  1.00 11.00      1ECN1077
+ATOM    972  CA  THR   127      -8.857  16.152  28.207  1.00 12.18      1ECN1078
+ATOM    973  C   THR   127      -7.397  16.084  28.662  1.00 10.29      1ECN1079
+ATOM    974  O   THR   127      -7.082  16.333  29.832  1.00  9.53      1ECN1080
+ATOM    975  CB  THR   127      -9.391  14.743  27.930  1.00 11.24      1ECN1081
+ATOM    976  OG1 THR   127     -10.781  14.939  27.805  1.00 15.78      1ECN1082
+ATOM    977  CG2 THR   127      -9.084  13.781  29.041  1.00 13.94      1ECN1083
+ATOM    978  N   PHE   128      -6.527  15.749  27.732  1.00 10.47      1ECN1084
+ATOM    979  CA  PHE   128      -5.080  15.711  28.016  1.00 10.36      1ECN1085
+ATOM    980  C   PHE   128      -4.453  17.017  28.510  1.00  8.35      1ECN1086
+ATOM    981  O   PHE   128      -3.804  17.055  29.562  1.00  8.73      1ECN1087
+ATOM    982  CB  PHE   128      -4.338  15.277  26.767  1.00 10.89      1ECN1088
+ATOM    983  CG  PHE   128      -2.852  15.091  26.733  1.00 11.75      1ECN1089
+ATOM    984  CD1 PHE   128      -2.269  14.309  27.668  1.00 13.40      1ECN1090
+ATOM    985  CD2 PHE   128      -2.079  15.622  25.734  1.00 15.83      1ECN1091
+ATOM    986  CE1 PHE   128       -.862  14.082  27.685  1.00 12.16      1ECN1092
+ATOM    987  CE2 PHE   128       -.666  15.352  25.734  1.00 21.47      1ECN1093
+ATOM    988  CZ  PHE   128       -.091  14.627  26.712  1.00 12.43      1ECN1094
+ATOM    989  N   PHE   129      -4.655  18.070  27.742  1.00 11.15      1ECN1095
+ATOM    990  CA  PHE   129      -4.084  19.383  28.079  1.00  9.96      1ECN1096
+ATOM    991  C   PHE   129      -4.822  19.972  29.284  1.00 10.69      1ECN1097
+ATOM    992  O   PHE   129      -4.240  20.712  30.089  1.00 11.77      1ECN1098
+ATOM    993  CB  PHE   129      -4.176  20.296  26.872  1.00 11.30      1ECN1099
+ATOM    994  CG  PHE   129      -3.056  19.974  25.925  1.00 11.49      1ECN1100
+ATOM    995  CD1 PHE   129      -3.341  19.388  24.734  1.00 11.95      1ECN1101
+ATOM    996  CD2 PHE   129      -1.761  20.326  26.192  1.00 14.70      1ECN1102
+ATOM    997  CE1 PHE   129      -2.323  19.074  23.789  1.00 15.07      1ECN1103
+ATOM    998  CE2 PHE   129       -.747  20.045  25.214  1.00 12.82      1ECN1104
+ATOM    999  CZ  PHE   129      -1.038  19.406  24.067  1.00 13.69      1ECN1105
+ATOM   1000  N   GLY   130      -6.090  19.637  29.394  1.00 12.35      1ECN1106
+ATOM   1001  CA  GLY   130      -6.860  19.963  30.602  1.00 13.37      1ECN1107
+ATOM   1002  C   GLY   130      -6.217  19.447  31.893  1.00 11.14      1ECN1108
+ATOM   1003  O   GLY   130      -6.201  20.140  32.917  1.00 12.23      1ECN1109
+ATOM   1004  N   MET   131      -5.697  18.237  31.825  1.00 11.08      1ECN1110
+ATOM   1005  CA  MET   131      -4.994  17.646  32.975  1.00 12.51      1ECN1111
+ATOM   1006  C   MET   131      -3.613  18.260  33.223  1.00  9.70      1ECN1112
+ATOM   1007  O   MET   131      -3.238  18.541  34.368  1.00 11.76      1ECN1113
+ATOM   1008  CB  MET   131      -4.821  16.119  32.763  1.00 10.94      1ECN1114
+ATOM   1009  CG AMET   131      -5.351  15.349  33.948   .50 13.45      1ECN1115
+ATOM   1010  CG BMET   131      -6.158  15.418  32.809   .50  9.31      1ECN1116
+ATOM   1011  SD AMET   131      -5.331  13.583  33.650   .50 21.01      1ECN1117
+ATOM   1012  SD BMET   131      -5.970  13.638  32.855   .50 27.52      1ECN1118
+ATOM   1013  CE AMET   131      -6.076  13.553  32.041   .50 13.78      1ECN1119
+ATOM   1014  CE BMET   131      -4.376  13.538  33.628   .50  9.73      1ECN1120
+ATOM   1015  N   ILE   132      -2.875  18.458  32.148  1.00 11.12      1ECN1121
+ATOM   1016  CA  ILE   132      -1.534  19.061  32.244  1.00 12.27      1ECN1122
+ATOM   1017  C   ILE   132      -1.616  20.465  32.847  1.00 12.44      1ECN1123
+ATOM   1018  O   ILE   132       -.837  20.821  33.741  1.00  9.26      1ECN1124
+ATOM   1019  CB  ILE   132       -.864  19.174  30.852  1.00 12.84      1ECN1125
+ATOM   1020  CG1 ILE   132       -.529  17.791  30.223  1.00 12.93      1ECN1126
+ATOM   1021  CG2 ILE   132        .320  20.087  31.155  1.00 14.66      1ECN1127
+ATOM   1022  CD1 ILE   132        .025  17.877  28.781  1.00 17.78      1ECN1128
+ATOM   1023  N   PHE   133      -2.556  21.244  32.353  1.00 15.00      1ECN1129
+ATOM   1024  CA  PHE   133      -2.683  22.648  32.781  1.00 11.01      1ECN1130
+ATOM   1025  C   PHE   133      -3.163  22.822  34.225  1.00 12.35      1ECN1131
+ATOM   1026  O   PHE   133      -2.989  23.866  34.825  1.00 16.74      1ECN1132
+ATOM   1027  CB  PHE   133      -3.636  23.336  31.850  1.00 11.93      1ECN1133
+ATOM   1028  CG  PHE   133      -3.158  23.834  30.516  1.00 16.44      1ECN1134
+ATOM   1029  CD1 PHE   133      -2.182  23.198  29.881  1.00 21.87      1ECN1135
+ATOM   1030  CD2 PHE   133      -3.753  24.889  29.881  1.00 21.18      1ECN1136
+ATOM   1031  CE1 PHE   133      -1.694  23.614  28.609  1.00 13.50      1ECN1137
+ATOM   1032  CE2 PHE   133      -3.283  25.274  28.580  1.00 25.07      1ECN1138
+ATOM   1033  CZ  PHE   133      -2.250  24.650  27.993  1.00 13.40      1ECN1139
+ATOM   1034  N   SER   134      -3.743  21.767  34.762  1.00 13.21      1ECN1140
+ATOM   1035  CA  SER   134      -4.153  21.766  36.176  1.00 15.04      1ECN1141
+ATOM   1036  C   SER   134      -3.010  21.388  37.123  1.00 21.41      1ECN1142
+ATOM   1037  O   SER   134      -3.137  21.500  38.348  1.00 19.74      1ECN1143
+ATOM   1038  CB  SER   134      -5.298  20.792  36.387  1.00 17.73      1ECN1144
+ATOM   1039  OG  SER   134      -4.847  19.443  36.441  1.00 25.66      1ECN1145
+ATOM   1040  N   LYS   135      -1.912  20.943  36.540  1.00 17.74      1ECN1146
+ATOM   1041  CA  LYS   135       -.749  20.513  37.340  1.00 13.63      1ECN1147
+ATOM   1042  C   LYS   135        .522  21.342  37.145  1.00 18.36      1ECN1148
+ATOM   1043  O   LYS   135       1.433  21.318  37.984  1.00 19.37      1ECN1149
+ATOM   1044  CB  LYS   135       -.378  19.064  37.026  1.00 14.40      1ECN1150
+ATOM   1045  CG  LYS   135      -1.497  18.057  37.240  1.00 14.37      1ECN1151
+ATOM   1046  CD  LYS   135      -1.164  16.717  36.585  1.00 19.60      1ECN1152
+ATOM   1047  CE  LYS   135      -2.371  15.791  36.557  1.00 16.58      1ECN1153
+ATOM   1048  NZ  LYS   135      -2.444  14.981  37.791  1.00 16.08      1ECN1154
+ATOM   1049  N   MET   136        .566  22.063  36.043  1.00 15.37      1ECN1155
+ATOM   1050  CA  MET   136       1.712  22.941  35.757  1.00 15.15      1ECN1156
+ATOM   1051  C   MET   136       1.411  24.113  34.822  1.00 22.64      1ECN1157
+ATOM   1052  O   MET   136       2.280  24.957  34.558  1.00 19.59      1ECN1158
+ATOM   1053  CB  MET   136       2.861  22.121  35.116  1.00 15.90      1ECN1159
+ATOM   1054  CG  MET   136       2.588  21.851  33.651  1.00 19.66      1ECN1160
+ATOM   1055  SD  MET   136       3.844  20.805  32.924  1.00 17.03      1ECN1161
+ATOM   1056  CE  MET   136       4.683  22.014  31.941  1.00 21.62      1ECN1162
+ATOM   1057  OXT MET   136        .185  24.149  34.335  1.00 17.82      1ECN1163
+TER    1058      MET   136                                              1ECN1164
+HETATM 1059 FE   HEM     1       9.351  17.111  25.916  1.00  9.67      1ECN1165
+HETATM 1060  CHA HEM     1      12.267  15.335  26.259  1.00 18.95      1ECN1166
+HETATM 1061  CHB HEM     1      11.093  20.038  25.979  1.00 13.35      1ECN1167
+HETATM 1062  CHC HEM     1       6.514  18.808  25.068  1.00 20.29      1ECN1168
+HETATM 1063  CHD HEM     1       7.590  14.177  25.955  1.00 16.18      1ECN1169
+HETATM 1064  N A HEM     1      11.298  17.594  26.033  1.00 17.46      1ECN1170
+HETATM 1065  C1A HEM     1      12.358  16.735  26.256  1.00 15.90      1ECN1171
+HETATM 1066  C2A HEM     1      13.568  17.510  26.486  1.00 23.76      1ECN1172
+HETATM 1067  C3A HEM     1      13.240  18.803  26.404  1.00 18.98      1ECN1173
+HETATM 1068  C4A HEM     1      11.816  18.875  26.119  1.00 15.30      1ECN1174
+HETATM 1069  CMA HEM     1      14.192  19.970  26.579  1.00 15.86      1ECN1175
+HETATM 1070  CAA HEM     1      14.953  16.968  26.770  1.00 21.36      1ECN1176
+HETATM 1071  CBA HEM     1      15.574  16.574  25.467  1.00 15.37      1ECN1177
+HETATM 1072  CGA HEM     1      16.963  16.004  25.756  1.00 35.36      1ECN1178
+HETATM 1073  O1A HEM     1      17.399  15.128  25.110  1.00 20.00      1ECN1179
+HETATM 1074  O2A HEM     1      17.634  16.459  26.665  1.00 33.77      1ECN1180
+HETATM 1075  N B HEM     1       8.903  19.025  25.552  1.00 16.50      1ECN1181
+HETATM 1076  C1B HEM     1       9.750  20.111  25.686  1.00 13.90      1ECN1182
+HETATM 1077  C2B HEM     1       9.002  21.342  25.478  1.00 14.57      1ECN1183
+HETATM 1078  C3B HEM     1       7.737  21.003  25.226  1.00 13.38      1ECN1184
+HETATM 1079  C4B HEM     1       7.657  19.550  25.269  1.00 14.26      1ECN1185
+HETATM 1080  CMB HEM     1       9.542  22.759  25.533  1.00 17.13      1ECN1186
+HETATM 1081  CAB HEM     1       6.603  21.971  24.949  1.00 17.41      1ECN1187
+HETATM 1082  CBB HEM     1       5.815  21.796  23.891  1.00 21.48      1ECN1188
+HETATM 1083  N C HEM     1       7.448  16.593  25.550  1.00 15.95      1ECN1189
+HETATM 1084  C1C HEM     1       6.401  17.448  25.261  1.00 18.94      1ECN1190
+HETATM 1085  C2C HEM     1       5.160  16.689  25.195  1.00 17.51      1ECN1191
+HETATM 1086  C3C HEM     1       5.458  15.409  25.440  1.00 15.64      1ECN1192
+HETATM 1087  C4C HEM     1       6.892  15.331  25.666  1.00 18.57      1ECN1193
+HETATM 1088  CMC HEM     1       3.777  17.232  24.904  1.00 18.01      1ECN1194
+HETATM 1089  CAC HEM     1       4.468  14.262  25.473  1.00 19.49      1ECN1195
+HETATM 1090  CBC HEM     1       4.562  13.264  24.596  0.00  0.00   2  1ECN1196
+HETATM 1091  N D HEM     1       9.833  15.154  26.057  1.00 14.69      1ECN1197
+HETATM 1092  C1D HEM     1       8.955  14.086  26.093  1.00 17.37      1ECN1198
+HETATM 1093  C2D HEM     1       9.696  12.850  26.297  1.00 20.02      1ECN1199
+HETATM 1094  C3D HEM     1      10.988  13.171  26.381  1.00 21.24      1ECN1200
+HETATM 1095  C4D HEM     1      11.093  14.615  26.233  1.00 12.65      1ECN1201
+HETATM 1096  CMD HEM     1       9.124  11.450  26.398  1.00 12.62      1ECN1202
+HETATM 1097  CAD HEM     1      12.125  12.192  26.594  1.00 14.87      1ECN1203
+HETATM 1098  CBD HEM     1      12.231  11.934  28.057  1.00 19.77      1ECN1204
+HETATM 1099  CGD HEM     1      12.658  13.233  28.736  1.00 19.62      1ECN1205
+HETATM 1100  O1D HEM     1      13.757  13.634  28.627  1.00 20.08      1ECN1206
+HETATM 1101  O2D HEM     1      11.857  13.869  29.401  1.00 15.91      1ECN1207
+HETATM 1102  C   HEM     1       9.655  17.111  23.749  1.00 11.44      1ECN1208
+HETATM 1103  N   HEM     1       9.584  17.315  22.613  1.00 17.42      1ECN1209
+HETATM 1104  O   HOH     2       8.435  18.576  49.550  1.00 25.13      1ECN1210
+HETATM 1105  O   HOH     3      15.151  13.014  24.174   .47 23.55      1ECN1211
+HETATM 1106  O   HOH     4      15.665  12.953  26.619   .67 31.16      1ECN1212
+HETATM 1107  O   HOH     5      10.329   8.850  11.264   .67 18.98      1ECN1213
+HETATM 1108  O   HOH     6      16.728  19.154  29.866   .97 31.61      1ECN1214
+HETATM 1109  O   HOH     7      -5.207  16.704   3.686   .32 16.38      1ECN1215
+HETATM 1110  O   HOH     8      -5.259    .178  22.907   .40 10.04      1ECN1216
+HETATM 1111  O   HOH     9     -18.491  11.210  27.122  1.10 34.05      1ECN1217
+HETATM 1112  O   HOH    10     -10.475   7.363  12.453  1.26 20.07      1ECN1218
+HETATM 1113  O   HOH    11     -16.012   9.115  16.430   .78 24.60      1ECN1219
+HETATM 1114  O   HOH    12      -8.332    .279  21.995   .92 13.60      1ECN1220
+HETATM 1115  O   HOH    13      -3.171   3.940  17.475   .72 13.02      1ECN1221
+HETATM 1116  O   HOH    14      -3.214   3.552  20.043   .85 18.34      1ECN1222
+HETATM 1117  O   HOH    15       2.533   2.810  32.972   .87 25.75      1ECN1223
+HETATM 1118  O   HOH    16      -1.429   2.010  16.499   .41 19.92      1ECN1224
+HETATM 1119  O   HOH    17       2.180   4.815  10.288   .42 15.52      1ECN1225
+HETATM 1120  O   HOH    18       3.604   2.181  12.388   .35 16.16      1ECN1226
+HETATM 1121  O   HOH    19       9.041  12.484   7.696   .68 18.21      1ECN1227
+HETATM 1122  O   HOH    20       3.448  18.976   8.140   .41 11.84      1ECN1228
+HETATM 1123  O   HOH    21       5.834  17.208   8.904   .86 15.43      1ECN1229
+HETATM 1124  O   HOH    22       3.627  23.240  12.114   .93 18.21      1ECN1230
+HETATM 1125  O   HOH    23       3.310  27.577  11.625  1.45 45.09      1ECN1231
+HETATM 1126  O   HOH    24      12.452  25.794  14.364   .22  7.78      1ECN1232
+HETATM 1127  O   HOH    25       6.034  30.363  22.917   .73  9.41      1ECN1233
+HETATM 1128  O   HOH    26      12.865  28.491  24.751   .51 14.96      1ECN1234
+HETATM 1129  O   HOH    27      19.454  25.255  24.940   .53 27.78      1ECN1235
+HETATM 1130  O   HOH    28      15.898  22.690  28.652   .83 38.08      1ECN1236
+HETATM 1131  O   HOH    29      23.306  24.623  22.361   .38 13.53      1ECN1237
+HETATM 1132  O   HOH    30      23.004  22.884  19.225   .32  7.39      1ECN1238
+HETATM 1133  O   HOH    31      19.185  17.748  22.648   .87 16.98      1ECN1239
+HETATM 1134  O   HOH    32     -17.048  12.842  29.268   .57 22.53      1ECN1240
+HETATM 1135  O   HOH    33      17.328  27.819  18.463  1.01 25.74      1ECN1241
+HETATM 1136  O   HOH    34      18.042  24.211   4.477   .32 10.69      1ECN1242
+HETATM 1137  O   HOH    35      14.601  26.454   9.279   .80 11.82      1ECN1243
+HETATM 1138  O   HOH    36      16.254  26.425   5.550   .60 16.20      1ECN1244
+HETATM 1139  O   HOH    37      12.065  25.926   8.826   .72 14.86      1ECN1245
+HETATM 1140  O   HOH    38      22.252  24.058  10.843   .71 14.83      1ECN1246
+HETATM 1141  O   HOH    39      23.552  23.140   8.519   .60 33.81      1ECN1247
+HETATM 1142  O   HOH    40      17.864  16.588   6.373   .53 33.67      1ECN1248
+HETATM 1143  O   HOH    41      15.597  12.120  11.078   .60 12.42      1ECN1249
+HETATM 1144  O   HOH    42      22.683  11.368  11.088   .55 14.87      1ECN1250
+HETATM 1145  O   HOH    43      14.753   6.765  20.846   .73 12.40      1ECN1251
+HETATM 1146  O   HOH    44      13.511   5.048  22.575   .90 21.97      1ECN1252
+HETATM 1147  O   HOH    45       9.990   4.990  22.256  1.31 28.07      1ECN1253
+HETATM 1148  O   HOH    46       8.114   5.856  18.713   .44 11.82      1ECN1254
+HETATM 1149  O   HOH    47       5.480   3.539  22.666   .91 14.38      1ECN1255
+HETATM 1150  O   HOH    48       3.121   2.538  22.271   .84 24.74      1ECN1256
+HETATM 1151  O   HOH    49        .701   2.828  18.599   .46 20.59      1ECN1257
+HETATM 1152  O   HOH    50       -.933   3.644  20.824   .56 21.12      1ECN1258
+HETATM 1153  O   HOH    51       -.376   2.175  26.107  1.04 15.60      1ECN1259
+HETATM 1154  O   HOH    52      -1.939    .263  27.369   .53 21.14      1ECN1260
+HETATM 1155  O   HOH    53        .239   1.845  29.071   .64 15.52      1ECN1261
+HETATM 1156  O   HOH    54      -7.757   2.268  25.203   .95 21.52      1ECN1262
+HETATM 1157  O   HOH    55      -3.356   6.546  35.601   .56 12.23      1ECN1263
+HETATM 1158  O   HOH    56      -1.419   6.421  32.819   .70 14.65      1ECN1264
+HETATM 1159  O   HOH    57      -6.628   9.127  34.437   .85 22.77      1ECN1265
+HETATM 1160  O   HOH    58       3.384   8.594  37.651   .92 24.95      1ECN1266
+HETATM 1161  O   HOH    59       4.148  15.123  38.910   .85 14.27      1ECN1267
+HETATM 1162  O   HOH    60       1.878  16.723  39.153   .80 15.35      1ECN1268
+HETATM 1163  O   HOH    61       1.392   9.019  39.575   .77 17.45      1ECN1269
+HETATM 1164  O   HOH    62      10.314  17.028  39.162   .32 15.30      1ECN1270
+HETATM 1165  O   HOH    63       9.492  13.001  29.980   .86 14.07      1ECN1271
+HETATM 1166  O   HOH    64      13.835  16.935  33.973   .60 14.32      1ECN1272
+HETATM 1167  O   HOH    65      13.712  14.551  35.072   .58 19.90      1ECN1273
+HETATM 1168  O   HOH    66       9.762  29.528  31.831   .44 17.62      1ECN1274
+HETATM 1169  O   HOH    67       7.078  25.027  33.839   .48 13.84      1ECN1275
+HETATM 1170  O   HOH    68       6.416  30.555  25.879  1.00 19.90      1ECN1276
+HETATM 1171  O   HOH    69       2.854  29.030  31.650   .86 16.45      1ECN1277
+HETATM 1172  O   HOH    70      -3.092  28.258  29.452   .48 15.19      1ECN1278
+HETATM 1173  O   HOH    71       2.114  30.878  28.980   .53 21.23      1ECN1279
+HETATM 1174  O   HOH    72      -5.204  23.124  24.702   .83 10.62      1ECN1280
+HETATM 1175  O   HOH    73      -3.601  25.266  20.274   .56 15.05      1ECN1281
+HETATM 1176  O   HOH    74      -6.065  25.707  21.617  1.01 27.70      1ECN1282
+HETATM 1177  O   HOH    75      -8.261  20.432  18.301   .49 24.56      1ECN1283
+HETATM 1178  O   HOH    76      -6.698  22.196  18.257   .79 19.71      1ECN1284
+HETATM 1179  O   HOH    77      -8.304  24.250  19.635   .76 23.58      1ECN1285
+HETATM 1180  O   HOH    78      -3.201  23.841  13.919   .58 13.02      1ECN1286
+HETATM 1181  O   HOH    79      -2.219  21.568   7.807   .50 12.92      1ECN1287
+HETATM 1182  O   HOH    80       2.117  10.092   8.132   .41 10.44      1ECN1288
+HETATM 1183  O   HOH    81      -6.981  11.199  10.752   .96 19.17      1ECN1289
+HETATM 1184  O   HOH    82      -7.449  17.849   6.275   .72 26.66      1ECN1290
+HETATM 1185  O   HOH    83     -12.227  12.290   6.253   .59 40.72      1ECN1291
+HETATM 1186  O   HOH    84     -10.790  10.077   2.526   .43 28.06      1ECN1292
+HETATM 1187  O   HOH    85      -6.390   9.817   5.485   .32  7.39      1ECN1293
+HETATM 1188  O   HOH    86     -15.251  14.845  13.406   .56 11.05      1ECN1294
+HETATM 1189  O   HOH    87      -9.496  19.022  16.687  1.13 26.74      1ECN1295
+HETATM 1190  O   HOH    88     -16.560  12.051  16.841   .66 22.80      1ECN1296
+HETATM 1191  O   HOH    89     -14.534  12.501  15.476   .70 10.40      1ECN1297
+HETATM 1192  O   HOH    90      -9.718  23.665  23.466  1.05 16.18      1ECN1298
+HETATM 1193  O   HOH    91       9.244  28.226  12.208  1.19 17.95      1ECN1299
+HETATM 1194  O   HOH    92     -10.780  19.881  29.641   .90 15.88      1ECN1300
+HETATM 1195  O   HOH    93     -11.957  18.507  28.211   .25 23.57      1ECN1301
+HETATM 1196  O   HOH    94      -9.031  16.825  31.915  1.10 24.95      1ECN1302
+HETATM 1197  O   HOH    95      -1.408  25.633  36.973   .83 27.27      1ECN1303
+HETATM 1198  O   HOH    96       2.420  19.396  39.960   .85 22.95      1ECN1304
+CONECT  669  667  668 1059                                              1ECN1305
+CONECT 1059  669 1064 1075 1083                                         1ECN1306
+CONECT 1059 1091 1102                                                   1ECN1307
+CONECT 1060 1065 1095                                                   1ECN1308
+CONECT 1061 1068 1076                                                   1ECN1309
+CONECT 1062 1079 1084                                                   1ECN1310
+CONECT 1063 1087 1092                                                   1ECN1311
+CONECT 1064 1059 1065 1068                                              1ECN1312
+CONECT 1065 1060 1064 1066                                              1ECN1313
+CONECT 1066 1065 1067 1070                                              1ECN1314
+CONECT 1067 1066 1068 1069                                              1ECN1315
+CONECT 1068 1061 1064 1067                                              1ECN1316
+CONECT 1069 1067                                                        1ECN1317
+CONECT 1070 1066 1071                                                   1ECN1318
+CONECT 1071 1070 1072                                                   1ECN1319
+CONECT 1072 1071 1073 1074                                              1ECN1320
+CONECT 1073 1072                                                        1ECN1321
+CONECT 1074 1072                                                        1ECN1322
+CONECT 1075 1059 1076 1079                                              1ECN1323
+CONECT 1076 1061 1075 1077                                              1ECN1324
+CONECT 1077 1076 1078 1080                                              1ECN1325
+CONECT 1078 1077 1079 1081                                              1ECN1326
+CONECT 1079 1062 1075 1078                                              1ECN1327
+CONECT 1080 1077                                                        1ECN1328
+CONECT 1081 1078 1082                                                   1ECN1329
+CONECT 1082 1081                                                        1ECN1330
+CONECT 1083 1059 1084 1087                                              1ECN1331
+CONECT 1084 1062 1083 1085                                              1ECN1332
+CONECT 1085 1084 1086 1088                                              1ECN1333
+CONECT 1086 1085 1087 1089                                              1ECN1334
+CONECT 1087 1063 1083 1086                                              1ECN1335
+CONECT 1088 1085                                                        1ECN1336
+CONECT 1089 1086 1090                                                   1ECN1337
+CONECT 1090 1089                                                        1ECN1338
+CONECT 1091 1059 1092 1095                                              1ECN1339
+CONECT 1092 1063 1091 1093                                              1ECN1340
+CONECT 1093 1092 1094 1096                                              1ECN1341
+CONECT 1094 1093 1095 1097                                              1ECN1342
+CONECT 1095 1060 1091 1094                                              1ECN1343
+CONECT 1096 1093                                                        1ECN1344
+CONECT 1097 1094 1098                                                   1ECN1345
+CONECT 1098 1097 1099                                                   1ECN1346
+CONECT 1099 1098 1100 1101                                              1ECN1347
+CONECT 1100 1099                                                        1ECN1348
+CONECT 1101 1099                                                        1ECN1349
+CONECT 1102 1059 1103                                                   1ECN1350
+CONECT 1103 1102                                                        1ECN1351
+MASTER       64   11    1    9    0    0    0    6 1196    1   47   11  1ECND  8
+END                                                                     1ECN1353
