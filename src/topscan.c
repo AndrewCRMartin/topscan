@@ -911,8 +911,7 @@ char *ReadStride(FILE *fp, int ELen, int HLen)
    REAL x,  y,  z,
         x1, y1, z1,
         xp, yp, zp;
-   BOOL InBody       = FALSE,
-        InElement    = FALSE;
+   BOOL InElement    = FALSE;
    int  i            = 0,
         EleLength    = 0;
 
