@@ -3,11 +3,11 @@
    Program:    topscan
    File:       topscan.c
    
-   Version:    V1.2
-   Date:       12.03.98
+   Version:    V1.3
+   Date:       06.08.18
    Function:   Compare protein topologies
    
-   Copyright:  (c) UCL, Dr. Andrew C. R. Martin 1998
+   Copyright:  (c) UCL, Dr. Andrew C. R. Martin 1998-2018
    Author:     Dr. Andrew C. R. Martin
    Address:    Biomolecular Structure & Modelling Unit,
                Department of Biochemistry & Molecular Biology,
@@ -15,9 +15,8 @@
                Gower Street,
                London.
                WC1E 6BT.
-   Phone:      (Home) +44 (0)1372 275775
-               (Work) +44 (0)171 419 3890
-   EMail:      INTERNET: martin@biochem.ucl.ac.uk
+   Phone:      +44 (0)207 679 7034
+   EMail:      andrew@bioinf.org.uk
                
 **************************************************************************
 
@@ -50,6 +49,7 @@
    V1.0  13.01.98 Original
    V1.1  15.01.98 Fixed for where there is no secondary structure found
    V1.2  12.03.98 Added option to use STRIDE rather than DSSP
+   V1.3  06.08.18 Initialized variable for clean compile
 
 *************************************************************************/
 /* Includes
@@ -109,11 +109,12 @@ char *ReadStride(FILE *fp, int ELen, int HLen);
    Main program for the topscan program
 
    13.01.98 Original   By: ACRM
+   06.08.18 Initialized fdssp1 and fdssp2
 */
 int main(int argc, char **argv)
 {
-   FILE  *fdssp1,
-         *fdssp2;
+   FILE  *fdssp1 = NULL,
+         *fdssp2 = NULL;
    char  infile1[MAXBUFF],
          infile2[MAXBUFF],
          sourcefile[MAXBUFF],
