@@ -73,8 +73,8 @@
 /************************************************************************/
 /* Globals
 */
-BOOL   gVerbose = FALSE;
-char   gBest1[MAXBUFF],
+BOOL   gVerbose = FALSE;        /* Should we display alignments?        */
+char   gBest1[MAXBUFF],         /* Used to store the best alignment     */
        gBest2[MAXBUFF];
 
 /************************************************************************/
@@ -86,12 +86,13 @@ void TurnAboutX(char *top);
 void TurnAboutY(char *top);
 void TurnAboutZ(char *top);
 BOOL ParseCmdLine(int argc, char **argv, char *infile1, char *infile2, 
-                  char *matfile, int *ELen, int *HLen, BOOL *RunDSSP);
+                  char *matfile, int *ELen, int *HLen, BOOL *RunDSSP,
+                  BOOL *BuildOnly, BOOL *ScanMode, BOOL *UseBoth);
 void Usage(void);
 char *ReadDSSP(FILE *fp, int ELen, int HLen);
 char CalcElement(char struc, REAL x1, REAL y1, REAL z1, 
                  REAL x2, REAL y2, REAL z2);
-int CalcIDScore(char *seq1, char *seq2);
+int CalcIDScore(char *seq1, char *seq2, BOOL UseBoth);
 
 
 /************************************************************************/
@@ -107,14 +108,18 @@ int main(int argc, char **argv)
          *fdssp2;
    char  infile1[MAXBUFF],
          infile2[MAXBUFF],
+         sourcefile[MAXBUFF],
          matfile[MAXBUFF],
          *top1,
          *top2;
    int   score, 
          IDScore, 
-         ELen = ELEN, 
-         HLen = HLEN;
-   BOOL  RunDSSP = FALSE;
+         ELen      = ELEN, 
+         HLen      = HLEN;
+   BOOL  RunDSSP   = FALSE,
+         BuildOnly = FALSE,
+         ScanMode  = FALSE,
+         UseBoth   = FALSE;
 #ifdef __linux__
    __pid_t pid;
 #else
@@ -122,8 +127,10 @@ int main(int argc, char **argv)
 #endif
    
    if(ParseCmdLine(argc, argv, infile1, infile2, matfile, &ELen, &HLen,
-                   &RunDSSP))
+                   &RunDSSP, &BuildOnly, &ScanMode, &UseBoth))
    {
+      strcpy(sourcefile,infile1);
+      
       if(RunDSSP)
       {
          char ofile1[MAXBUFF],
@@ -131,14 +138,19 @@ int main(int argc, char **argv)
               cmd[MAXBUFF];
          
          pid = getpid();
+
          sprintf(ofile1,"/tmp/file1.%d",pid);
-         sprintf(ofile2,"/tmp/file2.%d",pid);
-         sprintf(cmd,"%s %s %s", DSSP, infile1, ofile1);
-         system(cmd);
-         sprintf(cmd,"%s %s %s", DSSP, infile2, ofile2);
+         sprintf(cmd,"%s %s %s >/dev/null", DSSP, infile1, ofile1);
          system(cmd);
          strcpy(infile1, ofile1);
-         strcpy(infile2, ofile2);
+
+         if(!BuildOnly && !ScanMode)
+         {
+            sprintf(ofile2,"/tmp/file2.%d",pid);
+            sprintf(cmd,"%s %s %s >/dev/null", DSSP, infile2, ofile2);
+            system(cmd);
+            strcpy(infile2, ofile2);
+         }
       }
       
       /* Open the DSSP files                                            */
@@ -147,10 +159,13 @@ int main(int argc, char **argv)
          fprintf(stderr,"Can't read %s\n",infile1);
          return(1);
       }
-      if((fdssp2=fopen(infile2,"r"))==NULL)
+      if(!BuildOnly)
       {
-         fprintf(stderr,"Can't read %s\n",infile2);
-         return(1);
+         if((fdssp2=fopen(infile2,"r"))==NULL)
+         {
+            fprintf(stderr,"Can't read %s\n",infile2);
+            return(1);
+         }
       }
 
       /* Read the DSSP files                                            */
@@ -159,42 +174,93 @@ int main(int argc, char **argv)
          fprintf(stderr,"Unable to read topology from %s\n",infile1);
          return(1);
       }
-      if((top2 = ReadDSSP(fdssp2, ELen, HLen))==NULL)
+
+      if(BuildOnly)
       {
-         fprintf(stderr,"Unable to read topology from %s\n",infile2);
-         return(1);
+         printf("%s %s\n",sourcefile,top1);
       }
-
-      /* Read the Matrix file                                           */
-      if(!ReadMDM(matfile))
+      else
       {
-         fprintf(stderr,"Unable to read matrix file %s\n",matfile);
-         return(1);
+         /* Read the Matrix file                                        */
+         if(!ReadMDM(matfile))
+         {
+            fprintf(stderr,"Unable to read matrix file %s\n",matfile);
+            return(1);
+         }
+            
+         if(ScanMode)
+         {
+            char buffer[MAXBUFF], 
+                 name[MAXBUFF],
+                 *ptr;
+
+            if((top2 = (char *)malloc(MAXBUFF * sizeof(char)))==NULL)
+            {
+               fprintf(stderr,"No memory for topology buffer\n");
+               return(1);
+            }
+            
+            while(fgets(buffer,MAXBUFF,fdssp2))
+            {
+               TERMINATE(buffer);
+               
+               ptr = buffer;
+               while(*ptr == ' ' || *ptr == '\t')
+                  ptr++;
+               if(strlen(ptr) && (*ptr != '!') && (*ptr != '#'))
+               {
+                  sscanf(ptr,"%s %s",name,top2);
+
+                  IDScore = CalcIDScore(top1, top2, UseBoth);
+            
+                  if((score = RunAlignment(top1, top2))==(-1))
+                     return(1);
+            
+                  /* Print the result                                   */
+                  if(gVerbose)
+                  {
+                     printf("! %s\n! %s\n",gBest1,gBest2);
+                  }
+                  printf("%s %f\n", name,
+                         (REAL)100.0 * (REAL)score / (REAL)IDScore);
+                  
+               }
+            }
+         }
+         else
+         {
+            if((top2 = ReadDSSP(fdssp2, ELen, HLen))==NULL)
+            {
+               fprintf(stderr,"Unable to read topology from %s\n",
+                       infile2);
+               return(1);
+            }
+            
+            IDScore = CalcIDScore(top1, top2, UseBoth);
+            
+            if((score = RunAlignment(top1, top2))==(-1))
+               return(1);
+            
+            /* Print the result                                         */
+            if(gVerbose)
+            {
+               printf("%s\n%s\n",gBest1,gBest2);
+            }
+            printf("%f\n",(REAL)100.0 * (REAL)score / (REAL)IDScore);
+         }
       }
-
-      IDScore = CalcIDScore(top1, top2);
-
-      if((score = RunAlignment(top1, top2))==(-1))
-         return(1);
       
-      /* Print the result                                               */
-      if(gVerbose)
-      {
-         printf("%s\n%s\n",gBest1,gBest2);
-      }
-      printf("%f\n",(REAL)100.0 * (REAL)score / (REAL)IDScore);
-
       if(RunDSSP)
       {
          unlink(infile1);
-         unlink(infile2);
+         if(!BuildOnly && !ScanMode)
+            unlink(infile2);
       }
    }
    else
    {
       Usage();
    }
-   
 
    return(0);
 }
@@ -359,7 +425,8 @@ void TurnAboutZ(char *top)
 
 /************************************************************************/
 /*>BOOL ParseCmdLine(int argc, char **argv, char *infile1, char *infile2, 
-                     char *matfile, int *ELen, int *HLen, BOOL *RunDSSP)
+                     char *matfile, int *ELen, int *HLen, BOOL *RunDSSP,
+                     BOOL *BuildOnly, BOOL *ScanMode, BOOL *UseBoth)
    ---------------------------------------------------------------------
    Input:   int    argc         Argument count
             char   **argv       Argument array
@@ -368,7 +435,13 @@ void TurnAboutZ(char *top)
             char   *matfile     Matrix file      
             int    *ELen        Minimum strand length
             int    *HLen        Minimum helix length
-            BOOL   *RunDSSP     Run the DSSP program on input files
+            BOOL   *RunDSSP     Run the DSSP program on input files?
+            BOOL   *BuildOnly   Just create the topology string for the
+                                structure?
+            BOOL   *ScanMode    Run in scan mode?
+            BOOL   *UseBoth     Calculate the percentages wrt max score
+                                from either struc rather than just the 
+                                first
    Returns: BOOL                Success?
 
    Parse the command line
@@ -376,7 +449,8 @@ void TurnAboutZ(char *top)
    13.01.97 Original    By: ACRM
 */
 BOOL ParseCmdLine(int argc, char **argv, char *infile1, char *infile2, 
-                  char *matfile, int *ELen, int *HLen, BOOL *RunDSSP)
+                  char *matfile, int *ELen, int *HLen, BOOL *RunDSSP,
+                  BOOL *BuildOnly, BOOL *ScanMode, BOOL *UseBoth)
 {
    argc--;
    argv++;
@@ -417,6 +491,15 @@ BOOL ParseCmdLine(int argc, char **argv, char *infile1, char *infile2,
          case 'p':
             *RunDSSP = TRUE;
             break;
+         case 'b':
+            *BuildOnly = TRUE;
+            break;
+         case 's':
+            *ScanMode = TRUE;
+            break;
+         case 'w':
+            *UseBoth = TRUE;
+            break;
          default:
             return(FALSE);
             break;
@@ -425,12 +508,15 @@ BOOL ParseCmdLine(int argc, char **argv, char *infile1, char *infile2,
       else
       {
          /* Check that there are 2 arguments left                       */
-         if(argc != 2)
+         if(*BuildOnly && argc != 1)
+            return(FALSE);
+         if(!(*BuildOnly) && argc != 2)
             return(FALSE);
          
          /* Copy the first to infile                                    */
          strcpy(infile1, argv[0]);
-         strcpy(infile2, argv[1]);
+         if(!(*BuildOnly))
+            strcpy(infile2, argv[1]);
             
          return(TRUE);
       }
@@ -453,13 +539,25 @@ void Usage(void)
 {
    fprintf(stderr,"\ntopscan V1.0 (c) Dr. Andrew C.R. Martin, UCL\n");
 
-   fprintf(stderr,"Usage: topscan [-m matrix] [-p] [-v] [-h hlen] \
-[-e elen] file1.dssp file2.dssp\n");
+   fprintf(stderr,"\nUsage: topscan [-v] [-p] [-w] [-h hlen] [-e elen] \
+[-m matrix] file1.{dssp|pdb} file2.{dssp|pdb}\n");
+   fprintf(stderr,"       topscan -b [-p] [-h hlen] [-e elen] \
+file1.{dssp|pdb}\n");
+   fprintf(stderr,"       topscan -s [-v] [-p] [-w] [-h hlen] [-e elen] \
+[-m matrix] file1.{dssp|pdb} file2.top\n");
+   fprintf(stderr,"\n       -b Build the topology string for a file\n");
+   fprintf(stderr,"          (Don't actually run a comparison)\n");
+   fprintf(stderr,"       -s Scan a DSSP or PDB file against a library \
+of topology strings\n");
+   fprintf(stderr,"          stored in the second file\n");
    fprintf(stderr,"       -m Specify the matrix file [Default: %s]\n",
            MATFILE);
    fprintf(stderr,"       -v Verbose mode\n");
    fprintf(stderr,"       -p Input files are PDB and the DSSP program \
 will be run first\n");
+   fprintf(stderr,"       -w Calculate score as percentage from both \
+topology strings\n");
+   fprintf(stderr,"          rather than just the first\n");
    fprintf(stderr,"       -h Specify minimum helix length [Default: \
 %d]\n", HLEN);
    fprintf(stderr,"       -e Specify minimum strand length [Default: \
@@ -475,8 +573,30 @@ the 6 orientations\n");
 a fixed position.\n");
    fprintf(stderr,"Output is the best score obtained - the alignment is \
 also given if the\n");
-   fprintf(stderr,"verbose option is selected\n\n");
+   fprintf(stderr,"verbose option is selected\n");
+
+   fprintf(stderr,"\nOutput is the best score obtained. The score is \
+presented as a percentage\n");
+   fprintf(stderr,"of the score obtained by aligning the first structure \
+with itself; thus\n");
+   fprintf(stderr,"the first structure is treated as a probe being \
+tested against the \n");
+   fprintf(stderr,"second structure. If the -w option is given, the \
+maximum possible\n");
+   fprintf(stderr,"score is calculated from both topology strings. \
+If the verbose option\n");
+   fprintf(stderr,"is selected, the alignment is also given.\n");
+
+   fprintf(stderr,"\nIn scan mode (-s), the topology from the first \
+file is scanned against\n");
+   fprintf(stderr,"a library of topology strings stored in the second \
+file. Entries for \n");
+   fprintf(stderr,"the topology library file may be generated by using \
+the program in\n");
+   fprintf(stderr,"build mode (-b).\n\n");
 }
+
+
 
 
 /************************************************************************/
@@ -635,20 +755,19 @@ char CalcElement(char struc, REAL x1, REAL y1, REAL z1,
 }
 
 /************************************************************************/
-/*>int CalcIDScore(char *seq1, char *seq2)
-   ---------------------------------------
-   Input:   char     *seq1   First sequence
-            char     *seq2   Second sequence
+/*>int CalcIDScore(char *seq1, char *seq2, BOOL UseBoth)
+   -----------------------------------------------------
+   Input:   char     *seq1   Sequence 1
+            char     *seq2   Sequence 2
+            BOOL     UseBoth Calculate score as Max of both sequences
    Returns: int              Max score of each sequence vs itself
 
    Calculates the maximum possible score resulting from the identical
    sequence
 
-   (Lifted from nw.c)
-
-   11.07.96 Original   By: ACRM
+   14.01.98 Original   By: ACRM
 */
-int CalcIDScore(char *seq1, char *seq2)
+int CalcIDScore(char *seq1, char *seq2, BOOL UseBoth)
 {
    int score1 = 0,
        score2 = 0,
@@ -661,13 +780,18 @@ int CalcIDScore(char *seq1, char *seq2)
       if(isalpha(seq1[i]))
          score1 += CalcMDMScore(seq1[i], seq1[i]);
    }
-   for(i=0; i<seqlen2; i++)
+   if(UseBoth)
    {
-      if(isalpha(seq2[i]))
-         score2 += CalcMDMScore(seq2[i], seq2[i]);
+      for(i=0; i<seqlen2; i++)
+      {
+         if(isalpha(seq2[i]))
+            score2 += CalcMDMScore(seq2[i], seq2[i]);
+      }
+      if(score2 > score1)
+         score1 = score2;
    }
    
-   return(MIN(score1, score2));
+   return(score1);
 }
 
 
