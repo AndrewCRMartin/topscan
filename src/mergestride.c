@@ -387,10 +387,11 @@ STRIDE *ReadStride(FILE *fp)
    Prints a usage message
 
    13.03.98 Original   By: ACRM
+   06.08.18 V2.0
 */
 void Usage(void)
 {
-   fprintf(stderr,"\nmergestride V1.0 (c) 1998 UCL, Dr. Andrew C.R. \
+   fprintf(stderr,"\nmergestride V2.0 (c) 1998 UCL, Dr. Andrew C.R. \
 Martin\n");
 
    fprintf(stderr,"\nUsage: mergestride pdbfile [stridefile \

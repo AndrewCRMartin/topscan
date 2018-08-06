@@ -3,7 +3,7 @@
    Program:    mergepdbsecstr
    File:       mergepdbsecstr.c
    
-   Version:    V1.0
+   Version:    V2.0
    Date:       06.08.18
    Function:   Merge original PDB file with PDBSECSTR secondary structure
                assignments
@@ -50,7 +50,7 @@
 
    Revision History:
    =================
-   V1.0  06.08.18 Original
+   V2.0  06.08.18 Original
 
 *************************************************************************/
 /* Includes
@@ -145,7 +145,7 @@ input or output file\n");
    Merges PDBSECSTR output data with coordinate information from a 
    PDB file
 
-   13.03.98 Orginal   By: ACRM
+   06.08.18 Orginal   By: ACRM
 */
 BOOL DoMerge(FILE *pdbfp, FILE *pdbsecstrfp, FILE *out)
 {
@@ -257,7 +257,7 @@ file\n");
 
    Parse the command line
 
-   16.08.94 Original    By: ACRM
+   06.08.18 Original    By: ACRM
 */
 BOOL ParseCmdLine(int argc, char **argv, char *pdbfile, char *infile, 
                   char *outfile)
@@ -323,7 +323,7 @@ BOOL ParseCmdLine(int argc, char **argv, char *pdbfile, char *infile,
    Reads a PDBSECSTR file and creates a doubly linked list of items \
    from the file
 
-   13.03.98 Original   By: ACRM
+   06.08.18 Original   By: ACRM
 */
 SECSTR *ReadPdbsecstr(FILE *fp)
 {
@@ -368,11 +368,11 @@ SECSTR *ReadPdbsecstr(FILE *fp)
    ----------------
    Prints a usage message
 
-   13.03.98 Original   By: ACRM
+   06.08.18 Original   By: ACRM
 */
 void Usage(void)
 {
-   fprintf(stderr,"\nmergepdbsecstr V1.0 (c) 1998 UCL, Dr. Andrew C.R. \
+   fprintf(stderr,"\nmergepdbsecstr V2.0 (c) 1998 UCL, Dr. Andrew C.R. \
 Martin\n");
 
    fprintf(stderr,"\nUsage: mergepdbsecstr pdbfile [pdbsecstrfile \
