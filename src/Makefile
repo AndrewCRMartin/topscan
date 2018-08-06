@@ -1,7 +1,7 @@
 LIBDIR = $(HOME)/lib
 INCDIR = $(HOME)/include
 CC     = cc
-COPT   = -ansi -pedantic -Wall -L$(LIBDIR) -I$(INCDIR) -g
+COPT   = -ansi -pedantic -Wall -L$(LIBDIR) -I$(INCDIR) -O3
 LIB    = -lbiop -lgen -lm -lxml2
 EXE    = topscan mergestride mergepdbsecstr
 

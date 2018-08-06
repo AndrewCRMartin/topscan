@@ -30,14 +30,15 @@ Installation
 You need to install your chosen secondary structure calculation
 program in your path (e.g. in `~/bin`)
 
-To install `topscan` simply enter the source directory and type:
+To install `topscan` simply enter the source directory and run make:
 
 ```
+cd src
 make
 ```
 to compile.
 
-Once the program has compiled, install by typingL
+Once the program has compiled, install by typing:
 
 ```
 make install
@@ -50,6 +51,7 @@ Test the install by typing:
 ```
 make test
 ```
+(Note that this must be done after the install.)
 
 Getting Help
 ------------
