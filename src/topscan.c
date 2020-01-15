@@ -590,9 +590,9 @@ int RunAlignment(int *top1, int *top2, BOOL PrimaryTopology)
       {
          TurnAboutZ(top1);
          
-         score = NumericAffineAlign(top1, length1, top2, length2, FALSE,
-                                    FALSE, GAPPEN, 0, align1, align2,
-                                    &align_len);
+         score = blNumericAffineAlign(top1, length1, top2, length2, FALSE,
+                                      FALSE, GAPPEN, 0, align1, align2,
+                                      &align_len);
          if(score > maxscore)
          {
             maxscore = score;
@@ -1598,38 +1598,38 @@ BOOL IsNeighbour(REAL x1, REAL y1, REAL z1,
    /* Calculate distance and position of Nter end against previous
       element
    */
-   d[0] = PointLineDistance(x1, y1, z1, 
-                            prevx1, prevy1, prevz1,
-                            prevx2, prevy2, prevz2,
-                            NULL, NULL, NULL,
-                            &f[0]);
+   d[0] = blPointLineDistance(x1, y1, z1, 
+                              prevx1, prevy1, prevz1,
+                              prevx2, prevy2, prevz2,
+                              NULL, NULL, NULL,
+                              &f[0]);
 
    /* Calculate distance and position of Cter end against previous
       element
    */
-   d[1] = PointLineDistance(x2, y2, z2, 
-                            prevx1, prevy1, prevz1,
-                            prevx2, prevy2, prevz2,
-                            NULL, NULL, NULL,
-                            &f[1]);
+   d[1] = blPointLineDistance(x2, y2, z2, 
+                              prevx1, prevy1, prevz1,
+                              prevx2, prevy2, prevz2,
+                              NULL, NULL, NULL,
+                              &f[1]);
 
    /* Calculate distance and position of Nter end of previous element
       against current
    */
-   d[2] = PointLineDistance(prevx1, prevy1, prevz1,
-                            x1, y1, z1, 
-                            x2, y2, z2,
-                            NULL, NULL, NULL,
-                            &f[2]);
+   d[2] = blPointLineDistance(prevx1, prevy1, prevz1,
+                              x1, y1, z1, 
+                              x2, y2, z2,
+                              NULL, NULL, NULL,
+                              &f[2]);
 
    /* Calculate distance and position of Cter end of previous element
       against current
    */
-   d[3] = PointLineDistance(prevx2, prevy2, prevz2,
-                            x1, y1, z1, 
-                            x2, y2, z2,
-                            NULL, NULL, NULL,
-                            &f[3]);
+   d[3] = blPointLineDistance(prevx2, prevy2, prevz2,
+                              x1, y1, z1, 
+                              x2, y2, z2,
+                              NULL, NULL, NULL,
+                              &f[3]);
 
    /* See which are in line with the other element                      */
    for(i=0; i<4; i++)
