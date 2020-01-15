@@ -1117,6 +1117,7 @@ accessibility from\nUCL DSSP files\n");
    26.01.00 Added EleLength
    10.03.00 Changed to use integer coded topology array. i.e. returns
             a number rather than a character
+   13.03.00 Fixed length checking
 */
 int CalcElement(char struc, REAL x1, REAL y1, REAL z1, 
                 REAL x2, REAL y2, REAL z2, BOOL PrimaryTopology,
@@ -1221,8 +1222,8 @@ int CalcElement(char struc, REAL x1, REAL y1, REAL z1,
 
    if(EleLength)
    {
-      if(((struc == 'E') && (EleLength > HELIX_MEAN_LENGTH)) ||
-         ((struc == 'H') && (EleLength > STRAND_MEAN_LENGTH)))
+      if(((struc == 'E') && (EleLength > STRAND_MEAN_LENGTH)) ||
+         ((struc == 'H') && (EleLength > HELIX_MEAN_LENGTH)))
          lengthmod = 48;
    }
    
