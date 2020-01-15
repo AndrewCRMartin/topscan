@@ -4,10 +4,10 @@
    File:       topscan.c
    
    Version:    V2.0
-   Date:       06.08.18
+   Date:       13.03.2000
    Function:   Compare protein topologies
    
-   Copyright:  (c) UCL, Dr. Andrew C. R. Martin 1998-2018
+   Copyright:  (c) UCL, Reading, Dr. Andrew C. R. Martin 1998-2000
    Author:     Dr. Andrew C. R. Martin
    Address:    Biomolecular Structure & Modelling Unit,
                Department of Biochemistry & Molecular Biology,
@@ -15,8 +15,9 @@
                Gower Street,
                London.
                WC1E 6BT.
-   Phone:      +44 (0)207 679 7034
-   EMail:      andrew@bioinf.org.uk
+   Phone:      (Home) +44 (0)1372 275775
+               (Work) +44 (0)171 419 3890
+   EMail:      INTERNET: A.C.R.Martin@reading.ac.uk
                
 **************************************************************************
 
@@ -49,8 +50,14 @@
    V1.0  13.01.98 Original
    V1.1  15.01.98 Fixed for where there is no secondary structure found
    V1.2  12.03.98 Added option to use STRIDE rather than DSSP
-   V1.3  06.08.18 Initialized variable for clean compile
-   V2.0  06.08.18 Added pdbsecstr support as the default
+   V1.3  26.10.99 Added -g option (treat 3_10 helix as alpha helix)
+   V1.4  10.11.99 Added -1 option (primary topology only)
+   V1.5  17.11.99 Added -n option (include neighbour information)
+   V1.6  23.11.99 Added -a option (include accessibility)
+   V1.7  19.01.00 Added -t option (give topology strings on command line)
+   V1.8  26.01.00 Added -l option (include length)
+   V2.0  13.03.00 Modified to work with numeric topology strings so we can
+                  have a much larger alphabet
 
 *************************************************************************/
 /* Includes
@@ -63,50 +70,77 @@
 #include "bioplib/seq.h"
 #include "bioplib/macros.h"
 #include "bioplib/fsscanf.h"
+#include "bioplib/MathUtil.h"
 
 /************************************************************************/
 /* Defines and macros
 */
-#define DSSP             "dssp"
-#define STRIDE           "stride"
-#define PDBSECSTR        "pdbsecstr"
-#define MERGESTRIDE      "mergestride"
-#define MERGEPDBSECSTR   "mergepdbsecstr"
-#define MAXBUFF          160
-#define GAPPEN           8
-#define MATFILE          "topmat.mat"
-#define DEFAULT_ELEN     4
-#define DEFAULT_HLEN     4
-#define SECSTR_DSSP      0
-#define SECSTR_STRIDE    1
-#define SECSTR_PDBSECSTR 2
+#define DSSP                  "dssp"
+#define STRIDE                "stride"
+#define MERGESTRIDE           "mergestride"
+#define MAXBUFF               320
+#define GAPPEN                8
+#define MATFILE               "numtopmat.mat"
+#define ELEN                  4
+#define HLEN                  4
+#define MARKER                -9999.0
+#define ADJACENT_DIST         12.0
+#define BUFFCHUNK             24
 
+#define STRAND_MEAN_ACCESS_3  33.836
+#define STRAND_MEAN_ACCESS_4  32.394
+#define HELIX_MEAN_ACCESS_3   52.807
+#define HELIX_MEAN_ACCESS_3G  56.547
+#define HELIX_MEAN_ACCESS_4   52.795
+#define HELIX_MEAN_ACCESS_4G  53.304
+
+#define HELIX_MEAN_LENGTH     12.5
+#define STRAND_MEAN_LENGTH    5.4
 /************************************************************************/
 /* Globals
 */
 BOOL   gVerbose = FALSE;        /* Should we display alignments?        */
 char   gBest1[MAXBUFF],         /* Used to store the best alignment     */
        gBest2[MAXBUFF];
+REAL   gHelixMeanAccess = 0.0,  /* Mean accessibilities                 */
+       gStrandMeanAccess = 0.0;
 
 /************************************************************************/
 /* Prototypes
 */
 int main(int argc, char **argv);
-int RunAlignment(char *top1, char *top2);
-void TurnAboutX(char *top);
-void TurnAboutY(char *top);
-void TurnAboutZ(char *top);
+int RunAlignment(int *top1, int *top2, BOOL PrimaryTopology);
+void TurnAboutX(int *top);
+void TurnAboutY(int *top);
+void TurnAboutZ(int *top);
 BOOL ParseCmdLine(int argc, char **argv, char *infile1, char *infile2, 
-                  char *matfile, int *ELen, int *HLen, BOOL *CalcSecStr,
+                  char *matfile, int *ELen, int *HLen, BOOL *RunDSSP,
                   BOOL *BuildOnly, BOOL *ScanMode, BOOL *UseBoth,
-                  int *SecStrCalculator);
+                  BOOL *UseStride, BOOL *Do3_10, BOOL *PrimaryTopology,
+                  BOOL *DoNeighbour, BOOL *DoAccess, BOOL *GivenTopString,
+                  BOOL *DoLength);
 void Usage(void);
-char *ReadTopology(FILE *fp, int ELen, int HLen, int SecStrCalculator);
-char CalcElement(char struc, REAL x1, REAL y1, REAL z1, 
-                 REAL x2, REAL y2, REAL z2);
-int CalcIDScore(char *seq1, char *seq2, BOOL UseBoth);
-char *ReadDSSP(FILE *fp, int ELen, int HLen);
-char *ReadStride(FILE *fp, int ELen, int HLen);
+int *ReadTopology(FILE *fp, int ELen, int HLen, BOOL UseStride,
+                   BOOL Do3_10, BOOL PrimaryTopology, BOOL DoNeighbour,
+                   BOOL DoAccess, BOOL DoLength);
+int CalcElement(char struc, REAL x1, REAL y1, REAL z1, 
+                REAL x2, REAL y2, REAL z2, BOOL PrimaryTopology,
+                BOOL DoNeighbour, BOOL DoAccess, REAL meanAccess,
+                int  EleLength);
+int CalcIDScore(int *seq1, int *seq2, BOOL UseBoth);
+int *ReadDSSP(FILE *fp, int ELen, int HLen, BOOL Do3_10, 
+              BOOL PrimaryTopology, BOOL DoNeighbour, BOOL DoAccess,
+              BOOL DoLength);
+int *ReadStride(FILE *fp, int ELen, int HLen, BOOL Do3_10, 
+                BOOL PrimaryTopology, BOOL DoNeighbour, BOOL DoAccess,
+                BOOL DoLength);
+BOOL IsNeighbour(REAL x1, REAL y1, REAL z1,
+                 REAL x2, REAL y2, REAL z2,
+                 REAL prevx1, REAL prevy1, REAL prevz1,
+                 REAL prevx2, REAL prevy2, REAL prevz2);
+int FindArrayLength(int *array);
+char *NumArrayToString(int *numarr);
+int MakeIntArray(int *array1, char *inarray);
 
 
 /************************************************************************/
@@ -115,28 +149,36 @@ char *ReadStride(FILE *fp, int ELen, int HLen);
    Main program for the topscan program
 
    13.01.98 Original   By: ACRM
-   06.08.18 Initialized file pointers
-            Added pdbsecstr support
+   26.10.99 Added 3_10 helix handling
+   19.01.00 Added -t handling
+   10.03.00 Changed to use integer coded topology array
 */
 int main(int argc, char **argv)
 {
-   FILE  *fdssp1 = NULL,
-         *fdssp2 = NULL;
+   FILE  *fdssp1,
+         *fdssp2;
    char  infile1[MAXBUFF],
          infile2[MAXBUFF],
          sourcefile[MAXBUFF],
          matfile[MAXBUFF],
-         *top1,
-         *top2;
+         top2str[MAXBUFF];
+   int   *top1 = NULL,
+         *top2 = NULL;
    int   score, 
          IDScore, 
-         ELen             = DEFAULT_ELEN, 
-         HLen             = DEFAULT_HLEN,
-         SecStrCalculator = SECSTR_PDBSECSTR;
-   BOOL  CalcSecStr       = FALSE,
-         BuildOnly        = FALSE,
-         ScanMode         = FALSE,
-         UseBoth          = FALSE;
+         ELen            = ELEN, 
+         HLen            = HLEN;
+   BOOL  RunDSSP         = FALSE,
+         BuildOnly       = FALSE,
+         ScanMode        = FALSE,
+         UseBoth         = FALSE,
+         UseStride       = FALSE,
+         Do3_10          = FALSE,
+         PrimaryTopology = FALSE,
+         DoNeighbour     = FALSE,
+         DoAccess        = FALSE,
+         DoLength        = FALSE,
+         GivenTopString  = FALSE;
 #ifdef __linux__
    __pid_t pid;
 #else
@@ -147,118 +189,168 @@ int main(int argc, char **argv)
    gBest2[0] = '\0';
    
    if(ParseCmdLine(argc, argv, infile1, infile2, matfile, &ELen, &HLen,
-                   &CalcSecStr, &BuildOnly, &ScanMode, &UseBoth,
-                   &SecStrCalculator))
+                   &RunDSSP, &BuildOnly, &ScanMode, &UseBoth, &UseStride,
+                   &Do3_10, &PrimaryTopology, &DoNeighbour, &DoAccess,
+                   &GivenTopString, &DoLength))
    {
-      strcpy(sourcefile,infile1);
-      
-      /* Calculate secondary structure using selected program if
-         required
-      */
-      if(CalcSecStr)
+      if(GivenTopString)
       {
-         char ofile1[MAXBUFF],
-              ofile2[MAXBUFF],
-              cmd[MAXBUFF];
-         
-         pid = getpid();
-
-         /* SecStr calculation for the first file                       */
-         sprintf(ofile1,"/tmp/file1.%d",pid);
-         switch(SecStrCalculator)
+         if((top1 = (int *)malloc((1+strlen(infile1)) * sizeof(int)))
+            ==NULL)
          {
-         case SECSTR_STRIDE:
-            sprintf(cmd,"%s %s | %s %s > %s", STRIDE, infile1, 
-                    MERGESTRIDE, infile1, ofile1);
-            break;
-         case SECSTR_DSSP:
-            sprintf(cmd,"%s %s %s >/dev/null", DSSP, infile1, ofile1);
-            break;
-         case SECSTR_PDBSECSTR:
-         default:
-            sprintf(cmd,"%s %s | %s %s > %s", PDBSECSTR, infile1, 
-                    MERGEPDBSECSTR, infile1, ofile1);
-            break;
-         }
-
-         system(cmd);
-         strcpy(infile1, ofile1);
-
-         /* If we aren't just building and we aren't scanning then it is
-            a comparison between two proteins so do the SecStr 
-            calculation for the second file
-         */
-         if(!BuildOnly && !ScanMode)
-         {
-            sprintf(ofile2,"/tmp/file2.%d",pid);
-
-            switch(SecStrCalculator)
-            {
-            case SECSTR_STRIDE:
-               sprintf(cmd,"%s %s | %s %s > %s", STRIDE, infile2, 
-                       MERGESTRIDE, infile2, ofile2);
-               break;
-            case SECSTR_DSSP:
-               sprintf(cmd,"%s %s %s >/dev/null", DSSP, infile2, ofile2);
-               break;
-            case SECSTR_PDBSECSTR:
-            default:
-               sprintf(cmd,"%s %s | %s %s > %s", PDBSECSTR, infile2, 
-                       MERGEPDBSECSTR, infile2, ofile2);
-               break;
-            }
-
-            system(cmd);
-            strcpy(infile2, ofile2);
-         }
-      }
-      
-      /* Open the secondary structure files                             */
-      if((fdssp1=fopen(infile1,"r"))==NULL)
-      {
-         fprintf(stderr,"Can't read %s\n",infile1);
-         return(1);
-      }
-      if(!BuildOnly)
-      {
-         if((fdssp2=fopen(infile2,"r"))==NULL)
-         {
-            fprintf(stderr,"Can't read %s\n",infile2);
+            fprintf(stderr,"No memory for copying topology string\n");
             return(1);
          }
-      }
-
-      /* Read the secondary structure files                             */
-      if((top1 = ReadTopology(fdssp1,ELen,HLen,SecStrCalculator))==NULL)
-      {
-         fprintf(stderr,"Unable to read topology from %s\n",infile1);
-         return(1);
-      }
-
-      /* If we are only building, then just display the information. 
-         Otherwise we compare the secondary structure assignments
-      */
-      if(BuildOnly)
-      {
-         printf("%s %s\n",sourcefile,top1);
+         MakeIntArray(top1, infile1);
+         
+         if(!ScanMode)
+         {
+            if((top2 = (int *)malloc((1+strlen(infile2)) * sizeof(int)))
+               ==NULL)
+            {
+               fprintf(stderr,"No memory for copying topology string\n");
+               return(1);
+            }
+            MakeIntArray(top2, infile2);
+         }
       }
       else
       {
-         /* Read the Matrix file                                        */
-         if(!blReadMDM(matfile))
+         strcpy(sourcefile,infile1);
+         
+         /* Choose which mean accessibilities to use if we are doing
+            accessibilities
+         */
+         if(DoAccess)
+         {
+            BOOL Warn = FALSE;
+            
+            if(ELen == 3)
+            {
+               gStrandMeanAccess = STRAND_MEAN_ACCESS_3;
+            }
+            else
+            {
+               gStrandMeanAccess = STRAND_MEAN_ACCESS_4;
+               if(ELen != 4) Warn = TRUE;
+            }
+            
+            if(HLen == 3)
+            {
+               gHelixMeanAccess = ((Do3_10)?HELIX_MEAN_ACCESS_3G:
+                                   HELIX_MEAN_ACCESS_3);
+            }
+            else
+            {
+               gHelixMeanAccess = ((Do3_10)?HELIX_MEAN_ACCESS_4G:
+                                   HELIX_MEAN_ACCESS_4);
+               if(ELen != 4) Warn = TRUE;
+            }
+            
+            if(Warn)
+            {
+               fprintf(stderr,"Mean accessibilities not known for \
+specified secondary structure length\nUsing values for length 4\n");
+            }
+         }
+         
+         if(RunDSSP)
+         {
+            char ofile1[MAXBUFF],
+               ofile2[MAXBUFF],
+               cmd[MAXBUFF];
+            
+            pid = getpid();
+            
+            sprintf(ofile1,"/tmp/file1.%d",pid);
+            if(UseStride)
+            {
+               sprintf(cmd,"%s %s | %s %s > %s", STRIDE, infile1, 
+                       MERGESTRIDE, infile1, ofile1);
+               system(cmd);
+            }
+            else
+            {
+               sprintf(cmd,"%s %s %s >/dev/null", DSSP, infile1, ofile1);
+               system(cmd);
+            }
+            strcpy(infile1, ofile1);
+            
+            
+            if(!BuildOnly && !ScanMode)
+            {
+               sprintf(ofile2,"/tmp/file2.%d",pid);
+               if(UseStride)
+               {
+                  sprintf(cmd,"%s %s | %s %s > %s", STRIDE, infile2, 
+                          MERGESTRIDE, infile2, ofile2);
+                  system(cmd);
+               }
+               else
+               {
+                  sprintf(cmd,"%s %s %s >/dev/null", 
+                          DSSP, infile2, ofile2);
+                  system(cmd);
+               }
+               strcpy(infile2, ofile2);
+            }
+         }
+         
+         /* Open the DSSP files                                         */
+         if((fdssp1=fopen(infile1,"r"))==NULL)
+         {
+            fprintf(stderr,"Can't read %s\n",infile1);
+            return(1);
+         }
+         if(!BuildOnly)
+         {
+            if((fdssp2=fopen(infile2,"r"))==NULL)
+            {
+               fprintf(stderr,"Can't read %s\n",infile2);
+               return(1);
+            }
+         }
+         
+         /* Read the DSSP files                                         */
+         if((top1 = ReadTopology(fdssp1, ELen, HLen, UseStride, Do3_10,
+                                 PrimaryTopology, DoNeighbour,
+                                 DoAccess, DoLength))==NULL)
+         {
+            fprintf(stderr,"Unable to read topology from %s\n",infile1);
+            return(1);
+         }
+         
+         if(BuildOnly)
+         {
+            char *ts = NumArrayToString(top1);
+            if(ts==NULL)
+            {
+               fprintf(stderr,"No memory to create topology string from \
+numeric array\n");
+               return(1);
+            }
+            
+            printf("%s %s\n",sourcefile,ts);
+            free(ts);
+         }
+      }
+      
+      if(!BuildOnly)
+      {
+         /* Read the Matrix file                                     */
+         if(!NumericReadMDM(matfile))
          {
             fprintf(stderr,"Unable to read matrix file %s\n",matfile);
             return(1);
          }
-
-         /* Comparing against a library                                 */
+      
          if(ScanMode)
          {
             char buffer[MAXBUFF], 
                  name[MAXBUFF],
                  *ptr;
 
-            if((top2 = (char *)malloc(MAXBUFF * sizeof(char)))==NULL)
+            if((top2 = (int *)malloc(MAXBUFF * sizeof(int)))==NULL)
             {
                fprintf(stderr,"No memory for topology buffer\n");
                return(1);
@@ -273,16 +365,25 @@ int main(int argc, char **argv)
                   ptr++;
                if(strlen(ptr) && (*ptr != '!') && (*ptr != '#'))
                {
-                  name[0]   = '\0';
-                  top2[0]   = '\0';
-                  strcpy(gBest1, top1);
-                  gBest2[0] = '\0';
+                  char *ts;
                   
-                  sscanf(ptr,"%s %s",name,top2);
+                  name[0]   = '\0';
+                  top2[0]   = -1;
+                  ts = NumArrayToString(top1);
+                  strcpy(gBest1, ts);
+                  free(ts);
+                  
+                  gBest2[0]  = '\0';
+                  name[0]    = '\0';
+                  top2str[0] = '\0';
+                  
+                  sscanf(ptr,"%s %s",name,top2str);
+                  MakeIntArray(top2, top2str);
 
                   IDScore = CalcIDScore(top1, top2, UseBoth);
             
-                  if((score = RunAlignment(top1, top2))==(-1))
+                  if((score = RunAlignment(top1, top2, 
+                                           PrimaryTopology))==(-1))
                      return(1);
             
                   /* Print the result                                   */
@@ -296,19 +397,24 @@ int main(int argc, char **argv)
                }
             }
          }
-         else /* Just comparing two files                               */
+         else
          {
-            if((top2 = ReadTopology(fdssp2,ELen,HLen,
-                                    SecStrCalculator))==NULL)
+            if(top2==NULL)
             {
-               fprintf(stderr,"Unable to read topology from %s\n",
-                       infile2);
-               return(1);
+               if((top2 = ReadTopology(fdssp2, ELen, HLen, UseStride, 
+                                       Do3_10, PrimaryTopology, 
+                                       DoNeighbour, DoAccess,
+                                       DoLength))==NULL)
+               {
+                  fprintf(stderr,"Unable to read topology from %s\n",
+                          infile2);
+                  return(1);
+               }
             }
             
             IDScore = CalcIDScore(top1, top2, UseBoth);
             
-            if((score = RunAlignment(top1, top2))==(-1))
+            if((score = RunAlignment(top1, top2, PrimaryTopology))==(-1))
                return(1);
             
             /* Print the result                                         */
@@ -320,7 +426,7 @@ int main(int argc, char **argv)
          }
       }
       
-      if(CalcSecStr)
+      if(RunDSSP)
       {
          unlink(infile1);
          if(!BuildOnly && !ScanMode)
@@ -337,22 +443,29 @@ int main(int argc, char **argv)
 
 
 /************************************************************************/
-/*>int RunAlignment(char *top1, char *top2)
-   ----------------------------------------
-   Input:   char     *top1   First topology string
-            char     *top2   Second topology string
-   Returns: int              Alignment score
-   Globals: char     *gBest1 Best alignment of top1 (maybe rotated)
-                     *gBest2 Best alignment of top2
+/*>int RunAlignment(int *top1, int *top2, BOOL PrimaryTopology)
+   ------------------------------------------------------------
+   Input:   int      *top1           First topology string
+            int      *top2           Second topology string
+            BOOL     PrimaryTopology Primary topology only
+   Returns: int                      Alignment score
+   Globals: char     *gBest1         Best alignment of top1 (maybe 
+                                     rotated)
+                     *gBest2         Best alignment of top2
 
    Does the alignment in all 24 rotations
    If both are of length 0, returns a score of 100. If only one is
    of length zero, returns 0
+   If PrimaryTopology is set, then only does the raw strings since
+   no directions are encoded
 
    13.01.98 Original   By: ACRM
    15.01.98 Added check for 0-length topology strings
+   10.11.99 Added PrimaryTopology
+   08.03.00 Changed calls to align() to NumericAffineAlign()
+            top1 and top2 now integer arrays
 */
-int RunAlignment(char *top1, char *top2)
+int RunAlignment(int *top1, int *top2, BOOL PrimaryTopology)
 {
    int  length1,
         length2,
@@ -360,13 +473,14 @@ int RunAlignment(char *top1, char *top2)
         maxscore,
         i, j,
         align_len;
-   char *align1,
+   int  *align1,
         *align2;
+   char *ts;
    
    
    /* Allocate memory to store the alignment and run the N&W            */
-   length1 = strlen(top1);
-   length2 = strlen(top2);
+   length1 = FindArrayLength(top1);
+   length2 = FindArrayLength(top2);
 
    /* 15.01.98 Added this check on 0-length topology strings            */
    if((length1 == 0) && (length2 == 0))
@@ -374,24 +488,36 @@ int RunAlignment(char *top1, char *top2)
    if((length1 == 0) || (length2 == 0))
       return(0);
    
-   if((align1 = (char *)malloc((length1+length2)*sizeof(char)))==NULL)
+   if((align1 = (int *)malloc((length1+length2)*sizeof(int)))==NULL)
    {
       fprintf(stderr,"No memory for alignment1\n");
       return(-1);
    }
-   if((align2 = (char *)malloc((length1+length2)*sizeof(char)))==NULL)
+   if((align2 = (int *)malloc((length1+length2)*sizeof(int)))==NULL)
    {
       fprintf(stderr,"No memory for alignment2\n");
       return(-1);
    }
 
    /* Native position                                                   */
-   maxscore = blAlign(top1,length1,top2,length2,FALSE,
-                      FALSE,GAPPEN,align1,align2,&align_len);
-   strcpy(gBest1,align1);
-   strcpy(gBest2,align2);
-   gBest1[align_len] = '\0';
-   gBest2[align_len] = '\0';
+   maxscore = NumericAffineAlign(top1,length1,top2,length2,FALSE,
+                    FALSE,GAPPEN,0,align1,align2,&align_len);
+   align1[align_len] = (-1);
+   align2[align_len] = (-1);
+
+   ts = NumArrayToString(align1);
+   strcpy(gBest1, ts);
+   free(ts);
+   
+   ts = NumArrayToString(align2);
+   strcpy(gBest2, ts);
+   free(ts);
+   
+   /* If we aren't doing direction information then we don't need to do
+      the permutations of the string for different orientations
+   */
+   if(PrimaryTopology)
+      return(maxscore);
    
    for(i=0; i<4; i++)
    {
@@ -400,15 +526,22 @@ int RunAlignment(char *top1, char *top2)
       {
          TurnAboutZ(top1);
          
-         score = blAlign(top1,length1,top2,length2,FALSE,
-                         FALSE,GAPPEN,align1,align2,&align_len);
+         score = NumericAffineAlign(top1,length1,top2,length2,FALSE,
+                       FALSE,GAPPEN,0,align1,align2,&align_len);
          if(score > maxscore)
          {
             maxscore = score;
-            strcpy(gBest1,align1);
-            strcpy(gBest2,align2);
-            gBest1[align_len] = '\0';
-            gBest2[align_len] = '\0';
+
+            align1[align_len] = (-1);
+            align2[align_len] = (-1);
+            
+            ts = NumArrayToString(align1);
+            strcpy(gBest1, ts);
+            free(ts);
+            
+            ts = NumArrayToString(align2);
+            strcpy(gBest2, ts);
+            free(ts);
          }
       }
    }
@@ -419,15 +552,22 @@ int RunAlignment(char *top1, char *top2)
       {
          TurnAboutZ(top1);
          
-         score = blAlign(top1,length1,top2,length2,FALSE,
-                         FALSE,GAPPEN,align1,align2,&align_len);
+         score = NumericAffineAlign(top1,length1,top2,length2,FALSE,
+                       FALSE,GAPPEN,0,align1,align2,&align_len);
          if(score > maxscore)
          {
             maxscore = score;
-            strcpy(gBest1,align1);
-            strcpy(gBest2,align2);
-            gBest1[align_len] = '\0';
-            gBest2[align_len] = '\0';
+
+            align1[align_len] = (-1);
+            align2[align_len] = (-1);
+            
+            ts = NumArrayToString(align1);
+            strcpy(gBest1, ts);
+            free(ts);
+            
+            ts = NumArrayToString(align2);
+            strcpy(gBest2, ts);
+            free(ts);
          }
       }
       if(i==0) TurnAboutY(top1);
@@ -438,66 +578,78 @@ int RunAlignment(char *top1, char *top2)
 
 
 /************************************************************************/
-/*>void TurnAboutX(char *top)
-   --------------------------
-   I/O:     char     *top    Topology string to rotate
+/*>void TurnAboutX(int *top)
+   -------------------------
+   I/O:     int      *top    Topology string to rotate
 
    Modifies the topology string by rotating about X
 
    13.01.98 Original   By: ACRM
+   17.11.99 Added characters M-X for adjacent secondary structures
+            Modified so array is indexed by the alphabet so it no
+            longer needs to use chindex() which is painfully slow
+   23.11.99 Added lower case letters
+   10.03.00 Changed to use integer coded topology array
 */
-void TurnAboutX(char *top)
+void TurnAboutX(int *top)
 {
-   static char *old = "ABCDEFGHIJKL";
-   static char *new = "EBFDCAKHLJIG";
+   static int new[] = {0,5,2,6,4,3,1};
    
-   while(*top)
+   while(*top >= 0)
    {
-      *top = new[blChindex(old,*top)];
+      *top = (6*(int)((*top - 1)/6)) + new[1+((*top - 1)%6)];
       top++;
    }
 }
 
 
 /************************************************************************/
-/*>void TurnAboutY(char *top)
+/*>void TurnAboutY(int *top)
    --------------------------
-   I/O:     char     *top    Topology string to rotate
+   I/O:     int     *top    Topology string to rotate
 
    Modifies the topology string by rotating about Y
 
    13.01.98 Original   By: ACRM
+   17.11.99 Added characters M-X for adjacent secondary structures
+            Modified so array is indexed by the alphabet so it no
+            longer needs to use chindex() which is painfully slow
+   23.11.99 Added lower case letters
+   10.03.00 Changed to use integer coded topology array
 */
-void TurnAboutY(char *top)
+void TurnAboutY(int *top)
 {
-   static char *old = "ABCDEFGHIJKL";
-   static char *new = "AECFDBGKILJH";
+   static int new[] = {0,1,5,3,6,4,2};
    
-   while(*top)
+   while(*top >= 0)
    {
-      *top = new[blChindex(old,*top)];
+      *top = (6*(int)((*top - 1)/6)) + new[1+((*top - 1)%6)];
       top++;
    }
 }
 
 
 /************************************************************************/
-/*>void TurnAboutZ(char *top)
+/*>void TurnAboutZ(int *top)
    --------------------------
-   I/O:     char     *top    Topology string to rotate
+   I/O:     int     *top    Topology string to rotate
 
    Modifies the topology string by rotating about Z
 
    13.01.98 Original   By: ACRM
+   17.11.99 Added characters M-X for adjacent secondary structures
+            Modified so array is indexed by the alphabet so it no
+            longer needs to use chindex() which is painfully slow
+   23.11.99 Added lower case letters
+   10.03.00 Changed to use integer coded topology array
 */
-void TurnAboutZ(char *top)
+void TurnAboutZ(int *top)
 {
-   static char *old = "ABCDEFGHIJKL";
-   static char *new = "BCDAEFHIJGKL";
+   static int new[] = {0,2,3,4,1,5,6};
    
-   while(*top)
+   while(*top >= 0)
    {
-      *top = new[blChindex(old,*top)];
+      *top = (6*(int)((*top - 1)/6)) + new[1+((*top - 1)%6)];
       top++;
    }
 }
@@ -505,10 +657,12 @@ void TurnAboutZ(char *top)
 
 /************************************************************************/
 /*>BOOL ParseCmdLine(int argc, char **argv, char *infile1, char *infile2, 
-                     char *matfile, int *ELen, int *HLen, 
-                     BOOL *CalcSecStr, BOOL *BuildOnly, BOOL *ScanMode,
-                     BOOL *UseBoth, int *SecStrCalculator)
-   ---------------------------------------------------------------------
+                     char *matfile, int *ELen, int *HLen, BOOL *RunDSSP,
+                     BOOL *BuildOnly, BOOL *ScanMode, BOOL *UseBoth,
+                     BOOL *UseStride, BOOL *Do3_10, BOOL *PrimaryTopology,
+                     BOOL *DoNeighbour, BOOL *DoAccess, 
+                     BOOL *GivenTopString, BOOL *DoLength)
+   -----------------------------------------------------------------------
    Input:   int    argc         Argument count
             char   **argv       Argument array
    Output:  char   *infile1     DSSP Input file 1
@@ -516,25 +670,39 @@ void TurnAboutZ(char *top)
             char   *matfile     Matrix file      
             int    *ELen        Minimum strand length
             int    *HLen        Minimum helix length
-            BOOL   *CalcSecStr  Run the DSSP program on input files?
+            BOOL   *RunDSSP     Run the DSSP program on input files?
             BOOL   *BuildOnly   Just create the topology string for the
                                 structure?
             BOOL   *ScanMode    Run in scan mode?
             BOOL   *UseBoth     Calculate the percentages wrt max score
                                 from either struc rather than just the 
                                 first
-            int    *SecStrCalculator Use Stride, DSSP or pdbsecstr
+            BOOL   *UseStride   Use Stride rather than DSSP
+            BOOL   *Do3_10      Merge 3_10 helix with alpha helix
+            BOOL   *PrimaryTopology Do only primary topology
+            BOOL   *DoNeighbour Add neighbour information
+            BOOL   *DoAccess    Add accessibility information
+            BOOL   *GivenTopString  Given the topology string on the 
+                                command line instead of a file
+            BOOL   *DoLength    Add length information
    Returns: BOOL                Success?
 
    Parse the command line
    
    13.01.98 Original    By: ACRM
-   06.08.18 Added pdbsecstr support as the default
+   26.10.99 Added -g / Do3_10
+   10.11.99 Added -1 / PrimaryTopology
+   16.11.99 Added DoNeighbour
+   23.11.99 Added DoAccess
+   19.01.00 Added -t (GivenTopString)
+   26.01.00 Added -l (DoLength)
 */
 BOOL ParseCmdLine(int argc, char **argv, char *infile1, char *infile2, 
-                  char *matfile, int *ELen, int *HLen, BOOL *CalcSecStr,
+                  char *matfile, int *ELen, int *HLen, BOOL *RunDSSP,
                   BOOL *BuildOnly, BOOL *ScanMode, BOOL *UseBoth,
-                  int *SecStrCalculator)
+                  BOOL *UseStride, BOOL *Do3_10, BOOL *PrimaryTopology,
+                  BOOL *DoNeighbour, BOOL *DoAccess,
+                  BOOL *GivenTopString, BOOL *DoLength)
 {
    argc--;
    argv++;
@@ -573,24 +741,9 @@ BOOL ParseCmdLine(int argc, char **argv, char *infile1, char *infile2,
             gVerbose = TRUE;
             break;
          case 'p':
-            *CalcSecStr = TRUE;
-            switch(argv[0][2])
-            {
-            case 's':
-               *SecStrCalculator = SECSTR_STRIDE;
-               break;
-            case 'p':
-               *SecStrCalculator = SECSTR_PDBSECSTR;
-               break;
-            case 'd':
-               *SecStrCalculator = SECSTR_DSSP;
-               break;
-            case '\0':
-               *SecStrCalculator = SECSTR_PDBSECSTR;
-               break;
-            default:
-               return(FALSE);
-            }
+            *RunDSSP = TRUE;
+            if(argv[0][2] == 's')
+               *UseStride = TRUE;
             break;
          case 'b':
             *BuildOnly = TRUE;
@@ -600,6 +753,24 @@ BOOL ParseCmdLine(int argc, char **argv, char *infile1, char *infile2,
             break;
          case 'w':
             *UseBoth = TRUE;
+            break;
+         case 'g':
+            *Do3_10 = TRUE;
+            break;
+         case '1':
+            *PrimaryTopology = TRUE;
+            break;
+         case 'n':
+            *DoNeighbour = TRUE;
+            break;
+         case 'a':
+            *DoAccess = TRUE;
+            break;
+         case 't':
+            *GivenTopString = TRUE;
+            break;
+         case 'l':
+            *DoLength = TRUE;
             break;
          default:
             return(FALSE);
@@ -637,20 +808,24 @@ BOOL ParseCmdLine(int argc, char **argv, char *infile1, char *infile2,
    13.01.98 Original   By: ACRM
    15.01.98 V1.1
    13.03.98 V1.2
-   06.08.18 V2.0 Added pdbsecstr support as the default
-
+   26.10.99 V1.3
+   10.11.99 V1.4
+   16.11.99 V1.5
+   19.11.99 V1.7
+   13.03.00 V2.0
 */
 void Usage(void)
 {
-   fprintf(stderr,"\ntopscan V2.0 (c) 1998-2018, Dr. Andrew C.R. Martin, \
-UCL\n");
+   fprintf(stderr,"\ntopscan V2.0 (c) 1998-2000, Dr. Andrew C.R. Martin, \
+UCL & Reading\n");
 
-   fprintf(stderr,"\nUsage: topscan [-v] [-p[s|d|p]] [-w] [-h hlen] \
-[-e elen] [-m matrix] file1.{dssp|pdb} file2.{dssp|pdb}\n");
-   fprintf(stderr,"       topscan -b [-p[s|d|p]] [-h hlen] [-e elen] \
-file1.{dssp|pdb}\n");
-   fprintf(stderr,"       topscan -s [-v] [-p[s|d|p]] [-w] [-h hlen] \
-[-e elen] [-m matrix] file1.{dssp|pdb} file2.top\n");
+   fprintf(stderr,"\nUsage: topscan [-t] [-v] [-1] [-n] [-a] [-l] [-p[s]] \
+[-w] [-h hlen] [-e elen] [-m matrix] [-g] file1.{dssp|pdb} \
+file2.{dssp|pdb}\n");
+   fprintf(stderr,"       topscan -b [-1] [-n] [-a] [-l] [-p[s]] [-h hlen] \
+[-e elen] [-g] file1.{dssp|pdb}\n");
+   fprintf(stderr,"       topscan -s [-t] [-1] [-n] [-a] [-l] [-v] [-p[s]] \
+[-w] [-h hlen] [-e elen] [-m matrix] [-g] file1.{dssp|pdb} file2.top\n");
    fprintf(stderr,"\n       -b Build the topology string for a file\n");
    fprintf(stderr,"          (Don't actually run a comparison)\n");
    fprintf(stderr,"       -s Scan a DSSP or PDB file against a library \
@@ -659,29 +834,30 @@ of topology strings\n");
    fprintf(stderr,"       -m Specify the matrix file [Default: %s]\n",
            MATFILE);
    fprintf(stderr,"       -v Verbose mode\n");
-   fprintf(stderr,"       -p Input files are PDB and the pdbsecstr \
-program will be run first\n");
+   fprintf(stderr,"       -p Input files are PDB and the DSSP program \
+will be run first\n");
    fprintf(stderr,"          If -ps is specified, then STRIDE will be \
-run rather than pdbsecstr\n");
-   fprintf(stderr,"          If -pd is specified, then DSSP will be \
-run rather than pdbsecstr\n");
-   fprintf(stderr,"          If -pp is specified, the default, \
-pdbsecstr will be used\n");
+run rather than DSSP\n");
    fprintf(stderr,"       -w Calculate score as percentage from both \
 topology strings\n");
    fprintf(stderr,"          rather than just the first\n");
    fprintf(stderr,"       -h Specify minimum helix length [Default: \
-%d]\n", DEFAULT_HLEN);
+%d]\n", HLEN);
    fprintf(stderr,"       -e Specify minimum strand length [Default: \
-%d]\n", DEFAULT_ELEN);
+%d]\n", ELEN);
+   fprintf(stderr,"       -g Treat 3_10 helix as alpha helix\n");
+   fprintf(stderr,"       -1 Only do primary topology (ignore \
+direction)\n");
+   fprintf(stderr,"       -n Add neighbour information\n");
+   fprintf(stderr,"       -a Add accessibility information\n");
+   fprintf(stderr,"       -l Add element length information\n");
+   fprintf(stderr,"       -t Command line has a topology string instead \
+of a filename\n");
 
-   fprintf(stderr,"\nV2.0 defaults to pdbsecstr (from BiopTools) with \
--p rather than DSSP.\n");
-   
    fprintf(stderr,"\nCondenses a protein structure into a topology \
 string by reading from\n");
-   fprintf(stderr,"a pdbsecstr, DSSP or STRIDE file. The string has a \
-12-letter alphabet for the 6\n");
+   fprintf(stderr,"a DSSP or STRIDE file. The string has a 12-letter \
+alphabet for the 6\n");
    fprintf(stderr,"orientations of sheet and helix. The comparison is \
 performed using 24\n");
    fprintf(stderr,"orientations for one of the structures compared with \
@@ -712,70 +888,112 @@ the program in\n");
 }
 
 
-/************************************************************************/
-/*>char *ReadTopology(FILE *fp, int ELen, int HLen, int SecStrCalculator)
-   ----------------------------------------------------------------------
-   Input:   FILE   *fp               DSSP file pointer
-            int    ELen              Minimum length of strand
-            int    HLen              Minimum length of helix
-            int    SecStrCalculator  Secondary Structure calculator to
-                                     use (pdbsecstr, Stride or DSSP)
-   Returns: char *                   Topology string
 
-   Reads a the topology from a pdbsecstr, DSSP or Stride file, returning
-   a string representing the topology.
+
+/************************************************************************/
+/*>int *ReadTopology(FILE *fp, int ELen, int HLen, BOOL UseStride,
+                     BOOL Do3_10, BOOL PrimaryTopology,
+                     BOOL DoNeighbour, BOOL DoAccess, BOOL DoLength)
+   -----------------------------------------------------------------
+   Input:   FILE   *fp             DSSP file pointer
+            int    ELen            Minimum length of strand
+            int    HLen            Minimum length of helix
+            BOOL   UseStride       Read from Stride rather than DSSP file
+            BOOL   Do3_10          Merge 3_10 helix with alpha helix
+            BOOL   PrimaryTopology Only do primary topology
+            BOOL   DoNeighbour     Add neighbour information
+            BOOL   DoAccess        Add accessibility information
+            BOOL   DoLength        Add length information
+   Returns: int *                  Topology string
+
+   Reads the topology from a DSSP or Stride file, returning a string 
+   representing the topology.
 
    13.03.98 Original   By: ACRM
-   06.08.18 Added pdbsecstr support as the default
+   26.10.99 Added Do3_10
+   10.11.99 Added PrimaryTopology
+   16.11.99 Added DoNeighbour
+   23.11.99 Addes DoAccess
+   26.01.00 Added DoLength
+   10.03.00 Changed to use integer coded topology array
 */
-char *ReadTopology(FILE *fp, int ELen, int HLen, int SecStrCalculator)
+int *ReadTopology(FILE *fp, int ELen, int HLen, BOOL UseStride,
+                  BOOL Do3_10, BOOL PrimaryTopology, BOOL DoNeighbour,
+                  BOOL DoAccess, BOOL DoLength)
 {
-   switch(SecStrCalculator)
+   /* If we are doing neighbours, then reset the internal neighbour
+      information
+   */
+   if(DoNeighbour)
    {
-   case SECSTR_DSSP:
-      return(ReadDSSP(fp, ELen, HLen));
-      break;
-   case SECSTR_STRIDE:
-   case SECSTR_PDBSECSTR:
-   default:
-      return(ReadStride(fp, ELen, HLen));
-      break;
+      CalcElement('\0', 0,0,0, 0,0,0, 0, 1, 0, 0.0, 0);
+   }
+   
+   if(UseStride)
+   {
+      return(ReadStride(fp, ELen, HLen, Do3_10, PrimaryTopology,
+                        DoNeighbour, DoAccess, DoLength));
+   }
+   else
+   {
+      return(ReadDSSP(fp, ELen, HLen, Do3_10, PrimaryTopology,
+                      DoNeighbour, DoAccess, DoLength));
    }
 }
 
 
 /************************************************************************/
-/*>char *ReadDSSP(FILE *fp, int ELen, int HLen)
-   --------------------------------------------
-   Input:   FILE     *fp     DSSP file pointer
-            int      ELen    Minimum length of strand
-            int      HLen    Minimum length of helix
-   Returns: char *           Topology string
+/*>int *ReadDSSP(FILE *fp, int ELen, int HLen, BOOL Do3_10,
+                 BOOL PrimaryTopology, BOOL DoNeighbour, BOOL DoAccess,
+                 BOOL DoLength)
+   --------------------------------------------------------------------
+   Input:   FILE     *fp             DSSP file pointer
+            int      ELen            Minimum length of strand
+            int      HLen            Minimum length of helix
+            BOOL     Do3_10          Merge 3_10 helix with alpha
+            BOOL     PrimaryTopology Only do primary topology
+            BOOL     DoNeighbour     Add neighbour information
+            BOOL     DoAccess        Add accessibility information
+            BOOL     DoLength        Add length information
+   Returns: int *                    Topology string
 
    Reads a DSSP file returning a string representing the topology.
 
    13.01.98 Original   By: ACRM
+   26.10.99 Added Do3_10 handling
+   10.11.99 Added PrimaryTopology
+   16.11.99 Added DoNeighbour
+   23.11.99 Added DoAccess
+            Fixed bug - file ending with an SS element wasn't checking
+            element length
+   26.01.00 Added DoLength
+   10.03.00 Changed to use integer coded topology array
 */
-char *ReadDSSP(FILE *fp, int ELen, int HLen)
+int *ReadDSSP(FILE *fp, int ELen, int HLen, BOOL Do3_10, 
+              BOOL PrimaryTopology, BOOL DoNeighbour, BOOL DoAccess,
+              BOOL DoLength)
 {
-   char *top,
-        buffer[MAXBUFF*2],
+   int  *top;
+   char buffer[MAXBUFF*2],
         struc,
         LastStruc    = ' ';
    REAL x,  y,  z,
-        x1 = 0.0, 
-        y1 = 0.0, 
-        z1 = 0.0,
-        xp = 0.0, 
-        yp = 0.0,
-        zp = 0.0;
+        x1, y1, z1,
+        xp, yp, zp,
+        access,
+        sumaccess    = 0.0;
    BOOL InBody       = FALSE,
         InElement    = FALSE;
    int  i            = 0,
         EleLength    = 0;
 
+#ifdef UCL
+   fprintf(stderr,"Code needs to be modified to support reading \
+accessibility from\nUCL DSSP files\n");
+#endif
+
    
-   if((top = (char *)malloc(MAXBUFF * sizeof(char)))==NULL)
+   if((top = (int *)malloc(MAXBUFF * sizeof(int)))==NULL)
       return(NULL);
    
    while(fgets(buffer,MAXBUFF*2,fp))
@@ -783,10 +1001,19 @@ char *ReadDSSP(FILE *fp, int ELen, int HLen)
       TERMINATE(buffer);
       if(InBody)
       {
+#ifdef UCL
          fsscanf(buffer,"%16x%c%90x%7lf%7lf%7lf",&struc,&x,&y,&z);
+         access=0.0;
+#else
+         fsscanf(buffer,"%16x%c%17x%4lf%77x%7lf%7lf%7lf",
+                 &struc,&access,&x,&y,&z);
+#endif
+         if(Do3_10 && struc=='G')                  /* 26.10.99          */
+            struc = 'H';
          if((struc=='E' || struc=='H') && (struc==LastStruc))
          {
             EleLength++;
+            sumaccess += access;
          }
          
          if((struc=='E' || struc=='H') && (struc!=LastStruc))
@@ -796,11 +1023,15 @@ char *ReadDSSP(FILE *fp, int ELen, int HLen)
             {
                if((LastStruc=='E' && EleLength>=ELen) ||
                   (LastStruc=='H' && EleLength>=HLen))
-                  top[i++] = CalcElement(LastStruc,x1,y1,z1,xp,yp,zp);
+                  top[i++] = CalcElement(LastStruc,x1,y1,z1,xp,yp,zp,
+                                         PrimaryTopology, DoNeighbour,
+                                         DoAccess, sumaccess/EleLength,
+                                         (DoLength?EleLength:0));
             }
             
             InElement = TRUE;
             EleLength = 1;
+            sumaccess = access;
             x1 = x;
             y1 = y;
             z1 = z;
@@ -810,7 +1041,10 @@ char *ReadDSSP(FILE *fp, int ELen, int HLen)
             /* Just come out of an element                              */
             if((LastStruc=='E' && EleLength>=ELen) ||
                (LastStruc=='H' && EleLength>=HLen))
-               top[i++] = CalcElement(LastStruc,x1,y1,z1,xp,yp,zp);
+               top[i++] = CalcElement(LastStruc,x1,y1,z1,xp,yp,zp,
+                                      PrimaryTopology, DoNeighbour,
+                                      DoAccess, sumaccess/EleLength,
+                                      (DoLength?EleLength:0));
             InElement = FALSE;
          }
             
@@ -831,48 +1065,100 @@ char *ReadDSSP(FILE *fp, int ELen, int HLen)
    if(InElement)
    {
       /* File ended with an element                                     */
-      top[i++] = CalcElement(LastStruc,x1,y1,z1,xp,yp,zp);
+      if((LastStruc=='E' && EleLength>=ELen) ||
+         (LastStruc=='H' && EleLength>=HLen))
+         top[i++] = CalcElement(LastStruc,x1,y1,z1,xp,yp,zp,
+                                PrimaryTopology, DoNeighbour,
+                                DoAccess, sumaccess/EleLength,
+                                (DoLength?EleLength:0));
    }
-   top[i] = '\0';
+   top[i] = (-1);
    
    return(top);
 }
 
 
 /************************************************************************/
-/*>char CalcElement(char struc, REAL x1, REAL y1, REAL z1, 
-                    REAL x2, REAL y2, REAL z2)
-   -------------------------------------------------------
-   Input:   char     struc   DSSP structure assignment
-            REAL     x1      Coordinates of SS element start
-            REAL     y1      
-            REAL     z1      
-            REAL     x2      Coordinates of SS element end
-            REAL     y2      
-            REAL     z2      
-   Returns: char             Code for element (structure & direction)
+/*>int CalcElement(char struc, REAL x1, REAL y1, REAL z1, 
+                   REAL x2, REAL y2, REAL z2, BOOL PrimaryTopology,
+                   BOOL DoNeighbour, BOOL DoAccess, REAL meanAccess,
+                   int EleLength)
+   -----------------------------------------------------------------
+   Input:   char  struc           DSSP structure assignment
+            REAL  x1              Coordinates of SS element start
+            REAL  y1      
+            REAL  z1      
+            REAL  x2              Coordinates of SS element end
+            REAL  y2      
+            REAL  z2      
+            BOOL  PrimaryTopology Do Primary topology only (no direction)
+            BOOL  DoNeighbour     Add neighbour information
+            BOOL  DoAccess        Add accessibility information
+            REAL  meanAccess      Mean access for element
+            int   EleLength       Element length (0 if we are ignoring
+                                  these)
+   Returns: char                  Code for element (structure & direction)
 
    Given a structure code from DSSP (E or H) and the coordinates of the
    ends of the element, returns a combined code of structure plus
-   direction.
+   direction. Also generates combined codes with neighbour, accessibility
+   and element length.
 
    13.01.98 Original   By: ACRM
+   10.11.99 Added PrimaryTopology
+   16.11.99 Added DoNeighbour
+   23.11.99 Added DoAccess/meanAccess
+   26.01.00 Added EleLength
+   10.03.00 Changed to use integer coded topology array. i.e. returns
+            a number rather than a character
 */
-char CalcElement(char struc, REAL x1, REAL y1, REAL z1, 
-                 REAL x2, REAL y2, REAL z2)
+int CalcElement(char struc, REAL x1, REAL y1, REAL z1, 
+                REAL x2, REAL y2, REAL z2, BOOL PrimaryTopology,
+                BOOL DoNeighbour, BOOL DoAccess, REAL meanAccess,
+                int EleLength)
 {
-   char code;
-   int  dirn;
-   REAL dx,    dy,    dz,
-        absdx, absdy, absdz;
+   int         code;
+   int         dirn,
+               buried    = 0,
+               lengthmod = 0;
+   REAL        dx,    dy,    dz,
+               absdx, absdy, absdz;
+   static REAL prevx1 = MARKER,
+               prevy1 = MARKER,
+               prevz1 = MARKER,
+               prevx2 = MARKER,
+               prevy2 = MARKER,
+               prevz2 = MARKER;
    
+   /* Special condition to reset the statics                            */
+   if(DoNeighbour && struc == '\0')
+   {
+      prevx1 = MARKER;
+      prevy1 = MARKER;
+      prevz1 = MARKER;
+      prevx2 = MARKER;
+      prevy2 = MARKER;
+      prevz2 = MARKER;
+      return(0);
+   }
+
    /* Base coding is A for sheet, G for helix                           */
+   if(PrimaryTopology)   /* We ignore the direction information         */
+   {
+      if(struc == 'E')
+         return(1);
+      else if(struc == 'H')
+         return(7);
+      else
+         return(0);
+   }
+
    if(struc == 'E')
-      code = 'A';
+      code = 1;
    else if(struc == 'H')
-      code = 'G';
+      code = 7;
    else
-      return(' ');
+      return(0);
 
    /* Calculate deltas along x, y and z                                 */
    dx = x2 - x1;
@@ -898,16 +1184,50 @@ char CalcElement(char struc, REAL x1, REAL y1, REAL z1,
    else if((dz <= (-absdx)) && (dz <= (-absdy)))
       dirn = 5;
    else
-      return(' ');
+      return(0);
    
-   return(code + (char)dirn);
+   if(DoNeighbour)
+   {
+      if((prevx1 != MARKER) && (prevy1 != MARKER) && (prevz1 != MARKER) &&
+         (prevx2 != MARKER) && (prevy2 != MARKER) && (prevz2 != MARKER))
+      {
+         if(IsNeighbour(x1, y1, z1,
+                        x2, y2, z2,
+                        prevx1, prevy1, prevz1,
+                        prevx2, prevy2, prevz2))
+            dirn += 12;
+      }
+      prevx1 = x1;
+      prevy1 = y1;
+      prevz1 = z1;
+
+      prevx2 = x2;
+      prevy2 = y2;
+      prevz2 = z2;
+   }
+
+   if(DoAccess)
+   {
+      if(((struc == 'E') && (meanAccess < gStrandMeanAccess)) ||
+         ((struc == 'H') && (meanAccess < gHelixMeanAccess)))
+         buried = 24;
+   }
+
+   if(EleLength)
+   {
+      if(((struc == 'E') && (EleLength > HELIX_MEAN_LENGTH)) ||
+         ((struc == 'H') && (EleLength > STRAND_MEAN_LENGTH)))
+         lengthmod = 48;
+   }
+   
+   return(code + dirn + buried + lengthmod);
 }
 
 /************************************************************************/
-/*>int CalcIDScore(char *seq1, char *seq2, BOOL UseBoth)
-   -----------------------------------------------------
-   Input:   char     *seq1   Sequence 1
-            char     *seq2   Sequence 2
+/*>int CalcIDScore(int *seq1, int *seq2, BOOL UseBoth)
+   ---------------------------------------------------
+   Input:   int      *seq1   Sequence 1
+            int      *seq2   Sequence 2
             BOOL     UseBoth Calculate score as Max of both sequences
    Returns: int              Max score of each sequence vs itself
 
@@ -915,27 +1235,27 @@ char CalcElement(char struc, REAL x1, REAL y1, REAL z1,
    sequence
 
    14.01.98 Original   By: ACRM
-   
+   10.03.00 Changed to use integer coded topology array
 */
-int CalcIDScore(char *seq1, char *seq2, BOOL UseBoth)
+int CalcIDScore(int *seq1, int *seq2, BOOL UseBoth)
 {
    int score1 = 0,
        score2 = 0,
        i,
-       seqlen1 = strlen(seq1),
-       seqlen2 = strlen(seq2);
+       seqlen1 = FindArrayLength(seq1),
+       seqlen2 = FindArrayLength(seq2);
 
    for(i=0; i<seqlen1; i++)
    {
-      if(isalpha(seq1[i]))
-         score1 += blCalcMDMScore(seq1[i], seq1[i]);
+      if(seq1[i])
+         score1 += NumericCalcMDMScore(seq1[i], seq1[i]);
    }
    if(UseBoth)
    {
       for(i=0; i<seqlen2; i++)
       {
-         if(isalpha(seq2[i]))
-            score2 += blCalcMDMScore(seq2[i], seq2[i]);
+         if(seq2[i])
+            score2 += NumericCalcMDMScore(seq2[i], seq2[i]);
       }
       if(score2 > score1)
          score1 = score2;
@@ -957,43 +1277,66 @@ int CalcIDScore(char *seq1, char *seq2, BOOL UseBoth)
 }
 
 /************************************************************************/
-/*>char *ReadStride(FILE *fp, int ELen, int HLen)
-   ----------------------------------------------
-   Input:   FILE     *fp     Stride file pointer
-            int      ELen    Minimum length of strand
-            int      HLen    Minimum length of helix
-   Returns: char *           Topology string
+/*>int *ReadStride(FILE *fp, int ELen, int HLen, BOOL Do3_10, 
+                   BOOL PrimaryTopology, BOOL DoNeighbour, BOOL DoAccess,
+                   BOOL DoLength)
+   -----------------------------------------------------------------------
+   Input:   FILE     *fp             Stride file pointer
+            int      ELen            Minimum length of strand
+            int      HLen            Minimum length of helix
+            BOOL     Do3_10          Merge 3_10 helix with alpha
+            BOOL     PrimaryTopology Only do primary topology
+            BOOL     DoNeighbour     Add neighbour information
+            BOOL     DoAccess        Add accessibility information
+            BOOL     DoLength        Add length information
+   Returns: int *                    Topology string
 
    Reads a Stride file returning a string representing the topology.
-   This is actually the combined PDB/STRIDE file - the same format is
-   used for pdbsecstr
 
    13.03.98 Original   By: ACRM
+   26.10.99 Added Do3_10 handling
+   10.11.99 Added PrimaryTopology
+   16.11.99 Added DoNeighbour
+   23.11.99 Added DoAccess
+            Fixed bug - file ending with an SS element wasn't checking
+            element length
+   26.01.00 Added DoLength
+   10.03.00 Changed to use integer coded topology array
 */
-char *ReadStride(FILE *fp, int ELen, int HLen)
+int *ReadStride(FILE *fp, int ELen, int HLen, BOOL Do3_10, 
+                BOOL PrimaryTopology, BOOL DoNeighbour, BOOL DoAccess,
+                BOOL DoLength)
 {
-   char *top,
-        buffer[MAXBUFF*2],
+   int  *top;
+   char buffer[MAXBUFF*2],
         struc,
         LastStruc    = ' ';
    REAL x,  y,  z,
         x1, y1, z1,
-        xp, yp, zp;
+        xp, yp, zp,
+        access, 
+        sumaccess    = 0.0;
    BOOL InElement    = FALSE;
    int  i            = 0,
         EleLength    = 0;
 
    
-   if((top = (char *)malloc(MAXBUFF * sizeof(char)))==NULL)
+   if((top = (int *)malloc(MAXBUFF * sizeof(int)))==NULL)
       return(NULL);
    
    while(fgets(buffer,MAXBUFF*2,fp))
    {
       TERMINATE(buffer);
-      fsscanf(buffer,"%15x%8lf%1x%8lf%1x%8lf%1x%c",&x,&y,&z,&struc);
+      fsscanf(buffer,"%15x%8lf%1x%8lf%1x%8lf%1x%c%1x%8lf",
+              &x,&y,&z,&struc,&access);
+      
+      if(Do3_10 && struc=='G')                     /* 26.10.99          */
+         struc = 'H';
+      
       if((struc=='E' || struc=='H') && (struc==LastStruc))
       {
          EleLength++;
+         sumaccess += access;
       }
       
       if((struc=='E' || struc=='H') && (struc!=LastStruc))
@@ -1003,11 +1346,15 @@ char *ReadStride(FILE *fp, int ELen, int HLen)
          {
             if((LastStruc=='E' && EleLength>=ELen) ||
                (LastStruc=='H' && EleLength>=HLen))
-               top[i++] = CalcElement(LastStruc,x1,y1,z1,xp,yp,zp);
+               top[i++] = CalcElement(LastStruc,x1,y1,z1,xp,yp,zp,
+                                      PrimaryTopology, DoNeighbour,
+                                      DoAccess, sumaccess/EleLength,
+                                      (DoLength?EleLength:0));
          }
          
          InElement = TRUE;
          EleLength = 1;
+         sumaccess = access;
          x1 = x;
          y1 = y;
          z1 = z;
@@ -1017,7 +1364,10 @@ char *ReadStride(FILE *fp, int ELen, int HLen)
          /* Just come out of an element                                 */
          if((LastStruc=='E' && EleLength>=ELen) ||
             (LastStruc=='H' && EleLength>=HLen))
-            top[i++] = CalcElement(LastStruc,x1,y1,z1,xp,yp,zp);
+            top[i++] = CalcElement(LastStruc,x1,y1,z1,xp,yp,zp,
+                                   PrimaryTopology, DoNeighbour,
+                                   DoAccess, sumaccess/EleLength,
+                                   (DoLength?EleLength:0));
          InElement = FALSE;
       }
       
@@ -1030,10 +1380,224 @@ char *ReadStride(FILE *fp, int ELen, int HLen)
    if(InElement)
    {
       /* File ended with an element                                     */
-      top[i++] = CalcElement(LastStruc,x1,y1,z1,xp,yp,zp);
+      if((LastStruc=='E' && EleLength>=ELen) ||
+         (LastStruc=='H' && EleLength>=HLen))
+         top[i++] = CalcElement(LastStruc,x1,y1,z1,xp,yp,zp,
+                                PrimaryTopology, DoNeighbour,
+                                DoAccess, sumaccess/EleLength,
+                                (DoLength?EleLength:0));
    }
-   top[i] = '\0';
+   top[i] = (-1);
    
    return(top);
+}
+
+
+/************************************************************************/
+/*>BOOL IsNeighbour(REAL x1, REAL y1, REAL z1,
+                    REAL x2, REAL y2, REAL z2,
+                    REAL prevx1, REAL prevy1, REAL prevz1,
+                    REAL prevx2, REAL prevy2, REAL prevz2)
+   -------------------------------------------------------
+   Input:   REAL    x1       Nter of this SS element
+            REAL    y1 
+            REAL    z1
+            REAL    x2       Cter of this SS element
+            REAL    y2
+            REAL    z2
+            REAL    prevx1   Nter of previous SS element
+            REAL    prevy1
+            REAL    prevz1
+            REAL    prevx2   Cter of previous SS element
+            REAL    prevy2
+            REAL    prevz2
+   Returns: BOOL             Are they neighbours?
+
+   Determines whether the current secondary structure element is a direct
+   neighbour of the preceeding element.
+
+   17.11.99 Original   By: ACRM
+   13.03.00 Fixed parameter variable types to REAL (were BOOL!)
+*/
+BOOL IsNeighbour(REAL x1, REAL y1, REAL z1,
+                 REAL x2, REAL y2, REAL z2,
+                 REAL prevx1, REAL prevy1, REAL prevz1,
+                 REAL prevx2, REAL prevy2, REAL prevz2)
+{
+   REAL d[4], f[4],
+        mindist = 9999.0;
+   int  i;
+   
+   
+   /* Calculate distance and position of Nter end against previous
+      element
+   */
+   d[0] = PointLineDistance(x1, y1, z1, 
+                            prevx1, prevy1, prevz1,
+                            prevx2, prevy2, prevz2,
+                            NULL, NULL, NULL,
+                            &f[0]);
+
+   /* Calculate distance and position of Cter end against previous
+      element
+   */
+   d[1] = PointLineDistance(x2, y2, z2, 
+                            prevx1, prevy1, prevz1,
+                            prevx2, prevy2, prevz2,
+                            NULL, NULL, NULL,
+                            &f[1]);
+
+   /* Calculate distance and position of Nter end of previous element
+      against current
+   */
+   d[2] = PointLineDistance(prevx1, prevy1, prevz1,
+                            x1, y1, z1, 
+                            x2, y2, z2,
+                            NULL, NULL, NULL,
+                            &f[2]);
+
+   /* Calculate distance and position of Cter end of previous element
+      against current
+   */
+   d[3] = PointLineDistance(prevx2, prevy2, prevz2,
+                            x1, y1, z1, 
+                            x2, y2, z2,
+                            NULL, NULL, NULL,
+                            &f[3]);
+
+   /* See which are in line with the other element                      */
+   for(i=0; i<4; i++)
+   {
+      if((f[i] >= 0.0) && (f[i] <= 1.0))
+      {
+         if(d[i] < mindist)
+            mindist = d[i];
+      }
+   }
+#ifdef DEBUG
+   fprintf(stderr,"Minimum distance = %f\n", mindist);
+#endif
+
+   /* If the minimum distance is less than our cutoff, then we return
+      TRUE as they are adjacent
+   */
+   if(mindist < ADJACENT_DIST)
+      return(TRUE);
+   
+   return(FALSE);
+}
+
+
+/************************************************************************/
+/*>int FindArrayLength(int *array)
+   -------------------------------
+   Input:   int   *array     Array of integers terminated with -1
+   Returns: int              Number of elements
+
+   Takes an integer array and counts how many elements there are up to but
+   excluding the first negative number
+
+   08.03.00 Original   By: ACRM
+*/
+int FindArrayLength(int *array)
+{
+   int len = 0;
+   
+   while(*array++ >= 0) len++;
+   
+   return(len);
+}
+
+/************************************************************************/
+/*>int MakeIntArray(int *array1, char *inarray)
+   --------------------------------------------
+   Input:   int    *array1    Integer array to be filled
+            char   *inarray   Dash-delimited list of positive integers
+   Returns: int               Number of integers copied into array
+
+   Builds an integer array terminated with a (-1) from a dash separated 
+   list of numbers
+   (e.g. 1-5-7-23-7-31 would go into a 7 element array containing
+   1,5,7,23,7,31,-1)
+
+   08.03.00 Original   By: ACRM
+*/
+int MakeIntArray(int *array1, char *inarray)
+{
+   int pos = 0;
+   char tempbuff[16],
+        *chp,
+        *buffp;
+   
+   chp = inarray;
+   
+   while(*chp)
+   {
+      buffp = tempbuff;
+      while(*chp != '-' && *chp)
+      {
+         *buffp++ = *chp++;
+      }
+      *buffp = '\0';
+      sscanf(tempbuff,"%d", &(array1[pos++]));
+      if(*chp) chp++;
+   }
+   array1[pos] = (-1);
+   
+   return(pos);
+}
+
+
+/************************************************************************/
+/*>char *NumArrayToString(int *numarr)
+   -----------------------------------
+   Input:   int    *numarray   Integer array terminated with -1
+   Returns: char   *           Pointer to allocated character string
+                               containing dash deliminated numbers
+
+   Creates a character representation of an integer array. Each element
+   is printed as three characters zero-padded and separated by a dash.
+   The first negative number in the array represents the end of the
+   array.
+
+   08.03.00 Original   By: ACRM
+*/
+char *NumArrayToString(int *numarr)
+{
+   char *buff = NULL,
+        tmpbuff[16],
+        *tbp;
+   int  buffsize = BUFFCHUNK,
+        i,
+        buffused = 0,
+        strsize;
+   
+   if((buff = (char *)malloc(BUFFCHUNK * sizeof(char)))==NULL)
+      return(NULL);
+   buff[0] = '\0';
+
+   for(i=0; numarr[i] >= 0; i++)
+   {
+      sprintf(tmpbuff,"%03d",numarr[i]);
+      KILLLEADSPACES(tbp,tmpbuff);
+
+      /* Check whether the number string will fit, if not increase the
+         array size
+      */
+      strsize = strlen(tbp)+1;
+      if((buffused + strsize + 1) > buffsize)
+      {
+         buffsize += BUFFCHUNK;
+         buff = (char *)realloc(buff, buffsize);
+      }
+
+      /* Add a dash if this isn't the first number added                */
+      if(i) strcat(buff, "-");
+      /* Now add the number itself                                      */
+      strcat(buff,tbp);
+      buffused = strlen(buff);
+   }
+   
+   return(buff);
 }
 
