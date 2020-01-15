@@ -152,11 +152,12 @@ int MakeIntArray(int *array1, char *inarray);
    26.10.99 Added 3_10 helix handling
    19.01.00 Added -t handling
    10.03.00 Changed to use integer coded topology array
+   13.03.00 Initialise fdssp1, fdssp2 only to silence warnings with -O2
 */
 int main(int argc, char **argv)
 {
-   FILE  *fdssp1,
-         *fdssp2;
+   FILE  *fdssp1 = NULL,
+         *fdssp2 = NULL;
    char  infile1[MAXBUFF],
          infile2[MAXBUFF],
          sourcefile[MAXBUFF],
@@ -968,6 +969,7 @@ int *ReadTopology(FILE *fp, int ELen, int HLen, BOOL UseStride,
             element length
    26.01.00 Added DoLength
    10.03.00 Changed to use integer coded topology array
+   13.03.00 Initialise x1,y1,z1,xp,yp,zp only to silence warnings with -O2
 */
 int *ReadDSSP(FILE *fp, int ELen, int HLen, BOOL Do3_10, 
               BOOL PrimaryTopology, BOOL DoNeighbour, BOOL DoAccess,
@@ -978,8 +980,12 @@ int *ReadDSSP(FILE *fp, int ELen, int HLen, BOOL Do3_10,
         struc,
         LastStruc    = ' ';
    REAL x,  y,  z,
-        x1, y1, z1,
-        xp, yp, zp,
+        x1 = MARKER, 
+        y1 = MARKER, 
+        z1 = MARKER,
+        xp = MARKER, 
+        yp = MARKER, 
+        zp = MARKER,
         access,
         sumaccess    = 0.0;
    BOOL InBody       = FALSE,
@@ -1302,6 +1308,7 @@ int CalcIDScore(int *seq1, int *seq2, BOOL UseBoth)
             element length
    26.01.00 Added DoLength
    10.03.00 Changed to use integer coded topology array
+   13.03.00 Initialise x1,y1,z1,xp,yp,zp only to silence warnings with -O2
 */
 int *ReadStride(FILE *fp, int ELen, int HLen, BOOL Do3_10, 
                 BOOL PrimaryTopology, BOOL DoNeighbour, BOOL DoAccess,
@@ -1312,8 +1319,12 @@ int *ReadStride(FILE *fp, int ELen, int HLen, BOOL Do3_10,
         struc,
         LastStruc    = ' ';
    REAL x,  y,  z,
-        x1, y1, z1,
-        xp, yp, zp,
+        x1 = MARKER, 
+        y1 = MARKER, 
+        z1 = MARKER,
+        xp = MARKER, 
+        yp = MARKER, 
+        zp = MARKER,
         access, 
         sumaccess    = 0.0;
    BOOL InElement    = FALSE;
