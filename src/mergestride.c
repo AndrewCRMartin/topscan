@@ -3,12 +3,12 @@
    Program:    mergestride
    File:       mergestride.c
    
-   Version:    V2.0
-   Date:       06.08.18
+   Version:    V1.1
+   Date:       23.11.99
    Function:   Merge original PDB file with STRIDE secondary structure
                assignments
    
-   Copyright:  (c) UCL / Dr. Andrew C. R. Martin 1998-2018
+   Copyright:  (c) Dr. Andrew C. R. Martin, UCL/Reading 1998-9
    Author:     Dr. Andrew C. R. Martin
    Address:    Biomolecular Structure & Modelling Unit,
                Department of Biochemistry & Molecular Biology,
@@ -16,7 +16,6 @@
                Gower Street,
                London.
                WC1E 6BT.
-   Phone:      +44 (0)207 679 7034
    EMail:      andrew@bioinf.org.uk
                
 **************************************************************************
@@ -51,7 +50,7 @@
    Revision History:
    =================
    V1.0  13.03.98 Original
-   V2.0  06.08.18 Updated for new Bioplib
+   V1.1  23.11.99 Added accessibility data
 
 *************************************************************************/
 /* Includes
@@ -73,6 +72,7 @@ typedef struct _stride
 {
    struct _stride *next,
                   *prev;
+   REAL           access;
    int            resnum;
    char           resnam[8],
                   insert,
@@ -106,7 +106,7 @@ int main(int argc, char **argv)
 
    if(ParseCmdLine(argc, argv, pdbfile, infile, outfile))
    {
-      if(blOpenStdFiles(infile, outfile, &in, &out))
+      if(OpenStdFiles(infile, outfile, &in, &out))
       {
          if((pdbfp = fopen(pdbfile,"r"))!=NULL)
          {
@@ -145,6 +145,7 @@ output file\n");
    Merges STRIDE output data with coordinate information from a PDB file
 
    13.03.98 Orginal   By: ACRM
+   23.11.99 Added accessibility
 */
 BOOL DoMerge(FILE *pdbfp, FILE *stridefp, FILE *out)
 {
@@ -155,14 +156,14 @@ BOOL DoMerge(FILE *pdbfp, FILE *stridefp, FILE *out)
    int    natoms;
 
    /* Read the PDB file                                                 */
-   if((pdb = blReadPDB(pdbfp, &natoms))==NULL)
+   if((pdb = ReadPDB(pdbfp, &natoms))==NULL)
    {
       fprintf(stderr,"mergestride: No atoms read from PDB file\n");
       return(FALSE);
    }
 
    /* Reduce to CA atoms                                                */
-   pdb = blSelectCaPDB(pdb);
+   pdb = SelectCaPDB(pdb);
 
    /* Read the STRIDE file                                              */
    if((stride = ReadStride(stridefp))==NULL)
@@ -194,7 +195,7 @@ BOOL DoMerge(FILE *pdbfp, FILE *stridefp, FILE *out)
             (p->insert[0] == s->insert) &&
             (p->chain[0]  == s->chain))
          {
-            fprintf(out, "%4s %c %5d %c %8.3f %8.3f %8.3f %c\n",
+            fprintf(out, "%4s %c %5d %c %8.3f %8.3f %8.3f %c %8.3f\n",
                     p->resnam,
                     p->chain[0],
                     p->resnum,
@@ -202,7 +203,8 @@ BOOL DoMerge(FILE *pdbfp, FILE *stridefp, FILE *out)
                     p->x,
                     p->y,
                     p->z,
-                    s->ss);
+                    s->ss,
+                    s->access);
 
             /* Now unlink this from the list                            */
             if((s->next != NULL) && (s->prev != NULL))
@@ -323,16 +325,21 @@ BOOL ParseCmdLine(int argc, char **argv, char *pdbfile, char *infile,
    file
 
    13.03.98 Original   By: ACRM
+   23.11.99 Added accessibility
 */
 STRIDE *ReadStride(FILE *fp)
 {
    char   buffer[MAXBUFF],
           junk[8],
+          ssname[40],
           ResnumBuff[8];
    STRIDE *stride = NULL,
           *s;
    int    iResnum,
           lastchar;
+   REAL   phi,
+          psi;
+   
    
    
    while(fgets(buffer,MAXBUFF,fp))
@@ -355,13 +362,17 @@ STRIDE *ReadStride(FILE *fp)
             return(NULL);
          }
 
-         sscanf(buffer,"%s %s %c %s %d %c",
+         sscanf(buffer,"%s %s %c %s %d %c %s %lf %lf %lf",
                 junk,
                 s->resnam,
                 &(s->chain),
                 ResnumBuff,
                 &iResnum,
-                &(s->ss));
+                &(s->ss),
+                ssname,
+                &phi,
+                &psi,
+                &(s->access));
 
          lastchar = strlen(ResnumBuff) - 1;
          if(isalpha(ResnumBuff[lastchar]))
@@ -387,11 +398,10 @@ STRIDE *ReadStride(FILE *fp)
    Prints a usage message
 
    13.03.98 Original   By: ACRM
-   06.08.18 V2.0
 */
 void Usage(void)
 {
-   fprintf(stderr,"\nmergestride V2.0 (c) 1998 UCL, Dr. Andrew C.R. \
+   fprintf(stderr,"\nmergestride V1.0 (c) 1998 UCL, Dr. Andrew C.R. \
 Martin\n");
 
    fprintf(stderr,"\nUsage: mergestride pdbfile [stridefile \
