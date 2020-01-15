@@ -15,9 +15,7 @@
                Gower Street,
                London.
                WC1E 6BT.
-   Phone:      (Home) +44 (0)1372 275775
-               (Work) +44 (0)171 419 3890
-   EMail:      INTERNET: A.C.R.Martin@reading.ac.uk
+   EMail:      andrew@bioinf.org.uk
                
 **************************************************************************
 
