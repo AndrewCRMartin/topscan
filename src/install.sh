@@ -11,4 +11,5 @@ if [ ! -d $DATA ]; then
 fi
 
 cp -i topscan mergestride mergepdbsecstr $BIN
-cp -i topmat.mat $DATA
+cp -i topmat.mat    $DATA
+cp -i numtopmat.mat $DATA
