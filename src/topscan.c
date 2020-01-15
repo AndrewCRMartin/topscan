@@ -3,8 +3,8 @@
    Program:    topscan
    File:       topscan.c
    
-   Version:    V2.0
-   Date:       13.03.2000
+   Version:    V2.1
+   Date:       17.03.2000
    Function:   Compare protein topologies
    
    Copyright:  (c) UCL, Reading, Dr. Andrew C. R. Martin 1998-2000
@@ -55,9 +55,10 @@
    V1.5  17.11.99 Added -n option (include neighbour information)
    V1.6  23.11.99 Added -a option (include accessibility)
    V1.7  19.01.00 Added -t option (give topology strings on command line)
-   V1.8  26.01.00 Added -l option (include length)
+   V1.8  26.01.00 Added -l option (include element length)
    V2.0  13.03.00 Modified to work with numeric topology strings so we can
                   have a much larger alphabet
+   V2.1  17.03.00 Added -L option (include loop length)
 
 *************************************************************************/
 /* Includes
@@ -96,6 +97,7 @@
 
 #define HELIX_MEAN_LENGTH     12.5
 #define STRAND_MEAN_LENGTH    5.4
+#define LOOP_MEAN_LENGTH      6.9
 /************************************************************************/
 /* Globals
 */
@@ -118,22 +120,22 @@ BOOL ParseCmdLine(int argc, char **argv, char *infile1, char *infile2,
                   BOOL *BuildOnly, BOOL *ScanMode, BOOL *UseBoth,
                   BOOL *UseStride, BOOL *Do3_10, BOOL *PrimaryTopology,
                   BOOL *DoNeighbour, BOOL *DoAccess, BOOL *GivenTopString,
-                  BOOL *DoLength);
+                  BOOL *DoLength, BOOL *DoLoopLength);
 void Usage(void);
 int *ReadTopology(FILE *fp, int ELen, int HLen, BOOL UseStride,
                    BOOL Do3_10, BOOL PrimaryTopology, BOOL DoNeighbour,
-                   BOOL DoAccess, BOOL DoLength);
+                   BOOL DoAccess, BOOL DoLength, BOOL DoLoopLength);
 int CalcElement(char struc, REAL x1, REAL y1, REAL z1, 
                 REAL x2, REAL y2, REAL z2, BOOL PrimaryTopology,
                 BOOL DoNeighbour, BOOL DoAccess, REAL meanAccess,
-                int  EleLength);
+                int  EleLength, int LoopLength);
 int CalcIDScore(int *seq1, int *seq2, BOOL UseBoth);
 int *ReadDSSP(FILE *fp, int ELen, int HLen, BOOL Do3_10, 
               BOOL PrimaryTopology, BOOL DoNeighbour, BOOL DoAccess,
-              BOOL DoLength);
+              BOOL DoLength, BOOL DoLoopLength);
 int *ReadStride(FILE *fp, int ELen, int HLen, BOOL Do3_10, 
                 BOOL PrimaryTopology, BOOL DoNeighbour, BOOL DoAccess,
-                BOOL DoLength);
+                BOOL DoLength, BOOL DoLoopLength);
 BOOL IsNeighbour(REAL x1, REAL y1, REAL z1,
                  REAL x2, REAL y2, REAL z2,
                  REAL prevx1, REAL prevy1, REAL prevz1,
@@ -179,6 +181,7 @@ int main(int argc, char **argv)
          DoNeighbour     = FALSE,
          DoAccess        = FALSE,
          DoLength        = FALSE,
+         DoLoopLength    = FALSE,
          GivenTopString  = FALSE;
 #ifdef __linux__
    __pid_t pid;
@@ -192,7 +195,7 @@ int main(int argc, char **argv)
    if(ParseCmdLine(argc, argv, infile1, infile2, matfile, &ELen, &HLen,
                    &RunDSSP, &BuildOnly, &ScanMode, &UseBoth, &UseStride,
                    &Do3_10, &PrimaryTopology, &DoNeighbour, &DoAccess,
-                   &GivenTopString, &DoLength))
+                   &GivenTopString, &DoLength, &DoLoopLength))
    {
       if(GivenTopString)
       {
@@ -315,7 +318,7 @@ specified secondary structure length\nUsing values for length 4\n");
          /* Read the DSSP files                                         */
          if((top1 = ReadTopology(fdssp1, ELen, HLen, UseStride, Do3_10,
                                  PrimaryTopology, DoNeighbour,
-                                 DoAccess, DoLength))==NULL)
+                                 DoAccess, DoLength, DoLoopLength))==NULL)
          {
             fprintf(stderr,"Unable to read topology from %s\n",infile1);
             return(1);
@@ -405,7 +408,7 @@ numeric array\n");
                if((top2 = ReadTopology(fdssp2, ELen, HLen, UseStride, 
                                        Do3_10, PrimaryTopology, 
                                        DoNeighbour, DoAccess,
-                                       DoLength))==NULL)
+                                       DoLength, DoLoopLength))==NULL)
                {
                   fprintf(stderr,"Unable to read topology from %s\n",
                           infile2);
@@ -662,7 +665,8 @@ void TurnAboutZ(int *top)
                      BOOL *BuildOnly, BOOL *ScanMode, BOOL *UseBoth,
                      BOOL *UseStride, BOOL *Do3_10, BOOL *PrimaryTopology,
                      BOOL *DoNeighbour, BOOL *DoAccess, 
-                     BOOL *GivenTopString, BOOL *DoLength)
+                     BOOL *GivenTopString, BOOL *DoLength, 
+                     BOOL *DoLoopLength)
    -----------------------------------------------------------------------
    Input:   int    argc         Argument count
             char   **argv       Argument array
@@ -686,6 +690,7 @@ void TurnAboutZ(int *top)
             BOOL   *GivenTopString  Given the topology string on the 
                                 command line instead of a file
             BOOL   *DoLength    Add length information
+            BOOL   *DoLoopLength    Add loop length information
    Returns: BOOL                Success?
 
    Parse the command line
@@ -697,13 +702,15 @@ void TurnAboutZ(int *top)
    23.11.99 Added DoAccess
    19.01.00 Added -t (GivenTopString)
    26.01.00 Added -l (DoLength)
+   16.03.00 Added -L (DoLoopLength)
 */
 BOOL ParseCmdLine(int argc, char **argv, char *infile1, char *infile2, 
                   char *matfile, int *ELen, int *HLen, BOOL *RunDSSP,
                   BOOL *BuildOnly, BOOL *ScanMode, BOOL *UseBoth,
                   BOOL *UseStride, BOOL *Do3_10, BOOL *PrimaryTopology,
                   BOOL *DoNeighbour, BOOL *DoAccess,
-                  BOOL *GivenTopString, BOOL *DoLength)
+                  BOOL *GivenTopString, BOOL *DoLength, 
+                  BOOL *DoLoopLength)
 {
    argc--;
    argv++;
@@ -773,6 +780,9 @@ BOOL ParseCmdLine(int argc, char **argv, char *infile1, char *infile2,
          case 'l':
             *DoLength = TRUE;
             break;
+         case 'L':
+            *DoLoopLength = TRUE;
+            break;
          default:
             return(FALSE);
             break;
@@ -814,19 +824,21 @@ BOOL ParseCmdLine(int argc, char **argv, char *infile1, char *infile2,
    16.11.99 V1.5
    19.11.99 V1.7
    13.03.00 V2.0
+   17.03.00 V2.1
 */
 void Usage(void)
 {
-   fprintf(stderr,"\ntopscan V2.0 (c) 1998-2000, Dr. Andrew C.R. Martin, \
+   fprintf(stderr,"\ntopscan V2.1 (c) 1998-2000, Dr. Andrew C.R. Martin, \
 UCL & Reading\n");
 
-   fprintf(stderr,"\nUsage: topscan [-t] [-v] [-1] [-n] [-a] [-l] [-p[s]] \
-[-w] [-h hlen] [-e elen] [-m matrix] [-g] file1.{dssp|pdb} \
+   fprintf(stderr,"\nUsage: topscan [-t] [-v] [-1] [-n] [-a] [-l] [-L] \
+[-p[s]] [-w] [-h hlen] [-e elen] [-m matrix] [-g] file1.{dssp|pdb} \
 file2.{dssp|pdb}\n");
-   fprintf(stderr,"       topscan -b [-1] [-n] [-a] [-l] [-p[s]] [-h hlen] \
-[-e elen] [-g] file1.{dssp|pdb}\n");
-   fprintf(stderr,"       topscan -s [-t] [-1] [-n] [-a] [-l] [-v] [-p[s]] \
-[-w] [-h hlen] [-e elen] [-m matrix] [-g] file1.{dssp|pdb} file2.top\n");
+   fprintf(stderr,"       topscan -b [-1] [-n] [-a] [-l] [-L] [-p[s]] \
+[-h hlen] [-e elen] [-g] file1.{dssp|pdb}\n");
+   fprintf(stderr,"       topscan -s [-t] [-1] [-n] [-a] [-l] [-L] [-v] \
+[-p[s]] [-w] [-h hlen] [-e elen] [-m matrix] [-g] file1.{dssp|pdb} \
+file2.top\n");
    fprintf(stderr,"\n       -b Build the topology string for a file\n");
    fprintf(stderr,"          (Don't actually run a comparison)\n");
    fprintf(stderr,"       -s Scan a DSSP or PDB file against a library \
@@ -852,6 +864,7 @@ direction)\n");
    fprintf(stderr,"       -n Add neighbour information\n");
    fprintf(stderr,"       -a Add accessibility information\n");
    fprintf(stderr,"       -l Add element length information\n");
+   fprintf(stderr,"       -L Add loop length information\n");
    fprintf(stderr,"       -t Command line has a topology string instead \
 of a filename\n");
 
@@ -894,7 +907,8 @@ the program in\n");
 /************************************************************************/
 /*>int *ReadTopology(FILE *fp, int ELen, int HLen, BOOL UseStride,
                      BOOL Do3_10, BOOL PrimaryTopology,
-                     BOOL DoNeighbour, BOOL DoAccess, BOOL DoLength)
+                     BOOL DoNeighbour, BOOL DoAccess, BOOL DoLength,
+                     BOOL DoLoopLength)
    -----------------------------------------------------------------
    Input:   FILE   *fp             DSSP file pointer
             int    ELen            Minimum length of strand
@@ -905,6 +919,7 @@ the program in\n");
             BOOL   DoNeighbour     Add neighbour information
             BOOL   DoAccess        Add accessibility information
             BOOL   DoLength        Add length information
+            BOOL   DoLoopLength    Add loop length information
    Returns: int *                  Topology string
 
    Reads the topology from a DSSP or Stride file, returning a string 
@@ -917,28 +932,29 @@ the program in\n");
    23.11.99 Addes DoAccess
    26.01.00 Added DoLength
    10.03.00 Changed to use integer coded topology array
+   16.03.00 Added DoLoopLength
 */
 int *ReadTopology(FILE *fp, int ELen, int HLen, BOOL UseStride,
                   BOOL Do3_10, BOOL PrimaryTopology, BOOL DoNeighbour,
-                  BOOL DoAccess, BOOL DoLength)
+                  BOOL DoAccess, BOOL DoLength, BOOL DoLoopLength)
 {
    /* If we are doing neighbours, then reset the internal neighbour
       information
    */
    if(DoNeighbour)
    {
-      CalcElement('\0', 0,0,0, 0,0,0, 0, 1, 0, 0.0, 0);
+      CalcElement('\0', 0,0,0, 0,0,0, 0, 1, 0, 0.0, 0, 0);
    }
    
    if(UseStride)
    {
       return(ReadStride(fp, ELen, HLen, Do3_10, PrimaryTopology,
-                        DoNeighbour, DoAccess, DoLength));
+                        DoNeighbour, DoAccess, DoLength, DoLoopLength));
    }
    else
    {
       return(ReadDSSP(fp, ELen, HLen, Do3_10, PrimaryTopology,
-                      DoNeighbour, DoAccess, DoLength));
+                      DoNeighbour, DoAccess, DoLength, DoLoopLength));
    }
 }
 
@@ -946,7 +962,7 @@ int *ReadTopology(FILE *fp, int ELen, int HLen, BOOL UseStride,
 /************************************************************************/
 /*>int *ReadDSSP(FILE *fp, int ELen, int HLen, BOOL Do3_10,
                  BOOL PrimaryTopology, BOOL DoNeighbour, BOOL DoAccess,
-                 BOOL DoLength)
+                 BOOL DoLength, BOOL DoLoopLength)
    --------------------------------------------------------------------
    Input:   FILE     *fp             DSSP file pointer
             int      ELen            Minimum length of strand
@@ -956,6 +972,7 @@ int *ReadTopology(FILE *fp, int ELen, int HLen, BOOL UseStride,
             BOOL     DoNeighbour     Add neighbour information
             BOOL     DoAccess        Add accessibility information
             BOOL     DoLength        Add length information
+            BOOL     DoLoopLength    Add loop length information
    Returns: int *                    Topology string
 
    Reads a DSSP file returning a string representing the topology.
@@ -970,10 +987,11 @@ int *ReadTopology(FILE *fp, int ELen, int HLen, BOOL UseStride,
    26.01.00 Added DoLength
    10.03.00 Changed to use integer coded topology array
    13.03.00 Initialise x1,y1,z1,xp,yp,zp only to silence warnings with -O2
+   16.03.00 Added loop length code
 */
 int *ReadDSSP(FILE *fp, int ELen, int HLen, BOOL Do3_10, 
               BOOL PrimaryTopology, BOOL DoNeighbour, BOOL DoAccess,
-              BOOL DoLength)
+              BOOL DoLength, BOOL DoLoopLength)
 {
    int  *top;
    char buffer[MAXBUFF*2],
@@ -989,9 +1007,11 @@ int *ReadDSSP(FILE *fp, int ELen, int HLen, BOOL Do3_10,
         access,
         sumaccess    = 0.0;
    BOOL InBody       = FALSE,
-        InElement    = FALSE;
+        InElement    = FALSE,
+        DoneOne      = FALSE;
    int  i            = 0,
-        EleLength    = 0;
+        EleLength    = 0,
+        LoopLength   = 0;
 
 #ifdef UCL
    fprintf(stderr,"Code needs to be modified to support reading \
@@ -1021,6 +1041,11 @@ accessibility from\nUCL DSSP files\n");
             EleLength++;
             sumaccess += access;
          }
+
+         if(DoneOne && (struc!='E') && (struc!='H'))
+         {
+            LoopLength++;
+         }
          
          if((struc=='E' || struc=='H') && (struc!=LastStruc))
          {
@@ -1029,10 +1054,15 @@ accessibility from\nUCL DSSP files\n");
             {
                if((LastStruc=='E' && EleLength>=ELen) ||
                   (LastStruc=='H' && EleLength>=HLen))
+               {
                   top[i++] = CalcElement(LastStruc,x1,y1,z1,xp,yp,zp,
                                          PrimaryTopology, DoNeighbour,
                                          DoAccess, sumaccess/EleLength,
-                                         (DoLength?EleLength:0));
+                                         (DoLength?EleLength:0),
+                                         (DoLoopLength?LoopLength:0));
+                  DoneOne = TRUE;
+                  LoopLength = 0;
+               }
             }
             
             InElement = TRUE;
@@ -1047,10 +1077,16 @@ accessibility from\nUCL DSSP files\n");
             /* Just come out of an element                              */
             if((LastStruc=='E' && EleLength>=ELen) ||
                (LastStruc=='H' && EleLength>=HLen))
+            {
+               
                top[i++] = CalcElement(LastStruc,x1,y1,z1,xp,yp,zp,
                                       PrimaryTopology, DoNeighbour,
                                       DoAccess, sumaccess/EleLength,
-                                      (DoLength?EleLength:0));
+                                      (DoLength?EleLength:0),
+                                      (DoLoopLength?LoopLength:0));
+               DoneOne = TRUE;
+               LoopLength = 0;
+            }
             InElement = FALSE;
          }
             
@@ -1076,7 +1112,8 @@ accessibility from\nUCL DSSP files\n");
          top[i++] = CalcElement(LastStruc,x1,y1,z1,xp,yp,zp,
                                 PrimaryTopology, DoNeighbour,
                                 DoAccess, sumaccess/EleLength,
-                                (DoLength?EleLength:0));
+                                (DoLength?EleLength:0),
+                                (DoLoopLength?LoopLength:0));
    }
    top[i] = (-1);
    
@@ -1088,7 +1125,7 @@ accessibility from\nUCL DSSP files\n");
 /*>int CalcElement(char struc, REAL x1, REAL y1, REAL z1, 
                    REAL x2, REAL y2, REAL z2, BOOL PrimaryTopology,
                    BOOL DoNeighbour, BOOL DoAccess, REAL meanAccess,
-                   int EleLength)
+                   int EleLength, int LoopLength)
    -----------------------------------------------------------------
    Input:   char  struc           DSSP structure assignment
             REAL  x1              Coordinates of SS element start
@@ -1102,6 +1139,8 @@ accessibility from\nUCL DSSP files\n");
             BOOL  DoAccess        Add accessibility information
             REAL  meanAccess      Mean access for element
             int   EleLength       Element length (0 if we are ignoring
+                                  these)
+            int   LoopLength      Loop length (0 if we are ignoring
                                   these)
    Returns: char                  Code for element (structure & direction)
 
@@ -1118,16 +1157,18 @@ accessibility from\nUCL DSSP files\n");
    10.03.00 Changed to use integer coded topology array. i.e. returns
             a number rather than a character
    13.03.00 Fixed length checking
+   16.03.00 Added loop length
 */
 int CalcElement(char struc, REAL x1, REAL y1, REAL z1, 
                 REAL x2, REAL y2, REAL z2, BOOL PrimaryTopology,
                 BOOL DoNeighbour, BOOL DoAccess, REAL meanAccess,
-                int EleLength)
+                int EleLength, int LoopLength)
 {
    int         code;
    int         dirn,
-               buried    = 0,
-               lengthmod = 0;
+               buried        = 0,
+               lengthmod     = 0,
+               looplengthmod = 0;
    REAL        dx,    dy,    dz,
                absdx, absdy, absdz;
    static REAL prevx1 = MARKER,
@@ -1148,6 +1189,11 @@ int CalcElement(char struc, REAL x1, REAL y1, REAL z1,
       prevz2 = MARKER;
       return(0);
    }
+
+
+#ifdef DEBUG
+   fprintf(stderr,"Length: %d\n", LoopLength);
+#endif
 
    /* Base coding is A for sheet, G for helix                           */
    if(PrimaryTopology)   /* We ignore the direction information         */
@@ -1227,7 +1273,13 @@ int CalcElement(char struc, REAL x1, REAL y1, REAL z1,
          lengthmod = 48;
    }
    
-   return(code + dirn + buried + lengthmod);
+   if(LoopLength)
+   {
+      if(LoopLength > LOOP_MEAN_LENGTH)
+         looplengthmod = 96;
+   }
+   
+   return(code + dirn + buried + lengthmod + looplengthmod);
 }
 
 /************************************************************************/
@@ -1286,7 +1338,7 @@ int CalcIDScore(int *seq1, int *seq2, BOOL UseBoth)
 /************************************************************************/
 /*>int *ReadStride(FILE *fp, int ELen, int HLen, BOOL Do3_10, 
                    BOOL PrimaryTopology, BOOL DoNeighbour, BOOL DoAccess,
-                   BOOL DoLength)
+                   BOOL DoLength, BOOL DoLoopLength)
    -----------------------------------------------------------------------
    Input:   FILE     *fp             Stride file pointer
             int      ELen            Minimum length of strand
@@ -1296,6 +1348,7 @@ int CalcIDScore(int *seq1, int *seq2, BOOL UseBoth)
             BOOL     DoNeighbour     Add neighbour information
             BOOL     DoAccess        Add accessibility information
             BOOL     DoLength        Add length information
+            BOOL     DoLoopLength    Add loop length information
    Returns: int *                    Topology string
 
    Reads a Stride file returning a string representing the topology.
@@ -1310,10 +1363,11 @@ int CalcIDScore(int *seq1, int *seq2, BOOL UseBoth)
    26.01.00 Added DoLength
    10.03.00 Changed to use integer coded topology array
    13.03.00 Initialise x1,y1,z1,xp,yp,zp only to silence warnings with -O2
+   16.03.00 Added loop length
 */
 int *ReadStride(FILE *fp, int ELen, int HLen, BOOL Do3_10, 
                 BOOL PrimaryTopology, BOOL DoNeighbour, BOOL DoAccess,
-                BOOL DoLength)
+                BOOL DoLength, BOOL DoLoopLength)
 {
    int  *top;
    char buffer[MAXBUFF*2],
@@ -1328,9 +1382,11 @@ int *ReadStride(FILE *fp, int ELen, int HLen, BOOL Do3_10,
         zp = MARKER,
         access, 
         sumaccess    = 0.0;
-   BOOL InElement    = FALSE;
+   BOOL InElement    = FALSE,
+        DoneOne      = FALSE;
    int  i            = 0,
-        EleLength    = 0;
+        EleLength    = 0,
+        LoopLength   = 0;
 
    
    if((top = (int *)malloc(MAXBUFF * sizeof(int)))==NULL)
@@ -1350,6 +1406,10 @@ int *ReadStride(FILE *fp, int ELen, int HLen, BOOL Do3_10,
          EleLength++;
          sumaccess += access;
       }
+      if(DoneOne && (struc != 'E') && (struc != 'H'))
+      {
+         LoopLength++;
+      }
       
       if((struc=='E' || struc=='H') && (struc!=LastStruc))
       {
@@ -1358,10 +1418,16 @@ int *ReadStride(FILE *fp, int ELen, int HLen, BOOL Do3_10,
          {
             if((LastStruc=='E' && EleLength>=ELen) ||
                (LastStruc=='H' && EleLength>=HLen))
+            {
                top[i++] = CalcElement(LastStruc,x1,y1,z1,xp,yp,zp,
                                       PrimaryTopology, DoNeighbour,
                                       DoAccess, sumaccess/EleLength,
-                                      (DoLength?EleLength:0));
+                                      (DoLength?EleLength:0),
+                                      (DoLoopLength?LoopLength:0));
+               DoneOne = TRUE;
+               LoopLength = 0;
+            }
+            
          }
          
          InElement = TRUE;
@@ -1376,10 +1442,15 @@ int *ReadStride(FILE *fp, int ELen, int HLen, BOOL Do3_10,
          /* Just come out of an element                                 */
          if((LastStruc=='E' && EleLength>=ELen) ||
             (LastStruc=='H' && EleLength>=HLen))
+         {
             top[i++] = CalcElement(LastStruc,x1,y1,z1,xp,yp,zp,
                                    PrimaryTopology, DoNeighbour,
                                    DoAccess, sumaccess/EleLength,
-                                   (DoLength?EleLength:0));
+                                   (DoLength?EleLength:0),
+                                   (DoLoopLength?LoopLength:0));
+            DoneOne = TRUE;
+            LoopLength = 0;
+         }
          InElement = FALSE;
       }
       
@@ -1397,7 +1468,8 @@ int *ReadStride(FILE *fp, int ELen, int HLen, BOOL Do3_10,
          top[i++] = CalcElement(LastStruc,x1,y1,z1,xp,yp,zp,
                                 PrimaryTopology, DoNeighbour,
                                 DoAccess, sumaccess/EleLength,
-                                (DoLength?EleLength:0));
+                                (DoLength?EleLength:0),
+                                (DoLoopLength?LoopLength:0));
    }
    top[i] = (-1);
    
